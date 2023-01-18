@@ -1,0 +1,9 @@
+{
+    "fortran.linter.includePaths": [
+        "${workspaceFolder}/src/",
+        "${workspaceFolder}/app/",
+        "${workspaceFolder}/build/**",
+    ],
+    "fortran.formatting.formatter": "findent",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+}
