@@ -154,7 +154,7 @@ program main
       
    call calcrab(mol,distvec)
    call ncoord_erf(mol,distvec,-7.5_wp,cnvec)
-   write(*,*) "CN: ",cnvec
+   if (verbose) write(*,*) "CN: ",cnvec
 
    chrg = chrg - charge
    if (.not. uhfgiven .and. (chrg .eq. 1 .or. (mod(chrg,2) .ne. 0))) then
@@ -167,7 +167,7 @@ program main
    endif
 
    call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.true.,unity,unity,unity,unity,qeeq)
-   write(*,*) "EEQ: ",qeeq
+   if (verbose) write(*,*) "EEQ: ",qeeq
 
 ! start writing
    open(newunit=myunit,file=outn)

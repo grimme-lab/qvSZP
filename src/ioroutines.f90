@@ -41,7 +41,7 @@ contains
       character(len=120)                     :: atmp
       character(len=1)                       :: ltmp
 
-      logical                                :: da
+      logical                                :: da,checked
 
       integer, allocatable                   :: nbf(:),npr(:,:)
       character(len=1), allocatable          :: angmom(:,:)
@@ -50,7 +50,10 @@ contains
       integer                                :: iat,tmpnpr,imax
       integer                                :: i,j,l,k
 
-      allocate(nbf(100),npr(100,20),angmom(100,20))
+      real(wp)                               :: tmpvec(4) = 1000.00_wp
+
+      allocate(nbf(100),npr(100,20),angmom(100,20),ibasis%sccoeff(118))
+      ibasis%sccoeff = .false.
 
       if (.not. present(basisfilename)) then
          call get_environment_variable("HOME", length=char_length)
@@ -108,6 +111,8 @@ contains
             cycle
          else
             read(atmp,*,iostat=iread) iat
+            checked = .false.
+            tmpvec = 1000.00_wp
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
                error stop "I/O error in basis set read in."
@@ -133,7 +138,17 @@ contains
                npr(iat,nbf(iat)) = tmpnpr
                angmom(iat,nbf(iat)) = ltmp
                do j=1,tmpnpr
-                  read(myunit,*,iostat=iread) atmp
+                  read(myunit,'(a)',iostat=iread) atmp
+                  if (.not. checked) then
+                     read(atmp,*,iostat=iread) tmpvec(:)
+                     if (verb) then
+                        write(*,*) tmpvec
+                     end if
+                     if (tmpvec(3) < 999.0_wp) then
+                        ibasis%sccoeff(iat) = .true.
+                     end if
+                     checked = .true.
+                  endif
                end do
                read(myunit,'(a)',iostat=iread) atmp
                l = l + 1
@@ -147,7 +162,7 @@ contains
 
       ibasis%atmax = imax
       allocate(ibasis%npr(imax,20),ibasis%angmom(imax,20),ibasis%nbf(imax))
-      allocate(ibasis%exp(imax,20,20),ibasis%coeff(imax,20,20))
+      allocate(ibasis%exp(imax,20,20),ibasis%coeff(imax,20,20),ibasis%qcoeff(imax,20,20))
       close(myunit)
 
       ibasis%npr = 0
@@ -177,7 +192,7 @@ contains
       iread =  0
       l     =  0
       if (verb) then
-         write(*,*) "Z, # basis function, # primitive, exponent, coefficient"
+         write(*,*) "Z, # basis function, # primitive, exponent, coefficient (,charge scaling coefficient)"
       endif
       do while (iread >= 0)
          read(myunit,'(a)',iostat=iread) atmp
@@ -202,9 +217,19 @@ contains
                read(myunit,*,iostat=iread) atmp
                l = l + 1
                do j=1,ibasis%npr(iat,i)
-                  read(myunit,*,iostat=iread) ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
+                  if (ibasis%sccoeff(iat)) then
+                     read(myunit,*,iostat=iread) ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j), &
+                        ibasis%qcoeff(iat,i,j)
+                  else
+                     read(myunit,*,iostat=iread) ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
+                  end if
                   if (verb) then
-                     write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
+                     if (ibasis%sccoeff(iat)) then
+                        write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j), &
+                           ibasis%qcoeff(iat,i,j)
+                     else
+                        write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
+                     endif
                   end if
                   l = l + 1
                end do

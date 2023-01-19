@@ -14,6 +14,9 @@ module basistype
       integer, allocatable  :: angmom(:,:) ! angular momentum of each primitive function
       real(wp), allocatable :: exp(:,:,:) ! exponent of each primitive function
       real(wp), allocatable :: coeff(:,:,:) ! contraction coefficient of each primitive function
+      logical, allocatable  :: sccoeff(:)
+      real(wp), allocatable :: qcoeff(:,:,:)
+
    end type basis_type
    type :: ecp_type
       integer               :: atmax ! atom index
