@@ -4,6 +4,7 @@ program main
    use mctc_env
    use ioroutines, only: rdfile,rdbas,rdecp
    use basistype, only: basis_type,ecp_type
+   use chargscfcts, only: eeq,calcrab,ncoord_erf
    use miscellaneous, only: helpf
    implicit none
    integer              :: narg,i,myunit,j,k
@@ -13,6 +14,7 @@ program main
    integer              :: nopen    = 0
    integer              :: chrg     = 0
    integer              :: coremem  = 5000
+   integer,allocatable  :: tmpids(:)
 
    character(len=120)   :: atmp,guess,filen,outn,bfilen,efilen
    character(len=:),allocatable :: scfconv
@@ -26,6 +28,10 @@ program main
    type(error_type), allocatable    :: error
    type(basis_type)                 :: bas
    type(ecp_type)                   :: ecp
+
+   real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:)
+
+   real(wp)                         :: unity(86) = 1.0_wp
 
    filen       = 'coord' ! input  filename
    outn        = 'wb97x3c.inp'   ! output filename
@@ -136,6 +142,20 @@ program main
    endif
 
    call rdfile(trim(filen),mol,chrg)
+   allocate(tmpids(mol%nat))
+   do i = 1, mol%nat
+      tmpids(i) = mol%num(mol%id(i))
+   enddo
+   allocate(distvec(mol%nat*(mol%nat+1)/2))
+   allocate(cnvec(mol%nat),qeeq(mol%nat))
+   distvec  =  0.0_wp
+   cnvec    =  0.0_wp
+   qeeq     =  0.0_wp
+      
+   call calcrab(mol,distvec)
+   call ncoord_erf(mol,distvec,-7.5_wp,cnvec)
+   write(*,*) "CN: ",cnvec
+
    chrg = chrg - charge
    if (.not. uhfgiven .and. (chrg .eq. 1 .or. (mod(chrg,2) .ne. 0))) then
       write(*,'(a)') "Use a .UHF file or '--uhf <int>' to indicate the number of unpaired electrons."
@@ -145,6 +165,9 @@ program main
          error stop
       end if
    endif
+
+   call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.true.,unity,unity,unity,unity,qeeq)
+   write(*,*) "EEQ: ",qeeq
 
 ! start writing
    open(newunit=myunit,file=outn)

@@ -1,4 +1,4 @@
-name = "o4wb3c"
+name = "qvSZP"
 version = "0.1.0"
 license = "license"
 author = "Marcel Mueller"
@@ -8,6 +8,7 @@ copyright = "Copyright 2023, Marcel Mueller"
 auto-executables = true
 auto-tests = true
 auto-examples = true
+link=["lapack"]
 [install]
 library = false
 [dependencies]

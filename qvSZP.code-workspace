@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"fortran.linter.includePaths": [
+			"${workspaceFolder}/src/",
+			"${workspaceFolder}/app/",
+			"${workspaceFolder}/build/**"
+		],
+		"fortran.formatting.formatter": "findent",
+		"fortran.fortls.path": "fortls"
+	}
+}

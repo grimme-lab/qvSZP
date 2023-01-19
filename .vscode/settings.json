@@ -6,4 +6,5 @@
     ],
     "fortran.formatting.formatter": "findent",
     "python.terminal.activateEnvInCurrentTerminal": true,
+    "fortran.fortls.path": "fortls",
 }
