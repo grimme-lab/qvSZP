@@ -16,6 +16,7 @@ module basistype
       real(wp), allocatable :: coeff(:,:,:) ! contraction coefficient of each primitive function
       logical, allocatable  :: sccoeff(:)
       real(wp), allocatable :: qcoeff(:,:,:)
+      real(wp), allocatable :: scalparam(:,:)   ! scaling parameters for the basis functions
 
    end type basis_type
    type :: ecp_type

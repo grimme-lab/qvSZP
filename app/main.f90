@@ -30,10 +30,10 @@ program main
    type(ecp_type)                   :: ecp
 
    real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:), sccoeff(:,:,:)
-   real(wp),allocatable             :: param(:)
 
-   real(wp)                         :: unity(86) = 1.0_wp
    real(wp)                         :: modq,scalfac
+
+   real(wp),parameter               :: unity(86) = 1.0_wp
 
    filen       = 'coord' ! input  filename
    outn        = 'wb97x3c.inp'   ! output filename
@@ -56,12 +56,6 @@ program main
    indefile    = .false.
    indcharge   = .false.
    sugg_guess  = .false.
-
-   allocate(param(3))
-   param = 0.0_wp
-
-   param(1) = 0.05_wp
-   param(2) = 0.66666_wp
 
    ! get number of arguments
    narg = command_argument_count()
@@ -86,14 +80,6 @@ program main
          call get_command_argument(i+1,atmp)
          indefile=.true.
          efilen = trim(atmp)
-      endif
-      if(index(atmp,'--cnpar').ne.0) then
-         call get_command_argument(i+1,atmp)
-         read(atmp,*) param(1)
-      endif
-      if(index(atmp,'--qsqpar').ne.0) then
-         call get_command_argument(i+1,atmp)
-         read(atmp,*) param(2)
       endif
       if(index(atmp,'--chrg').ne.0) then
          call get_command_argument(i+1,atmp)
@@ -255,8 +241,8 @@ program main
    write(*,'(a)') "Scaling prefactor for: #atom, #bf, #primitive, final coeff., scaling factor"
    do i = 1, mol%nat
       if (.not. bas%sccoeff(mol%num(mol%id(i)))) cycle
-      modq = qeeq(i) + param(1) * cnvec(i)
-      scalfac = modq - ( param(2) * modq**2 )
+      modq = qeeq(i) + bas%scalparam(i,1) * cnvec(i)
+      scalfac = modq - ( bas%scalparam(i,1) * modq**2 )
       do j = 1, bas%nbf(mol%num(mol%id(i)))
          do k = 1, bas%npr(mol%num(mol%id(i)),j)
             sccoeff(i,j,k) = bas%coeff(mol%num(mol%id(i)),j,k) + &

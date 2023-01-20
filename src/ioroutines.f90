@@ -52,8 +52,9 @@ contains
 
       real(wp)                               :: tmpvec(4) = 1000.00_wp
 
-      allocate(nbf(100),npr(100,20),angmom(100,20),ibasis%sccoeff(118))
+      allocate(nbf(100),npr(100,20),angmom(100,20),ibasis%sccoeff(118),ibasis%scalparam(118,2))
       ibasis%sccoeff = .false.
+      ibasis%scalparam = 0.0_wp
 
       if (.not. present(basisfilename)) then
          call get_environment_variable("HOME", length=char_length)
@@ -119,6 +120,15 @@ contains
             end if
             nbf(iat) = 0
             npr(iat,:) = 0
+
+            if (iat <= 10) then
+               read(myunit,'(a)',iostat=iread) atmp
+               if (iread /= 0) then
+                  write(*,*) "Current line number: ",l
+                  error stop "I/O error in basis set read in."
+               end if
+               read (atmp,*) ibasis%scalparam(iat,1),ibasis%scalparam(iat,2)
+            end if
 
             if (iat > imax) then
                imax = iat
@@ -212,6 +222,13 @@ contains
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
                error stop "I/O error in basis set read in."
+            end if
+            if (iat <= 10) then
+               read(myunit,'(a)',iostat=iread) atmp
+               if (iread /= 0) then
+                  write(*,*) "Current line number: ",l
+                  error stop "I/O error in basis set read in."
+               end if
             end if
             do i=1,ibasis%nbf(iat)
                read(myunit,*,iostat=iread) atmp
