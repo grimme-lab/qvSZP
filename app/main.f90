@@ -29,9 +29,11 @@ program main
    type(basis_type)                 :: bas
    type(ecp_type)                   :: ecp
 
-   real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:)
+   real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:), sccoeff(:,:,:)
+   real(wp),allocatable             :: param(:)
 
    real(wp)                         :: unity(86) = 1.0_wp
+   real(wp)                         :: modq,scalfac
 
    filen       = 'coord' ! input  filename
    outn        = 'wb97x3c.inp'   ! output filename
@@ -54,6 +56,12 @@ program main
    indefile    = .false.
    indcharge   = .false.
    sugg_guess  = .false.
+
+   allocate(param(3))
+   param = 0.0_wp
+
+   param(1) = 0.05_wp
+   param(2) = 0.66666_wp
 
    ! get number of arguments
    narg = command_argument_count()
@@ -78,6 +86,14 @@ program main
          call get_command_argument(i+1,atmp)
          indefile=.true.
          efilen = trim(atmp)
+      endif
+      if(index(atmp,'--cnpar').ne.0) then
+         call get_command_argument(i+1,atmp)
+         read(atmp,*) param(1)
+      endif
+      if(index(atmp,'--qsqpar').ne.0) then
+         call get_command_argument(i+1,atmp)
+         read(atmp,*) param(2)
       endif
       if(index(atmp,'--chrg').ne.0) then
          call get_command_argument(i+1,atmp)
@@ -142,16 +158,20 @@ program main
    endif
 
    call rdfile(trim(filen),mol,chrg)
+
    allocate(tmpids(mol%nat))
+   allocate(distvec(mol%nat*(mol%nat+1)/2))
+   allocate(cnvec(mol%nat),qeeq(mol%nat))
+   allocate(sccoeff(mol%nat,20,20))
+
    do i = 1, mol%nat
       tmpids(i) = mol%num(mol%id(i))
    enddo
-   allocate(distvec(mol%nat*(mol%nat+1)/2))
-   allocate(cnvec(mol%nat),qeeq(mol%nat))
+
    distvec  =  0.0_wp
    cnvec    =  0.0_wp
    qeeq     =  0.0_wp
-      
+
    call calcrab(mol,distvec)
    call ncoord_erf(mol,distvec,-7.5_wp,cnvec)
    if (verbose) write(*,*) "CN: ",cnvec
@@ -231,28 +251,21 @@ program main
       call rdbas(bas,verbose)
    endif
 
-   write(myunit,'(a)') "%basis"
-   do i=1,maxval(mol%id,1)
-      if ( bas%exp(mol%num(i),1,1) > 0.0_wp ) then
-         write(myunit,'(2x,a,1x,a2)') "NewGTO",mol%sym(i)
-         do j=1,bas%nbf(mol%num(i))
-            if (bas%angmom(mol%num(i),j) == 0) ltmp = 'S'
-            if (bas%angmom(mol%num(i),j) == 1) ltmp = 'P'
-            if (bas%angmom(mol%num(i),j) == 2) ltmp = 'D'
-            if (bas%angmom(mol%num(i),j) == 3) ltmp = 'F'
-            if (bas%angmom(mol%num(i),j) == 4) ltmp = 'G'
-            if (bas%angmom(mol%num(i),j) == 5) ltmp = 'H'
-            if (bas%angmom(mol%num(i),j) == 6) ltmp = 'I'
-            write(myunit,'(3x,a1,2x,i3)') ltmp,bas%npr(mol%num(i),j)
-            do k=1,bas%npr(mol%num(i),j)
-               write(myunit,'(i5,2x,2f14.8)') k,bas%exp(mol%num(i),j,k),bas%coeff(mol%num(i),j,k)
-            enddo
+   sccoeff = 0.0_wp
+   write(*,'(a)') "Scaling prefactor for: #atom, #bf, #primitive, final coeff., scaling factor"
+   do i = 1, mol%nat
+      if (.not. bas%sccoeff(mol%num(mol%id(i)))) cycle
+      modq = qeeq(i) + param(1) * cnvec(i)
+      scalfac = modq - ( param(2) * modq**2 )
+      do j = 1, bas%nbf(mol%num(mol%id(i)))
+         do k = 1, bas%npr(mol%num(mol%id(i)),j)
+            sccoeff(i,j,k) = bas%coeff(mol%num(mol%id(i)),j,k) + &
+               scalfac * bas%qcoeff(mol%num(mol%id(i)),j,k)
+            write(*,'(a,i3,i3,i3,f14.8,f14.8)') "Scaling prefactor for: ",i,j,k,sccoeff(i,j,k), scalfac
          enddo
-         write(myunit,'(2x,a)') "end"
-      else
-         call fatal_error(error,"No basis set for atoms with Z > 86")
-      endif
+      enddo
    enddo
+   write(*,'(a)') ""
 
    if (indefile) then
       call rdecp(ecp,verbose,efilen)
@@ -260,6 +273,7 @@ program main
       call rdecp(ecp,verbose)
    endif
 
+   write(myunit,'(a)') "%basis"
    do i=1,maxval(mol%id,1)
       if ( sum(abs(ecp%exp(mol%num(i),:,:))) > 0.0_wp .and. mol%num(i) >= ecp%atmin ) then
          write(myunit,'(a,a2)') "  NewECP ", mol%sym(i)
@@ -321,6 +335,26 @@ program main
    write(myunit,'(a,2x,2i3)') "* xyz", charge, nopen+1
    do i=1,mol%nat
       write(myunit,'(a2,2x,3F22.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
+      if ( bas%exp(mol%num(mol%id(i)),1,1) > 0.0_wp ) then
+         write(myunit,'(2x,a,1x,a2)') "NewGTO"
+         do j=1,bas%nbf(mol%num(mol%id(i)))
+            if (bas%angmom(mol%num(mol%id(i)),j) == 0) ltmp = 'S'
+            if (bas%angmom(mol%num(mol%id(i)),j) == 1) ltmp = 'P'
+            if (bas%angmom(mol%num(mol%id(i)),j) == 2) ltmp = 'D'
+            if (bas%angmom(mol%num(mol%id(i)),j) == 3) ltmp = 'F'
+            if (bas%angmom(mol%num(mol%id(i)),j) == 4) ltmp = 'G'
+            if (bas%angmom(mol%num(mol%id(i)),j) == 5) ltmp = 'H'
+            if (bas%angmom(mol%num(mol%id(i)),j) == 6) ltmp = 'I'
+            write(myunit,'(3x,a1,2x,i3)') ltmp,bas%npr(mol%num(mol%id(i)),j)
+            do k=1,bas%npr(mol%num(mol%id(i)),j)
+               write(myunit,'(i5,2x,2f14.8)') k, &
+                  bas%exp(mol%num(mol%id(i)),j,k),sccoeff(i,j,k)
+            enddo
+         enddo
+         write(myunit,'(2x,a)') "end"
+      else
+         call fatal_error(error,"No basis set for atoms with Z > 86")
+      endif
    enddo
    write(myunit,'(a)') "*"
 
