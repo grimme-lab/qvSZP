@@ -32,5 +32,4 @@ module basistype
       real(wp), allocatable :: exp(:,:,:) ! exponent of each primitive function
       real(wp), allocatable :: coeff(:,:,:) ! contraction coefficient of each primitive function
    end type ecp_type
-
 end module basistype

@@ -160,7 +160,6 @@ program main
 
    call calcrab(mol,distvec)
    call ncoord_erf(mol,distvec,-7.5_wp,cnvec)
-   if (verbose) write(*,*) "CN: ",cnvec
 
    chrg = chrg - charge
    if (.not. uhfgiven .and. (chrg .eq. 1 .or. (mod(chrg,2) .ne. 0))) then
@@ -173,7 +172,6 @@ program main
    endif
 
    call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.true.,unity,unity,unity,unity,qeeq)
-   if (verbose) write(*,*) "EEQ: ",qeeq
 
 ! start writing
    open(newunit=myunit,file=outn)
@@ -237,17 +235,31 @@ program main
       call rdbas(bas,verbose)
    endif
 
+   if (verbose) then
+      do i = 1, mol%nat
+         write(*,'(1x,a,i3,a,i3)')               "Z for atom               ",i,":",mol%num(mol%id(i))
+         write(*,'(1x,a,i3,a,f9.5,f9.5)')               "scaling factors for atom ",i,":", &
+            bas%scalparam(mol%num(mol%id(i)),1),bas%scalparam(mol%num(mol%id(i)),2)
+         write(*,'(1x,a,i3,a,f9.5)')               "qEEQ of atom             ",i,":",qeeq(i)
+         write(*,'(1x,a,i3,a,f9.5,/)') "CN of atom               ",i,":",cnvec(i)
+      enddo
+   endif
+
    sccoeff = 0.0_wp
-   write(*,'(a)') "Scaling prefactor for: #atom, #bf, #primitive, final coeff., scaling factor"
+   if (verbose) then
+      write(*,'(a)') "Scaling prefactor for: #atom, #bf, #primitive, final coeff., scaling factor"
+   endif
    do i = 1, mol%nat
       if (.not. bas%sccoeff(mol%num(mol%id(i)))) cycle
-      modq = qeeq(i) + bas%scalparam(i,1) * cnvec(i)
-      scalfac = modq - ( bas%scalparam(i,1) * modq**2 )
+      modq = qeeq(i) + bas%scalparam(mol%num(mol%id(i)),1) * cnvec(i)
+      scalfac = modq - ( bas%scalparam(mol%num(mol%id(i)),2) * modq**2 )
       do j = 1, bas%nbf(mol%num(mol%id(i)))
          do k = 1, bas%npr(mol%num(mol%id(i)),j)
             sccoeff(i,j,k) = bas%coeff(mol%num(mol%id(i)),j,k) + &
                scalfac * bas%qcoeff(mol%num(mol%id(i)),j,k)
-            write(*,'(a,i3,i3,i3,f14.8,f14.8)') "Scaling prefactor for: ",i,j,k,sccoeff(i,j,k), scalfac
+            if (verbose) then
+               write(*,'(a,i3,i3,i3,f14.8,f14.8)') "Scaling prefactor for: ",i,j,k,sccoeff(i,j,k), scalfac
+            endif
          enddo
       enddo
    enddo

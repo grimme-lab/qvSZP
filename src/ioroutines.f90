@@ -51,6 +51,7 @@ contains
       integer                                :: i,j,l,k
 
       real(wp)                               :: tmpvec(4) = 1000.00_wp
+      real(wp)                               :: iattmp(2)
 
       allocate(nbf(100),npr(100,20),angmom(100,20),ibasis%sccoeff(118),ibasis%scalparam(118,2))
       ibasis%sccoeff = .false.
@@ -111,24 +112,30 @@ contains
          if(index(atmp,'*').ne.0) then
             cycle
          else
-            read(atmp,*,iostat=iread) iat
+            iattmp=1000.00_wp
+            atmp=trim(atmp)
+            read(atmp,*,iostat=iread) iat, iattmp(:)
+            if (maxval(iattmp) <= 999.0_wp) then
+               ibasis%scalparam(iat,1) = iattmp(1)
+               ibasis%scalparam(iat,2) = iattmp(2)
+               if (present(verb)) then
+                  if (verb) then
+                     write(*,'(a,i3,a,f6.3,f6.3)') "Scaling parameters for atom ", &
+                        iat," are: ",ibasis%scalparam(iat,1),ibasis%scalparam(iat,2)
+                  end if
+               end if
+            end if
             checked = .false.
             tmpvec = 1000.00_wp
-            if (iread /= 0) then
+            ! ATTENTION: IOSTAT error only detects read-in errors, not end of file as this is is
+            ! what we want to test for here.
+            if (iread > 0) then
                write(*,*) "Current line number: ",l
                error stop "I/O error in basis set read in."
             end if
             nbf(iat) = 0
             npr(iat,:) = 0
 
-            if (iat <= 10) then
-               read(myunit,'(a)',iostat=iread) atmp
-               if (iread /= 0) then
-                  write(*,*) "Current line number: ",l
-                  error stop "I/O error in basis set read in."
-               end if
-               read (atmp,*) ibasis%scalparam(iat,1),ibasis%scalparam(iat,2)
-            end if
 
             if (iat > imax) then
                imax = iat
@@ -149,11 +156,9 @@ contains
                angmom(iat,nbf(iat)) = ltmp
                do j=1,tmpnpr
                   read(myunit,'(a)',iostat=iread) atmp
+                  l = l + 1
                   if (.not. checked) then
                      read(atmp,*,iostat=iread) tmpvec(:)
-                     if (verb) then
-                        write(*,*) tmpvec
-                     end if
                      if (tmpvec(3) < 999.0_wp) then
                         ibasis%sccoeff(iat) = .true.
                      end if
@@ -180,6 +185,7 @@ contains
       ibasis%angmom = 0
       ibasis%exp = 0.0_wp
       ibasis%coeff = 0.0_wp
+      ibasis%qcoeff = 0.0_wp
 
       do i=1,ibasis%atmax
          ibasis%nbf(i) = nbf(i)
@@ -201,8 +207,10 @@ contains
       open(newunit=myunit,file=fname,action='read',status='old',iostat=ierr)
       iread =  0
       l     =  0
-      if (verb) then
-         write(*,*) "Z, # basis function, # primitive, exponent, coefficient (,charge scaling coefficient)"
+      if ( present(verb) ) then
+         if (verb) then
+            write(*,*) "Z, # basis function, # primitive, exponent, coefficient (,charge scaling coefficient)"
+         endif
       endif
       do while (iread >= 0)
          read(myunit,'(a)',iostat=iread) atmp
@@ -223,13 +231,6 @@ contains
                write(*,*) "Current line number: ",l
                error stop "I/O error in basis set read in."
             end if
-            if (iat <= 10) then
-               read(myunit,'(a)',iostat=iread) atmp
-               if (iread /= 0) then
-                  write(*,*) "Current line number: ",l
-                  error stop "I/O error in basis set read in."
-               end if
-            end if
             do i=1,ibasis%nbf(iat)
                read(myunit,*,iostat=iread) atmp
                l = l + 1
@@ -240,14 +241,16 @@ contains
                   else
                      read(myunit,*,iostat=iread) ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
                   end if
-                  if (verb) then
-                     if (ibasis%sccoeff(iat)) then
-                        write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j), &
-                           ibasis%qcoeff(iat,i,j)
-                     else
-                        write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
-                     endif
-                  end if
+                  if ( present(verb) ) then
+                     if (verb) then
+                        if (ibasis%sccoeff(iat)) then
+                           write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j), &
+                              ibasis%qcoeff(iat,i,j)
+                        else
+                           write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
+                        endif
+                     end if
+                  endif
                   l = l + 1
                end do
             enddo
@@ -431,14 +434,13 @@ contains
       enddo
       iecp%atmin = imin
 
-      if (verb) then
-         write(*,*) "Z, # basis function, # primitive, exponent, coefficient"
-      endif
       open(newunit=myunit,file=fname,action='read',status='old',iostat=ierr)
       iread =  0
       l     =  0
-      if (verb) then
-         write(*,*) "Z, # basis function, # primitive, exponent, coefficient, nfactor, lmax, ncore"
+      if ( present(verb) ) then
+         if (verb) then
+            write(*,*) "Z, # ECP function, # primitive, exponent, coefficient, nfactor, lmax, ncore"
+         endif
       endif
       do while (iread >= 0)
          read(myunit,'(a)',iostat=iread) atmp
@@ -475,10 +477,12 @@ contains
                      write(*,*) "Current line number: ",l
                      error stop "I/O error in basis set read in."
                   end if
-                  if (verb) then
-                     write(*,*) iat, i, j, iecp%exp(iat,i,j),iecp%coeff(iat,i,j),iecp%nfactor(iat,i,j), &
-                        iecp%lmax(iat),iecp%ncore(iat)
-                  end if
+                  if ( present(verb) ) then
+                     if (verb) then
+                        write(*,*) iat, i, j, iecp%exp(iat,i,j),iecp%coeff(iat,i,j),iecp%nfactor(iat,i,j), &
+                           iecp%lmax(iat),iecp%ncore(iat)
+                     end if
+                  endif
                end do
             enddo
          endif
@@ -487,11 +491,13 @@ contains
       do i=iecp%atmin,iecp%atmax
          allocate(sortindex(iecp%nbf(i)))
          call sort_index(iecp%angmom(i,1:iecp%nbf(i)),sortindex(1:iecp%nbf(i)))
-         if (verb) then
-            write(*,*) "Sorted basis functions for element ",i
-            do j=1,iecp%nbf(i)
-               write(*,*) iecp%angmom(i,j), iecp%npr(i,sortindex(j))
-            enddo
+         if ( present(verb) ) then
+            if (verb) then
+               write(*,*) "Sorted basis functions for element ",i
+               do j=1,iecp%nbf(i)
+                  write(*,*) iecp%angmom(i,j), iecp%npr(i,sortindex(j))
+               enddo
+            endif
          endif
          iecp%sindex(i,1:iecp%nbf(i)) = sortindex(1:iecp%nbf(i))
          deallocate(sortindex)
