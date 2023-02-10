@@ -251,7 +251,7 @@ program main
    endif
    do i = 1, mol%nat
       if (.not. bas%sccoeff(mol%num(mol%id(i)))) cycle
-      modq = qeeq(i) + bas%scalparam(mol%num(mol%id(i)),1) * cnvec(i)
+      modq = qeeq(i) + bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i))
       scalfac = modq - ( bas%scalparam(mol%num(mol%id(i)),2) * modq**2 )
       do j = 1, bas%nbf(mol%num(mol%id(i)))
          do k = 1, bas%npr(mol%num(mol%id(i)),j)
