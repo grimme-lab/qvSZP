@@ -4,7 +4,7 @@ program main
    use mctc_env
    use ioroutines, only: rdfile,rdbas,rdecp
    use basistype, only: basis_type,ecp_type
-   use chargscfcts, only: eeq,calcrab,ncoord_erf
+   use chargscfcts, only: eeq,calcrab,ncoord_erf,ncoord_basq
    use miscellaneous, only: helpf
    implicit none
    integer              :: narg,i,myunit,j,k
@@ -31,12 +31,14 @@ program main
 
    real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:), sccoeff(:,:,:)
 
-   real(wp)                         :: modq,scalfac
+   real(wp)                         :: scalfac
 
-   real(wp),parameter               :: unity(86) = 1.0_wp
+   real(wp),parameter               :: unity(86)      = 1.0_wp
+   real(wp),parameter               :: zero(86)       = 0.0_wp
+   real(wp),parameter               :: alphascal(86)  = 0.85_wp
 
    filen       = 'coord' ! input  filename
-   outn        = 'wb97x3c.inp'   ! output filename
+   outn        = 'wb97xd4-qvszp.inp'   ! output filename
    scfconv     = 'NormalSCF'
    polar       = .false. ! polarizability calc
    beta        = .false. ! hyperpolarizabilities
@@ -159,7 +161,7 @@ program main
    qeeq     =  0.0_wp
 
    call calcrab(mol,distvec)
-   call ncoord_erf(mol,distvec,-7.5_wp,cnvec)
+   call ncoord_erf(mol,distvec,-3.75_wp,cnvec)
 
    chrg = chrg - charge
    if (.not. uhfgiven .and. (chrg .eq. 1 .or. (mod(chrg,2) .ne. 0))) then
@@ -171,7 +173,8 @@ program main
       end if
    endif
 
-   call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.true.,unity,unity,unity,unity,qeeq)
+   call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.False.,unity,zero,unity,alphascal,qeeq)
+   call ncoord_basq(mol,distvec,-3.75_wp,cnvec)
 
 ! start writing
    open(newunit=myunit,file=outn)
@@ -191,10 +194,10 @@ program main
    write(myunit,'(''%MaxCore '',i6,/)') coremem
 
    write(myunit,'(a)')    "%method"
-   write(myunit,'(a)')    "  D4A1    0.2464"
-   write(myunit,'(a)')    "  D4A2    4.737"
+   write(myunit,'(a)')    "  D4A1    0.35"
+   write(myunit,'(a)')    "  D4A2    5.90"
    write(myunit,'(a)')    "  D4S6    1.00"
-   write(myunit,'(a)')    "  D4S8    0.00"
+   write(myunit,'(a)')    "  D4S8    1.00"
    write(myunit,'(a)')    "  D4S9    1.00"
    write(myunit,'(a,/)')  "end"
 
@@ -251,8 +254,8 @@ program main
    endif
    do i = 1, mol%nat
       if (.not. bas%sccoeff(mol%num(mol%id(i)))) cycle
-      modq = qeeq(i) + bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i))
-      scalfac = modq - ( bas%scalparam(mol%num(mol%id(i)),2) * modq**2 )
+      scalfac = qeeq(i) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq(i)**2 ) &
+         + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i)) )
       do j = 1, bas%nbf(mol%num(mol%id(i)))
          do k = 1, bas%npr(mol%num(mol%id(i)),j)
             sccoeff(i,j,k) = bas%coeff(mol%num(mol%id(i)),j,k) + &
