@@ -20,9 +20,10 @@ program main
    character(len=:),allocatable :: scfconv
    character(len=1)     :: ltmp
 
-   logical              :: indguess, polar, beta, polgrad, dipgrad, geoopt, nocosx
+   logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
    logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
-   logical              :: ploteldens, help, uhfgiven, da,indbfile,indefile,indcharge
+   logical              :: help, uhfgiven, da,indbfile,indefile,indcharge
+   logical              :: ecpex
 
    type(structure_type)             :: mol
    type(error_type), allocatable    :: error
@@ -33,15 +34,16 @@ program main
 
    real(wp)                         :: scalfac
 
+   ! ####### Set up EEQ parameters for coefficient scaling #######
    real(wp),parameter               :: unity(86)      = 1.0_wp
    real(wp),parameter               :: zero(86)       = 0.0_wp
    real(wp),parameter               :: alphascal(86)  = 0.85_wp
+   ! ###########################################################
 
    filen       = 'coord' ! input  filename
    outn        = 'wb97xd4-qvszp.inp'   ! output filename
    scfconv     = 'NormalSCF'
    polar       = .false. ! polarizability calc
-   beta        = .false. ! hyperpolarizabilities
    polgrad     = .false. ! polarizability derivatives
    dipgrad     = .false. ! dipole moment gradients
    geoopt      = .false. ! turn on !OPT keyword
@@ -53,7 +55,6 @@ program main
    indguess    = .false.
    uhfgiven    = .false.
    help        = .false.
-   ploteldens  = .false.
    indbfile    = .false.
    indefile    = .false.
    indcharge   = .false.
@@ -118,7 +119,6 @@ program main
       if(index(atmp,'--suborca').ne.0) suborca=.true.
       if(index(atmp,'--nouseshark').ne.0) nouseshark=.true.
       if(index(atmp,'--help').ne.0) help=.true.
-      if(index(atmp,'--plot').ne.0) ploteldens=.true.
       if(index(atmp,'--suggestedguess').ne.0) sugg_guess=.true.
    enddo
    if (.not. uhfgiven) then
@@ -176,12 +176,15 @@ program main
    call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.False.,unity,zero,unity,alphascal,qeeq)
    call ncoord_basq(mol,distvec,-3.75_wp,cnvec)
 
-! start writing
-   open(newunit=myunit,file=outn)
-   write(myunit,'(''! RKS WB97X-D4 def2/J'')')
-   if (verbose) then
-      write(myunit,'(''! PRINTBASIS LARGEPRINT'')')
+   if (indbfile) then
+      call rdbas(bas,verbose,trim(bfilen))
+   else
+      call rdbas(bas,verbose)
    endif
+
+   ! Start writing the ORCA input file
+   open(newunit=myunit,file=outn)
+   write(myunit,'(a)') "! WB97X-D4 def2/J PrintBasis"
    write(myunit,'(a,a)',advance='NO') "! ",scfconv
    write(myunit,'(1x,a,i1,/)') "DEFGRID", defgrid
    if(geoopt) write(myunit,'(''! Opt'')')
@@ -201,42 +204,17 @@ program main
    write(myunit,'(a)')    "  D4S9    1.00"
    write(myunit,'(a,/)')  "end"
 
-
-   if(.not.indguess) then
-      if (sugg_guess) then
-         if (any((mol%num >= 37 .and. mol%num <= 45) .or. (mol%num >= 48 .and. mol%num <= 54))) then
-            indguess=.true.
-            guess='hueckel'
-         endif
-         if (any(mol%num == 21 .or. mol%num == 47 .or. &
-            mol%num == 74 .or. mol%num == 82 .or. mol%num == 83)) then
-            indguess=.true.
-            guess='hcore'
-         endif
-      endif
+   if (sugg_guess) then
+      guess='hueckel'
    endif
 
-   if (indguess .or. beta) then
+   if (sugg_guess .or. indguess) then
       write(myunit, '(a)') "%scf"
-      if (indguess) write(myunit,'(''  guess '',a20)') guess
-      ! if (beta) write(myunit, '(2x,a)') "efield XXX,YYY,ZZZ"
+      write(myunit,'(''  guess '',a20)') guess
       write(myunit, '(a,/)') "end"
    endif
 
-   if(polar.or.polgrad.or.beta) write(myunit,'(''%elprop polar 1'',/,''end'',/)')
-   if (verbose) then
-      write(myunit,'(''%output'')')
-      write(myunit,'(''       print[P_Hirshfeld] 1'')')
-      write(myunit,'(''       print[P_BondOrder_M] 1'')')
-      write(myunit,'(''       print[P_basis] 2'')')
-      write(myunit,'(''end'')')
-   endif
-
-   if (indbfile) then
-      call rdbas(bas,verbose,trim(bfilen))
-   else
-      call rdbas(bas,verbose)
-   endif
+   if(polar.or.polgrad) write(myunit,'(''%elprop polar 1'',/,''end'',/)')
 
    if (verbose) then
       do i = 1, mol%nat
@@ -274,9 +252,13 @@ program main
       call rdecp(ecp,verbose)
    endif
 
-   write(myunit,'(a)') "%basis"
+   ecpex = .false.
    do i=1,maxval(mol%id,1)
       if ( sum(abs(ecp%exp(mol%num(i),:,:))) > 0.0_wp .and. mol%num(i) >= ecp%atmin ) then
+         if ( .not. ecpex ) then
+            write(myunit,'(a)') "%basis"
+            ecpex = .true.
+         endif
          write(myunit,'(a,a2)') "  NewECP ", mol%sym(i)
          write(myunit,'(a,i2)') "  N_core ", ecp%ncore(mol%num(i))
          if (ecp%lmax(mol%num(i)) == 0) ltmp = 's'
@@ -310,28 +292,12 @@ program main
          write(*,'(a,a,a,/)') "No ECP assigned for element ",trim(mol%sym(i)),"."
       endif
    enddo
-   write(myunit,'(a,/)') "end"
+   if (ecpex) write(myunit,'(a,/)') "end"
 
    if (allocated(error)) then
       print '(a)', error%message
       error stop
    end if
-
-   if (ploteldens) then
-      write(myunit,'(a)') "%plots"
-      write(myunit,'(a)') "  dim1 60"
-      write(myunit,'(a)') "  dim2 60"
-      write(myunit,'(a)') "  dim3 60"
-      write(myunit,'(a)') "  min1 -15"
-      write(myunit,'(a)') "  max1  15"
-      write(myunit,'(a)') "  min2 -15"
-      write(myunit,'(a)') "  max2  15"
-      write(myunit,'(a)') "  min3 -15"
-      write(myunit,'(a)') "  max3  15"
-      write(myunit,'(a)') "  Format Gaussian_Cube"
-      write(myunit,'(a)') '  Eldens("eldens.cube");'
-      write(myunit,'(a,/)') "end"
-   endif
 
    write(myunit,'(a,2x,2i3)') "* xyz", charge, nopen+1
    do i=1,mol%nat

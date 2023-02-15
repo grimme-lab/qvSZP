@@ -27,6 +27,7 @@ contains
          nel = nel + imol%num(imol%id(i))
       end do
 
+      imol%sym = to_symbol(imol%num)
 
    end subroutine rdfile
 
