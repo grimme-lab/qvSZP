@@ -4,7 +4,7 @@ module chargscfcts
    implicit none
    private
 
-   public :: eeq,calcrab,ncoord_erf,ncoord_basq
+   public :: eeq,calcrab,ncoord_basq
 contains
    subroutine eeq(n,at,rab,chrg,cn,orig,scal,scal2,scal3,scal4,q)
       implicit none
@@ -15,7 +15,7 @@ contains
       real(wp),intent(in)  :: cn(n)        ! CN
       logical ,intent(in)  :: orig         ! logical. if true use original eeq model
       real(wp),intent(in)  :: scal(86)     ! scale orig xi parameters
-      real(wp),intent(in)  :: scal2(86)    ! new gamma parameters
+      real(wp),intent(in)  :: scal2(86)    ! scale gamma paramters
       real(wp),intent(in)  :: scal3(86)    ! scale CN fac
       real(wp),intent(in)  :: scal4(86)    ! scale alpha
       real(wp),intent(out) :: q(n)         ! output charges
@@ -32,25 +32,25 @@ contains
 ! ------------------------------------------------------------------------
 !  PARAMETRISATION BY S. SPICHER (NEW)
 ! ------------------------------------------------------------------------
-      parameter( chieeq =(/&
+      parameter( chieeq =(/& ! mod. by SG for wB97X-D3/q-vSZP energy see below
          1.27000000_wp, 1.25000000_wp, 0.44000000_wp, 0.99000000_wp, 1.30000000_wp, &
-         1.48000000_wp, 1.63000000_wp, 1.66000000_wp, 1.66000000_wp, 1.05000000_wp, &
-         0.44000000_wp, 0.68000000_wp, 1.16000000_wp, 1.15000000_wp, 1.67000000_wp, &
-         1.52000000_wp, 1.60000000_wp, 1.20000000_wp, 0.35000000_wp, 0.70000000_wp, & ! Ca
-         0.76482096_wp, 0.98457281_wp, 0.96702598_wp, 1.05266584_wp, 0.93274875_wp, &
-         1.04025281_wp, 0.92738624_wp, 1.07419210_wp, 1.07900668_wp, 1.04712861_wp, & ! Zn
+         1.50000000_wp, 1.63000000_wp, 1.66000000_wp, 1.66000000_wp, 1.05000000_wp, &
+         0.44000000_wp, 0.68000000_wp, 1.16000000_wp, 1.16000000_wp, 1.67000000_wp, &
+         1.53000000_wp, 1.60000000_wp, 1.20000000_wp, 0.34000000_wp, 0.67000000_wp, & ! Ca
+         0.72000000_wp, 0.95000000_wp, 0.96000000_wp, 1.00000000_wp, 0.92000000_wp, &
+         1.05000000_wp, 0.93000000_wp, 1.08000000_wp, 0.96000000_wp, 0.96000000_wp, & ! Zn
          1.11000000_wp, 1.14000000_wp, 1.45000000_wp, 1.49000000_wp, 1.48000000_wp, &
-         1.11000000_wp, 0.36273870_wp, 0.58797255_wp, 0.71961946_wp, 0.96158233_wp, &
-         0.89585296_wp, 0.81360499_wp, 1.00794665_wp, 0.92613682_wp, 1.09152285_wp, &
-         1.14907070_wp, 1.13508911_wp, 1.08853785_wp, 1.11005982_wp, 1.12452195_wp, &
-         1.21642129_wp, 1.36000000_wp, 1.42000000_wp, 1.33000000_wp, 0.34125098_wp, & ! Cs
-         0.58884173_wp, 0.68441115_wp, 0.56999999_wp, 0.56999999_wp, 0.56999999_wp, &
+         1.11000000_wp, 0.30000000_wp, 0.54000000_wp, 0.73000000_wp, 0.91000000_wp, & ! Zr
+         0.88000000_wp, 0.81000000_wp, 0.98000000_wp, 0.94000000_wp, 1.12000000_wp, &
+         1.23000000_wp, 1.08000000_wp, 0.90000000_wp, 1.13000000_wp, 1.12000000_wp, &
+         1.35000000_wp, 1.46000000_wp, 1.47000000_wp, 1.37000000_wp, 0.40000000_wp, & ! Cs
+         0.50000000_wp, 0.68441115_wp, 0.56999999_wp, 0.56999999_wp, 0.56999999_wp, &
          0.56999999_wp, 0.56999999_wp, 0.56999999_wp, 0.56999999_wp, 0.56999999_wp, &
          0.56999999_wp, 0.56999999_wp, 0.56999999_wp, 0.56999999_wp, 0.56999999_wp, &
          0.56999999_wp, 0.87936784_wp, 1.02761808_wp, 0.93297476_wp, 1.10172128_wp, &
-         0.97350071_wp, 1.16695666_wp, 1.23997927_wp, 1.18464453_wp, 1.14191734_wp, &
-         1.12334192_wp, 1.01485321_wp, 1.12950808_wp, 1.30804834_wp, 1.33689961_wp, &
-         1.37000000_wp /))
+         0.97350071_wp, 1.16695666_wp, 1.23997927_wp, 1.18464453_wp, 1.14191734_wp, & ! Hg
+         1.17000000_wp, 1.02000000_wp, 1.21000000_wp, 1.33000000_wp, 1.43000000_wp, &
+         1.43000000_wp /))
       parameter( gameeq =(/&
          -0.35015861_wp, 1.04121227_wp, 0.09281243_wp, 0.09412380_wp, 0.26629137_wp, &
          0.19408787_wp, 0.05317918_wp, 0.03151644_wp, 0.32275132_wp, 1.30996037_wp, &
@@ -124,11 +124,7 @@ contains
          do i=1,n
             x(i) =-chieeq(at(i)) * scal(at(i)) + scal3(at(i))*cnfeeq(at(i))*sqrt(cn(i))
             alp(i) = alpeeq(at(i)) * scal4(at(i))
-            if(abs(scal2(at(i))).gt.1d-6)then
-               gam(i) =  scal2(at(i))  ! fitted
-            else
-               gam(i) = gameeq(at(i))  ! orig
-            endif
+            gam(i) = gameeq(at(i)) * scal2(at(i)) 
          enddo
       endif
 
@@ -194,62 +190,6 @@ contains
 
    end subroutine calcrab
 
-   subroutine ncoord_erf(tmpmol,rab,kn,cn)
-
-      implicit none
-
-      type(structure_type),intent(in)  :: tmpmol
-      real(wp),intent(in)  :: rab(tmpmol%nat*(tmpmol%nat+1)/2)
-      real(wp),intent(in)  :: kn
-      real(wp),intent(out) :: cn(tmpmol%nat)
-
-      integer  :: i, j, k
-      real(wp) :: rcovij, tmp, arg
-
-      !  covalent radii (taken from Pyykko and Atsumi, Chem. Eur. J. 15, 2009,
-!  188-197), values for metals decreased by 10 %
-      real(wp),parameter :: rcov(118) = 1.889725949_wp * [ &
-      & 0.32_wp,0.46_wp, & ! H,He
-!  & 0.24_wp,0.46_wp, & ! H,He H changed
-      & 1.20_wp,0.94_wp,0.77_wp,0.75_wp,0.71_wp,0.63_wp,0.64_wp,0.67_wp, & ! Li-Ne
-      & 1.40_wp,1.25_wp,1.13_wp,1.04_wp,1.10_wp,1.02_wp,0.99_wp,0.96_wp, & ! Na-Ar
-      & 1.76_wp,1.54_wp, & ! K,Ca
-      &                 1.33_wp,1.22_wp,1.21_wp,1.10_wp,1.07_wp, & ! Sc-
-      &                 1.04_wp,1.00_wp,0.99_wp,1.01_wp,1.09_wp, & ! -Zn
-      &                 1.12_wp,1.09_wp,1.15_wp,1.10_wp,1.14_wp,1.17_wp, & ! Ga-Kr
-      & 1.89_wp,1.67_wp, & ! Rb,Sr
-      &                 1.47_wp,1.39_wp,1.32_wp,1.24_wp,1.15_wp, & ! Y-
-      &                 1.13_wp,1.13_wp,1.08_wp,1.15_wp,1.23_wp, & ! -Cd
-      &                 1.28_wp,1.26_wp,1.26_wp,1.23_wp,1.32_wp,1.31_wp, & ! In-Xe
-      & 2.09_wp,1.76_wp, & ! Cs,Ba
-      &         1.62_wp,1.47_wp,1.58_wp,1.57_wp,1.56_wp,1.55_wp,1.51_wp, & ! La-Eu
-      &         1.52_wp,1.51_wp,1.50_wp,1.49_wp,1.49_wp,1.48_wp,1.53_wp, & ! Gd-Yb
-      &                 1.46_wp,1.37_wp,1.31_wp,1.23_wp,1.18_wp, & ! Lu-
-      &                 1.16_wp,1.11_wp,1.12_wp,1.13_wp,1.32_wp, & ! -Hg
-      &                 1.30_wp,1.30_wp,1.36_wp,1.31_wp,1.38_wp,1.42_wp, & ! Tl-Rn
-      & 2.01_wp,1.81_wp, & ! Fr,Ra
-      &         1.67_wp,1.58_wp,1.52_wp,1.53_wp,1.54_wp,1.55_wp,1.49_wp, & ! Ac-Am
-      &         1.49_wp,1.51_wp,1.51_wp,1.48_wp,1.50_wp,1.56_wp,1.58_wp, & ! Cm-No
-      &                 1.45_wp,1.41_wp,1.34_wp,1.29_wp,1.27_wp, & ! Lr-
-      &                 1.21_wp,1.16_wp,1.15_wp,1.09_wp,1.22_wp, & ! -Cn
-      &                 1.36_wp,1.43_wp,1.46_wp,1.58_wp,1.48_wp,1.57_wp ] ! Nh-Og
-
-      cn = 0.0_wp
-      k = 0
-      do i = 1, tmpmol%nat
-         do j = 1, i-1
-            k = k + 1
-            rcovij=(4.0_wp/3.0_wp)*(rcov(tmpmol%num(tmpmol%id(i)))+rcov(tmpmol%num(tmpmol%id(j))))
-            arg = (rab(k)-rcovij)/rcovij
-            tmp = 0.5_wp * (1.0_wp + erf(kn*arg))
-            cn(i) = cn(i) + tmp
-            cn(j) = cn(j) + tmp
-         enddo
-         k = k + 1
-      enddo
-
-   end subroutine ncoord_erf
-
    subroutine ncoord_basq(tmpmol,rab,kn,cn)
 
       implicit none
@@ -294,7 +234,7 @@ contains
       do i = 1, tmpmol%nat
          do j = 1, i-1
             k = k + 1
-            rcovij= 1.0_wp * (rcov(tmpmol%num(tmpmol%id(i)))+rcov(tmpmol%num(tmpmol%id(j))))
+            rcovij= 1.0_wp * ( rcov(tmpmol%num(tmpmol%id(i))) + rcov(tmpmol%num(tmpmol%id(j))) )
             arg = (rab(k)-rcovij)/rcovij
             tmp = 0.5_wp * (1.0_wp + erf(kn*arg))
             cn(i) = cn(i) + tmp

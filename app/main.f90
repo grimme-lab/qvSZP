@@ -4,7 +4,7 @@ program main
    use mctc_env
    use ioroutines, only: rdfile,rdbas,rdecp
    use basistype, only: basis_type,ecp_type
-   use chargscfcts, only: eeq,calcrab,ncoord_erf,ncoord_basq
+   use chargscfcts, only: eeq,calcrab,ncoord_basq
    use miscellaneous, only: helpf
    implicit none
    integer              :: narg,i,myunit,j,k
@@ -36,8 +36,9 @@ program main
 
    ! ####### Set up EEQ parameters for coefficient scaling #######
    real(wp),parameter               :: unity(86)      = 1.0_wp
-   real(wp),parameter               :: zero(86)       = 0.0_wp
-   real(wp),parameter               :: alphascal(86)  = 0.85_wp
+   real(wp),parameter               :: alphascal(86)  = 0.75_wp
+   real(wp),parameter               :: chiscal(86)    = 1.20_wp
+   real(wp),parameter               :: gamscal(86)    = 0.90_wp
    ! ###########################################################
 
    filen       = 'coord' ! input  filename
@@ -161,7 +162,7 @@ program main
    qeeq     =  0.0_wp
 
    call calcrab(mol,distvec)
-   call ncoord_erf(mol,distvec,-3.75_wp,cnvec)
+   call ncoord_basq(mol,distvec,-3.75_wp,cnvec)
 
    chrg = chrg - charge
    if (.not. uhfgiven .and. (chrg .eq. 1 .or. (mod(chrg,2) .ne. 0))) then
@@ -173,8 +174,7 @@ program main
       end if
    endif
 
-   call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.False.,unity,zero,unity,alphascal,qeeq)
-   call ncoord_basq(mol,distvec,-3.75_wp,cnvec)
+   call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.False.,unity,gamscal,chiscal,alphascal,qeeq)
 
    if (indbfile) then
       call rdbas(bas,verbose,trim(bfilen))
