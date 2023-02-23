@@ -198,10 +198,10 @@ program main
 
    write(myunit,'(a)')    "%method"
    write(myunit,'(a)')    "  D4A1    0.35"
-   write(myunit,'(a)')    "  D4A2    5.90"
+   write(myunit,'(a)')    "  D4A2    5.60"
    write(myunit,'(a)')    "  D4S6    1.00"
    write(myunit,'(a)')    "  D4S8    1.00"
-   write(myunit,'(a)')    "  D4S9    1.00"
+   write(myunit,'(a)')    "  D4S9    0.00"
    write(myunit,'(a,/)')  "end"
 
    if (sugg_guess) then
