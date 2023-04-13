@@ -1,3 +1,4 @@
 build/*
 src/*.mod
 releases/
+tmpfiles/

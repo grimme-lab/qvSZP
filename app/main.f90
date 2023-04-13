@@ -22,7 +22,7 @@ program main
 
    logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
    logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
-   logical              :: help, uhfgiven, da,indbfile,indefile,indcharge
+   logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
    logical              :: ecpex
 
    type(structure_type)             :: mol
@@ -33,6 +33,11 @@ program main
    real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:), sccoeff(:,:,:)
 
    real(wp)                         :: scalfac
+   real(wp)                         :: d4_s6 = 1.00_wp 
+   real(wp)                         :: d4_s8 = 1.00_wp 
+   real(wp)                         :: d4_a1 = 0.35_wp 
+   real(wp)                         :: d4_a2 = 5.60_wp 
+   real(wp)                         :: d4_s9 = 0.00_wp 
 
    ! ####### Set up EEQ parameters for coefficient scaling #######
    real(wp),parameter               :: unity(86)      = 1.0_wp
@@ -108,6 +113,19 @@ program main
          call get_command_argument(i+1,atmp)
          guess=trim(atmp)
       endif
+      if(index(atmp,'--d4par').ne.0) then
+         indd4param=.true.
+         call get_command_argument(i+1,atmp)
+         read(atmp,*) d4_s6
+         call get_command_argument(i+2,atmp)
+         read(atmp,*) d4_s8
+         call get_command_argument(i+3,atmp)
+         read(atmp,*) d4_a1
+         call get_command_argument(i+4,atmp)
+         read(atmp,*) d4_a2
+         call get_command_argument(i+5,atmp)
+         read(atmp,*) d4_s9
+      endif
       if(index(atmp,'--polar').ne.0) polar=.true.
       ! if(index(atmp,'-hyppol').ne.0) beta=.true.
       if(index(atmp,'--polgrad').ne.0) polgrad=.true.
@@ -145,6 +163,8 @@ program main
       call helpf()
       stop
    endif
+
+   !####### END OF INITIALIZATION PART ######
 
    call rdfile(trim(filen),mol,chrg)
 
@@ -197,11 +217,11 @@ program main
    write(myunit,'(''%MaxCore '',i6,/)') coremem
 
    write(myunit,'(a)')    "%method"
-   write(myunit,'(a)')    "  D4A1    0.35"
-   write(myunit,'(a)')    "  D4A2    5.60"
-   write(myunit,'(a)')    "  D4S6    1.00"
-   write(myunit,'(a)')    "  D4S8    1.00"
-   write(myunit,'(a)')    "  D4S9    0.00"
+   write(myunit,'(a,f5.2)')    "  D4S6  ", d4_s6
+   write(myunit,'(a,f5.2)')    "  D4S8  ", d4_s8
+   write(myunit,'(a,f5.2)')    "  D4A1  ", d4_a1
+   write(myunit,'(a,f5.2)')    "  D4A2  ", d4_a2
+   write(myunit,'(a,f5.2)')    "  D4S9  ", d4_s9
    write(myunit,'(a,/)')  "end"
 
    if (sugg_guess) then
