@@ -20,6 +20,7 @@ program main
    character(len=:),allocatable :: scfconv
    character(len=1)     :: ltmp
 
+   logical, allocatable :: ghostatoms(:)
    logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
    logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
@@ -33,11 +34,11 @@ program main
    real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:), sccoeff(:,:,:)
 
    real(wp)                         :: scalfac
-   real(wp)                         :: d4_s6 = 1.00_wp 
-   real(wp)                         :: d4_s8 = 1.00_wp 
-   real(wp)                         :: d4_a1 = 0.35_wp 
-   real(wp)                         :: d4_a2 = 5.60_wp 
-   real(wp)                         :: d4_s9 = 0.00_wp 
+   real(wp)                         :: d4_s6 = 1.00_wp
+   real(wp)                         :: d4_s8 = 1.00_wp
+   real(wp)                         :: d4_a1 = 0.35_wp
+   real(wp)                         :: d4_a2 = 5.60_wp
+   real(wp)                         :: d4_s9 = 0.00_wp
 
    ! ####### Set up EEQ parameters for coefficient scaling #######
    real(wp),parameter               :: unity(86)      = 1.0_wp
@@ -166,7 +167,7 @@ program main
 
    !####### END OF INITIALIZATION PART ######
 
-   call rdfile(trim(filen),mol,chrg)
+   call rdfile(filen,mol,chrg,ghostatoms)
 
    allocate(tmpids(mol%nat))
    allocate(distvec(mol%nat*(mol%nat+1)/2))
@@ -321,7 +322,11 @@ program main
 
    write(myunit,'(a,2x,2i3)') "* xyz", charge, nopen+1
    do i=1,mol%nat
-      write(myunit,'(a2,2x,3F22.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
+      if (ghostatoms(i)) then
+         write(myunit,'(a2,2x,a,2x,3F22.14)') mol%sym(mol%id(i)),":",mol%xyz(:,i)*autoaa
+      else
+         write(myunit,'(a2,2x,3F22.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
+      endif
       if ( bas%exp(mol%num(mol%id(i)),1,1) > 0.0_wp ) then
          write(myunit,'(2x,a,1x,a2)') "NewGTO"
          do j=1,bas%nbf(mol%num(mol%id(i)))

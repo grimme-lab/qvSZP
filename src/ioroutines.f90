@@ -8,13 +8,35 @@ module ioroutines
 
    public :: rdfile,rdbas,rdecp
 contains
-   subroutine rdfile(filename,imol,nel)
+   subroutine rdfile(filename,imol,nel,ghostat)
 
+      character(len=*), intent(inout)      :: filename
       type(structure_type),intent(out)  :: imol
-      type(error_type), allocatable     :: error
-      character(len=*), intent(in)      :: filename
+      logical, allocatable, intent(out) :: ghostat(:)
       integer,intent(out)               :: nel
+      type(error_type), allocatable     :: error
       integer                           :: i
+
+      filename=trim(adjustl(filename))
+      ! Conduct the checking for ghost atoms only in case of .xyz files
+      if (index(filename,'.xyz').ne.0) then
+         call check_ghost_atoms(filename,ghostat,error)
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop
+         end if
+      end if
+
+      ! Check if any of the atoms in "filename" is a ghost atom
+      if (allocated(ghostat)) then
+         if (any(ghostat)) then
+            filename="struc_raw.xyz"
+            write(*,'(a)') "Ghost atoms detected. Converting to raw .xyz file and incorporating them into [input] file..."
+         else
+            call execute_command_line("rm struc_raw.xyz")
+         end if
+      end if
+      write(*,'(a,a)') "Reading structure from file: ",filename
 
       call read_structure(imol, filename, error)
       if (allocated(error)) then
@@ -507,4 +529,73 @@ contains
       close(myunit)
 
    end subroutine rdecp
+
+   subroutine check_ghost_atoms(filename,ghostat,error)
+      character(len=*), intent(in)      :: filename
+      logical, allocatable, intent(out) :: ghostat(:)
+      type(error_type), allocatable     :: error
+      character(len=120)                :: atmp
+      character(len=1)                  :: delete_char = ':'
+      integer                           :: i,j,ierr
+      integer                           :: myunit,myunit2,nat
+
+      i=0
+      open(newunit=myunit,file=filename,action='read',status='old',iostat=ierr)
+      open(newunit=myunit2,file="struc_raw.xyz",action='write',status='replace',iostat=ierr)
+
+      if (ierr /= 0) then
+         call fatal_error(error, "coordinate file cannot be opened!")
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop "I/O error stop."
+         end if
+      end if
+      read(myunit,'(a)',iostat=ierr) atmp
+      if (ierr /= 0) then
+         call fatal_error(error, "coordinate file cannot be read!")
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop "I/O error stop."
+         end if
+      end if
+      read(atmp,*,iostat=ierr) nat
+      if (ierr /= 0) then
+         call fatal_error(error, "coordinate file cannot be read!")
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop "I/O error stop."
+         end if
+      end if
+      write(myunit2,'(i0)',iostat=ierr) nat 
+      read(myunit,'(a)',iostat=ierr) atmp
+      write(myunit2,'(a)',iostat=ierr) trim(adjustl(atmp))
+      allocate(ghostat(nat))
+      ghostat = .false.
+      do while (ierr == 0)
+         read(myunit,'(a)',iostat=ierr) atmp
+         if (ierr /= 0) then
+            exit
+         end if
+         i = i + 1
+         if (index(atmp,delete_char).ne.0) then
+            ghostat(i) = .true.
+            atmp = trim(adjustl(atmp))
+            ! remove "delete_char" from string
+            do j = 1, len(atmp)
+               if (atmp(j:j) == delete_char) then
+                  atmp = atmp(1:j-1) // " " // atmp(j+1:len(atmp))
+               end if
+            end do
+            write(myunit2,'(a)',iostat=ierr) trim(atmp)
+            cycle
+         else
+            write(myunit2,'(a)',iostat=ierr) trim(adjustl(atmp))
+         end if
+      end do
+
+      close(myunit)
+      close(myunit2)
+
+   end subroutine check_ghost_atoms
+
 end module ioroutines
