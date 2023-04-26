@@ -6,37 +6,15 @@ module ioroutines
    implicit none
    private
 
-   public :: rdfile,rdbas,rdecp
+   public :: rdfile,rdbas,rdecp,check_ghost_atoms,search_ghost_atoms
 contains
-   subroutine rdfile(filename,imol,nel,ghostat)
+   subroutine rdfile(filename,imol,nel)
 
-      character(len=*), intent(inout)      :: filename
+      character(len=*), intent(in)      :: filename
       type(structure_type),intent(out)  :: imol
-      logical, allocatable, intent(out) :: ghostat(:)
-      integer,intent(out)               :: nel
+      integer,optional,intent(out)      :: nel
       type(error_type), allocatable     :: error
       integer                           :: i
-
-      filename=trim(adjustl(filename))
-      ! Conduct the checking for ghost atoms only in case of .xyz files
-      if (index(filename,'.xyz').ne.0) then
-         call check_ghost_atoms(filename,ghostat,error)
-         if (allocated(error)) then
-            print '(a)', error%message
-            error stop
-         end if
-      end if
-
-      ! Check if any of the atoms in "filename" is a ghost atom
-      if (allocated(ghostat)) then
-         if (any(ghostat)) then
-            filename="struc_raw.xyz"
-            write(*,'(a)') "Ghost atoms detected. Converting to raw .xyz file and incorporating them into [input] file..."
-         else
-            call execute_command_line("rm struc_raw.xyz")
-         end if
-      end if
-      write(*,'(a,a)') "Reading structure from file: ",filename
 
       call read_structure(imol, filename, error)
       if (allocated(error)) then
@@ -44,10 +22,12 @@ contains
          error stop
       end if
 
-      nel = 0
-      do i=1,imol%nat
-         nel = nel + imol%num(imol%id(i))
-      end do
+      if (present(nel)) then
+         nel = 0
+         do i=1,imol%nat
+            nel = nel + imol%num(imol%id(i))
+         end do
+      endif
 
       imol%sym = to_symbol(imol%num)
 
@@ -530,19 +510,55 @@ contains
 
    end subroutine rdecp
 
-   subroutine check_ghost_atoms(filename,ghostat,error)
+   subroutine check_ghost_atoms(filename,ghost,error)
+      character(len=*), intent(in)      :: filename
+      logical, intent(out)              :: ghost
+      type(error_type), allocatable     :: error
+      character(len=120)                :: atmp
+      character(len=1)                  :: delete_char = ':'
+      integer                           :: ierr
+      integer                           :: myunit
+
+      ghost = .false.
+      open(newunit=myunit,file=filename,action='read',status='old',iostat=ierr)
+      ! check for the existence of the character delete_char in the file "filename"
+      if (ierr /= 0) then
+         call fatal_error(error, "coordinate file cannot be opened!")
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop "I/O error stop."
+         end if
+      end if
+      do while (ierr == 0)
+         read(myunit,'(a)',iostat=ierr) atmp
+         if (ierr /= 0) then
+            exit
+         end if
+         if (index(atmp,delete_char).ne.0) then
+            write(*,'(a,/,a)') "Ghost atom(s) detected in coordinate file.", &
+               "Writing dummy coordinate files 'struc_raw.xyz' and 'struc_short.xyz'."
+            ghost = .true.
+            exit
+         end if
+      enddo
+      close(myunit)
+
+   end subroutine check_ghost_atoms
+
+   subroutine search_ghost_atoms(filename,ghostat,error)
       character(len=*), intent(in)      :: filename
       logical, allocatable, intent(out) :: ghostat(:)
       type(error_type), allocatable     :: error
       character(len=120)                :: atmp
       character(len=1)                  :: delete_char = ':'
       integer                           :: i,j,ierr
-      integer                           :: myunit,myunit2,nat
+      integer                           :: myunit,myunit2,myunit3,nat,natshort
 
-      i=0
+      natshort = 0
       open(newunit=myunit,file=filename,action='read',status='old',iostat=ierr)
       open(newunit=myunit2,file="struc_raw.xyz",action='write',status='replace',iostat=ierr)
 
+      i=0
       if (ierr /= 0) then
          call fatal_error(error, "coordinate file cannot be opened!")
          if (allocated(error)) then
@@ -566,7 +582,7 @@ contains
             error stop "I/O error stop."
          end if
       end if
-      write(myunit2,'(i0)',iostat=ierr) nat 
+      write(myunit2,'(i0)',iostat=ierr) nat
       read(myunit,'(a)',iostat=ierr) atmp
       write(myunit2,'(a)',iostat=ierr) trim(adjustl(atmp))
       allocate(ghostat(nat))
@@ -579,6 +595,7 @@ contains
          i = i + 1
          if (index(atmp,delete_char).ne.0) then
             ghostat(i) = .true.
+            natshort = natshort + 1
             atmp = trim(adjustl(atmp))
             ! remove "delete_char" from string
             do j = 1, len(atmp)
@@ -593,9 +610,52 @@ contains
          end if
       end do
 
-      close(myunit)
       close(myunit2)
 
-   end subroutine check_ghost_atoms
+      natshort = nat - natshort
+      rewind(myunit)
+      open(newunit=myunit3,file="struc_short.xyz",action='write',status='replace',iostat=ierr)
+
+      i=0
+      if (ierr /= 0) then
+         call fatal_error(error, "coordinate file cannot be opened!")
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop "I/O error stop."
+         end if
+      end if
+      read(myunit,'(a)',iostat=ierr) atmp
+      if (ierr /= 0) then
+         call fatal_error(error, "coordinate file cannot be read!")
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop "I/O error stop."
+         end if
+      end if
+      read(atmp,*,iostat=ierr) nat
+      if (ierr /= 0) then
+         call fatal_error(error, "coordinate file cannot be read!")
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop "I/O error stop."
+         end if
+      end if
+      write(myunit3,'(i0)',iostat=ierr) natshort
+      read(myunit,'(a)',iostat=ierr) atmp
+      write(myunit3,'(a)',iostat=ierr) trim(adjustl(atmp))
+      do i = 1, nat
+         read(myunit,'(a)',iostat=ierr) atmp
+         if (ierr /= 0) then
+            exit
+         end if
+         if (.not. index(atmp,delete_char).ne.0) then
+            write(myunit3,'(a)',iostat=ierr) trim(adjustl(atmp))
+         end if
+      end do
+
+      close(myunit)
+      close(myunit3)
+
+   end subroutine search_ghost_atoms
 
 end module ioroutines

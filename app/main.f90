@@ -2,12 +2,12 @@ program main
    use mctc_io
    use mctc_io_convert, only : autoaa
    use mctc_env
-   use ioroutines, only: rdfile,rdbas,rdecp
+   use ioroutines, only: rdfile,rdbas,rdecp,check_ghost_atoms,search_ghost_atoms
    use basistype, only: basis_type,ecp_type
    use chargscfcts, only: eeq,calcrab,ncoord_basq
    use miscellaneous, only: helpf
    implicit none
-   integer              :: narg,i,myunit,j,k
+   integer              :: narg,i,myunit,j,k,n
    integer              :: mpi      = 4
    integer              :: defgrid  = 2
    integer              :: charge   = 0
@@ -15,23 +15,27 @@ program main
    integer              :: chrg     = 0
    integer              :: coremem  = 5000
    integer,allocatable  :: tmpids(:)
+   integer,allocatable  :: tmpids_short(:)
 
    character(len=120)   :: atmp,guess,filen,outn,bfilen,efilen
    character(len=:),allocatable :: scfconv
    character(len=1)     :: ltmp
 
    logical, allocatable :: ghostatoms(:)
+   logical              :: dummy
+
    logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
    logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
    logical              :: ecpex
 
-   type(structure_type)             :: mol
+   type(structure_type)             :: mol,molshort
    type(error_type), allocatable    :: error
    type(basis_type)                 :: bas
    type(ecp_type)                   :: ecp
 
    real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:), sccoeff(:,:,:)
+   real(wp),allocatable             :: distvec_short(:),cnvec_short(:),qeeq_short(:)
 
    real(wp)                         :: scalfac
    real(wp)                         :: d4_s6 = 1.00_wp
@@ -79,7 +83,7 @@ program main
       call get_command_argument(i,atmp)
       if(index(atmp,'--struc').ne.0) then
          call get_command_argument(i+1,atmp)
-         filen = trim(atmp)
+         filen=trim(adjustl(atmp))
       endif
       if(index(atmp,'--basisfile').ne.0) then
          call get_command_argument(i+1,atmp)
@@ -167,23 +171,64 @@ program main
 
    !####### END OF INITIALIZATION PART ######
 
-   call rdfile(filen,mol,chrg,ghostatoms)
+   if (index((filen),'.xyz').ne.0) then
+      call check_ghost_atoms(filen,dummy,error)
+      if (allocated(error)) then
+         print '(a)', error%message
+         error stop
+      end if
+   end if
+
+   if (dummy) then
+      call search_ghost_atoms(filen,ghostatoms,error)
+      if (allocated(error)) then
+         print '(a)', error%message
+         error stop
+      end if
+   end if
+
+   if (dummy) then
+      call rdfile("struc_raw.xyz",mol,chrg)
+      call rdfile("struc_short.xyz",molshort)
+   else
+      call rdfile(filen,mol,chrg)
+   end if
 
    allocate(tmpids(mol%nat))
    allocate(distvec(mol%nat*(mol%nat+1)/2))
    allocate(cnvec(mol%nat),qeeq(mol%nat))
    allocate(sccoeff(mol%nat,20,20))
 
+   if (dummy) then
+      allocate(cnvec_short(molshort%nat),qeeq_short(molshort%nat) &
+         ,distvec_short(molshort%nat*(molshort%nat+1)/2))
+      allocate(tmpids_short(molshort%nat))
+   endif
+
    do i = 1, mol%nat
       tmpids(i) = mol%num(mol%id(i))
    enddo
+   if (dummy) then
+      do i = 1, molshort%nat
+         tmpids_short(i) = molshort%num(molshort%id(i))
+      enddo
+   endif
 
    distvec  =  0.0_wp
    cnvec    =  0.0_wp
    qeeq     =  0.0_wp
+   if (dummy) then
+      distvec_short  =  0.0_wp
+      cnvec_short    =  0.0_wp
+      qeeq_short     =  0.0_wp
+   endif
 
    call calcrab(mol,distvec)
    call ncoord_basq(mol,distvec,-3.75_wp,cnvec)
+   if (dummy) then
+      call calcrab(molshort,distvec_short)
+      call ncoord_basq(molshort,distvec_short,-3.75_wp,cnvec_short)
+   endif
 
    chrg = chrg - charge
    if (.not. uhfgiven .and. (chrg .eq. 1 .or. (mod(chrg,2) .ne. 0))) then
@@ -196,6 +241,13 @@ program main
    endif
 
    call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.False.,unity,gamscal,chiscal,alphascal,qeeq)
+   if (dummy) then
+      if (charge /= 0) then
+         error stop "Non-zero charge not supported for dummy atoms."
+      endif
+      call eeq(molshort%nat,tmpids_short,distvec_short, &
+         real(charge,wp),cnvec_short,.False.,unity,gamscal,chiscal,alphascal,qeeq_short)
+   endif
 
    if (indbfile) then
       call rdbas(bas,verbose,trim(bfilen))
@@ -238,6 +290,9 @@ program main
    if(polar.or.polgrad) write(myunit,'(''%elprop polar 1'',/,''end'',/)')
 
    if (verbose) then
+      if (dummy) then
+         write(*,'(a)') "WARNING!! Verbose output not optimized for presence of dummy atoms."
+      endif
       do i = 1, mol%nat
          write(*,'(1x,a,i3,a,i3)')               "Z for atom               ",i,":",mol%num(mol%id(i))
          write(*,'(1x,a,i3,a,f9.5,f9.5)')               "scaling factors for atom ",i,":", &
@@ -247,14 +302,26 @@ program main
       enddo
    endif
 
+   n = 0
    sccoeff = 0.0_wp
    if (verbose) then
       write(*,'(a)') "Scaling prefactor for: #atom, #bf, #primitive, final coeff., scaling factor"
    endif
    do i = 1, mol%nat
       if (.not. bas%sccoeff(mol%num(mol%id(i)))) cycle
-      scalfac = qeeq(i) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq(i)**2 ) &
-         + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i)) )
+      if (dummy) then
+         if (.not.ghostatoms(i)) then
+            n = n + 1
+            scalfac = qeeq_short(n) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq_short(n)**2 ) &
+               + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec_short(n)) )
+         else
+            scalfac = qeeq(i) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq(i)**2 ) &
+               + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i)) )
+         endif
+      else
+         scalfac = qeeq(i) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq(i)**2 ) &
+            + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i)) )
+      endif
       do j = 1, bas%nbf(mol%num(mol%id(i)))
          do k = 1, bas%npr(mol%num(mol%id(i)),j)
             sccoeff(i,j,k) = bas%coeff(mol%num(mol%id(i)),j,k) + &
@@ -322,8 +389,12 @@ program main
 
    write(myunit,'(a,2x,2i3)') "* xyz", charge, nopen+1
    do i=1,mol%nat
-      if (ghostatoms(i)) then
-         write(myunit,'(a2,2x,a,2x,3F22.14)') mol%sym(mol%id(i)),":",mol%xyz(:,i)*autoaa
+      if (dummy) then
+         if (ghostatoms(i)) then
+            write(myunit,'(a2,2x,a,2x,3F22.14)') mol%sym(mol%id(i)),":",mol%xyz(:,i)*autoaa
+         else
+            write(myunit,'(a2,2x,3F22.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
+         endif
       else
          write(myunit,'(a2,2x,3F22.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
       endif
