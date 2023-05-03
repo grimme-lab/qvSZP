@@ -6,19 +6,19 @@ module chargscfcts
 
    public :: eeq,calcrab,ncoord_basq
 contains
-   subroutine eeq(n,at,rab,chrg,cn,orig,scal,scal2,scal3,scal4,q)
+   subroutine eeq(tmpmol,rab,chrg,cn,orig,scal,scal2,scal3,scal4,q,efield)
       implicit none
-      integer, intent(in)  :: n            ! number of atoms
-      integer, intent(in)  :: at(n)        ! ordinal numbers
-      real(wp),intent(in)  :: rab(n*(n+1)/2)   ! dist
-      real(wp),intent(in)  :: chrg         ! total charge on system
-      real(wp),intent(in)  :: cn(n)        ! CN
-      logical ,intent(in)  :: orig         ! logical. if true use original eeq model
-      real(wp),intent(in)  :: scal(86)     ! scale orig xi parameters
-      real(wp),intent(in)  :: scal2(86)    ! scale gamma paramters
-      real(wp),intent(in)  :: scal3(86)    ! scale CN fac
-      real(wp),intent(in)  :: scal4(86)    ! scale alpha
-      real(wp),intent(out) :: q(n)         ! output charges
+      type(structure_type),intent(in)  :: tmpmol       ! Molecular structure
+      real(wp),intent(in)              :: rab(tmpmol%nat*(tmpmol%nat+1)/2)   ! dist
+      real(wp),intent(in)              :: chrg         ! total charge on system
+      real(wp),intent(in)              :: cn(tmpmol%nat)        ! CN
+      logical ,intent(in)              :: orig         ! logical. if true use original eeq model
+      real(wp),intent(in)              :: scal(86)     ! scale orig xi parameters
+      real(wp),intent(in)              :: scal2(86)    ! scale gamma paramters
+      real(wp),intent(in)              :: scal3(86)    ! scale CN fac
+      real(wp),intent(in)              :: scal4(86)    ! scale alpha
+      real(wp),intent(in)              :: efield(3)    ! electric field
+      real(wp),intent(out)             :: q(tmpmol%nat)         ! output charges
 
 !  local variables
       integer  :: m,i,j,k,ij,nfrag
@@ -110,34 +110,37 @@ contains
          2.82773085_wp /))
 
       nfrag = 1
-      m=n+nfrag ! # atoms + chrg constrain + frag constrain
+      m = tmpmol%nat + nfrag ! # atoms + chrg constrain + frag constrain
 
-      allocate(A(m,m),x(m),work(m*m),ipiv(m),alp(n),gam(n))
+      allocate(A(m,m),x(m),work(m*m),ipiv(m),alp(tmpmol%nat),gam(tmpmol%nat))
 !  setup RHS
       if(orig)then
-         do i=1,n
-            x(i) =-chieeq(at(i))               + cnfeeq(at(i))*sqrt(cn(i))
-            alp(i) = alpeeq(at(i))
-            gam(i) = gameeq(at(i))
+         do i=1,tmpmol%nat
+            x(i) =-chieeq(tmpmol%num(tmpmol%id(i))) + cnfeeq(tmpmol%num(tmpmol%id(i)))*sqrt(cn(i)) &
+            & + sum( efield(1:3)*tmpmol%xyz(1:3,i) )
+            alp(i) = alpeeq(tmpmol%num(tmpmol%id(i)))
+            gam(i) = gameeq(tmpmol%num(tmpmol%id(i)))
          enddo
       else
-         do i=1,n
-            x(i) =-chieeq(at(i)) * scal(at(i)) + scal3(at(i))*cnfeeq(at(i))*sqrt(cn(i))
-            alp(i) = alpeeq(at(i)) * scal4(at(i))
-            gam(i) = gameeq(at(i)) * scal2(at(i)) 
+         do i=1,tmpmol%nat
+            x(i) =-chieeq(tmpmol%num(tmpmol%id(i))) * scal(tmpmol%num(tmpmol%id(i))) + &
+            & scal3(tmpmol%num(tmpmol%id(i)))*cnfeeq(tmpmol%num(tmpmol%id(i)))*sqrt(cn(i)) &
+            & + sum( efield(1:3)*tmpmol%xyz(1:3,i) )
+            alp(i) = alpeeq(tmpmol%num(tmpmol%id(i))) * scal4(tmpmol%num(tmpmol%id(i)))
+            gam(i) = gameeq(tmpmol%num(tmpmol%id(i))) * scal2(tmpmol%num(tmpmol%id(i)))
          enddo
       endif
 
       A = 0
 !  setup A matrix
-      do i=1,n
+      do i=1,tmpmol%nat
          A(i,i)=tsqrt2pi/alp(i)+gam(i)
          k = i*(i-1)/2
          do j=1,i-1
             ij = k+j
             rij=rab(ij)
-            gammij=1./sqrt(alp(i)**2+alp(j)**2)
-            tmp = erf(gammij*rij)
+            gammij= 1.0_wp / sqrt( alp(i)**2 + alp(j)**2 )
+            tmp = erf( gammij*rij )
             A(j,i) = tmp/rij
             A(i,j) = A(j,i)
          enddo
@@ -145,11 +148,11 @@ contains
 
 !  fragment charge constrain
       do i=1,nfrag
-         x(n+i)=chrg
-         do j=1,n
+         x(tmpmol%nat + i)=chrg
+         do j=1,tmpmol%nat
 !        if(fraglist(j).eq.i) then
-            A(n+i,j)=1
-            A(j,n+i)=1
+            A(tmpmol%nat+i,j)=1
+            A(j,tmpmol%nat+i)=1
 !        endif
          enddo
       enddo
@@ -157,11 +160,11 @@ contains
 !     call prmat(6,A,m,m,'A eg')
       lwork=m*m
       call DSYSV('U', m, 1, A, m, IPIV, x, m, WORK, LWORK, INFO)
-      q(1:n)=x(1:n)
+      q(1:tmpmol%nat)=x(1:tmpmol%nat)
 
       if(info.ne.0) stop 'EEQ *SYSV failed'
 
-      if(n.eq.1) q(1)=chrg
+      if(tmpmol%nat .eq. 1) q(1)=chrg
 
    end subroutine eeq
 

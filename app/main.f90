@@ -22,8 +22,8 @@ program main
    character(len=1)     :: ltmp
 
    logical, allocatable :: ghostatoms(:)
-   logical              :: dummy
 
+   logical              :: dummy
    logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
    logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
@@ -36,6 +36,8 @@ program main
 
    real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:), sccoeff(:,:,:)
    real(wp),allocatable             :: distvec_short(:),cnvec_short(:),qeeq_short(:)
+
+   real(wp)                         :: efield(3) = 0.0_wp
 
    real(wp)                         :: scalfac
    real(wp)                         :: d4_s6 = 1.00_wp
@@ -130,6 +132,14 @@ program main
          read(atmp,*) d4_a2
          call get_command_argument(i+5,atmp)
          read(atmp,*) d4_s9
+      endif
+      if(index(atmp,'--efield').ne.0) then
+         call get_command_argument(i+1,atmp)
+         read(atmp,*) efield(1)
+         call get_command_argument(i+2,atmp)
+         read(atmp,*) efield(2)
+         call get_command_argument(i+3,atmp)
+         read(atmp,*) efield(3)
       endif
       if(index(atmp,'--polar').ne.0) polar=.true.
       ! if(index(atmp,'-hyppol').ne.0) beta=.true.
@@ -240,13 +250,14 @@ program main
       end if
    endif
 
-   call eeq(mol%nat,tmpids,distvec,real(charge,wp),cnvec,.False.,unity,gamscal,chiscal,alphascal,qeeq)
+   call eeq(mol,distvec,real(charge,wp),cnvec,.False., &
+   & unity,gamscal,chiscal,alphascal,qeeq,efield)
    if (dummy) then
       if (charge /= 0) then
          error stop "Non-zero charge not supported for dummy atoms."
       endif
-      call eeq(molshort%nat,tmpids_short,distvec_short, &
-         real(charge,wp),cnvec_short,.False.,unity,gamscal,chiscal,alphascal,qeeq_short)
+      call eeq(molshort,distvec_short,real(charge,wp),cnvec_short,.False., &
+      & unity,gamscal,chiscal,alphascal,qeeq_short,efield)
    endif
 
    if (indbfile) then
