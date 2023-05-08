@@ -1,4 +1,5 @@
 build/*
 src/*.mod
+src/*.smod
 releases/
 tmpfiles/
