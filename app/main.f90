@@ -27,7 +27,7 @@ program main
    logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
    logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
-   logical              :: ecpex
+   logical              :: ecpex, hfref, noelprop
 
    type(structure_type)             :: mol,molshort
    type(error_type), allocatable    :: error
@@ -72,6 +72,8 @@ program main
    indefile    = .false.
    indcharge   = .false.
    sugg_guess  = .false.
+   hfref       = .false.
+   noelprop    = .false.
 
    ! get number of arguments
    narg = command_argument_count()
@@ -152,8 +154,13 @@ program main
       if(index(atmp,'--v').ne.0) verbose=.true.
       if(index(atmp,'--suborca').ne.0) suborca=.true.
       if(index(atmp,'--nouseshark').ne.0) nouseshark=.true.
+      if(index(atmp,'--noelprop').ne.0) noelprop=.true.
       if(index(atmp,'--help').ne.0) help=.true.
       if(index(atmp,'--suggestedguess').ne.0) sugg_guess=.true.
+      if(index(atmp,'--hfref').ne.0) then
+         hfref=.true.
+         outn = "hf_q-vSZP.inp"
+      endif
    enddo
    if (.not. uhfgiven) then
       inquire(file='.UHF',exist=da)
@@ -177,6 +184,11 @@ program main
    if (help) then
       call helpf()
       stop
+   endif
+
+   if (noelprop .and. polar) then
+      print '(a)', "Error: --noelprop and --polar cannot be used together"
+      error stop
    endif
 
    !####### END OF INITIALIZATION PART ######
@@ -268,34 +280,52 @@ program main
 
    ! Start writing the ORCA input file
    open(newunit=myunit,file=outn)
-   write(myunit,'(a)') "! WB97X-D4 def2/J PrintBasis"
-   write(myunit,'(a,a)',advance='NO') "! ",scfconv
-   write(myunit,'(1x,a,i1,/)') "DEFGRID", defgrid
-   if(geoopt) write(myunit,'(''! Opt'')')
-   if(nocosx) write(myunit,'(''! NOCOSX'')')
-   if(dipgrad) write(myunit,'(''! Freq'')')
-   if(polgrad) write(myunit,'(''! NumFreq'')')
-   if(nouseshark) write(myunit,'(''! NoUseShark'',/)')
 
-   if(mpi.gt.0) write(myunit,'(''%pal'',/,''  nprocs'',i4,/,''end'',/)') mpi
-   write(myunit,'(''%MaxCore '',i6,/)') coremem
+   if (hfref) then
+      write(myunit,'(a)')     "! HF NORI ExtremeSCF"
+      write(myunit,'(a)')     "! NOCOSX"
+      write(myunit,'(a,/)')   "! LargePrint"
+      write(myunit,'(a)')     "%scf"
+      write(myunit,'(a,a)')   "  guess ", trim(adjustl(guess))
+      write(myunit,'(a)')     "  SCFMode Conventional"
+      write(myunit,'(a,/)')   "end"
+   else
+      write(myunit,'(a)') "! WB97X-D4 def2/J PrintBasis"
+      write(myunit,'(a,a)',advance='NO') "! ",scfconv
+      write(myunit,'(1x,a,i1,/)') "DEFGRID", defgrid
+      if(geoopt) write(myunit,'(''! Opt'')')
+      if(nocosx) write(myunit,'(''! NOCOSX'')')
+      if(dipgrad) write(myunit,'(''! Freq'')')
+      if(polgrad) write(myunit,'(''! NumFreq'')')
+      if(nouseshark) write(myunit,'(''! NoUseShark'',/)')
 
-   write(myunit,'(a)')    "%method"
-   write(myunit,'(a,f5.2)')    "  D4S6  ", d4_s6
-   write(myunit,'(a,f5.2)')    "  D4S8  ", d4_s8
-   write(myunit,'(a,f5.2)')    "  D4A1  ", d4_a1
-   write(myunit,'(a,f5.2)')    "  D4A2  ", d4_a2
-   write(myunit,'(a,f5.2)')    "  D4S9  ", d4_s9
-   write(myunit,'(a,/)')  "end"
+      if(mpi.gt.0) write(myunit,'(''%pal'',/,''  nprocs'',i4,/,''end'',/)') mpi
+      write(myunit,'(''%MaxCore '',i6,/)') coremem
 
-   if (sugg_guess) then
-      guess='hueckel'
+      write(myunit,'(a)')    "%method"
+      write(myunit,'(a,f5.2)')    "  D4S6  ", d4_s6
+      write(myunit,'(a,f5.2)')    "  D4S8  ", d4_s8
+      write(myunit,'(a,f5.2)')    "  D4A1  ", d4_a1
+      write(myunit,'(a,f5.2)')    "  D4A2  ", d4_a2
+      write(myunit,'(a,f5.2)')    "  D4S9  ", d4_s9
+      write(myunit,'(a,/)')  "end"
+
+      if (sugg_guess) then
+         guess='hueckel'
+      endif
+
+      if (sugg_guess .or. indguess) then
+         write(myunit, '(a)') "%scf"
+         write(myunit,'(''  guess '',a20)') guess
+         write(myunit, '(a,/)') "end"
+      endif
    endif
 
-   if (sugg_guess .or. indguess) then
-      write(myunit, '(a)') "%scf"
-      write(myunit,'(''  guess '',a20)') guess
-      write(myunit, '(a,/)') "end"
+   if (noelprop) then
+      write(myunit,'(a)') "%elprop"
+      write(myunit,'(a)') "  Dipole false"
+      write(myunit,'(a)') "  Quadrupole false"
+      write(myunit,'(a)') "end"
    endif
 
    if(polar.or.polgrad) write(myunit,'(''%elprop polar 1'',/,''end'',/)')
