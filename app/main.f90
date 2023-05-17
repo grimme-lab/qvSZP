@@ -23,7 +23,7 @@ program main
 
    logical, allocatable :: ghostatoms(:)
 
-   logical              :: dummy
+   logical              :: dummy = .false.
    logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
    logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
