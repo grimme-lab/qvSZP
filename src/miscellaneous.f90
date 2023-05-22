@@ -28,5 +28,6 @@ contains
    write(*,*) "--v           # verbose mode with extended printout of O4wB97X3c and for ORCA itself"
    write(*,*) "--nouseshark  # (use different integral library)"
    write(*,*) "--plot        # (Plot the electron density with the following settings)"
+   write(*,*) "--outname <filename> # set output file name. NOTE: An'.inp' suffix will be added."
   end subroutine helpf
 end module miscellaneous

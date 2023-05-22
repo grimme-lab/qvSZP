@@ -17,8 +17,8 @@ program main
    integer,allocatable  :: tmpids(:)
    integer,allocatable  :: tmpids_short(:)
 
-   character(len=120)   :: atmp,guess,filen,outn,bfilen,efilen
-   character(len=:),allocatable :: scfconv
+   character(len=120)   :: atmp,guess,filen,bfilen,efilen
+   character(len=:),allocatable :: scfconv,outn
    character(len=1)     :: ltmp
 
    logical, allocatable :: ghostatoms(:)
@@ -160,6 +160,10 @@ program main
       if(index(atmp,'--hfref').ne.0) then
          hfref=.true.
          outn = "hf_q-vSZP.inp"
+      endif
+      if(index(atmp,'--outname').ne.0) then
+         call get_command_argument(i+1,atmp)
+         outn= trim(adjustl(atmp)) // ".inp"
       endif
    enddo
    if (.not. uhfgiven) then
