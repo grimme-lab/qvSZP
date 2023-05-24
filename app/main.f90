@@ -122,6 +122,10 @@ program main
          call get_command_argument(i+1,atmp)
          guess=trim(atmp)
       endif
+      if(index(atmp,'--conv').ne.0) then
+         call get_command_argument(i+1,atmp)
+         scfconv=trim(adjustl(atmp))
+      endif
       if(index(atmp,'--d4par').ne.0) then
          indd4param=.true.
          call get_command_argument(i+1,atmp)
