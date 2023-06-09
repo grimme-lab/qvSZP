@@ -4,7 +4,7 @@ module chargscfcts
    implicit none
    private
 
-   public :: eeq,calcrab,ncoord_basq
+   public :: eeq,calcrab,ncoord_basq,extcharges
 contains
    subroutine eeq(tmpmol,rab,chrg,cn,orig,scal,scal2,scal3,scal4,q,efield)
       implicit none
@@ -247,5 +247,49 @@ contains
       enddo
 
    end subroutine ncoord_basq
+
+   subroutine extcharges(tmpmol,fname,q,cn)
+      implicit none
+      type(structure_type),intent(in)  :: tmpmol         ! Molecular structure
+      character(len=*), intent(in)     :: fname          ! file name of external data
+      real(wp),intent(out)             :: q(tmpmol%nat)  ! output charges
+      real(wp),intent(out), optional   :: cn(tmpmol%nat) ! CN
+      character(len=256)               :: tmpstr
+      integer                          :: i,myunit,ierr
+      logical                          :: ex
+
+      q = 0.0_wp
+      if (present(cn)) cn = 0.0_wp
+      inquire(file=fname,exist=ex)
+      if (.not. ex) then
+         write(*,*) 'WARNING: file ',trim(fname),' does not exist'
+         error stop 'ERROR: file with external charges does not exist'
+      else
+         open(newunit=myunit,file=trim(adjustl(fname)),status='old',action='read')
+         do i=1,size(q)
+            read(myunit,'(a)') tmpstr
+            if (present(cn)) then
+               read(tmpstr,*,iostat=ierr) q(i), cn(i)
+            else
+               read(tmpstr,*,iostat=ierr) q(i)
+            endif
+         enddo
+         close(myunit)
+      endif
+
+      if (present(cn)) then
+         write(*,'(a,a)') 'External charges and CN read from file: ',trim(adjustl(fname))
+         do i = 1,size(q)
+            write(*,'(a,a2,i0,a,f9.5,a,a,i0,a,f9.5)') 'q( ',tmpmol%sym(tmpmol%id(i)),i,' ) = ',q(i), &
+            & ' CN( ',tmpmol%sym(tmpmol%id(i)),i,' ) = ',cn(i)
+         enddo
+      else
+         write(*,'(a,a)') 'External charges read from file: ',trim(adjustl(fname))
+         do i = 1,size(q)
+            write(*,'(a,a2,i0,a,f9.5)') 'q( ',tmpmol%sym(tmpmol%id(i)),i,' ) = ',q(i)
+         enddo
+      endif
+      write(*,*)  ' '
+   end subroutine extcharges
 
 end module chargscfcts

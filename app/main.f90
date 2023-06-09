@@ -4,10 +4,10 @@ program main
    use mctc_env
    use ioroutines, only: rdfile,rdbas,rdecp,check_ghost_atoms,search_ghost_atoms
    use basistype, only: basis_type,ecp_type
-   use chargscfcts, only: eeq,calcrab,ncoord_basq
+   use chargscfcts, only: eeq,calcrab,ncoord_basq,extcharges
    use miscellaneous, only: helpf
    implicit none
-   integer              :: narg,i,myunit,j,k,n
+   integer              :: narg,i,myunit,j,k,n,errint
    integer              :: mpi      = 4
    integer              :: defgrid  = 2
    integer              :: charge   = 0
@@ -27,7 +27,7 @@ program main
    logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
    logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
-   logical              :: ecpex, hfref, noelprop
+   logical              :: ecpex, hfref, noelprop, rdextq
 
    type(structure_type)             :: mol,molshort
    type(error_type), allocatable    :: error
@@ -74,6 +74,7 @@ program main
    sugg_guess  = .false.
    hfref       = .false.
    noelprop    = .false.
+   rdextq      = .false.
 
    ! get number of arguments
    narg = command_argument_count()
@@ -161,6 +162,7 @@ program main
       if(index(atmp,'--noelprop').ne.0) noelprop=.true.
       if(index(atmp,'--help').ne.0) help=.true.
       if(index(atmp,'--suggestedguess').ne.0) sugg_guess=.true.
+      if(index(atmp,'--rdq').ne.0) rdextq=.true.
       if(index(atmp,'--hfref').ne.0) then
          hfref=.true.
          outn = "hf_q-vSZP.inp"
@@ -270,8 +272,25 @@ program main
       end if
    endif
 
-   call eeq(mol,distvec,real(charge,wp),cnvec,.False., &
-   & unity,gamscal,chiscal,alphascal,qeeq,efield)
+   if (rdextq) then
+      if (index((filen),'coord').eq.0) then
+         call write_structure(mol, 'coord', error) 
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop
+         end if
+      endif
+      ! Call gp3 per system call to calculate the external charges and store them in the file
+      ! 'ceh.charges'. The file is then read in the next step.
+      call execute_command_line('gp3 -ceh > gp3.out 2> gp3.err', exitstat=errint)
+      if (errint /= 0) then
+         call fatal_error(error, "Error in GP3 call! ")
+      endif
+      call extcharges(mol,'ceh.charges',qeeq,cnvec)
+   else
+      call eeq(mol,distvec,real(charge,wp),cnvec,.False., &
+      & unity,gamscal,chiscal,alphascal,qeeq,efield)
+   endif
    if (dummy) then
       if (charge /= 0) then
          error stop "Non-zero charge not supported for dummy atoms."
