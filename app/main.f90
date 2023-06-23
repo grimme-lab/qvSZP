@@ -274,7 +274,7 @@ program main
 
    if (rdextq) then
       if (index((filen),'coord').eq.0) then
-         call write_structure(mol, 'coord', error) 
+         call write_structure(mol, 'coord', error)
          if (allocated(error)) then
             print '(a)', error%message
             error stop
@@ -287,16 +287,31 @@ program main
          call fatal_error(error, "Error in GP3 call! ")
       endif
       call extcharges(mol,'ceh.charges',qeeq,cnvec)
+      if (dummy) then
+         ! Copy coord file to coord.bak file
+         call execute_command_line('rm ceh.charges')
+         call execute_command_line('cp coord coord.bak', exitstat=errint)
+         call write_structure(molshort, 'coord', error)
+         if (allocated(error)) then
+            print '(a)', error%message
+            error stop
+         end if
+         call execute_command_line('gp3 -ceh > gp3.out 2> gp3.err', exitstat=errint)
+         if (errint /= 0) then
+            call fatal_error(error, "Error in GP3 call! ")
+         endif
+         call extcharges(molshort,'ceh.charges',qeeq_short,cnvec_short)
+      endif
    else
       call eeq(mol,distvec,real(charge,wp),cnvec,.False., &
       & unity,gamscal,chiscal,alphascal,qeeq,efield)
-   endif
-   if (dummy) then
-      if (charge /= 0) then
-         error stop "Non-zero charge not supported for dummy atoms."
+      if (dummy) then
+         if (charge /= 0) then
+            error stop "Non-zero charge not supported for dummy atoms."
+         endif
+         call eeq(molshort,distvec_short,real(charge,wp),cnvec_short,.False., &
+         & unity,gamscal,chiscal,alphascal,qeeq_short,efield)
       endif
-      call eeq(molshort,distvec_short,real(charge,wp),cnvec_short,.False., &
-      & unity,gamscal,chiscal,alphascal,qeeq_short,efield)
    endif
 
    if (indbfile) then
@@ -380,15 +395,18 @@ program main
       if (dummy) then
          if (.not.ghostatoms(i)) then
             n = n + 1
-            scalfac = qeeq_short(n) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq_short(n)**2 ) &
-               + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec_short(n)) )
+            scalfac = qeeq_short(n) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq_short(n)**2 ) & ! Dependency on q and q^2
+               + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec_short(n)) ) &                  ! Dependency on square root of CN
+               + ( bas%scalparam(mol%num(mol%id(i)),3) * cnvec_short(n) * qeeq_short(n) )          ! Cross term dependency of CN and q
          else
-            scalfac = qeeq(i) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq(i)**2 ) &
-               + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i)) )
+            scalfac = qeeq(i) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq(i)**2 ) & ! Dependency on q and q^2
+               + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i)) ) &            ! Dependency on square root of CN
+               + ( bas%scalparam(mol%num(mol%id(i)),3) * cnvec(i) * qeeq(i) )          ! Cross term dependency of CN and q
          endif
       else
-         scalfac = qeeq(i) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq(i)**2 ) &
-            + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i)) )
+         scalfac = qeeq(i) - ( bas%scalparam(mol%num(mol%id(i)),2) * qeeq(i)**2 ) & ! Dependency on q and q^2
+            + ( bas%scalparam(mol%num(mol%id(i)),1) * sqrt(cnvec(i)) ) &            ! Dependency on square root of CN
+            + ( bas%scalparam(mol%num(mol%id(i)),3) * cnvec(i) * qeeq(i) )          ! Cross term dependency of CN and q
       endif
       do j = 1, bas%nbf(mol%num(mol%id(i)))
          do k = 1, bas%npr(mol%num(mol%id(i)),j)

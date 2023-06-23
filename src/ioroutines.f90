@@ -54,9 +54,9 @@ contains
       integer                                :: i,j,l,k
 
       real(wp)                               :: tmpvec(4) = 1000.00_wp
-      real(wp)                               :: iattmp(2)
+      real(wp)                               :: iattmp(3)
 
-      allocate(nbf(100),npr(100,20),angmom(100,20),ibasis%sccoeff(118),ibasis%scalparam(118,2))
+      allocate(nbf(100),npr(100,20),angmom(100,20),ibasis%sccoeff(118),ibasis%scalparam(118,3))
       ibasis%sccoeff = .false.
       ibasis%scalparam = 0.0_wp
 
@@ -118,13 +118,18 @@ contains
             iattmp=1000.00_wp
             atmp=trim(atmp)
             read(atmp,*,iostat=iread) iat, iattmp(:)
+            if (iread /= 0) then
+               write(*,*) "Current line number: ",l
+               error stop "I/O error in reading element-wise coefficients from line."
+            end if
             if (maxval(iattmp) <= 999.0_wp) then
                ibasis%scalparam(iat,1) = iattmp(1)
                ibasis%scalparam(iat,2) = iattmp(2)
+               ibasis%scalparam(iat,3) = iattmp(3)
                if (present(verb)) then
                   if (verb) then
                      write(*,'(a,i3,a,f6.3,f6.3)') "Scaling parameters for atom ", &
-                        iat," are: ",ibasis%scalparam(iat,1),ibasis%scalparam(iat,2)
+                        iat," are: ",ibasis%scalparam(iat,1),ibasis%scalparam(iat,2),ibasis%scalparam(iat,3)
                   end if
                end if
             end if
