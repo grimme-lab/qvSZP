@@ -280,13 +280,13 @@ contains
       if (present(cn)) then
          write(*,'(a,a)') 'External charges and CN read from file: ',trim(adjustl(fname))
          do i = 1,size(q)
-            write(*,'(a,a2,i0,a,f9.5,a,a,i0,a,f9.5)') 'q( ',tmpmol%sym(tmpmol%id(i)),i,' ) = ',q(i), &
+            write(*,'(a,a2,i0,a,f12.8,a,a,i0,a,f12.8)') 'q( ',tmpmol%sym(tmpmol%id(i)),i,' ) = ',q(i), &
             & ' CN( ',tmpmol%sym(tmpmol%id(i)),i,' ) = ',cn(i)
          enddo
       else
          write(*,'(a,a)') 'External charges read from file: ',trim(adjustl(fname))
          do i = 1,size(q)
-            write(*,'(a,a2,i0,a,f9.5)') 'q( ',tmpmol%sym(tmpmol%id(i)),i,' ) = ',q(i)
+            write(*,'(a,a2,i0,a,f12.8)') 'q( ',tmpmol%sym(tmpmol%id(i)),i,' ) = ',q(i)
          enddo
       endif
       write(*,*)  ' '

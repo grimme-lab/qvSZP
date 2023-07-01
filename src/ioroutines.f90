@@ -520,7 +520,7 @@ contains
       logical, intent(out)              :: ghost
       type(error_type), allocatable     :: error
       character(len=120)                :: atmp
-      character(len=1)                  :: delete_char = ':'
+      character(len=3)                  :: delete_char = " : "
       integer                           :: ierr
       integer                           :: myunit
 

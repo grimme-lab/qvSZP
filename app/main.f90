@@ -17,7 +17,7 @@ program main
    integer,allocatable  :: tmpids(:)
    integer,allocatable  :: tmpids_short(:)
 
-   character(len=120)   :: atmp,guess,filen,bfilen,efilen
+   character(len=120)   :: atmp,guess,filen,bfilen,efilen,extcall
    character(len=:),allocatable :: scfconv,outn
    character(len=1)     :: ltmp
 
@@ -282,7 +282,14 @@ program main
       endif
       ! Call gp3 per system call to calculate the external charges and store them in the file
       ! 'ceh.charges'. The file is then read in the next step.
-      call execute_command_line('gp3 -ceh > gp3.out 2> gp3.err', exitstat=errint)
+      if (sum(abs(efield)) > 0.0_wp) then
+         write(extcall,'(f12.8,1x,f12.8,1x,f12.8)') efield(1), efield(2), efield(3)
+         extcall = "gp3 -ceh -efield " // trim(adjustl(extcall)) // " > gp3.out 2> gp3.err"
+         write(*,'(a,f12.8,f12.8,f12.8)') "External electric field is initialized: ", efield(1), efield(2), efield(3)
+         call execute_command_line(extcall, exitstat=errint)
+      else
+         call execute_command_line('gp3 -ceh > gp3.out 2> gp3.err', exitstat=errint)
+      endif
       if (errint /= 0) then
          call fatal_error(error, "Error in GP3 call! ")
       endif
