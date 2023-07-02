@@ -17,15 +17,16 @@ program main
    integer,allocatable  :: tmpids(:)
    integer,allocatable  :: tmpids_short(:)
 
-   character(len=120)   :: atmp,guess,filen,bfilen,efilen,extcall
+   character(len=120)   :: atmp,filen,bfilen,efilen,extcall
+   character(len=120)   :: guess = 'PModel'
    character(len=:),allocatable :: scfconv,outn
    character(len=1)     :: ltmp
 
    logical, allocatable :: ghostatoms(:)
 
    logical              :: dummy = .false.
-   logical              :: indguess, polar, polgrad, dipgrad, geoopt, nocosx
-   logical              :: tightscf, strongscf, verbose, suborca, nouseshark,sugg_guess
+   logical              :: polar, polgrad, dipgrad, geoopt, nocosx
+   logical              :: tightscf, strongscf, verbose, suborca, nouseshark
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
    logical              :: ecpex, hfref, noelprop, rdextq
 
@@ -65,13 +66,11 @@ program main
    nouseshark  = .false. ! use different integral library
    tightscf    = .false. ! SCF conv criterium
    strongscf   = .false. ! SCF conv criterium
-   indguess    = .false.
    uhfgiven    = .false.
    help        = .false.
    indbfile    = .false.
    indefile    = .false.
    indcharge   = .false.
-   sugg_guess  = .false.
    hfref       = .false.
    noelprop    = .false.
    rdextq      = .false.
@@ -119,9 +118,8 @@ program main
          read(atmp,*) defgrid
       endif
       if(index(atmp,'--guess').ne.0) then
-         indguess=.true.
          call get_command_argument(i+1,atmp)
-         guess=trim(atmp)
+         guess=trim(adjustl(atmp))
       endif
       if(index(atmp,'--conv').ne.0) then
          call get_command_argument(i+1,atmp)
@@ -161,7 +159,7 @@ program main
       if(index(atmp,'--nouseshark').ne.0) nouseshark=.true.
       if(index(atmp,'--noelprop').ne.0) noelprop=.true.
       if(index(atmp,'--help').ne.0) help=.true.
-      if(index(atmp,'--suggestedguess').ne.0) sugg_guess=.true.
+      if(index(atmp,'--suggestedguess').ne.0) guess='hueckel'
       if(index(atmp,'--rdq').ne.0) rdextq=.true.
       if(index(atmp,'--hfref').ne.0) then
          hfref=.true.
@@ -359,15 +357,12 @@ program main
       write(myunit,'(a,f5.2)')    "  D4S9  ", d4_s9
       write(myunit,'(a,/)')  "end"
 
-      if (sugg_guess) then
-         guess='hueckel'
+      write(myunit, '(a)') "%scf"
+      write(myunit,'(''  guess '',a20)') guess
+      if (sum(abs(efield)) > 0.0_wp) then
+         write(myunit,'(a,f12.8,a,f12.8,a,f12.8)') "  efield", efield(1),", ", efield(2),", ", efield(3)
       endif
-
-      if (sugg_guess .or. indguess) then
-         write(myunit, '(a)') "%scf"
-         write(myunit,'(''  guess '',a20)') guess
-         write(myunit, '(a,/)') "end"
-      endif
+      write(myunit, '(a,/)') "end"
    endif
 
    if (noelprop) then
@@ -484,12 +479,12 @@ program main
    do i=1,mol%nat
       if (dummy) then
          if (ghostatoms(i)) then
-            write(myunit,'(a2,2x,a,2x,3F22.14)') mol%sym(mol%id(i)),":",mol%xyz(:,i)*autoaa
+            write(myunit,'(a2,2x,a,2x,3F20.14)') mol%sym(mol%id(i)),":",mol%xyz(:,i)*autoaa
          else
-            write(myunit,'(a2,2x,3F22.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
+            write(myunit,'(a2,2x,3F20.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
          endif
       else
-         write(myunit,'(a2,2x,3F22.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
+         write(myunit,'(a2,2x,3F20.14)') mol%sym(mol%id(i)),mol%xyz(:,i)*autoaa
       endif
       if ( bas%exp(mol%num(mol%id(i)),1,1) > 0.0_wp ) then
          write(myunit,'(2x,a,1x,a2)') "NewGTO"
@@ -503,7 +498,7 @@ program main
             if (bas%angmom(mol%num(mol%id(i)),j) == 6) ltmp = 'I'
             write(myunit,'(3x,a1,2x,i3)') ltmp,bas%npr(mol%num(mol%id(i)),j)
             do k=1,bas%npr(mol%num(mol%id(i)),j)
-               write(myunit,'(i5,2x,2f14.8)') k, &
+               write(myunit,'(i5,2x,2f20.14)') k, &
                   bas%exp(mol%num(mol%id(i)),j,k),sccoeff(i,j,k)
             enddo
          enddo
