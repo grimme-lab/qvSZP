@@ -3,3 +3,4 @@ src/*.mod
 src/*.smod
 releases/
 tmpfiles/
+modoutput/

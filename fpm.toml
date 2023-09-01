@@ -12,5 +12,6 @@ link=["lapack"]
 [install]
 library = false
 [dependencies]
-mctc-lib.git = "https://github.com/grimme-lab/mctc-lib"
-stdlib = { git="https://github.com/fortran-lang/stdlib", branch="stdlib-fpm" }
+tblite.git = "https://github.com/marcelmbn/tblite"
+tblite.branch = "ceh"
+stdlib = "*"
