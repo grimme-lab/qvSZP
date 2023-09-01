@@ -1,6 +1,8 @@
 module chargscfcts
    use mctc_io
-   use mctc_env
+   use mctc_env, only: i4, wp
+   use tblite_ceh_ceh, only: ceh_guess
+   use multicharge_lapack, only : sytrf, sytrs
    implicit none
    private
 
@@ -20,9 +22,9 @@ contains
       real(wp),intent(in)              :: efield(3)    ! electric field
       real(wp),intent(out)             :: q(tmpmol%nat)         ! output charges
 
+      integer(i4) :: info
 !  local variables
       integer  :: m,i,j,k,ij,nfrag
-      integer  :: info,lwork
       integer,allocatable :: ipiv(:)
       real(wp) :: gammij,tsqrt2pi,tmp,rij
       real(wp) :: chieeq(86), gameeq(86), cnfeeq(86), alpeeq(86)
@@ -157,12 +159,13 @@ contains
          enddo
       enddo
 
-!     call prmat(6,A,m,m,'A eg')
-      lwork=m*m
-      call DSYSV('U', m, 1, A, m, IPIV, x, m, WORK, LWORK, INFO)
+      call sytrf(A, ipiv, info=info, uplo='l')
+      if (info == 0) then
+         call sytrs(A, x, ipiv, info=info, uplo='l')
+      else
+         error stop 'EEQ *SYSV failed'
+      endif
       q(1:tmpmol%nat)=x(1:tmpmol%nat)
-
-      if(info.ne.0) stop 'EEQ *SYSV failed'
 
       if(tmpmol%nat .eq. 1) q(1)=chrg
 

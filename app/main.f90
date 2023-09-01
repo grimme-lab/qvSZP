@@ -2,8 +2,8 @@ program main
    use mctc_io
    use mctc_io_convert, only : autoaa
    use mctc_env
-   use ioroutines, only: rdfile,rdbas,rdecp,check_ghost_atoms,search_ghost_atoms
-   use basistype, only: basis_type,ecp_type
+   use ioroutines, only: rdfile,rdbas,rdecp,check_ghost_atoms, & 
+   & search_ghost_atoms, basis_type, ecp_type
    use chargscfcts, only: eeq,calcrab,ncoord_basq,extcharges
    use miscellaneous, only: helpf
    implicit none
