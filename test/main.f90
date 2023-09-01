@@ -5,6 +5,7 @@ module test_qvSZP
    use mstore, only : get_structure
    use mctc_io, only : structure_type, new
    use mctc_env, only : wp
+   use chargscfcts, only : calcrab, ncoord_basq, eeq
    implicit none
    private
 
@@ -25,7 +26,6 @@ contains
       !> Error handling
       type(error_type), allocatable, intent(out) :: error
       type(structure_type) :: mol
-      character(len=:), allocatable :: line
       real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:)
       real(wp) :: efield(3) = 0.0_wp
       integer :: i
@@ -36,22 +36,22 @@ contains
       real(wp),parameter               :: gamscal(86)    = 0.90_wp
       ! ###########################################################
       real(wp), parameter :: ref(16) = reshape([ &
-      0.30785024_wp, &
-     -0.02792822_wp, &
-     -0.11358521_wp, &
-      0.03271103_wp, &
-      0.10217515_wp, &
-      0.25825112_wp, &
-     -0.20769464_wp, &
-     -0.03447769_wp, &
-     -0.25817610_wp, &
-      0.24460001_wp, &
-      0.26974150_wp, &
-     -0.01050015_wp, &
-     -0.28007123_wp, &
-     -0.42862573_wp, &
-      0.03898681_wp, &
-      0.10674311_wp], shape(ref))
+      -0.24050023_wp, &
+       0.21015486_wp, &
+       0.13777823_wp, &
+       0.13725307_wp, &
+       0.91277882_wp, &
+      -0.09167350_wp, &
+      -0.24784753_wp, &
+      -0.15279396_wp, &
+      -0.24016983_wp, &
+      -0.28519031_wp, &
+      -0.01842048_wp, &
+       0.16651145_wp, &
+       0.09247858_wp, &
+       0.17236600_wp, &
+      -0.21969239_wp, &
+      -0.33303278_wp], shape(ref))
 
       allocate(distvec(mol%nat*(mol%nat+1)/2))
       allocate(cnvec(mol%nat),qeeq(mol%nat))
@@ -64,8 +64,6 @@ contains
 
       call eeq(mol,distvec,mol%charge,cnvec,.False., &
       & unity,gamscal,chiscal,alphascal,qeeq,efield)
-      ! line = "This is a valid example"
-      ! call check(error, line, "This is a valid example")
       do i = 1, mol%nat
          call check(error, qeeq(i), ref(i), thr=1.0e-6_wp)
       end do
