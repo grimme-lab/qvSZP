@@ -21,3 +21,4 @@ stdlib = "*"
 
 [dev-dependencies]
 test-drive.git = "https://github.com/fortran-lang/test-drive"
+mstore.git = "https://github.com/grimme-lab/mstore"
