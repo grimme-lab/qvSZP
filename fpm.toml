@@ -4,14 +4,20 @@ license = "license"
 author = "Marcel Mueller"
 maintainer = "marcel.mueller@thch.uni-bonn.de"
 copyright = "Copyright 2023, Marcel Mueller"
+
 [build]
 auto-executables = true
 auto-tests = true
 auto-examples = true
 link=["lapack"]
+
 [install]
 library = false
+
 [dependencies]
 tblite.git = "https://github.com/marcelmbn/tblite"
 tblite.branch = "ceh"
 stdlib = "*"
+
+[dev-dependencies]
+test-drive.git = "https://github.com/fortran-lang/test-drive"
