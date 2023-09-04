@@ -1,6 +1,14 @@
+# build files
 build/*
+releases/
+
+# linter files
 src/*.mod
 src/*.smod
-releases/
-tmpfiles/
 modoutput/
+
+# other personal files
+tmpfiles/
+
+# VS code settings
+.vscode/
