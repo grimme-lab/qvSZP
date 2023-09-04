@@ -1,7 +1,0 @@
-{
-    "fortran.linter.includePaths": [
-        "${workspaceFolder}/build/**",
-        "${workspaceFolder}/app/",
-        "${workspaceFolder}/src/"
-    ]
-}
