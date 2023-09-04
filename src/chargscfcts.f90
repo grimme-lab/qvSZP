@@ -24,17 +24,16 @@ contains
 
       integer(i4) :: info
 !  local variables
-      integer  :: m,i,j,k,ij,nfrag
+      integer  :: m,i,j,k,ij,nfrag,msq
       integer,allocatable :: ipiv(:)
-      real(wp) :: gammij,tsqrt2pi,tmp,rij
-      real(wp) :: chieeq(86), gameeq(86), cnfeeq(86), alpeeq(86)
-      real(wp),allocatable :: A (:,:),x (:),work (:), alp(:), gam(:)
+      real(wp) :: gammij,tmp,rij
+      real(wp), allocatable :: A(:,:), x(:), work(:), alp(:), gam(:)
 !  parameter
-      parameter (tsqrt2pi = 0.797884560802866_wp)
+      real(wp), parameter :: tsqrt2pi = 0.797884560802866_wp
 ! ------------------------------------------------------------------------
 !  PARAMETRISATION BY S. SPICHER (NEW)
 ! ------------------------------------------------------------------------
-      parameter( chieeq =(/& ! mod. by SG for wB97X-D3/q-vSZP energy see below
+      real(wp), parameter :: chieeq(86) =(/& ! mod. by SG for wB97X-D3/q-vSZP energy see below
          1.27000000_wp, 1.25000000_wp, 0.44000000_wp, 0.99000000_wp, 1.30000000_wp, &
          1.50000000_wp, 1.63000000_wp, 1.66000000_wp, 1.66000000_wp, 1.05000000_wp, &
          0.44000000_wp, 0.68000000_wp, 1.16000000_wp, 1.16000000_wp, 1.67000000_wp, &
@@ -52,8 +51,8 @@ contains
          0.56999999_wp, 0.87936784_wp, 1.02761808_wp, 0.93297476_wp, 1.10172128_wp, &
          0.97350071_wp, 1.16695666_wp, 1.23997927_wp, 1.18464453_wp, 1.14191734_wp, & ! Hg
          1.17000000_wp, 1.02000000_wp, 1.21000000_wp, 1.33000000_wp, 1.43000000_wp, &
-         1.43000000_wp /))
-      parameter( gameeq =(/&
+         1.43000000_wp /)
+      real(wp), parameter :: gameeq(86) =(/&
          -0.35015861_wp, 1.04121227_wp, 0.09281243_wp, 0.09412380_wp, 0.26629137_wp, &
          0.19408787_wp, 0.05317918_wp, 0.03151644_wp, 0.32275132_wp, 1.30996037_wp, &
          0.24206510_wp, 0.04147733_wp, 0.11634126_wp, 0.13155266_wp, 0.15350650_wp, &
@@ -71,8 +70,8 @@ contains
          0.11000000_wp,-0.02786741_wp, 0.01057858_wp,-0.03892226_wp,-0.04574364_wp, &
          -0.03874080_wp,-0.03782372_wp,-0.07046855_wp, 0.09546597_wp, 0.21953269_wp, &
          0.02522348_wp, 0.15263050_wp, 0.08042611_wp, 0.01878626_wp, 0.08715453_wp, &
-         0.10500484_wp /))
-      parameter( cnfeeq =(/& ! changed handish for RGs
+         0.10500484_wp /)
+      real(wp), parameter :: cnfeeq(86) =(/& ! changed handish for RGs
          0.04916110_wp, 0.25000000_wp,-0.12349591_wp,-0.02665108_wp,-0.02631658_wp, &
          0.06005196_wp, 0.09279548_wp, 0.11689703_wp, 0.15704746_wp, 0.21000000_wp, &
          -0.10002962_wp,-0.07712863_wp,-0.02170561_wp,-0.04964052_wp, 0.14250599_wp, &
@@ -90,8 +89,8 @@ contains
          -0.11000000_wp,-0.03585873_wp,-0.03132400_wp,-0.05902379_wp,-0.02827592_wp, &
          -0.07606260_wp,-0.02123839_wp, 0.03814822_wp, 0.02146834_wp, 0.01580538_wp, &
          -0.00894298_wp,-0.05864876_wp,-0.01817842_wp, 0.07721851_wp, 0.07936083_wp, &
-         0.05849285_wp /))
-      parameter( alpeeq =(/&
+         0.05849285_wp /)
+      real(wp), parameter :: alpeeq(86) =(/&
          0.55159092_wp, 0.66205886_wp, 0.90529132_wp, 1.51710827_wp, 2.86070364_wp, &
          1.88862966_wp, 1.32250290_wp, 1.23166285_wp, 1.77503721_wp, 1.11955204_wp, &
          1.28263182_wp, 1.22344336_wp, 1.70936266_wp, 1.54075036_wp, 1.38200579_wp, &
@@ -109,12 +108,14 @@ contains
          1.63999999_wp, 1.47055223_wp, 1.81127084_wp, 1.40189963_wp, 1.54015481_wp, &
          1.33721475_wp, 1.57165422_wp, 1.04815857_wp, 1.78342098_wp, 2.79106396_wp, &
          1.78160840_wp, 2.47588882_wp, 2.37670734_wp, 1.76613217_wp, 2.66172302_wp, &
-         2.82773085_wp /))
+         2.82773085_wp /)
 
       nfrag = 1
       m = tmpmol%nat + nfrag ! # atoms + chrg constrain + frag constrain
+      msq = m**2
+      allocate(alp(tmpmol%nat), x(m), ipiv(m), gam(tmpmol%nat), work(msq))
+      allocate(A(m,m), source=0.0_wp)
 
-      allocate(A(m,m),x(m),work(m*m),ipiv(m),alp(tmpmol%nat),gam(tmpmol%nat))
 !  setup RHS
       if(orig)then
          do i=1,tmpmol%nat
@@ -133,7 +134,6 @@ contains
          enddo
       endif
 
-      A = 0
 !  setup A matrix
       do i=1,tmpmol%nat
          A(i,i)=tsqrt2pi/alp(i)+gam(i)

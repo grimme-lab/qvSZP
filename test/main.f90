@@ -36,29 +36,29 @@ contains
       real(wp),parameter               :: gamscal(86)    = 0.90_wp
       ! ###########################################################
       real(wp), parameter :: ref(16) = reshape([ &
-      -0.24050023_wp, &
-       0.21015486_wp, &
-       0.13777823_wp, &
-       0.13725307_wp, &
-       0.91277882_wp, &
-      -0.09167350_wp, &
-      -0.24784753_wp, &
-      -0.15279396_wp, &
-      -0.24016983_wp, &
-      -0.28519031_wp, &
-      -0.01842048_wp, &
-       0.16651145_wp, &
-       0.09247858_wp, &
-       0.17236600_wp, &
-      -0.21969239_wp, &
-      -0.33303278_wp], shape(ref))
+       0.14519974_wp, &
+      -0.13570696_wp, &
+      -0.13513992_wp, &
+      -0.21127141_wp, &
+       0.16304431_wp, &
+       0.22455622_wp, &
+      -0.25454477_wp, &
+       0.05184459_wp, &
+      -0.29019112_wp, &
+       0.38616228_wp, &
+       0.34946124_wp, &
+       0.09644326_wp, &
+      -0.26588399_wp, &
+      -0.40907177_wp, &
+       0.12349849_wp, &
+       0.16159982_wp], shape(ref))
 
+      call get_structure(mol, "MB16-43", "12")
       allocate(distvec(mol%nat*(mol%nat+1)/2))
       allocate(cnvec(mol%nat),qeeq(mol%nat))
       distvec  =  0.0_wp
       cnvec    =  0.0_wp
       qeeq     =  0.0_wp
-      call get_structure(mol, "MB16-43", "12")
       call calcrab(mol,distvec)
       call ncoord_basq(mol,distvec,-3.75_wp,cnvec)
 
