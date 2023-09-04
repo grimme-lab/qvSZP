@@ -21,7 +21,6 @@ module write_output
       logical          :: noelprop      = .false.
       logical          :: nouseshark    = .false. ! use different integral library
       logical          :: verbose       = .false.
-      logical          :: dummy         = .false.
       logical          :: indefile      = .false.
       logical          :: hfref         = .false.
 
@@ -52,8 +51,8 @@ contains
       real(wp), intent(in)              :: cn(mol%nat)
       logical, intent(in)               :: verbose
       type(error_type), allocatable, intent(out)     :: error
-      real(wp), intent(in),optional     :: q_short(:)
-      real(wp), intent(in),optional     :: cn_short(:)
+      real(wp), intent(in), optional    :: q_short(:)
+      real(wp), intent(in), optional    :: cn_short(:)
 
       integer :: myunit,i,n,j,k
 
@@ -117,7 +116,7 @@ contains
       if(orcainp%polar.or.orcainp%polgrad) write(myunit,'(''%elprop polar 1'',/,''end'',/)')
 
       if (verbose) then
-         if (orcainp%dummy) then
+         if (present(q_short)) then
             write(*,'(a)') "WARNING!! Verbose output not optimized for presence of dummy atoms."
          endif
          do i = 1, mol%nat
@@ -136,7 +135,7 @@ contains
       endif
       do i = 1, mol%nat
          if (.not. bas%sccoeff(mol%num(mol%id(i)))) cycle
-         if (orcainp%dummy) then
+         if (present(q_short)) then
             if (.not.orcainp%ghostatoms(i)) then
                n = n + 1
                scalfac = q_short(n) - ( bas%scalparam(mol%num(mol%id(i)),2) * q_short(n)**2 ) & ! Dependency on q and q^2
@@ -213,7 +212,7 @@ contains
 
       write(myunit,'(a,2x,2i3)') "* xyz", nint(mol%charge), mol%uhf+1
       do i=1,mol%nat
-         if (orcainp%dummy) then
+         if (present(q_short)) then
             if (orcainp%ghostatoms(i)) then
                write(myunit,'(a2,2x,a,2x,3F20.14)') mol%sym(mol%id(i)),":",mol%xyz(:,i)*autoaa
             else

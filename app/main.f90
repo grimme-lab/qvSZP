@@ -16,8 +16,6 @@ program main
 
    character(len=120)   :: atmp,filen,bfilen,efilen,extcall
 
-   logical, allocatable :: ghostatoms(:)
-
    logical              :: dummy = .false.
    logical              :: tightscf, strongscf, verbose
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
@@ -189,7 +187,7 @@ program main
    end if
 
    if (dummy) then
-      call search_ghost_atoms(filen,ghostatoms,error)
+      call search_ghost_atoms(filen,orcainp%ghostatoms,error)
       if (allocated(error)) then
          print '(a)', error%message
          error stop
@@ -249,7 +247,7 @@ program main
          error stop
       end if
    endif
-   mol%charge = float(charge)
+   mol%charge = real(charge,wp)
 
    if (rdextq) then
       if (index((filen),'coord').eq.0) then
@@ -312,7 +310,12 @@ program main
       call rdecp(ecp,verbose)
    endif
 
-   call wrorca(orcainp, mol, bas, ecp, qeeq, cnvec, verbose, &
-   & error, qeeq_short, cnvec_short)
+   if (dummy) then
+      call wrorca(orcainp, mol, bas, ecp, qeeq, cnvec, verbose, &
+      & error, qeeq_short, cnvec_short)
+   else
+      call wrorca(orcainp, mol, bas, ecp, qeeq, cnvec, verbose, &
+      & error)
+   endif
 
 end program main
