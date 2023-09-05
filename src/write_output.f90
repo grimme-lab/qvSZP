@@ -35,7 +35,7 @@ module write_output
       real(wp)         :: d4_a1 = 0.35_wp
       real(wp)         :: d4_a2 = 5.60_wp
       real(wp)         :: d4_s9 = 0.00_wp
-      real(wp)         :: efield(3)
+      real(wp)         :: efield(3) = 0.0_wp
 
    end type orcaconfig
 

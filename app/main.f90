@@ -33,8 +33,6 @@ program main
    real(wp),allocatable             :: distvec(:),cn(:),q(:), sccoeff(:,:,:)
    real(wp),allocatable             :: distvec_short(:),cn_short(:),q_short(:)
 
-   real(wp)                         :: efield(3) = 0.0_wp
-
    ! ####### Set up EEQ parameters for coefficient scaling #######
    real(wp),parameter               :: unity(86)      = 1.0_wp
    real(wp),parameter               :: alphascal(86)  = 0.75_wp
@@ -75,12 +73,12 @@ program main
          call get_command_argument(i+1,atmp)
          filen=trim(adjustl(atmp))
       endif
-      if(index(atmp,'--basisfile').ne.0) then
+      if(index(atmp,'--bfile').ne.0) then
          call get_command_argument(i+1,atmp)
          indbfile=.true.
          bfilen = trim(atmp)
       endif
-      if(index(atmp,'--ecpfile').ne.0) then
+      if(index(atmp,'--efile').ne.0) then
          call get_command_argument(i+1,atmp)
          indefile=.true.
          efilen = trim(atmp)
@@ -183,11 +181,6 @@ program main
       endif
    endif
 
-   if (help) then
-      call helpf()
-      stop
-   endif
-
    if (orcainp%noelprop .and. orcainp%polar) then
       print '(a)', "Error: --noelprop and --polar cannot be used together"
       error stop
@@ -200,6 +193,10 @@ program main
    write(*,'(a,a,a)')   "|               v",version,"                |"
    write(*,'(a)')       "|        M. Müller, S. Grimme       |"
    write(*,'(a,/)')     "-------------------------------------"
+   if (help) then
+      call helpf()
+      stop
+   endif
 
    if (index((filen),'.xyz').ne.0) then
       call check_ghost_atoms(filen,dummy,error)
@@ -278,13 +275,13 @@ program main
       call fatal_error(error, "Unknown charge model.")
     case('eeq')
       call eeq(mol,distvec,real(charge,wp),cn,.False., &
-      & unity,gamscal,chiscal,alphascal,q,efield)
+      & unity,gamscal,chiscal,alphascal,q,orcainp%efield)
       if (dummy) then
          if (charge /= 0) then
             error stop "Non-zero charge not supported for dummy atoms."
          endif
          call eeq(molshort,distvec_short,real(charge,wp),cn_short,.False., &
-         & unity,gamscal,chiscal,alphascal,q_short,efield)
+         & unity,gamscal,chiscal,alphascal,q_short,orcainp%efield)
       endif
     case('extq')
       if (index((filen),'coord').eq.0) then
@@ -296,10 +293,11 @@ program main
       endif
       ! Call gp3 per system call to calculate the external charges and store them in the file
       ! 'ceh.charges'. The file is then read in the next step.
-      if (sum(abs(efield)) > 0.0_wp) then
-         write(extcall,'(f12.8,1x,f12.8,1x,f12.8)') efield(1), efield(2), efield(3)
+      if (sum(abs(orcainp%efield)) > 0.0_wp) then
+         write(extcall,'(f12.8,1x,f12.8,1x,f12.8)') orcainp%efield(1), orcainp%efield(2), orcainp%efield(3)
          extcall = "gp3 -ceh -efield " // trim(adjustl(extcall)) // " > gp3.out 2> gp3.err"
-         write(*,'(a,f12.8,f12.8,f12.8)') "External electric field is initialized: ", efield(1), efield(2), efield(3)
+         write(*,'(a,f12.8,f12.8,f12.8)') "External electric field is initialized: ", &
+         & orcainp%efield(1), orcainp%efield(2), orcainp%efield(3)
          call execute_command_line(extcall, exitstat=errint)
       else
          call execute_command_line('gp3 -ceh > gp3.out 2> gp3.err', exitstat=errint)
@@ -325,9 +323,9 @@ program main
       endif
     case('ceh')
       if (verbose) verbosity = 2
-      call ceh(mol,efield,q,error,verbosity)
+      call ceh(mol,orcainp%efield,q,error,verbosity)
       if (dummy) then
-         call ceh(molshort,efield,q_short,error,verbosity)
+         call ceh(molshort,orcainp%efield,q_short,error,verbosity)
       endif
    end select
    if(verbose) write(*,'(a)') "---------------------------"
