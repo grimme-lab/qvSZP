@@ -28,6 +28,7 @@ contains
       write(*,'(a25,10x,a)') "--dipgrad",         "# calculate dipole moment gradient"
       write(*,'(a25,10x,a)') "--geoopt",          "# geometry optimization"
       write(*,'(a25,10x,a)') "--nocosx",          "# do not use COSX approximation"
+      write(*,'(a25,10x,a)') "--conv <convergence setting>","# set convergence setting, see ORCA manual"
       write(*,'(a25,10x,a)') "--tightscf",        "# (tight convergence)"
       write(*,'(a25,10x,a)') "--strongscf",       "# (strong convergence)"
       write(*,'(a25,10x,a)') "--nouseshark",      "# (use different integral library)"

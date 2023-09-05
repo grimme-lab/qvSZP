@@ -16,8 +16,8 @@ program main
    integer,allocatable  :: tmpids(:)
    integer,allocatable  :: tmpids_short(:)
 
-   character(len=120)   :: atmp,filen,bfilen,efilen,extcall
-   character(len=:), allocatable :: cm,version
+   character(len=180)   :: atmp
+   character(len=:), allocatable :: cm,version,filen,bfilen,efilen,extcall
 
    logical              :: dummy = .false.
    logical              :: tightscf, strongscf, verbose
@@ -76,12 +76,12 @@ program main
       if(index(atmp,'--bfile').ne.0) then
          call get_command_argument(i+1,atmp)
          indbfile=.true.
-         bfilen = trim(atmp)
+         bfilen = trim(adjustl(atmp))
       endif
       if(index(atmp,'--efile').ne.0) then
          call get_command_argument(i+1,atmp)
          indefile=.true.
-         efilen = trim(atmp)
+         efilen = trim(adjustl(atmp))
       endif
       if(index(atmp,'--chrg').ne.0) then
          call get_command_argument(i+1,atmp)
