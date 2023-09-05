@@ -3,7 +3,7 @@ program main
    use mctc_env, only: error_type, wp, fatal_error
    use ioroutines, only: rdfile,rdbas,rdecp,check_ghost_atoms, &
    & search_ghost_atoms, basis_type, ecp_type
-   use chargscfcts, only: eeq,calcrab,ncoord_basq,extcharges
+   use chargscfcts, only: eeq,calcrab,ncoord_basq,extcharges,ceh
    use miscellaneous, only: helpf
    use write_output, only: orcaconfig, wrorca
    implicit none
@@ -11,10 +11,12 @@ program main
    integer              :: charge   = 0
    integer              :: nopen    = 0
    integer              :: chrg     = 0
+   integer              :: verbosity = 2
    integer,allocatable  :: tmpids(:)
    integer,allocatable  :: tmpids_short(:)
 
    character(len=120)   :: atmp,filen,bfilen,efilen,extcall
+   character(len=:), allocatable :: cm
 
    logical              :: dummy = .false.
    logical              :: tightscf, strongscf, verbose
@@ -27,8 +29,8 @@ program main
    type(ecp_type)                   :: ecp
    type(orcaconfig)                 :: orcainp
 
-   real(wp),allocatable             :: distvec(:),cnvec(:),qeeq(:), sccoeff(:,:,:)
-   real(wp),allocatable             :: distvec_short(:),cnvec_short(:),qeeq_short(:)
+   real(wp),allocatable             :: distvec(:),cn(:),q(:), sccoeff(:,:,:)
+   real(wp),allocatable             :: distvec_short(:),cn_short(:),q_short(:)
 
    real(wp)                         :: efield(3) = 0.0_wp
 
@@ -53,6 +55,7 @@ program main
    orcainp%outn      = 'wb97xd4-qvszp.inp'   ! output filename
    orcainp%scfconv   = 'NormalSCF'
    orcainp%guess     = "PModel"
+   cm                = "eeq"
    ! get number of arguments
    narg = command_argument_count()
 
@@ -99,6 +102,10 @@ program main
          call get_command_argument(i+1,atmp)
          orcainp%guess=trim(adjustl(atmp))
       endif
+      if(index(atmp,'--cm').ne.0) then
+         call get_command_argument(i+1,atmp)
+         cm=trim(adjustl(atmp))
+      endif
       if(index(atmp,'--conv').ne.0) then
          call get_command_argument(i+1,atmp)
          orcainp%scfconv=trim(adjustl(atmp))
@@ -132,7 +139,6 @@ program main
       if(index(atmp,'--nocosx').ne.0) orcainp%nocosx=.true.
       if(index(atmp,'--tightscf').ne.0)   orcainp%scfconv='TightSCF'
       if(index(atmp,'--strongscf').ne.0)  orcainp%scfconv='StrongSCF'
-      if(index(atmp,'--v').ne.0) orcainp%verbose=.true.
       if(index(atmp,'--nouseshark').ne.0) orcainp%nouseshark=.true.
       if(index(atmp,'--noelprop').ne.0) orcainp%noelprop=.true.
       if(index(atmp,'--help').ne.0) help=.true.
@@ -146,6 +152,10 @@ program main
          call get_command_argument(i+1,atmp)
          orcainp%outn= trim(adjustl(atmp)) // ".inp"
       endif
+      if(index(atmp,'--ov').ne.0 .or. &
+      & index(atmp,'--orcaverbose').ne.0) orcainp%verbose=.true.
+      if(index(atmp,'--v').ne.0 .or. &
+      & index(atmp,'--verbose').ne.0) verbose=.true.
    enddo
    if (.not. uhfgiven) then
       inquire(file='.UHF',exist=da)
@@ -204,11 +214,11 @@ program main
    mol%uhf   = nopen
    allocate(tmpids(mol%nat))
    allocate(distvec(mol%nat*(mol%nat+1)/2))
-   allocate(cnvec(mol%nat),qeeq(mol%nat))
+   allocate(cn(mol%nat),q(mol%nat))
    allocate(sccoeff(mol%nat,20,20))
 
    if (dummy) then
-      allocate(cnvec_short(molshort%nat),qeeq_short(molshort%nat) &
+      allocate(cn_short(molshort%nat),q_short(molshort%nat) &
          ,distvec_short(molshort%nat*(molshort%nat+1)/2))
       allocate(tmpids_short(molshort%nat))
    endif
@@ -223,19 +233,19 @@ program main
    endif
 
    distvec  =  0.0_wp
-   cnvec    =  0.0_wp
-   qeeq     =  0.0_wp
+   cn    =  0.0_wp
+   q     =  0.0_wp
    if (dummy) then
       distvec_short  =  0.0_wp
-      cnvec_short    =  0.0_wp
-      qeeq_short     =  0.0_wp
+      cn_short    =  0.0_wp
+      q_short     =  0.0_wp
    endif
 
    call calcrab(mol,distvec)
-   call ncoord_basq(mol,distvec,-3.75_wp,cnvec)
+   call ncoord_basq(mol,distvec,-4.00_wp,cn)
    if (dummy) then
       call calcrab(molshort,distvec_short)
-      call ncoord_basq(molshort,distvec_short,-3.75_wp,cnvec_short)
+      call ncoord_basq(molshort,distvec_short,-4.00_wp,cn_short)
    endif
 
    chrg = chrg - charge
@@ -249,7 +259,20 @@ program main
    endif
    mol%charge = real(charge,wp)
 
-   if (rdextq) then
+   select case (cm)
+    case default
+      call fatal_error(error, "Unknown charge model.")
+    case('eeq')
+      call eeq(mol,distvec,real(charge,wp),cn,.False., &
+      & unity,gamscal,chiscal,alphascal,q,efield)
+      if (dummy) then
+         if (charge /= 0) then
+            error stop "Non-zero charge not supported for dummy atoms."
+         endif
+         call eeq(molshort,distvec_short,real(charge,wp),cn_short,.False., &
+         & unity,gamscal,chiscal,alphascal,q_short,efield)
+      endif
+    case('extq')
       if (index((filen),'coord').eq.0) then
          call write_structure(mol, 'coord', error)
          if (allocated(error)) then
@@ -270,7 +293,7 @@ program main
       if (errint /= 0) then
          call fatal_error(error, "Error in GP3 call! ")
       endif
-      call extcharges(mol,'ceh.charges',qeeq,cnvec)
+      call extcharges(mol,'ceh.charges',q,cn)
       if (dummy) then
          ! Copy coord file to coord.bak file
          call execute_command_line('rm ceh.charges')
@@ -284,19 +307,18 @@ program main
          if (errint /= 0) then
             call fatal_error(error, "Error in GP3 call! ")
          endif
-         call extcharges(molshort,'ceh.charges',qeeq_short,cnvec_short)
+         call extcharges(molshort,'ceh.charges',q_short,cn_short)
       endif
-   else
-      call eeq(mol,distvec,real(charge,wp),cnvec,.False., &
-      & unity,gamscal,chiscal,alphascal,qeeq,efield)
+   case('ceh')
+      call ceh(mol,efield,q,error,verbosity)
       if (dummy) then
-         if (charge /= 0) then
-            error stop "Non-zero charge not supported for dummy atoms."
-         endif
-         call eeq(molshort,distvec_short,real(charge,wp),cnvec_short,.False., &
-         & unity,gamscal,chiscal,alphascal,qeeq_short,efield)
+         call ceh(molshort,efield,q_short,error,verbosity)
       endif
-   endif
+   end select
+   if (allocated(error)) then
+      print '(a)', error%message
+      error stop
+   end if
 
    if (indbfile) then
       call rdbas(bas,verbose,trim(bfilen))
@@ -310,11 +332,26 @@ program main
       call rdecp(ecp,verbose)
    endif
 
+   if (verbose) then
+      write(*,'(a)') "----  ------  -------"
+      write(*,'(a)') "Atom  Symbol  Charge"
+      write(*,'(a)') "----  ------  -------"
+      do i = 1, mol%nat
+         write(*,'(i4,2x,a,2x,f12.8)') i, mol%sym(mol%id(i)), q(i)
+      enddo
+      write(*,'(a)') "----  ------ --------------------"
+      write(*,'(a)') "Atom  Symbol  Coordination number"
+      write(*,'(a)') "----  ------  -------------------"
+      do i = 1, mol%nat
+         write(*,'(i4,2x,a,2x,f12.8)') i, mol%sym(mol%id(i)), cn(i)
+      enddo
+   endif
+
    if (dummy) then
-      call wrorca(orcainp, mol, bas, ecp, qeeq, cnvec, verbose, &
-      & error, qeeq_short, cnvec_short)
+      call wrorca(orcainp, mol, bas, ecp, q, cn, verbose, &
+      & error, q_short, cn_short)
    else
-      call wrorca(orcainp, mol, bas, ecp, qeeq, cnvec, verbose, &
+      call wrorca(orcainp, mol, bas, ecp, q, cn, verbose, &
       & error)
    endif
 

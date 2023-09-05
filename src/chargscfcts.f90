@@ -1,12 +1,24 @@
 module chargscfcts
+   !> Intrinsics
+   use, intrinsic :: iso_fortran_env, only: error_unit
+   !> MCTC modules
    use mctc_io
-   use mctc_env, only: i4, wp
-   use tblite_ceh_ceh, only: ceh_guess
+   use mctc_env, only: i4, wp, error_type, fatal_error
+   !> Multicharge modules
    use multicharge_lapack, only : sytrf, sytrs
+   !> CEH modules
+   use tblite_ceh_ceh, only : ceh_guess, new_ceh_calculator
+   use tblite_ceh_calculator, only : ceh_calculator
+   use tblite_wavefunction, only : wavefunction_type, new_wavefunction
+   use tblite_container, only : container_type
+   use tblite_external_field, only : electric_field
+   use tblite_context, only : context_type
    implicit none
    private
 
-   public :: eeq,calcrab,ncoord_basq,extcharges
+   real(wp), parameter :: kt = 3.166808578545117e-06_wp
+
+   public :: eeq, calcrab, ncoord_basq, extcharges, ceh
 contains
    subroutine eeq(tmpmol,rab,chrg,cn,orig,scal,scal2,scal3,scal4,q,efield)
       implicit none
@@ -171,6 +183,47 @@ contains
 
    end subroutine eeq
 
+   subroutine ceh(mol, efield, q_ceh, error, verbosity)
+      !> CEH calculator
+      type(ceh_calculator)    :: calc
+      !> Wavefunction data
+      type(wavefunction_type) :: wfn
+      !> CEH calculation context
+      type(context_type) :: ctx
+      !> Molecular structure data
+      type(structure_type),intent(in)    :: mol
+      !> Electric field
+      real(wp),intent(in) :: efield(3)
+      !> Atomic charges
+      real(wp),intent(out) :: q_ceh(mol%nat)
+      !> Error type
+      type(error_type), allocatable, intent(out) :: error
+      !> Verbosity level
+      integer,intent(in),optional :: verbosity
+      !> Electronic temperature
+      real(wp) :: etemp = 300.0_wp
+
+      call new_ceh_calculator(calc, mol)
+      call new_wavefunction(wfn, mol%nat, calc%bas%nsh, calc%bas%nao, 1, etemp * kt)
+      if (norm2(efield) > 1.0e-10_wp) then
+         block
+            class(container_type), allocatable :: cont
+            cont = electric_field(efield)
+            call calc%push_back(cont)
+         end block
+      end if
+      call ceh_guess(ctx, calc, mol, error, wfn, verbosity)
+      if (ctx%failed()) then
+         print *, 'CEH guess failed'
+         do while(ctx%failed())
+            call ctx%get_error(error)
+            write(error_unit, '("->", 1x, a)') error%message
+         end do
+         error stop
+      end if
+      q_ceh(:) = wfn%qat(:,1)
+   end subroutine ceh
+
    subroutine calcrab(tmpmol,rab)
       implicit none
       type(structure_type),intent(in)  :: tmpmol
@@ -211,7 +264,7 @@ contains
       !  covalent radii (taken from Pyykko and Atsumi, Chem. Eur. J. 15, 2009,
 !  188-197), values for metals decreased by 10 %
       real(wp),parameter :: rcov(118) = 1.889725949_wp * [ &
-      & 0.47_wp,0.46_wp, & ! H,He
+      & 0.25_wp,0.46_wp, & ! H,He
       & 1.20_wp,0.94_wp,0.77_wp,0.75_wp,0.71_wp,0.63_wp,0.64_wp,0.67_wp, & ! Li-Ne
       & 1.40_wp,1.25_wp,1.13_wp,1.04_wp,1.10_wp,1.02_wp,0.99_wp,0.96_wp, & ! Na-Ar
       & 1.76_wp,1.54_wp, & ! K,Ca

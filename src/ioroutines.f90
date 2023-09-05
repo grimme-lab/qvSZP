@@ -153,12 +153,6 @@ contains
                ibasis%scalparam(iat,1) = iattmp(1)
                ibasis%scalparam(iat,2) = iattmp(2)
                ibasis%scalparam(iat,3) = iattmp(3)
-               if (present(verb)) then
-                  if (verb) then
-                     write(*,'(a,i3,a,f6.3,f6.3)') "Scaling parameters for atom ", &
-                        iat," are: ",ibasis%scalparam(iat,1),ibasis%scalparam(iat,2),ibasis%scalparam(iat,3)
-                  end if
-               end if
             end if
             checked = .false.
             tmpvec = 1000.00_wp
@@ -242,11 +236,6 @@ contains
       open(newunit=myunit,file=fname,action='read',status='old',iostat=ierr)
       iread =  0
       l     =  0
-      if ( present(verb) ) then
-         if (verb) then
-            write(*,*) "Z, # basis function, # primitive, exponent, coefficient (,charge scaling coefficient)"
-         endif
-      endif
       do while (iread >= 0)
          read(myunit,'(a)',iostat=iread) atmp
          l = l + 1
@@ -276,16 +265,6 @@ contains
                   else
                      read(myunit,*,iostat=iread) ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
                   end if
-                  if ( present(verb) ) then
-                     if (verb) then
-                        if (ibasis%sccoeff(iat)) then
-                           write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j), &
-                              ibasis%qcoeff(iat,i,j)
-                        else
-                           write(*,*) iat, i, j, ibasis%exp(iat,i,j),ibasis%coeff(iat,i,j)
-                        endif
-                     end if
-                  endif
                   l = l + 1
                end do
             enddo
@@ -472,11 +451,6 @@ contains
       open(newunit=myunit,file=fname,action='read',status='old',iostat=ierr)
       iread =  0
       l     =  0
-      if ( present(verb) ) then
-         if (verb) then
-            write(*,*) "Z, # ECP function, # primitive, exponent, coefficient, nfactor, lmax, ncore"
-         endif
-      endif
       do while (iread >= 0)
          read(myunit,'(a)',iostat=iread) atmp
          l = l + 1
@@ -512,12 +486,6 @@ contains
                      write(*,*) "Current line number: ",l
                      error stop "I/O error in basis set read in."
                   end if
-                  if ( present(verb) ) then
-                     if (verb) then
-                        write(*,*) iat, i, j, iecp%exp(iat,i,j),iecp%coeff(iat,i,j),iecp%nfactor(iat,i,j), &
-                           iecp%lmax(iat),iecp%ncore(iat)
-                     end if
-                  endif
                end do
             enddo
          endif
@@ -526,14 +494,6 @@ contains
       do i=iecp%atmin,iecp%atmax
          allocate(sortindex(iecp%nbf(i)))
          call sort_index(iecp%angmom(i,1:iecp%nbf(i)),sortindex(1:iecp%nbf(i)))
-         if ( present(verb) ) then
-            if (verb) then
-               write(*,*) "Sorted basis functions for element ",i
-               do j=1,iecp%nbf(i)
-                  write(*,*) iecp%angmom(i,j), iecp%npr(i,sortindex(j))
-               enddo
-            endif
-         endif
          iecp%sindex(i,1:iecp%nbf(i)) = sortindex(1:iecp%nbf(i))
          deallocate(sortindex)
       enddo

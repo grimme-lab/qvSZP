@@ -115,24 +115,8 @@ contains
 
       if(orcainp%polar.or.orcainp%polgrad) write(myunit,'(''%elprop polar 1'',/,''end'',/)')
 
-      if (verbose) then
-         if (present(q_short)) then
-            write(*,'(a)') "WARNING!! Verbose output not optimized for presence of dummy atoms."
-         endif
-         do i = 1, mol%nat
-            write(*,'(1x,a,i3,a,i3)')               "Z for atom               ",i,":",mol%num(mol%id(i))
-            write(*,'(1x,a,i3,a,f9.5,f9.5)')               "scaling factors for atom ",i,":", &
-               bas%scalparam(mol%num(mol%id(i)),1),bas%scalparam(mol%num(mol%id(i)),2)
-            write(*,'(1x,a,i3,a,f9.5)')               "qEEQ of atom             ",i,":",q(i)
-            write(*,'(1x,a,i3,a,f9.5,/)') "CN of atom               ",i,":",cn(i)
-         enddo
-      endif
-
       n = 0
       sccoeff = 0.0_wp
-      if (verbose) then
-         write(*,'(a)') "Scaling prefactor for: #atom, #bf, #primitive, final coeff., scaling factor"
-      endif
       do i = 1, mol%nat
          if (.not. bas%sccoeff(mol%num(mol%id(i)))) cycle
          if (present(q_short)) then
@@ -155,9 +139,6 @@ contains
             do k = 1, bas%npr(mol%num(mol%id(i)),j)
                sccoeff(i,j,k) = bas%coeff(mol%num(mol%id(i)),j,k) + &
                   scalfac * bas%qcoeff(mol%num(mol%id(i)),j,k)
-               if (verbose) then
-                  write(*,'(a,i3,i3,i3,f14.8,f14.8)') "Scaling prefactor for: ",i,j,k,sccoeff(i,j,k), scalfac
-               endif
             enddo
          enddo
       enddo
@@ -181,9 +162,6 @@ contains
             if (ecp%lmax(mol%num(i)) == 6) ltmp = 'i'
             write(myunit,'(a,a2)') "  lmax ", ltmp
             do j=1,ecp%nbf(mol%num(i))
-               if (verbose) then
-                  write(*,*) "sortindex of element i and bf j: ",mol%num(i), j, ecp%sindex(mol%num(i),j)
-               endif
                if (ecp%angmom(mol%num(i),j) == 0) ltmp = 's'
                if (ecp%angmom(mol%num(i),j) == 1) ltmp = 'p'
                if (ecp%angmom(mol%num(i),j) == 2) ltmp = 'd'
