@@ -7,21 +7,22 @@ program main
    use miscellaneous, only: helpf
    use write_output, only: orcaconfig, wrorca
    implicit none
+
    integer              :: narg,i,myunit,errint
    integer              :: charge   = 0
    integer              :: nopen    = 0
    integer              :: chrg     = 0
-   integer              :: verbosity = 2
+   integer              :: verbosity = 0
    integer,allocatable  :: tmpids(:)
    integer,allocatable  :: tmpids_short(:)
 
    character(len=120)   :: atmp,filen,bfilen,efilen,extcall
-   character(len=:), allocatable :: cm
+   character(len=:), allocatable :: cm,version
 
    logical              :: dummy = .false.
    logical              :: tightscf, strongscf, verbose
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
-   logical              :: hfref, rdextq
+   logical              :: hfref
 
    type(structure_type)             :: mol,molshort
    type(error_type), allocatable    :: error
@@ -49,13 +50,17 @@ program main
    indbfile    = .false.
    indefile    = .false.
    indcharge   = .false.
-   rdextq      = .false.
 
    filen             = 'coord' ! input  filename
    orcainp%outn      = 'wb97xd4-qvszp.inp'   ! output filename
    orcainp%scfconv   = 'NormalSCF'
    orcainp%guess     = "PModel"
-   cm                = "eeq"
+   cm                = "ceh"
+
+   !##### VERSION STRING #####
+   version = "2.0"
+   !##########################
+
    ! get number of arguments
    narg = command_argument_count()
 
@@ -132,7 +137,6 @@ program main
          read(atmp,*) orcainp%efield(3)
       endif
       if(index(atmp,'--polar').ne.0) orcainp%polar=.true.
-      ! if(index(atmp,'-hyppol').ne.0) beta=.true.
       if(index(atmp,'--polgrad').ne.0) orcainp%polgrad=.true.
       if(index(atmp,'--dipgrad').ne.0) orcainp%dipgrad=.true.
       if(index(atmp,'--geoopt').ne.0) orcainp%geoopt=.true.
@@ -141,21 +145,24 @@ program main
       if(index(atmp,'--strongscf').ne.0)  orcainp%scfconv='StrongSCF'
       if(index(atmp,'--nouseshark').ne.0) orcainp%nouseshark=.true.
       if(index(atmp,'--noelprop').ne.0) orcainp%noelprop=.true.
-      if(index(atmp,'--help').ne.0) help=.true.
       if(index(atmp,'--suggestedguess').ne.0) orcainp%guess='hueckel'
-      if(index(atmp,'--rdq').ne.0) rdextq=.true.
+      !> HF reference calculation
       if(index(atmp,'--hfref').ne.0) then
          hfref=.true.
          orcainp%outn = "hf_q-vSZP.inp"
       endif
+      !> ORCA input file name
       if(index(atmp,'--outname').ne.0) then
          call get_command_argument(i+1,atmp)
          orcainp%outn= trim(adjustl(atmp)) // ".inp"
       endif
+      !> Verbosity
       if(index(atmp,'--ov').ne.0 .or. &
       & index(atmp,'--orcaverbose').ne.0) orcainp%verbose=.true.
       if(index(atmp,'--v').ne.0 .or. &
       & index(atmp,'--verbose').ne.0) verbose=.true.
+      !> Help
+      if(index(atmp,'--help').ne.0) help=.true.
    enddo
    if (.not. uhfgiven) then
       inquire(file='.UHF',exist=da)
@@ -187,6 +194,12 @@ program main
    endif
 
    !####### END OF INITIALIZATION PART ######
+
+   write(*,'(a)')       "-------------------------------------"
+   write(*,'(a)')       "|    q-vSZP ORCA INPUT GENERATOR    |"
+   write(*,'(a,a,a)')   "|               v",version,"                |"
+   write(*,'(a)')       "|        M. Müller, S. Grimme       |"
+   write(*,'(a,/)')     "-------------------------------------"
 
    if (index((filen),'.xyz').ne.0) then
       call check_ghost_atoms(filen,dummy,error)
@@ -259,6 +272,7 @@ program main
    endif
    mol%charge = real(charge,wp)
 
+   write(*,'(a,a,a)') "---- CHARGE MODEL: ", cm," ----"
    select case (cm)
     case default
       call fatal_error(error, "Unknown charge model.")
@@ -309,12 +323,14 @@ program main
          endif
          call extcharges(molshort,'ceh.charges',q_short,cn_short)
       endif
-   case('ceh')
+    case('ceh')
+      if (verbose) verbosity = 2
       call ceh(mol,efield,q,error,verbosity)
       if (dummy) then
          call ceh(molshort,efield,q_short,error,verbosity)
       endif
    end select
+   if(verbose) write(*,'(a)') "---------------------------"
    if (allocated(error)) then
       print '(a)', error%message
       error stop
@@ -333,6 +349,7 @@ program main
    endif
 
    if (verbose) then
+      if (dummy) write(*,'(a)') "MOLECULE WITH GHOST ATOMS"
       write(*,'(a)') "----  ------  -------"
       write(*,'(a)') "Atom  Symbol  Charge"
       write(*,'(a)') "----  ------  -------"
@@ -345,6 +362,22 @@ program main
       do i = 1, mol%nat
          write(*,'(i4,2x,a,2x,f12.8)') i, mol%sym(mol%id(i)), cn(i)
       enddo
+      if (dummy) then
+         write(*,'(a)') "----------------------------"
+         write(*,'(a)') "MOLECULE WITHOUT GHOST ATOMS"
+         write(*,'(a)') "----  ------  -------"
+         write(*,'(a)') "Atom  Symbol  Charge"
+         write(*,'(a)') "----  ------  -------"
+         do i = 1, molshort%nat
+            write(*,'(i4,2x,a,2x,f12.8)') i, molshort%sym(molshort%id(i)), q_short(i)
+         enddo
+         write(*,'(a)') "----  ------ --------------------"
+         write(*,'(a)') "Atom  Symbol  Coordination number"
+         write(*,'(a)') "----  ------  -------------------"
+         do i = 1, molshort%nat
+            write(*,'(i4,2x,a,2x,f12.8)') i, molshort%sym(molshort%id(i)), cn_short(i)
+         enddo
+      endif
    endif
 
    if (dummy) then

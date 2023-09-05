@@ -107,12 +107,12 @@ contains
                error stop "I/O error stop."
             end if
          end select
-         fname=trim(homedir)//'/.basis_vDZP'
+         fname=trim(homedir)//'/.basisq'
       else
          fname=basisfilename
       end if
 
-      write(*,'(a,a)') "Used basis set file: ",fname
+      if (verb) write(*,'(a,a)') "Used basis set file: ",fname
 
       inquire(file=fname,exist=da)
       if(da)then
@@ -240,7 +240,7 @@ contains
          read(myunit,'(a)',iostat=iread) atmp
          l = l + 1
          if (iread < 0) then
-            write(*,'(a,1x,i3,/)') "End of file reached after reading basis set for element:", iat
+            if (verb) write(*,'(a,1x,i3,/)') "End of file reached after reading basis set for element:", iat
             exit
          end if
          if (iread > 0) then
@@ -316,12 +316,12 @@ contains
                error stop "I/O error stop."
             end if
          end select
-         fname=trim(homedir)//'/.ecp_vDZP'
+         fname=trim(homedir)//'/.ecpq'
       else
          fname=ecpfilename
       end if
 
-      write(*,'(a,a)') "Used ECP set file: ",fname
+      if (verb) write(*,'(a,a)') "Used ECP set file: ",fname
 
       inquire(file=fname,exist=da)
       if(da)then
@@ -455,7 +455,7 @@ contains
          read(myunit,'(a)',iostat=iread) atmp
          l = l + 1
          if (iread < 0) then
-            write(*,'(a,1x,i3,/)') "End of file reached after reading ECP set for element:", iat
+            if (verb) write(*,'(a,1x,i3,/)') "End of file reached after reading ECP set for element:", iat
             exit
          end if
          if (iread > 0) then

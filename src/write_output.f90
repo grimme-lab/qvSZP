@@ -178,7 +178,7 @@ contains
             enddo
             write(myunit,'(2x,a)') "end"
          else
-            write(*,'(a,a,a,/)') "No ECP assigned for element ",trim(mol%sym(i)),"."
+            if (verbose) write(*,'(a,a,a,/)') "No ECP assigned for element ",trim(mol%sym(i)),"."
          endif
       enddo
       if (ecpex) write(myunit,'(a,/)') "end"
@@ -224,7 +224,7 @@ contains
 
       close(myunit)
 
-      write(*,'(a,a)') "Successfully wrote input file: ",orcainp%outn
+      write(*,'(a,a,a)') "Successfully wrote input file: '",orcainp%outn,"'"
 
    end subroutine wrorca
 
