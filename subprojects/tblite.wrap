@@ -1,0 +1,4 @@
+[wrap-git]
+directory = tblite
+url =  https://github.com/marcelmbn/tblite
+revision = v0.3.1
