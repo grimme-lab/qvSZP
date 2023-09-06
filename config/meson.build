@@ -1,18 +1,18 @@
-# This file is part of tblite.
+# This file is part of qvSZP.
 # SPDX-Identifier: LGPL-3.0-or-later
 #
-# tblite is free software: you can redistribute it and/or modify it under
+# qvSZP is free software: you can redistribute it and/or modify it under
 # the terms of the GNU Lesser General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# tblite is distributed in the hope that it will be useful,
+# qvSZP is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Lesser General Public License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public License
-# along with tblite.  If not, see <https://www.gnu.org/licenses/>.
+# along with qvSZP.  If not, see <https://www.gnu.org/licenses/>.
 
 os = host_machine.system()
 fc = meson.get_compiler('fortran')
@@ -135,11 +135,13 @@ stdlib_dep = dependency(
 )
 lib_deps += stdlib_dep
 
+#!> Preparation for subproject inclusion of stdlib
+
 # cmake = import('cmake')
-# # cmake_opts = cmake.subproject_options()
-# # cmake_opts.add_cmake_defines({'CMAKE_POSITION_INDEPENDENT_CODE': true})
+# cmake_opts = cmake.subproject_options()
+# cmake_opts.add_cmake_defines({'CMAKE_POSITION_INDEPENDENT_CODE': true})
 # sub_proj = cmake.subproject('stdlib') #, options: cmake_opts)
-# # stdlib fortran-lang framework 
+# stdlib fortran-lang framework 
 # stdlib_dep = sub_proj.dependency(
-#   'fortran_stdlib',
+# 'fortran_stdlib',
 # )
