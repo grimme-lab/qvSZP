@@ -1,6 +1,8 @@
 # qvSZP
 This tool sets up an ORCA calculation using the q-vSZP basis set (submitted to _The Journal of Chemical Physics_). It is intended to work with ORCA version 5.0.4 and higher. The project depends on other subprojects, the most important being `tblite` (https://github.com/tblite/tblite) and `stdlib` (https://github.com/fortran-lang/stdlib).
 
+The basis sets itself is located in `q-vSZP_basis/`. Besides the full q-vSZP basis set, also a version without polarization functions (`basisq_wopol`) is available.
+
 ## Installation
 ### Release version (recommended)
 The use of the statically-linked release binary [`qvSZP`] is recommended. The binary has to be added to a location belonging to your `$PATH` variable.
@@ -29,7 +31,7 @@ More information about FPM can be found in the respective documentation.
 
 ### Building with Meson
 You can use meson to build the project from source. Caution: For building with meson, the Fortran Standard Library (`stdlib`) has to be installed beforehand (see below).
-To install the `qvSZP` project in your preferred path (assuming the use of Intel compilers), setup a build in the (new) directory `_build` with: 
+To install the `qvSZP` project in your preferred path (assuming the use of Intel compilers), set up a build in the (new) directory `_build` with: 
 ```
 FC=ifort CC=icc CXX=icpc meson setup _build --buildtype release --prefix=[path] -Dfortran_link_args=-qopenmp
 ```
@@ -39,7 +41,7 @@ meson compile -C _build
 meson install -C _build
 ```
 
-If you want to setup a static compilation, replace the above meson setup with the following:
+If you want to set up a static compilation, replace the above meson setup with the following:
 ```
 FC=ifort CC=icc CXX=icpc meson setup _build --buildtype release -Dfortran_link_args="-static -qopenmp -lifcoremt" --default-library=static --prefix=[path]
 ```
