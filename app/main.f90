@@ -22,7 +22,7 @@ program main
    logical              :: dummy = .false.
    logical              :: tightscf, strongscf, verbose
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
-   logical              :: hfref
+   logical              :: hfref, prversion
 
    type(structure_type)             :: mol,molshort
    type(error_type), allocatable    :: error
@@ -48,11 +48,13 @@ program main
    indbfile    = .false.
    indefile    = .false.
    indcharge   = .false.
+   prversion   = .false.
 
    filen             = 'coord' ! input  filename
    orcainp%outn      = 'wb97xd4-qvszp.inp'   ! output filename
    orcainp%scfconv   = 'NormalSCF'
    orcainp%guess     = "PModel"
+   orcainp%dfa       = "wB97X-D4"
    cm                = "ceh"
 
    !##### VERSION STRING #####
@@ -104,6 +106,10 @@ program main
       if(index(atmp,'--guess').ne.0) then
          call get_command_argument(i+1,atmp)
          orcainp%guess=trim(adjustl(atmp))
+      endif
+      if(index(atmp,'--dfa').ne.0) then
+         call get_command_argument(i+1,atmp)
+         orcainp%dfa=trim(adjustl(atmp))
       endif
       if(index(atmp,'--cm').ne.0) then
          call get_command_argument(i+1,atmp)
@@ -161,6 +167,8 @@ program main
       & index(atmp,'--verbose').ne.0) verbose=.true.
       !> Help
       if(index(atmp,'--help').ne.0) help=.true.
+      !> Help
+      if(index(atmp,'--version').ne.0) prversion=.true.
    enddo
    if (.not. uhfgiven) then
       inquire(file='.UHF',exist=da)
@@ -188,11 +196,16 @@ program main
 
    !####### END OF INITIALIZATION PART ######
 
-   write(*,'(a)')       "-------------------------------------"
-   write(*,'(a)')       "|    q-vSZP ORCA INPUT GENERATOR    |"
-   write(*,'(a,a,a)')   "|               v",version,"                |"
-   write(*,'(a)')       "|        M. Müller, S. Grimme       |"
-   write(*,'(a,/)')     "-------------------------------------"
+   if (prversion) then
+      write(*,'(a,a)') "qvSZP version ", version
+      stop
+   endif
+
+   write(*,'(a)')       "     -------------------------------------"
+   write(*,'(a)')       "     |    q-vSZP ORCA INPUT GENERATOR    |"
+   write(*,'(a,a,a)')   "     |               v",version,"                |"
+   write(*,'(a)')       "     |        M. Müller, S. Grimme       |"
+   write(*,'(a,/)')     "     -------------------------------------"
    if (help) then
       call helpf()
       stop

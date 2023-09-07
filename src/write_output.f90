@@ -12,6 +12,7 @@ module write_output
       character(:), allocatable :: outn
       character(:), allocatable :: guess
       character(:), allocatable :: scfconv
+      character(:), allocatable :: dfa
 
       logical          :: geoopt        = .false. ! turn on !OPT keyword
       logical          :: nocosx        = .false. ! turns off RIJCOSX, seminumerical exchange
@@ -77,7 +78,7 @@ contains
          write(myunit,'(a)')     "  SCFMode Conventional"
          write(myunit,'(a,/)')   "end"
       else
-         write(myunit,'(a)') "! WB97X-D4 def2/J PrintBasis"
+         write(myunit,'(a,a,a)') "! ",orcainp%dfa, " def2/J PrintBasis"
          write(myunit,'(a,a)',advance='NO') "! ",orcainp%scfconv
          write(myunit,'(1x,a,i1,/)') "DEFGRID", orcainp%defgrid
          if(orcainp%geoopt) write(myunit,'(''! Opt'')')
