@@ -1,7 +1,7 @@
 program main
    use mctc_io, only: structure_type, write_structure
    use mctc_env, only: error_type, wp, fatal_error
-   use ioroutines, only: rdfile,rdbas,rdecp,check_ghost_atoms, &
+   use ioroutines, only: rdfile, rdbas, rdecp_default, rdecp_qvSZPs, check_ghost_atoms, &
    & search_ghost_atoms, basis_type, ecp_type
    use chargscfcts, only: eeq,calcrab,ncoord_basq,extcharges,ceh
    use miscellaneous, only: helpf
@@ -20,6 +20,7 @@ program main
    character(len=:), allocatable :: cm,version,filen,bfilen,efilen,extcall
 
    logical              :: dummy = .false.
+   logical              :: qvSZPs = .false.
    logical              :: tightscf, strongscf, verbose
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
    logical              :: hfref, prversion
@@ -85,6 +86,7 @@ program main
          indefile=.true.
          efilen = trim(adjustl(atmp))
       endif
+      if(index(atmp,'--qvSZPs').ne.0) qvSZPs=.true.
       if(index(atmp,'--chrg').ne.0) then
          call get_command_argument(i+1,atmp)
          indcharge=.true.
@@ -353,10 +355,15 @@ program main
       call rdbas(bas,verbose)
    endif
 
-   if (indefile) then
-      call rdecp(ecp,verbose,efilen)
+   if (.not. qvSZPs) then
+      if (indefile) then
+         call rdecp_default(ecp,verbose,efilen)
+      else
+         call rdecp_default(ecp,verbose)
+      endif
    else
-      call rdecp(ecp,verbose)
+      if (.not. indefile) error stop "ECP file location must be given with --efile <filename>."
+      call rdecp_qvSZPs(ecp,verbose,efilen)
    endif
 
    if (verbose) then
