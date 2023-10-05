@@ -23,7 +23,7 @@ program main
    logical              :: qvSZPs = .false.
    logical              :: tightscf, strongscf, verbose
    logical              :: help, uhfgiven, da,indbfile,indefile,indcharge,indd4param
-   logical              :: hfref, prversion
+   logical              :: prversion
 
    type(structure_type)             :: mol,molshort
    type(error_type), allocatable    :: error
@@ -31,8 +31,10 @@ program main
    type(ecp_type)                   :: ecp
    type(orcaconfig)                 :: orcainp
 
-   real(wp),allocatable             :: distvec(:),cn(:),q(:), sccoeff(:,:,:)
+   real(wp),allocatable             :: distvec(:),cn(:),q(:), sccoeff(:,:,:), increment(:)
    real(wp),allocatable             :: distvec_short(:),cn_short(:),q_short(:)
+
+   real(wp)                         :: energy_shift = 0.0_wp
 
    ! ####### Set up EEQ parameters for coefficient scaling #######
    real(wp),parameter               :: unity(86)      = 1.0_wp
@@ -59,7 +61,7 @@ program main
    cm                = "ceh"
 
    !##### VERSION STRING #####
-   version = "2.0"
+   version = "2.1"
    !##########################
 
    ! get number of arguments
@@ -86,7 +88,20 @@ program main
          indefile=.true.
          efilen = trim(adjustl(atmp))
       endif
-      if(index(atmp,'--qvSZPs').ne.0) qvSZPs=.true.
+      !####### SET ORCA q-vSZPs DEFAULT PARAMETERS ######
+      if(index(atmp,'--qvSZPs').ne.0) then 
+         qvSZPs = .true.
+         orcainp%dfa = "wB97M-D4"
+
+         orcainp%d4_s6 = 1.0_wp
+         orcainp%d4_s8 = 1.0_wp
+         orcainp%d4_a1 = 0.38_wp
+         orcainp%d4_a2 = 4.2_wp
+         orcainp%d4_s9 = 1.0_wp
+
+         orcainp%outn = "wb97m-3c.inp"
+      endif
+      !##################################################
       if(index(atmp,'--chrg').ne.0) then
          call get_command_argument(i+1,atmp)
          indcharge=.true.
@@ -154,7 +169,7 @@ program main
       if(index(atmp,'--suggestedguess').ne.0) orcainp%guess='hueckel'
       !> HF reference calculation
       if(index(atmp,'--hfref').ne.0) then
-         hfref=.true.
+         orcainp%hfref=.true.
          orcainp%outn = "hf_q-vSZP.inp"
       endif
       !> ORCA input file name
@@ -169,15 +184,40 @@ program main
       & index(atmp,'--verbose').ne.0) verbose=.true.
       !> Help
       if(index(atmp,'--help').ne.0) help=.true.
-      !> Help
+      !> Version
       if(index(atmp,'--version').ne.0) prversion=.true.
    enddo
+
+   !> Print version
+   if (prversion) then
+      write(*,'(a,a)') "qvSZP version ", version
+      stop
+   endif
+
+   !> Check input consistency
+   if (orcainp%noelprop .and. orcainp%polar) then
+      print '(a)', "Error: --noelprop and --polar cannot be used together"
+      error stop
+   endif
+
+   !> Print header - actual program starts here
+   write(*,'(a)')       "     -------------------------------------"
+   write(*,'(a)')       "     |    q-vSZP ORCA INPUT GENERATOR    |"
+   write(*,'(a,a,a)')   "     |               v",version,"                |"
+   write(*,'(a)')       "     |        M. Müller, S. Grimme       |"
+   write(*,'(a,/)')     "     -------------------------------------"
+   if (help) then
+      call helpf()
+      stop
+   endif
+
    if (.not. uhfgiven) then
       inquire(file='.UHF',exist=da)
       if(da)then
          open(newunit=myunit,file='.UHF')
          read(myunit,*) nopen
          uhfgiven=.true.
+         write(*,'(a,i0,/)') "Number of unpaired electrons read from .UHF file: ", nopen
          close(myunit)
       endif
    endif
@@ -188,30 +228,11 @@ program main
          open(newunit=myunit,file='.CHRG')
          read(myunit,*) charge
          close(myunit)
+         write(*,'(a,i0,/)') "Charge read from .CHRG file: ", charge
       endif
    endif
 
-   if (orcainp%noelprop .and. orcainp%polar) then
-      print '(a)', "Error: --noelprop and --polar cannot be used together"
-      error stop
-   endif
-
    !####### END OF INITIALIZATION PART ######
-
-   if (prversion) then
-      write(*,'(a,a)') "qvSZP version ", version
-      stop
-   endif
-
-   write(*,'(a)')       "     -------------------------------------"
-   write(*,'(a)')       "     |    q-vSZP ORCA INPUT GENERATOR    |"
-   write(*,'(a,a,a)')   "     |               v",version,"                |"
-   write(*,'(a)')       "     |        M. Müller, S. Grimme       |"
-   write(*,'(a,/)')     "     -------------------------------------"
-   if (help) then
-      call helpf()
-      stop
-   endif
 
    if (index((filen),'.xyz').ne.0) then
       call check_ghost_atoms(filen,dummy,error)
@@ -363,7 +384,12 @@ program main
       endif
    else
       if (.not. indefile) error stop "ECP file location must be given with --efile <filename>."
-      call rdecp_qvSZPs(ecp,verbose,efilen)
+      call rdecp_qvSZPs(ecp,verbose,efilen,increment)
+      do i = 1, mol%nat
+         if ( .not. sum(abs(ecp%exp(mol%num(mol%id(i)),:,:))) > 0.0_wp ) then
+            error stop "ERROR. No ECP/ACP found for atom " // trim(adjustl(mol%sym(mol%id(i)))) // "."
+         endif
+      enddo
    endif
 
    if (verbose) then
@@ -405,5 +431,19 @@ program main
       call wrorca(orcainp, mol, bas, ecp, q, cn, verbose, &
       & error)
    endif
+
+   if (qvSZPs) then
+      do i = 1, mol%nat
+         energy_shift = energy_shift + increment(mol%num(mol%id(i)))
+      enddo
+      write(*,'(/,a)') "CAUTION: Sum of q-vSZPs atomic increments has to be added!"
+      write(*,'(a)') " -----  THIS IS NOT DONE AUTOMATICALLY!  -----"
+      open(newunit=myunit,file='eshift.qvSZPs', status='replace', action='write')
+      write(myunit,'(f16.10)') energy_shift
+      close(myunit)
+      write(*,'(a)') " -----  written to file 'eshift.qvSZPs'  -----"
+      write(*,'(a,f14.9)') "TOTAL ENERGY SHIFT: ", energy_shift
+   endif
+
 
 end program main

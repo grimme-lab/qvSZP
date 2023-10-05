@@ -275,7 +275,7 @@ contains
 
    end subroutine rdbas
 
-   subroutine rdecp_qvSZPs(iecp,verb,ecpfilename)
+   subroutine rdecp_qvSZPs(iecp,verb,ecpfilename, increment)
 
       type(ecp_type),intent(out)             :: iecp
       logical, intent(in), optional          :: verb
@@ -297,10 +297,10 @@ contains
 
       integer(int_size), allocatable        :: sortindex(:)
 
-      real(wp), allocatable                 :: increments(:)
+      real(wp), allocatable, intent(inout)  :: increment(:)
 
       allocate(nbf(118),npr(118,20),angmom(118,20),ncore(118),lmax(118), &
-      & increments(118))
+      & increment(118))
 
       if (.not. present(ecpfilename)) then
          call get_environment_variable("HOME", length=char_length)
@@ -354,7 +354,7 @@ contains
          end if
          if (iread > 0) then
             write(*,*) "Current line number: ",l
-            error stop "I/O error in basis set read in. Pt. 1."
+            error stop "I/O error in ECP file read in. Pt. 1."
          end if
          if( (index(atmp,'*').ne.0) .or. (index(atmp,'#').ne.0) ) then
             cycle
@@ -363,7 +363,7 @@ contains
             call symbol_to_number(iat, element)
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 2."
+               error stop "I/O error in ECP file read in. Pt. 2."
             end if
             nbf(iat) = 0
             npr(iat,:) = 0
@@ -381,20 +381,20 @@ contains
             if (iread < 0) exit
             if ((trim(adjustl(atmp)) /= "*") .or. (iread > 0)) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 3. '*'-line expected."
+               error stop "I/O error in ECP file read in. Pt. 3. '*'-line expected."
             endif
 
             read(myunit,*,iostat=iread) btmp, ctmp, ncore(iat), dtmp, etmp, lmax(iat)
             l = l + 1
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 4."
+               error stop "I/O error in ECP file read in. Pt. 4."
             end if
-            read(myunit,*,iostat=iread) atmp, btmp, ctmp, dtmp, increments(iat)
+            read(myunit,*,iostat=iread) atmp, btmp, ctmp, dtmp, increment(iat)
             l = l + 1
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 5."
+               error stop "I/O error in ECP file read in. Pt. 5."
             end if
 
             angfound = .false.
@@ -404,7 +404,7 @@ contains
                l = l + 1
                if (iread /= 0) then
                   write(*,*) "Current line number: ",l
-                  error stop "I/O error in basis set read in. Pt. 6."
+                  error stop "I/O error in ECP file read in. Pt. 6."
                end if
 
                if(index(atmp(1:1),'s').eq.1) then
@@ -482,7 +482,7 @@ contains
          end if
          if (iread > 0) then
             write(*,*) "Current line number: ",l
-            error stop "I/O error in basis set read in. Pt. 7."
+            error stop "I/O error in ECP file read in. Pt. 7."
          end if
          if( (index(atmp,'*').ne.0) .or. (index(atmp,'#').ne.0) ) then
             cycle
@@ -495,34 +495,34 @@ contains
             if (iread < 0) exit
             if ((trim(adjustl(btmp)) /= "*") .or. (iread > 0)) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 8. '*'-line expected."
+               error stop "I/O error in ECP file read in. Pt. 8. '*'-line expected."
             endif
 
             read(myunit,*,iostat=iread) btmp
             l = l + 1
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 9."
+               error stop "I/O error in ECP file read in. Pt. 9."
             end if
             read(myunit,*,iostat=iread) btmp
             l = l + 1
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 9."
+               error stop "I/O error in ECP file read in. Pt. 9."
             end if
             do i=1,iecp%nbf(iat)
                read(myunit,*,iostat=iread) btmp
                l = l + 1
                if (iread /= 0) then
                   write(*,*) "Current line number: ",l
-                  error stop "I/O error in basis set read in. Pt. 10."
+                  error stop "I/O error in ECP file read in. Pt. 10."
                end if
                do j=1,iecp%npr(iat,i)
                   read(myunit,*,iostat=iread) iecp%coeff(iat,i,j), iecp%nfactor(iat,i,j), iecp%exp(iat,i,j)
                   l = l + 1
                   if (iread /= 0) then
                      write(*,*) "Current line number: ",l
-                     error stop "I/O error in basis set read in. Pt. 11."
+                     error stop "I/O error in ECP file read in. Pt. 11."
                   end if
                end do
             enddo
@@ -615,7 +615,7 @@ contains
          end if
          if (iread > 0) then
             write(*,*) "Current line number: ",l
-            error stop "I/O error in basis set read in. Pt. 1."
+            error stop "I/O error in ECP file read in. Pt. 1."
          end if
          if( (index(atmp,'*').ne.0) .or. (index(atmp,'#').ne.0) ) then
             cycle
@@ -623,7 +623,7 @@ contains
             read(atmp,*,iostat=iread) iat
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 2."
+               error stop "I/O error in ECP file read in. Pt. 2."
             end if
             nbf(iat) = 0
             npr(iat,:) = 0
@@ -640,7 +640,7 @@ contains
             l = l + 1
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in. Pt. 3."
+               error stop "I/O error in ECP file read in. Pt. 3."
             end if
 
             angfound = .false.
@@ -649,7 +649,7 @@ contains
                l = l + 1
                if (iread /= 0) then
                   write(*,*) "Current line number: ",l
-                  error stop "I/O error in basis set read in. Pt. 4."
+                  error stop "I/O error in ECP file read in. Pt. 4."
                end if
 
                if(index(atmp(1:1),'s').eq.1) then
@@ -727,7 +727,7 @@ contains
          end if
          if (iread > 0) then
             write(*,*) "Current line number: ",l
-            error stop "I/O error in basis set read in."
+            error stop "I/O error in ECP file read in."
          end if
          if( (index(atmp,'*').ne.0) .or. (index(atmp,'#').ne.0) ) then
             cycle
@@ -737,21 +737,21 @@ contains
             l = l + 1
             if (iread /= 0) then
                write(*,*) "Current line number: ",l
-               error stop "I/O error in basis set read in."
+               error stop "I/O error in ECP file read in."
             end if
             do i=1,iecp%nbf(iat)
                read(myunit,*,iostat=iread) btmp
                l = l + 1
                if (iread /= 0) then
                   write(*,*) "Current line number: ",l
-                  error stop "I/O error in basis set read in."
+                  error stop "I/O error in ECP file read in."
                end if
                do j=1,iecp%npr(iat,i)
                   read(myunit,*,iostat=iread) iecp%coeff(iat,i,j), iecp%nfactor(iat,i,j), iecp%exp(iat,i,j)
                   l = l + 1
                   if (iread /= 0) then
                      write(*,*) "Current line number: ",l
-                     error stop "I/O error in basis set read in."
+                     error stop "I/O error in ECP file read in."
                   end if
                end do
             enddo
