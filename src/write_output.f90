@@ -91,11 +91,11 @@ contains
          write(myunit,'(''%MaxCore '',i6,/)') orcainp%coremem
 
          write(myunit,'(a)')    "%method"
-         write(myunit,'(a,f5.2)')    "  D4S6  ", orcainp%d4_s6
-         write(myunit,'(a,f5.2)')    "  D4S8  ", orcainp%d4_s8
-         write(myunit,'(a,f5.2)')    "  D4A1  ", orcainp%d4_a1
-         write(myunit,'(a,f5.2)')    "  D4A2  ", orcainp%d4_a2
-         write(myunit,'(a,f5.2)')    "  D4S9  ", orcainp%d4_s9
+         write(myunit,'(a,f9.4)')    "  D4S6  ", orcainp%d4_s6
+         write(myunit,'(a,f9.4)')    "  D4S8  ", orcainp%d4_s8
+         write(myunit,'(a,f9.4)')    "  D4A1  ", orcainp%d4_a1
+         write(myunit,'(a,f9.4)')    "  D4A2  ", orcainp%d4_a2
+         write(myunit,'(a,f9.4)')    "  D4S9  ", orcainp%d4_s9
          write(myunit,'(a,/)')  "end"
 
          write(myunit, '(a)') "%scf"

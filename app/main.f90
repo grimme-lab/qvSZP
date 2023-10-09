@@ -93,11 +93,11 @@ program main
          qvSZPs = .true.
          orcainp%dfa = "wB97M-D4"
 
-         orcainp%d4_s6 = 1.0_wp
-         orcainp%d4_s8 = 1.0_wp
-         orcainp%d4_a1 = 0.38_wp
-         orcainp%d4_a2 = 4.2_wp
-         orcainp%d4_s9 = 1.0_wp
+         orcainp%d4_s6 = 1.0000_wp
+         orcainp%d4_s8 = 0.4769_wp
+         orcainp%d4_a1 = 0.2074_wp
+         orcainp%d4_a2 = 5.2000_wp
+         orcainp%d4_s9 = 1.0000_wp
 
          orcainp%outn = "wb97m-3c.inp"
       endif
