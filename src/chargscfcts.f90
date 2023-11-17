@@ -264,7 +264,7 @@ contains
       !  covalent radii (taken from Pyykko and Atsumi, Chem. Eur. J. 15, 2009,
 !  188-197), values for metals decreased by 10 %
       real(wp),parameter :: rcov(118) = 1.889725949_wp * [ &
-      & 0.25_wp,0.46_wp, & ! H,He
+      & 0.28_wp,0.46_wp, & ! H,He
       & 1.20_wp,0.94_wp,0.77_wp,0.75_wp,0.71_wp,0.63_wp,0.64_wp,0.67_wp, & ! Li-Ne
       & 1.40_wp,1.25_wp,1.13_wp,1.04_wp,1.10_wp,1.02_wp,0.99_wp,0.96_wp, & ! Na-Ar
       & 1.76_wp,1.54_wp, & ! K,Ca
