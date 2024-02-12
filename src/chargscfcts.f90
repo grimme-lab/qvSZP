@@ -7,8 +7,9 @@ module chargscfcts
    !> Multicharge modules
    use multicharge_lapack, only : sytrf, sytrs
    !> CEH modules
-   use tblite_ceh_ceh, only : ceh_guess, new_ceh_calculator
-   use tblite_ceh_calculator, only : ceh_calculator
+   use tblite_ceh_ceh, only : new_ceh_calculator
+   use tblite_ceh_singlepoint, only : ceh_guess
+   use tblite_xtb_calculator, only : xtb_calculator
    use tblite_wavefunction, only : wavefunction_type, new_wavefunction
    use tblite_container, only : container_type
    use tblite_external_field, only : electric_field
@@ -185,7 +186,7 @@ contains
 
    subroutine ceh(mol, efield, q_ceh, error, verbosity)
       !> CEH calculator
-      type(ceh_calculator)    :: calc
+      type(xtb_calculator)    :: calc
       !> Wavefunction data
       type(wavefunction_type) :: wfn
       !> CEH calculation context
@@ -202,6 +203,8 @@ contains
       integer,intent(in),optional :: verbosity
       !> Electronic temperature
       real(wp) :: etemp = 300.0_wp
+      !> Numerical accuracy for self-consistent iterations
+      real(wp) :: accuracy = 1.0_wp
 
       call new_ceh_calculator(calc, mol)
       call new_wavefunction(wfn, mol%nat, calc%bas%nsh, calc%bas%nao, 1, etemp * kt)
@@ -212,7 +215,7 @@ contains
             call calc%push_back(cont)
          end block
       end if
-      call ceh_guess(ctx, calc, mol, error, wfn, verbosity)
+      call ceh_guess(ctx, calc, mol, error, wfn, accuracy, verbosity)
       if (ctx%failed()) then
          print *, 'CEH guess failed'
          do while(ctx%failed())

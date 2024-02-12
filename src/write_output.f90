@@ -179,7 +179,12 @@ contains
             enddo
             write(myunit,'(2x,a)') "end"
          else
-            if (verbose) write(*,'(a,a,a,/)') "No ECP assigned for element ",trim(mol%sym(i)),"."
+            if (mol%num(i) <= 2) then
+               if (verbose) write(*,'(a,a,a,/)') "No ECP assigned for element ",trim(mol%sym(i)),"."
+            else
+               write(*,'(a,a,a)') "ERROR: No ECP assigned for element ",trim(mol%sym(i)),"."
+               error stop
+            endif
          endif
       enddo
       if (ecpex) write(myunit,'(a,/)') "end"
