@@ -288,7 +288,7 @@ program main
    endif
 
    call calcrab(mol,distvec)
-   call ncoord_basq(mol,distvec,-4.00_wp,cn)
+   call ncoord_basq(mol,distvec,-3.75_wp,cn)
    if (dummy) then
       call calcrab(molshort,distvec_short)
       call ncoord_basq(molshort,distvec_short,-4.00_wp,cn_short)
