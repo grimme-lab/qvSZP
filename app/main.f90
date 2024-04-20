@@ -319,7 +319,7 @@ program main
          call eeq(molshort,distvec_short,real(charge,wp),cn_short,.False., &
          & unity,gamscal,chiscal,alphascal,q_short,orcainp%efield)
       endif
-    case('extq')
+    case('ceh_external')
       if (index((filen),'coord').eq.0) then
          call write_structure(mol, 'coord', error)
          if (allocated(error)) then
@@ -363,6 +363,9 @@ program main
       if (dummy) then
          call ceh(molshort,orcainp%efield,q_short,error,verbosity)
       endif
+   case('ext')
+      if (dummy) call fatal_error(error, "External charges not supported for dummy atoms.")
+      call extcharges(mol,'ext.charges',q,cn)
    end select
    if(verbose) write(*,'(a)') "---------------------------"
    if (allocated(error)) then
