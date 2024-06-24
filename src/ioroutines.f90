@@ -2,7 +2,7 @@ module ioroutines
    use mctc_io, only: read_structure, structure_type, to_symbol
    use mctc_io_symbols, only: symbol_to_number
    use mctc_env, only: fatal_error, error_type, wp
-   use stdlib_sorting, only: sort_index, int_size
+   use stdlib_sorting, only: sort_index, int_index
    implicit none
    private
 
@@ -31,7 +31,7 @@ module ioroutines
       integer, allocatable  :: lmax(:) ! total number of primitive functions
       integer, allocatable  :: nfactor(:,:,:) ! total number of primitive functions
       integer, allocatable  :: angmom(:,:) ! angular momentum of each primitive function
-      integer(int_size), allocatable :: sindex(:,:)
+      integer(int_index), allocatable :: sindex(:,:)
       real(wp), allocatable :: exp(:,:,:) ! exponent of each primitive function
       real(wp), allocatable :: coeff(:,:,:) ! contraction coefficient of each primitive function
    end type ecp_type
@@ -295,7 +295,7 @@ contains
       integer                                :: iat,imax,ltmp
       integer                                :: i,j,l,imin
 
-      integer(int_size), allocatable        :: sortindex(:)
+      integer(int_index), allocatable        :: sortindex(:)
 
       real(wp), allocatable, intent(inout)  :: increment(:)
 
@@ -559,7 +559,7 @@ contains
       integer                                :: iat,imax,ltmp
       integer                                :: i,j,l,imin
 
-      integer(int_size), allocatable        :: sortindex(:)
+      integer(int_index), allocatable        :: sortindex(:)
 
       allocate(nbf(118),npr(118,20),angmom(118,20),ncore(118),lmax(118))
 
