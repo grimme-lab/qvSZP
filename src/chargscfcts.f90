@@ -296,7 +296,7 @@ contains
       do i = 1, tmpmol%nat
          do j = 1, i-1
             k = k + 1
-            rcovij= 1.0_wp * ( rcov(tmpmol%num(tmpmol%id(i))) + rcov(tmpmol%num(tmpmol%id(j))) )
+            rcovij= rcov(tmpmol%num(tmpmol%id(i))) + rcov(tmpmol%num(tmpmol%id(j)))
             arg = (rab(k)-rcovij)/rcovij
             tmp = 0.5_wp * (1.0_wp + erf(kn*arg))
             cn(i) = cn(i) + tmp
