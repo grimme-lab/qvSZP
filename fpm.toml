@@ -15,7 +15,8 @@ link=["lapack"]
 library = false
 
 [dependencies]
-tblite.git = "https://github.com/tblite/tblite"
+tblite.git = "https://github.com/thfroitzheim/tblite"
+tblite.branch = "ceh-v2"
 stdlib = "*"
 
 [dev-dependencies]

@@ -202,7 +202,7 @@ contains
       !> Verbosity level
       integer,intent(in),optional :: verbosity
       !> Electronic temperature
-      real(wp) :: etemp = 300.0_wp
+      real(wp) :: etemp = 4000.0_wp
       !> Numerical accuracy for self-consistent iterations
       real(wp) :: accuracy = 1.0_wp
 
