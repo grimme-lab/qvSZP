@@ -61,7 +61,7 @@ program main
    cm                = "ceh"
 
    !##### VERSION STRING #####
-   version = "2.1"
+   version = "2.2.0"
    !##########################
 
    ! get number of arguments
@@ -203,8 +203,10 @@ program main
    !> Print header - actual program starts here
    write(*,'(a)')       "     -------------------------------------"
    write(*,'(a)')       "     |    q-vSZP ORCA INPUT GENERATOR    |"
-   write(*,'(a,a,a)')   "     |               v",version,"                |"
-   write(*,'(a)')       "     |        M. Müller, S. Grimme       |"
+   write(*,'(a,a,a)')   "     |               v",version,"              |"
+   write(*,'(a)')       "     |        M. M., T. F., S. G.        |"
+   write(*,'(a)')       "     |    University of Bonn, Germany    |"
+   write(*,'(a)')       "     |           (c) 2023-24             |"
    write(*,'(a,/)')     "     -------------------------------------"
    if (help) then
       call helpf()
