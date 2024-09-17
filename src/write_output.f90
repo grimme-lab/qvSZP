@@ -32,6 +32,7 @@ module write_output
       integer          :: defgrid = 2
       integer          :: coremem = 5000
       integer          :: mpi = 4
+      integer          :: scfcycles = 125
 
       real(wp)         :: d4_s6 = 1.00_wp
       real(wp)         :: d4_s8 = 1.00_wp
@@ -108,6 +109,7 @@ contains
             write(myunit,'(a,f12.8,a,f12.8,a,f12.8)') "  efield", &
             & orcainp%efield(1),", ", orcainp%efield(2),", ", orcainp%efield(3)
          endif
+         if (orcainp%scfcycles > 0) write(myunit,'(2x,a,1x,i0)') "MaxIter", orcainp%scfcycles
          write(myunit, '(a,/)') "end"
       endif
 

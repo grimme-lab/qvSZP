@@ -120,6 +120,10 @@ program main
          call get_command_argument(i+1,atmp)
          read(atmp,*) orcainp%defgrid
       endif
+      if(index(atmp,'--scf-cycles').ne.0) then
+         call get_command_argument(i+1,atmp)
+         read(atmp,*) orcainp%scfcycles
+      endif
       if(index(atmp,'--guess').ne.0) then
          call get_command_argument(i+1,atmp)
          orcainp%guess=trim(adjustl(atmp))
