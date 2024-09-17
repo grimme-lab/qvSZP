@@ -150,6 +150,12 @@ contains
          if ( sum(abs(ecp%exp(mol%num(i),:,:))) > 0.0_wp .and. mol%num(i) >= ecp%atmin ) then
             if ( .not. ecpex ) then
                write(myunit,'(a)') "%basis"
+               ! Check if an atom with ordinal number > 86 is in the molecule
+               if ( any(mol%num > 86) ) then
+                  ! Print the following line to the output file
+                  !   AuxJ  "AutoAux"      # Use AutoAux to generate the AuxJ fitting basis set
+                  write(myunit,'(a)') '  AuxJ  "AutoAux" # Use AutoAux to generate the AuxJ fitting basis set'
+               end if
                ecpex = .true.
             endif
             write(myunit,'(a,a2)') "  NewECP ", mol%sym(i)
@@ -222,8 +228,11 @@ contains
                enddo
             enddo
             write(myunit,'(2x,a)') "end"
+            if (mol%num(i) > 86) then
+               write(myunit,'(2x,a,/,5x,a,/,2x,a)') 'NewAuxJGTO', '"AutoAux"', 'end'
+            end if
          else
-            call fatal_error(error,"No basis set for atoms with Z > 86")
+            call fatal_error(error,"No basis set for desired element available.")
          endif
       enddo
       write(myunit,'(a)') "*"
