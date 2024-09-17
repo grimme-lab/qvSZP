@@ -1,9 +1,9 @@
 name = "qvSZP"
-version = "2.0"
+version = "2.2.0"
 license = "license"
-author = "Marcel Mueller"
+author = ["Marcel Mueller", "Thomas Froitzheim", "Stefan Grimme"]
 maintainer = "marcel.mueller@thch.uni-bonn.de"
-copyright = "Copyright 2023, Marcel Mueller"
+copyright = "Copyright 2023-2024, Marcel Mueller"
 
 [build]
 auto-executables = true
@@ -15,8 +15,7 @@ link=["lapack"]
 library = false
 
 [dependencies]
-tblite.git = "https://github.com/thfroitzheim/tblite"
-tblite.branch = "ceh-v2"
+tblite.git = "https://github.com/tblite/tblite"
 stdlib = "*"
 
 [dev-dependencies]
