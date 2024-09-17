@@ -16,6 +16,8 @@ module write_output
 
       logical          :: geoopt        = .false. ! turn on !OPT keyword
       logical          :: nocosx        = .false. ! turns off RIJCOSX, seminumerical exchange
+      logical          :: notrah        = .false. ! turns off TRAH
+      logical          :: nososcf       = .false. ! turns off SOSCF
       logical          :: dipgrad       = .false. ! dipole moment gradients
       logical          :: polgrad       = .false. ! polarizability derivatives
       logical          :: polar         = .false. ! polarizability calc
@@ -80,7 +82,9 @@ contains
       else
          write(myunit,'(a,a,a)') "! ",orcainp%dfa, " def2/J PrintBasis"
          write(myunit,'(a,a)',advance='NO') "! ",orcainp%scfconv
-         write(myunit,'(1x,a,i1,/)') "DEFGRID", orcainp%defgrid
+         write(myunit,'(1x,a,i1)') "DEFGRID", orcainp%defgrid
+         if(orcainp%notrah) write(myunit,'(''! NoTRAH'')')
+         if(orcainp%nososcf) write(myunit,'(''! NoSOSCF'')')
          if(orcainp%geoopt) write(myunit,'(''! Opt'')')
          if(orcainp%nocosx) write(myunit,'(''! NOCOSX'')')
          if(orcainp%dipgrad) write(myunit,'(''! Freq'')')

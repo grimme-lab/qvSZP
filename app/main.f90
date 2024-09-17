@@ -162,6 +162,8 @@ program main
       if(index(atmp,'--dipgrad').ne.0) orcainp%dipgrad=.true.
       if(index(atmp,'--geoopt').ne.0) orcainp%geoopt=.true.
       if(index(atmp,'--nocosx').ne.0) orcainp%nocosx=.true.
+      if(index(atmp,'--notrah').ne.0) orcainp%notrah=.true.
+      if(index(atmp,'--nososcf').ne.0) orcainp%nososcf=.true.
       if(index(atmp,'--tightscf').ne.0)   orcainp%scfconv='TightSCF'
       if(index(atmp,'--strongscf').ne.0)  orcainp%scfconv='StrongSCF'
       if(index(atmp,'--nouseshark').ne.0) orcainp%nouseshark=.true.
