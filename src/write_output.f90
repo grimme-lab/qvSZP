@@ -234,7 +234,7 @@ contains
                enddo
             enddo
             write(myunit,'(2x,a)') "end"
-            if (mol%num(i) > 86) then
+            if (mol%num(mol%id(i)) > 86) then
                write(myunit,'(2x,a,/,5x,a,/,2x,a)') 'NewAuxJGTO', '"AutoAux"', 'end'
             end if
          else
