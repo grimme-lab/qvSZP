@@ -1,0 +1,917 @@
+CID	Name	Structure Path	Number of Atoms	Total Charge	HOMO-LUMO gap
+6695	[9-(2-carboxyphenyl)-6-(diethylamino)xanthen-3-ylidene]-diethylazanium	/Users/marcelmueller/source/randommolecules/example/6695/6695_opt.xyz	64	1	1.561
+43467	diphenyl propan-2-yl phosphate	/Users/marcelmueller/source/randommolecules/example/43467/43467_opt.xyz	37	0	4.520
+44961	[4-(dimethylamino)-3-methylphenyl] N,N-dimethylcarbamate	/Users/marcelmueller/source/randommolecules/example/44961/44961_opt.xyz	34	0	3.511
+60641	4-[2-(4-methylphenyl)sulfonylhydrazinyl]-4-oxobut-2-enoic acid	/Users/marcelmueller/source/randommolecules/example/60641/60641_opt.xyz	31	0	2.193
+76470	bis(2-methylpropyl)carbamothioylsulfanyl N,N-bis(2-methylpropyl)carbamodithioate	/Users/marcelmueller/source/randommolecules/example/76470/76470_opt.xyz	60	0	2.258
+94837	(4-hydroxy-2-methyl-5-propan-2-ylphenyl) thiocyanate	/Users/marcelmueller/source/randommolecules/example/94837/94837_opt.xyz	27	0	3.760
+95734	4-benzhydrylidene-1-methylpiperidine	/Users/marcelmueller/source/randommolecules/example/95734/95734_opt.xyz	41	0	3.323
+131001	3-(dipropylamino)-3,4-dihydro-2H-chromen-5-ol	/Users/marcelmueller/source/randommolecules/example/131001/131001_opt.xyz	41	0	3.696
+131753	4-(4-hydroxy-3-methylbut-2-enyl)-1,2-diphenylpyrazolidine-3,5-dione	/Users/marcelmueller/source/randommolecules/example/131753/131753_opt.xyz	45	0	3.441
+141029	2-[(3-methoxyphenyl)diazenyl]-4-methylphenol	/Users/marcelmueller/source/randommolecules/example/141029/141029_opt.xyz	32	0	0.748
+153148	2-[3-(3-hydroxy-4-methoxyphenyl)propyl]benzene-1,3,5-triol	/Users/marcelmueller/source/randommolecules/example/153148/153148_opt.xyz	39	0	4.103
+158729	(2S,3R,4S,5S,6R)-2-(3-phenylprop-2-enoxy)-6-[[(2S,3R,4S,5S)-3,4,5-trihydroxyoxan-2-yl]oxymethyl]oxane-3,4,5-triol	/Users/marcelmueller/source/randommolecules/example/158729/158729_opt.xyz	58	0	3.538
+166247	(2-butan-2-yl-1-methylcyclohexyl) acetate	/Users/marcelmueller/source/randommolecules/example/166247/166247_opt.xyz	39	0	4.830
+170596	(2S)-1-[(2S)-6-amino-2-[[(2S,3R)-2-amino-3-hydroxybutanoyl]amino]hexanoyl]pyrrolidine-2-carboxylic acid	/Users/marcelmueller/source/randommolecules/example/170596/170596_opt.xyz	52	0	3.167
+192631	2-(4,5-dihydro-1,3-thiazol-2-ylsulfanyl)pyridin-3-ol	/Users/marcelmueller/source/randommolecules/example/192631/192631_opt.xyz	21	0	2.992
+196440	(2S,3S,4R,5S,6S)-2-[(2S,3R,4S,5R,6R)-4,5-dihydroxy-6-(hydroxymethyl)-2-(4-nitrophenoxy)oxan-3-yl]oxy-6-methyloxane-3,4,5-triol	/Users/marcelmueller/source/randommolecules/example/196440/196440_opt.xyz	56	0	2.798
+213279	N-(5-propyl-1,3,4-thiadiazol-2-yl)propanamide	/Users/marcelmueller/source/randommolecules/example/213279/213279_opt.xyz	26	0	3.117
+227382	6-methoxy-5-(4-methoxyphenoxy)-8-nitroquinoline	/Users/marcelmueller/source/randommolecules/example/227382/227382_opt.xyz	38	0	1.732
+229051	6-chloro-5-[(4-chlorophenyl)diazenyl]-4-N-ethylpyrimidine-2,4-diamine	/Users/marcelmueller/source/randommolecules/example/229051/229051_opt.xyz	32	0	0.826
+233627	2-(2-methylbenzimidazole-1-carbonyl)oxyethyl 2-methylbenzimidazole-1-carboxylate	/Users/marcelmueller/source/randommolecules/example/233627/233627_opt.xyz	46	0	3.288
+254572	N',N'-diacetyl-N-(4-methyl-1,3-thiazol-2-yl)acetohydrazide	/Users/marcelmueller/source/randommolecules/example/254572/254572_opt.xyz	30	0	3.146
+255767	5,5-dimethyl-6H-benzo[c]acridine-7-carboxamide	/Users/marcelmueller/source/randommolecules/example/255767/255767_opt.xyz	41	0	2.195
+270844	1-chloro-3-[3-chloropropoxy(dichloromethyl)phosphoryl]oxypropane	/Users/marcelmueller/source/randommolecules/example/270844/270844_opt.xyz	28	0	5.376
+278427	3-(dimethylamino)-2-formylprop-2-enenitrile	/Users/marcelmueller/source/randommolecules/example/278427/278427_opt.xyz	17	0	3.016
+286285	5-bromo-2-(3,4-dimethoxyphenoxy)-4-methoxybenzaldehyde	/Users/marcelmueller/source/randommolecules/example/286285/286285_opt.xyz	37	0	2.426
+303388	N-(4-methoxyphenyl)furan-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/303388/303388_opt.xyz	27	0	2.739
+323461	(2-bromo-3,4,5-trimethoxyphenyl)methanol	/Users/marcelmueller/source/randommolecules/example/323461/323461_opt.xyz	28	0	3.697
+333567	1-[4-[[2-(4-acetylphenyl)-3H-isoindol-1-ylidene]amino]phenyl]ethanone	/Users/marcelmueller/source/randommolecules/example/333567/333567_opt.xyz	48	0	2.248
+338431	4-acetyl-2-[(4-chlorophenyl)methylidene]-5-methylfuran-3-one	/Users/marcelmueller/source/randommolecules/example/338431/338431_opt.xyz	29	0	1.960
+344749	5-(2,2-dimethyl-1,3-dioxolan-4-yl)-2,2-dimethyl-3a,5,6,6a-tetrahydrofuro[2,3-d][1,3]dioxol-6-amine	/Users/marcelmueller/source/randommolecules/example/344749/344749_opt.xyz	39	0	8.963
+344954	N-phenyl-2-phenylmethoxypropanamide	/Users/marcelmueller/source/randommolecules/example/344954/344954_opt.xyz	36	0	3.730
+356668	4-[[methyl-[3-methyl-3-(2,4,5-trimethyl-3,6-dioxocyclohexa-1,4-dien-1-yl)butanoyl]amino]diazenyl]-1H-imidazole-5-carboxamide	/Users/marcelmueller/source/randommolecules/example/356668/356668_opt.xyz	53	0	1.478
+372755	5,5-dimethyl-2-oxo-4-[(3-oxo-2-benzofuran-1-ylidene)methyl]furan-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/372755/372755_opt.xyz	35	0	2.008
+383881	(1S,3S)-3-[[2-amino-3-(4-hydroxyphenyl)propanoyl]amino]-N-[1-[(1-amino-4-methyl-1-oxopentan-2-yl)amino]-1-oxo-3-phenylpropan-2-yl]cyclopentane-1-carboxamide;hydrochloride	/Users/marcelmueller/source/randommolecules/example/383881/383881_opt.xyz	83	0	3.729
+393138	S-[2-[[4-(acetylsulfamoyl)phenyl]carbamoyl]phenyl] 4-methoxybenzenecarbothioate	/Users/marcelmueller/source/randommolecules/example/393138/393138_opt.xyz	53	0	2.735
+399668	4-amino-3-(hydroxyamino)-1,2,4-triazin-5-one	/Users/marcelmueller/source/randommolecules/example/399668/399668_opt.xyz	15	0	2.368
+404693	4-amino-4-oxo-2-[(4,4,4-trichloro-3-oxobut-1-enyl)amino]butanoic acid	/Users/marcelmueller/source/randommolecules/example/404693/404693_opt.xyz	26	0	3.003
+411323	2-[[2-phenyl-1-(4-propan-2-ylphenyl)ethyl]amino]ethanol	/Users/marcelmueller/source/randommolecules/example/411323/411323_opt.xyz	46	0	3.774
+443408	(1S,2S,6R,14R,15R,16R)-5-(cyclopropylmethyl)-16-(2-hydroxypropan-2-yl)-15-methoxy-13-oxa-5-azahexacyclo[13.2.2.12,8.01,6.02,14.012,20]icosa-8(20),9,11-trien-11-ol	/Users/marcelmueller/source/randommolecules/example/443408/443408_opt.xyz	66	0	3.556
+443749	6-(2-methoxyethenyl)-1,3-benzodioxole-5-carboxylic acid	/Users/marcelmueller/source/randommolecules/example/443749/443749_opt.xyz	26	0	2.625
+495863	3-(4-methoxyphenyl)-1,5-dimethyl-3,3a,6,6a-tetrahydropyrrolo[3,4-c][1,2]oxazol-4-one	/Users/marcelmueller/source/randommolecules/example/495863/495863_opt.xyz	37	0	3.974
+529057	4-methyl-2,6-di(propan-2-yl)-1,3,5-dithiazinane	/Users/marcelmueller/source/randommolecules/example/529057/529057_opt.xyz	34	0	3.886
+539111	(3,5,6-triacetyloxy-4-hydroxyoxan-2-yl)methyl acetate	/Users/marcelmueller/source/randommolecules/example/539111/539111_opt.xyz	44	0	4.729
+545944	3-octoxybutane-1,2,4-triol	/Users/marcelmueller/source/randommolecules/example/545944/545944_opt.xyz	42	0	10.398
+547332	N,N-dimethyl-6-phenylmethoxyhexan-1-amine	/Users/marcelmueller/source/randommolecules/example/547332/547332_opt.xyz	42	0	3.314
+547918	methyl 6-(2,2-dibromoethenyl)-4-oxo-3-oxabicyclo[3.1.0]hexane-1-carboxylate	/Users/marcelmueller/source/randommolecules/example/547918/547918_opt.xyz	23	0	3.633
+559660	2-[2-[2-(diethylamino)ethyldisulfanyl]ethylsulfanyl]-N,N-diethylethanamine	/Users/marcelmueller/source/randommolecules/example/559660/559660_opt.xyz	51	0	2.568
+560323	1-(4-bromophenyl)-3-(4-hydroxybutylamino)pyrrolidine-2,5-dione	/Users/marcelmueller/source/randommolecules/example/560323/560323_opt.xyz	37	0	2.814
+619674	4-[5-(2-chloro-5-nitrophenyl)-1,2,4-oxadiazol-3-yl]-1,2,5-oxadiazol-3-amine	/Users/marcelmueller/source/randommolecules/example/619674/619674_opt.xyz	26	0	1.684
+626979	N-[4-(1,3-benzothiazol-2-ylsulfanyl)-3-chlorophenyl]acetamide	/Users/marcelmueller/source/randommolecules/example/626979/626979_opt.xyz	32	0	2.952
+635760	13-methyl-2,3,4-tris(trimethylsilyloxy)-7,8,9,11,12,14,15,16-octahydro-6H-cyclopenta[a]phenanthren-17-one	/Users/marcelmueller/source/randommolecules/example/635760/635760_opt.xyz	80	0	3.349
+638083	(E)-pent-3-en-1-yne	/Users/marcelmueller/source/randommolecules/example/638083/638083_opt.xyz	11	0	4.111
+642407	(4R,5S)-5-(2,2-dichloroethyl)-4-methyloxolan-2-one	/Users/marcelmueller/source/randommolecules/example/642407/642407_opt.xyz	21	0	5.077
+645960	6-ethyl-5-methyl-2-(pyridin-3-ylmethylsulfanyl)-1H-pyrimidin-4-one	/Users/marcelmueller/source/randommolecules/example/645960/645960_opt.xyz	33	0	3.006
+646867	N-[2-(cyclopentylamino)-1-[4-(dimethylamino)phenyl]-2-oxoethyl]-N-(3-methoxyphenyl)furan-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/646867/646867_opt.xyz	65	0	2.635
+661948	2-(4-methyl-1-oxophthalazin-2-yl)-N-(2-morpholin-4-ylethyl)acetamide	/Users/marcelmueller/source/randommolecules/example/661948/661948_opt.xyz	46	0	2.597
+673071	(2S)-3-(2-methoxyphenyl)-2-pyridin-4-yl-1,2-dihydroquinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/673071/673071_opt.xyz	42	0	2.776
+683901	benzyl N-[2-(3-methylanilino)-2-oxoethyl]carbamate	/Users/marcelmueller/source/randommolecules/example/683901/683901_opt.xyz	40	0	3.868
+690003	(3S)-N-(benzylideneamino)-1-(4-ethylphenyl)-5-oxopyrrolidine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/690003/690003_opt.xyz	46	0	2.443
+700740	ethyl 4-(3,4-dimethylanilino)-8-methylquinoline-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/700740/700740_opt.xyz	47	0	2.337
+702651	4-[(3-methylphenyl)methylsulfanyl]-5,6,7,8-tetrahydro-[1]benzothiolo[2,3-d]pyrimidine	/Users/marcelmueller/source/randommolecules/example/702651/702651_opt.xyz	40	0	2.801
+707745	3-(4-methoxyphenyl)-5-propylfuro[3,2-g]chromen-7-one	/Users/marcelmueller/source/randommolecules/example/707745/707745_opt.xyz	43	0	2.461
+724943	N-[4,5-dimethyl-3-(pyrrolidine-1-carbonyl)thiophen-2-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/724943/724943_opt.xyz	43	0	2.436
+733830	[4-[(2,5-dimethylphenyl)carbamoyl]phenyl] furan-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/733830/733830_opt.xyz	42	0	2.374
+765417	1-(3-chlorophenyl)-3-(2,3-dichlorophenyl)urea	/Users/marcelmueller/source/randommolecules/example/765417/765417_opt.xyz	28	0	3.579
+769496	7-chloro-3-methyl-2-[(1S)-1-(methylamino)ethyl]quinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/769496/769496_opt.xyz	31	0	2.834
+772769	N-(furan-2-ylmethyl)-2-methoxy-N-[[(2R)-oxolan-2-yl]methyl]acetamide	/Users/marcelmueller/source/randommolecules/example/772769/772769_opt.xyz	37	0	4.577
+773277	(4R)-5-acetyl-6-methyl-4-(2-phenylmethoxyphenyl)-3,4-dihydro-1H-pyrimidin-2-one	/Users/marcelmueller/source/randommolecules/example/773277/773277_opt.xyz	45	0	2.971
+779110	5,6-dihydrobenzo[b][1]benzazepin-11-yl(pyrrolidin-1-yl)methanone	/Users/marcelmueller/source/randommolecules/example/779110/779110_opt.xyz	42	0	3.713
+782701	6-methyl-3-[(4-phenylpiperazin-1-yl)methyl]chromen-4-one	/Users/marcelmueller/source/randommolecules/example/782701/782701_opt.xyz	47	0	1.737
+784154	N-cyclopentyl-2-(3-formylindol-1-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/784154/784154_opt.xyz	38	0	3.049
+797118	N-(2-methoxy-5-methylphenyl)-4-(4-methoxyphenyl)butanamide	/Users/marcelmueller/source/randommolecules/example/797118/797118_opt.xyz	46	0	3.674
+816486	2-[4-(diethylamino)phenyl]-N-[(2S)-1-phenylpropan-2-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/816486/816486_opt.xyz	52	0	3.187
+857068	1-[(1R)-1-(1-benzyltetrazol-5-yl)-3-methylbutyl]-4-methylpiperazine	/Users/marcelmueller/source/randommolecules/example/857068/857068_opt.xyz	52	0	2.831
+861081	5-(4-methoxyphenyl)-2-(2H-tetrazol-5-ylmethyl)tetrazole	/Users/marcelmueller/source/randommolecules/example/861081/861081_opt.xyz	29	0	2.525
+866261	2-[(2R)-2-ethyl-6-methyl-3-oxo-1,4-benzoxazin-4-yl]-N-(furan-2-ylmethyl)acetamide	/Users/marcelmueller/source/randommolecules/example/866261/866261_opt.xyz	44	0	3.432
+873976	2-[(pyridin-3-ylmethylamino)methylidene]indene-1,3-dione	/Users/marcelmueller/source/randommolecules/example/873976/873976_opt.xyz	32	0	2.335
+881083	9-tert-butyl-3-ethyl-3-methyl-1,5-dioxaspiro[5.5]undecane	/Users/marcelmueller/source/randommolecules/example/881083/881083_opt.xyz	48	0	10.679
+884961	methyl 4-[(2-chloro-3-phenylprop-2-enoyl)amino]benzoate	/Users/marcelmueller/source/randommolecules/example/884961/884961_opt.xyz	36	0	2.734
+911092	(2S)-1-[[(1S)-3,4-dihydro-1H-isochromen-1-yl]methylamino]-3-phenoxypropan-2-ol	/Users/marcelmueller/source/randommolecules/example/911092/911092_opt.xyz	46	0	3.480
+926954	N-[(3,5-dimethylphenyl)carbamothioyl]-3-(2-methoxyphenyl)prop-2-enamide	/Users/marcelmueller/source/randommolecules/example/926954/926954_opt.xyz	44	0	1.202
+937448	(5S,7S)-7-(3-chlorophenyl)-5-(3-methoxyphenyl)-4,5,6,7-tetrahydro-[1,2,4]triazolo[1,5-a]pyrimidine	/Users/marcelmueller/source/randommolecules/example/937448/937448_opt.xyz	41	0	3.243
+960135	4-(acetylcarbamothioylamino)benzoic acid	/Users/marcelmueller/source/randommolecules/example/960135/960135_opt.xyz	26	0	1.826
+979030	N-[4-[5-(5-chloro-2-methoxyphenyl)-1,2,4-oxadiazol-3-yl]phenyl]pyridine-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/979030/979030_opt.xyz	44	0	2.600
+991642	(4-chlorophenyl)-[4-[(2S)-3-[4-(2-fluorophenyl)piperazin-1-yl]-2-hydroxypropoxy]phenyl]methanone	/Users/marcelmueller/source/randommolecules/example/991642/991642_opt.xyz	59	0	1.836
+1003339	4-[[1-(4-chlorophenyl)-4-methoxycarbonyl-5-methyl-2-oxopyrrol-3-ylidene]methyl]benzoic acid	/Users/marcelmueller/source/randommolecules/example/1003339/1003339_opt.xyz	44	0	1.934
+1011358	(6S)-6-[2-[(2R)-butan-2-yl]oxyphenyl]-9,9-dimethyl-5-propanoyl-6,8,10,11-tetrahydrobenzo[b][1,4]benzodiazepin-7-one	/Users/marcelmueller/source/randommolecules/example/1011358/1011358_opt.xyz	67	0	2.725
+1020441	(3E)-5-bromo-3-[(2-chloro-4-hydroxy-5-methoxyphenyl)methylidene]-1H-indol-2-one	/Users/marcelmueller/source/randommolecules/example/1020441/1020441_opt.xyz	33	0	2.213
+1022358	(3R)-3-(cyclopentylamino)-1-[4-[(3R)-3-(cyclopentylamino)-2,5-dioxopyrrolidin-1-yl]phenyl]pyrrolidine-2,5-dione	/Users/marcelmueller/source/randommolecules/example/1022358/1022358_opt.xyz	62	0	2.764
+1042782	7H-benzo[d][2]benzothiepine-5-thione	/Users/marcelmueller/source/randommolecules/example/1042782/1042782_opt.xyz	26	0	1.445
+1053290	[2-(2,5-dimethylphenyl)-5-(4-nitrophenyl)pyrazol-3-yl]-[4-(2-methoxyphenyl)piperazin-1-yl]methanone	/Users/marcelmueller/source/randommolecules/example/1053290/1053290_opt.xyz	67	0	1.478
+1055942	N-[4-(4-benzoylpiperazin-1-yl)phenyl]-4-(trifluoromethyl)benzamide	/Users/marcelmueller/source/randommolecules/example/1055942/1055942_opt.xyz	55	0	1.855
+1061769	[5-tert-butyl-2-(3-methylphenyl)pyrazol-3-yl] 4-methoxybenzoate	/Users/marcelmueller/source/randommolecules/example/1061769/1061769_opt.xyz	51	0	2.834
+1083059	N-[4-[2-(4-methylquinolin-2-yl)sulfanylacetyl]phenyl]acetamide	/Users/marcelmueller/source/randommolecules/example/1083059/1083059_opt.xyz	43	0	2.378
+1101249	3-nitro-N-[(3-phenoxyphenyl)methylideneamino]benzamide	/Users/marcelmueller/source/randommolecules/example/1101249/1101249_opt.xyz	42	0	1.360
+1112937	2-(2-imino-3-propylbenzimidazol-1-yl)-1-(4-phenylphenyl)ethanone	/Users/marcelmueller/source/randommolecules/example/1112937/1112937_opt.xyz	51	0	1.521
+1114062	5-acetamido-4-(dimethylamino)-N-[[(2S)-1-ethylpyrrolidin-2-yl]methyl]-2-methoxybenzamide	/Users/marcelmueller/source/randommolecules/example/1114062/1114062_opt.xyz	56	0	2.491
+1146521	1-[(4-fluorophenyl)methyl]-3-(furan-2-ylmethyl)-1-[(7-oxo-3,6-dihydro-2H-[1,4]dioxino[2,3-g]quinolin-8-yl)methyl]thiourea	/Users/marcelmueller/source/randommolecules/example/1146521/1146521_opt.xyz	56	0	0.978
+1156541	2-[[5-[(4,6-dimethylpyrimidin-2-yl)sulfanylmethyl]-4-methyl-1,2,4-triazol-3-yl]sulfanyl]-1-piperidin-1-ylethanone	/Users/marcelmueller/source/randommolecules/example/1156541/1156541_opt.xyz	50	0	2.985
+1191021	(2S)-2-(3-bromophenoxy)-N-[(6S)-3-cyano-6-methyl-4,5,6,7-tetrahydro-1-benzothiophen-2-yl]propanamide	/Users/marcelmueller/source/randommolecules/example/1191021/1191021_opt.xyz	44	0	2.822
+1191182	2,5-dichloro-N-[4-[(6-methoxypyrimidin-4-yl)sulfamoyl]phenyl]thiophene-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/1191182/1191182_opt.xyz	40	0	2.256
+1197430	methyl 2-[[cyclohexyl-[(1S,2S)-2-phenylcyclopropanecarbonyl]amino]methyl]-1,3-oxazole-4-carboxylate	/Users/marcelmueller/source/randommolecules/example/1197430/1197430_opt.xyz	54	0	2.890
+1210678	N-(4-bromophenyl)-4-[(2S)-4-oxo-3-(2-phenylethyl)-1,3-thiazolidin-2-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/1210678/1210678_opt.xyz	51	0	2.526
+1214149	(5E)-5-[(2,4-diethoxyphenyl)methylidene]-3-(2-oxo-2-piperidin-1-ylethyl)-1,3-thiazolidine-2,4-dione	/Users/marcelmueller/source/randommolecules/example/1214149/1214149_opt.xyz	55	0	1.994
+1217098	2-chloro-5-[(2S,6S)-2,6-dimethylmorpholin-4-yl]sulfonyl-N-(3-hydroxyphenyl)benzamide	/Users/marcelmueller/source/randommolecules/example/1217098/1217098_opt.xyz	49	0	2.792
+1217550	phenacyl 2-(4-bromophenyl)sulfanylacetate	/Users/marcelmueller/source/randommolecules/example/1217550/1217550_opt.xyz	34	0	1.958
+1221462	N-(4-chlorophenyl)-2-[(5R)-2-(4-ethylanilino)-4-oxo-1,3-thiazol-5-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/1221462/1221462_opt.xyz	44	0	2.956
+1223268	N-[(3,4-dimethoxyphenyl)methylideneamino]-2-oxo-1H-quinoline-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/1223268/1223268_opt.xyz	43	0	1.956
+1237659	(1S,2S,4R)-N-[(1R)-2,2,2-trichloro-1-(2,4-dioxopyrimidin-1-yl)ethyl]bicyclo[2.2.1]heptane-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/1237659/1237659_opt.xyz	39	0	3.485
+1238913	1,3,7-trimethyl-8-(2-morpholin-4-yl-2-oxoethyl)sulfanylpurine-2,6-dione	/Users/marcelmueller/source/randommolecules/example/1238913/1238913_opt.xyz	43	0	3.093
+1269933	(E)-2-(1,3-dithian-2-ylidene)-1-phenyl-5-thiophen-2-ylpent-4-ene-1,3-dione	/Users/marcelmueller/source/randommolecules/example/1269933/1269933_opt.xyz	40	0	1.915
+1270662	(2E,7S)-5-amino-7-(1-methylpyrrol-2-yl)-2-[(1-methylpyrrol-2-yl)methylidene]-3-oxo-7H-[1,3]thiazolo[3,2-a]pyridine-6,8-dicarbonitrile	/Users/marcelmueller/source/randommolecules/example/1270662/1270662_opt.xyz	44	0	1.519
+1283702	(5R)-5-(3-bromophenyl)-1-[2-(dimethylamino)ethyl]-4-[hydroxy-(4-methoxy-3-methylphenyl)methylidene]pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/1283702/1283702_opt.xyz	55	0	1.698
+1290847	ethyl 2-[[(4S)-3-cyano-5-[(2,4-dichlorophenyl)carbamoyl]-4-(furan-2-yl)-6-methyl-1,4-dihydropyridin-2-yl]sulfanyl]acetate	/Users/marcelmueller/source/randommolecules/example/1290847/1290847_opt.xyz	51	0	2.490
+1301462	(5Z)-5-[[1-(2,3-dimethylphenyl)-2,5-dimethylpyrrol-3-yl]methylidene]-1-(furan-2-ylmethyl)-2-sulfanylidene-1,3-diazinane-4,6-dione	/Users/marcelmueller/source/randommolecules/example/1301462/1301462_opt.xyz	54	0	1.329
+1319535	methyl (4S)-2-amino-4-[3-chloro-4-[(3-nitrophenyl)methoxy]phenyl]-7,7-dimethyl-5-oxo-6,8-dihydro-4H-chromene-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/1319535/1319535_opt.xyz	61	0	1.403
+1328981	(5Z)-3-(2-methylphenyl)-5-[(2-methylphenyl)methylidene]-2-sulfanylidene-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/1328981/1328981_opt.xyz	37	0	1.345
+1332003	3-[(2R)-butan-2-yl]-5-[(4-fluorophenyl)methylidene]-2-sulfanylidene-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/1332003/1332003_opt.xyz	33	0	1.332
+1344482	(5Z)-2-[4-(3-chlorophenyl)piperazin-1-yl]-5-[(4-methoxyphenyl)methylidene]-1,3-thiazol-4-one	/Users/marcelmueller/source/randommolecules/example/1344482/1344482_opt.xyz	48	0	2.107
+1376856	4-(1-methylpyrrol-3-yl)-2,6-diphenylpyridine	/Users/marcelmueller/source/randommolecules/example/1376856/1376856_opt.xyz	42	0	2.753
+1393213	3-[2-[2-(methylamino)phenyl]phenyl]propanoic acid	/Users/marcelmueller/source/randommolecules/example/1393213/1393213_opt.xyz	36	0	3.095
+1395686	(2R)-2-[(6-hydroxy-1-naphthalen-1-yl-2,4-dioxopyrimidin-5-yl)methylideneamino]-3-(1H-indol-3-yl)propanoic acid	/Users/marcelmueller/source/randommolecules/example/1395686/1395686_opt.xyz	55	0	1.824
+1397336	2-methyl-N-[[4-(4-methylsulfonylpiperazin-1-yl)phenyl]carbamothioyl]propanamide	/Users/marcelmueller/source/randommolecules/example/1397336/1397336_opt.xyz	49	0	1.983
+1408596	2-ethoxy-4-[[3-[(4-methylphenyl)methylsulfanyl]-1,2,4-triazol-4-yl]iminomethyl]-6-nitrophenol	/Users/marcelmueller/source/randommolecules/example/1408596/1408596_opt.xyz	48	0	1.280
+1427163	(1S)-1-[4-[(2-chlorophenyl)methoxy]-3-ethoxyphenyl]-2,3,4,9-tetrahydro-1H-pyrido[3,4-b]indol-2-ium	/Users/marcelmueller/source/randommolecules/example/1427163/1427163_opt.xyz	57	1	3.469
+1431483	(3S)-N-[2-(1,3-benzodioxol-5-ylmethylamino)-2-oxoethyl]-N-benzyl-5-oxothiolane-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/1431483/1431483_opt.xyz	52	0	3.540
+1444581	(4-benzylpiperazin-1-yl)-(2-methyl-1-phenylbenzimidazol-5-yl)methanone	/Users/marcelmueller/source/randommolecules/example/1444581/1444581_opt.xyz	57	0	2.951
+1456999	cyclohexyl-[(3R)-3-[3-[4-(dimethylamino)phenyl]-1,2,4-oxadiazol-5-yl]piperidin-1-yl]methanone	/Users/marcelmueller/source/randommolecules/example/1456999/1456999_opt.xyz	58	0	2.620
+1467197	2-methoxy-N-[(1S,5S)-9-(thiophen-2-ylmethyl)-9-azabicyclo[3.3.1]nonan-3-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/1467197/1467197_opt.xyz	52	0	2.541
+1497158	4-[(3,4-diphenyl-1,3-thiazol-2-ylidene)amino]-N-(4-methylphenyl)-1H-imidazole-5-carboxamide	/Users/marcelmueller/source/randommolecules/example/1497158/1497158_opt.xyz	54	0	2.522
+1499740	5-[2-(4-chlorophenyl)-2-oxoethoxy]-N-methyl-1-[(4-methylphenyl)methylideneamino]triazole-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/1499740/1499740_opt.xyz	47	0	1.886
+1511052	methyl 4-[(2R)-4-oxo-3-(2-propan-2-ylphenyl)-1,2-dihydroquinazolin-2-yl]benzoate	/Users/marcelmueller/source/randommolecules/example/1511052/1511052_opt.xyz	54	0	2.362
+1512769	6-(benzimidazol-2-ylidene)-4-[[3-(dihydroxyamino)-2-hydroxyphenyl]methylideneamino]cyclohexa-2,4-dien-1-one	/Users/marcelmueller/source/randommolecules/example/1512769/1512769_opt.xyz	42	0	0.392
+1522294	N-[2-(4-ethylpiperazin-1-yl)-2-oxoethyl]-4-methoxybenzamide	/Users/marcelmueller/source/randommolecules/example/1522294/1522294_opt.xyz	45	0	3.346
+1535503	ethyl 3-(2-methoxyphenyl)-7-[(2-methylphenyl)methoxy]-4-oxochromene-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/1535503/1535503_opt.xyz	57	0	2.206
+1543448	1-[4-[(2S)-2-hydroxy-3-(4-hydroxy-2,2,6,6-tetramethylpiperidin-1-yl)propoxy]phenyl]ethanone	/Users/marcelmueller/source/randommolecules/example/1543448/1543448_opt.xyz	56	0	2.280
+1547352	(5S)-4-[hydroxy-(3-methoxyphenyl)methylidene]-1-(3-imidazol-1-ylpropyl)-5-(4-methoxyphenyl)pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/1547352/1547352_opt.xyz	58	0	1.834
+1548189	N-[4-(4-iodophenyl)-1,3-thiazol-2-yl]-4-nitrobenzamide	/Users/marcelmueller/source/randommolecules/example/1548189/1548189_opt.xyz	34	0	1.395
+1551678	2-(1-adamantylsulfanyl)ethylazanium	/Users/marcelmueller/source/randommolecules/example/1551678/1551678_opt.xyz	36	1	4.445
+1555464	16-(2-methylprop-2-enylsulfanyl)-12-phenylspiro[12,14,15,17-tetrazatetracyclo[8.7.0.02,7.013,17]heptadeca-1(10),2,4,6,13,15-hexaene-9,1'-cyclopentane]-11-one	/Users/marcelmueller/source/randommolecules/example/1555464/1555464_opt.xyz	59	0	2.139
+1557570	2-methoxyethyl (3R,4R)-4-(2-chlorophenyl)-5-cyano-6-[2-(2,3-dimethylanilino)-2-oxoethyl]sulfanyl-2-methylidene-3,4-dihydro-1H-pyridine-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/1557570/1557570_opt.xyz	64	0	2.591
+1559469	(2E,6Z)-6-[[4-[2-(4-cyclohexylphenoxy)ethoxy]phenyl]methylidene]-2-ethylidene-5-imino-3H-[1,3,4]thiadiazolo[3,2-a]pyrimidin-7-one	/Users/marcelmueller/source/randommolecules/example/1559469/1559469_opt.xyz	66	0	1.814
+1597794	N-[2-(5-chloronaphthalen-1-yl)-1,3-benzoxazol-5-yl]-3-fluorobenzamide	/Users/marcelmueller/source/randommolecules/example/1597794/1597794_opt.xyz	44	0	2.467
+1624822	2-amino-1-(4-fluoro-3-nitrophenyl)-N-heptylpyrrolo[3,2-b]quinoxaline-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/1624822/1624822_opt.xyz	59	0	0.988
+1625711	N'-[2-hydroxy-1-[2-(4-methylanilino)-2-oxoethyl]indol-3-yl]imino-N-(2-methoxyphenyl)oxamide	/Users/marcelmueller/source/randommolecules/example/1625711/1625711_opt.xyz	59	0	1.395
+1641349	2-(4-methoxyphenyl)-7-methyl-3-(naphthalen-1-ylmethoxy)chromen-4-one	/Users/marcelmueller/source/randommolecules/example/1641349/1641349_opt.xyz	54	0	2.338
+1661518	2-(3,4-dimethylanilino)-N-(4-ethylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/1661518/1661518_opt.xyz	43	0	2.571
+1668315	2-(4-chlorophenyl)-3-methoxy-6-methylchromen-4-one	/Users/marcelmueller/source/randommolecules/example/1668315/1668315_opt.xyz	34	0	2.321
+1676227	ethyl 4-[[1-[(4-chlorophenyl)methyl]-4-(4,6-dimethylpyrimidin-2-yl)sulfanyl-2,5-dioxopyrrol-3-yl]amino]benzoate	/Users/marcelmueller/source/randommolecules/example/1676227/1676227_opt.xyz	59	0	1.538
+1679967	diethyl 5-[[2-(2-chlorobenzoyl)oxyacetyl]amino]-3-methylthiophene-2,4-dicarboxylate	/Users/marcelmueller/source/randommolecules/example/1679967/1679967_opt.xyz	50	0	2.678
+1680647	1-methyl-4-[6-methyl-2-(4-methylphenyl)chromen-4-ylidene]piperazine-1,4-diium	/Users/marcelmueller/source/randommolecules/example/1680647/1680647_opt.xyz	51	2	1.815
+1684698	4-[[4-chloro-1-(3-chlorophenyl)-2,5-dioxopyrrol-3-yl]amino]-N-(4-iodo-2-methylphenyl)benzamide	/Users/marcelmueller/source/randommolecules/example/1684698/1684698_opt.xyz	49	0	1.463
+1688793	N-(2,4-dimethylphenyl)-5-methyl-3-[(4-nitrophenyl)methyl]-4-oxothieno[2,3-d]pyrimidine-6-carboxamide	/Users/marcelmueller/source/randommolecules/example/1688793/1688793_opt.xyz	52	0	1.210
+1700668	propyl 3-[3-chloro-4-[3-[(4-chloro-2-methylphenyl)carbamoyl]anilino]-2,5-dioxopyrrol-1-yl]benzoate	/Users/marcelmueller/source/randommolecules/example/1700668/1700668_opt.xyz	61	0	1.078
+1716621	methyl (2R)-2-[(2-chlorobenzoyl)amino]-3,3,3-trifluoro-2-(pyridin-1-ium-2-ylamino)propanoate	/Users/marcelmueller/source/randommolecules/example/1716621/1716621_opt.xyz	40	1	1.951
+1726884	(Z)-1-[(4S)-4-(4-chlorophenyl)-2,2,4-trimethyl-3H-quinolin-1-yl]-3-(furan-2-yl)prop-2-en-1-one	/Users/marcelmueller/source/randommolecules/example/1726884/1726884_opt.xyz	53	0	2.684
+1729185	N-(2,1,3-benzoxadiazol-4-ylmethylideneamino)-3,5-dinitrobenzamide	/Users/marcelmueller/source/randommolecules/example/1729185/1729185_opt.xyz	34	0	1.514
+1731828	N-[(2S)-4-methylpentan-2-yl]pyridine-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/1731828/1731828_opt.xyz	33	0	2.721
+1735460	N-(2,3-dimethylphenyl)-2-(6-fluoro-2-phenylquinazolin-4-yl)sulfanylacetamide	/Users/marcelmueller/source/randommolecules/example/1735460/1735460_opt.xyz	50	0	2.099
+1754389	(2S,8S)-2-(4-chlorophenyl)-6-[2-(4-fluorophenyl)ethyl]-3,6,17-triazatetracyclo[8.7.0.03,8.011,16]heptadeca-1(10),11,13,15-tetraene-4,7-dione	/Users/marcelmueller/source/randommolecules/example/1754389/1754389_opt.xyz	58	0	3.352
+1797888	(7S)-4,7,15-trimethyl-7-phenyl-3,11-dioxatetracyclo[8.7.0.02,6.012,17]heptadeca-1(10),2(6),4,12(17),13,15-hexaene	/Users/marcelmueller/source/randommolecules/example/1797888/1797888_opt.xyz	48	0	3.019
+1801496	(4R)-2-amino-1-(3-chloro-4-methylphenyl)-7,7-dimethyl-3-(4-methylbenzoyl)-4-(4-methylphenyl)-6,8-dihydro-4H-quinolin-5-one	/Users/marcelmueller/source/randommolecules/example/1801496/1801496_opt.xyz	71	0	2.148
+1813080	2-chloro-5-[5-[(Z)-[2-(4-methoxyphenyl)imino-3-(2-methylpropyl)-4-oxo-1,3-thiazolidin-5-ylidene]methyl]furan-2-yl]benzoic acid	/Users/marcelmueller/source/randommolecules/example/1813080/1813080_opt.xyz	58	0	1.480
+1820073	2-[(4E)-4-[(4-methylphenyl)methylidene]-5-oxo-1-prop-2-enylimidazol-2-yl]sulfanyl-N-propylacetamide	/Users/marcelmueller/source/randommolecules/example/1820073/1820073_opt.xyz	48	0	1.929
+1845497	4-[[(5E)-5-[(5-bromo-2-methoxyphenyl)methylidene]-3-methyl-4-oxo-1,3-thiazolidin-2-ylidene]amino]benzoic acid	/Users/marcelmueller/source/randommolecules/example/1845497/1845497_opt.xyz	42	0	2.167
+1852307	(8Z)-4-methyl-8-[(4-nitrophenyl)methylidene]furo[2,3-h]chromene-2,9-dione	/Users/marcelmueller/source/randommolecules/example/1852307/1852307_opt.xyz	37	0	1.933
+1855869	N-(1-ethyl-[1,2,4]triazolo[4,3-a]quinoxalin-4-yl)-4-fluoro-N-propylbenzenesulfonamide	/Users/marcelmueller/source/randommolecules/example/1855869/1855869_opt.xyz	49	0	2.649
+1869623	N-[4-[[5-[(Z)-[1-(furan-2-ylmethyl)-2,4,6-trioxo-1,3-diazinan-5-ylidene]methyl]-2-methoxyphenyl]methoxy]phenyl]acetamide	/Users/marcelmueller/source/randommolecules/example/1869623/1869623_opt.xyz	59	0	1.330
+1913196	3-[4-[(5Z)-4-oxo-5-[(2-propoxyphenyl)methylidene]-1,3-thiazol-2-yl]piperazin-1-ium-1-yl]propanenitrile	/Users/marcelmueller/source/randommolecules/example/1913196/1913196_opt.xyz	52	1	2.088
+1921495	2-[3-[(Z)-[1-(4-methoxyphenyl)-4,6-dioxo-2-sulfanylidene-1,3-diazinan-5-ylidene]methyl]indol-1-yl]-N-phenylacetamide	/Users/marcelmueller/source/randommolecules/example/1921495/1921495_opt.xyz	59	0	1.197
+1928836	(5S)-5-(6-bromo-1,3-benzodioxol-5-yl)-11-methyl-8-thia-4,6-diaza-11-azoniatricyclo[7.4.0.02,7]trideca-1(9),2(7)-dien-3-one	/Users/marcelmueller/source/randommolecules/example/1928836/1928836_opt.xyz	42	1	3.071
+1931976	2-(1,3-benzothiazol-2-ylsulfanyl)-N-[(5-methyl-3-oxo-2-phenyl-1H-pyrazol-4-yl)methylideneamino]acetamide	/Users/marcelmueller/source/randommolecules/example/1931976/1931976_opt.xyz	46	0	2.590
+1933815	8-[(2-chlorophenyl)methylsulfanyl]-7-heptyl-3-methyl-9H-purin-7-ium-2,6-dione	/Users/marcelmueller/source/randommolecules/example/1933815/1933815_opt.xyz	54	1	1.902
+1942292	(4R,5S)-4-benzoyl-1-butyl-5-phenylpyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/1942292/1942292_opt.xyz	46	0	2.342
+1947655	(1S,2S)-1-(4-bromophenyl)-2-phenyl-3-pyrrolidin-1-ium-1-ylpropan-1-ol	/Users/marcelmueller/source/randommolecules/example/1947655/1947655_opt.xyz	45	1	3.576
+1947753	(5Z)-1-(3,5-dimethylphenyl)-5-[(2-methyl-1,5-diphenylpyrrol-3-yl)methylidene]-1,3-diazinane-2,4,6-trione	/Users/marcelmueller/source/randommolecules/example/1947753/1947753_opt.xyz	61	0	2.011
+1960613	3-[(3R)-2,3-dihydro-1,4-benzodioxin-3-yl]-5H-[1,2,4]triazolo[3,4-b][1,3,4]thiadiazole-6-thione	/Users/marcelmueller/source/randommolecules/example/1960613/1960613_opt.xyz	27	0	2.303
+1980769	(2E)-2-cyano-2-[(5E)-5-(furan-2-ylmethylidene)-3-(2-methylphenyl)-4-oxo-1,3-thiazolidin-2-ylidene]-N-phenylacetamide	/Users/marcelmueller/source/randommolecules/example/1980769/1980769_opt.xyz	48	0	1.866
+1982087	3-[5-[(E)-(1-methyl-4,6-dioxo-3-phenyl-2-sulfanylidene-1,3-diazinan-5-ylidene)methyl]furan-2-yl]benzoic acid	/Users/marcelmueller/source/randommolecules/example/1982087/1982087_opt.xyz	47	0	0.873
+2003929	methyl (2S)-2-[[(2Z)-3-oxo-2-(thiophen-2-ylmethylidene)-1-benzofuran-6-yl]oxy]propanoate	/Users/marcelmueller/source/randommolecules/example/2003929/2003929_opt.xyz	37	0	2.076
+2006853	[(2S)-2-[3-[(2S)-1-(dimethylazaniumyl)propan-2-yl]oxy-4-oxoquinazolin-2-yl]sulfanylpropyl]-dimethylazanium	/Users/marcelmueller/source/randommolecules/example/2006853/2006853_opt.xyz	55	2	3.078
+2017094	(3R,4'R)-4'-(1-benzofuran-2-carbonyl)-1'-(2-morpholin-4-ylethyl)-1-prop-2-enylspiro[indole-3,5'-pyrrolidine]-2,2',3'-trione	/Users/marcelmueller/source/randommolecules/example/2017094/2017094_opt.xyz	65	0	1.495
+2035198	benzyl (2S)-2-cyano-2-(3-piperidin-1-ylquinoxalin-2-yl)acetate	/Users/marcelmueller/source/randommolecules/example/2035198/2035198_opt.xyz	51	0	1.829
+2035752	(2R)-1-[(2S,3S)-3-methyl-2-(4-oxo-1,2,3-benzotriazin-3-yl)pentanoyl]pyrrolidine-2-carboxylic acid	/Users/marcelmueller/source/randommolecules/example/2035752/2035752_opt.xyz	48	0	2.220
+2037312	4-[[5-(3-chlorophenyl)-4-phenyl-1,2,4-triazol-3-yl]sulfanylmethyl]benzonitrile	/Users/marcelmueller/source/randommolecules/example/2037312/2037312_opt.xyz	43	0	2.705
+2057251	(1R)-1-(3-prop-2-enoxyphenyl)-2-pyridin-1-ium-2-yl-1H-chromeno[2,3-c]pyrrole-3,9-dione	/Users/marcelmueller/source/randommolecules/example/2057251/2057251_opt.xyz	50	1	0.777
+2069578	ethyl 3-[2-(2-methoxyethoxy)-2-oxoethyl]-5-methyl-4-oxothieno[2,3-d]pyrimidine-6-carboxylate	/Users/marcelmueller/source/randommolecules/example/2069578/2069578_opt.xyz	42	0	2.717
+2071763	3-(4-butoxy-3-ethoxyphenyl)-N-phenylpropanamide	/Users/marcelmueller/source/randommolecules/example/2071763/2071763_opt.xyz	52	0	3.444
+2078523	N-(2,4-difluorophenyl)-2-[(5R)-2-(3-methylanilino)-4-oxo-1,3-thiazol-5-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/2078523/2078523_opt.xyz	41	0	3.011
+2102192	(7-bromo-4-oxopyrido[1,2-a]pyrimidin-2-yl)methyl 3-[(3-chlorophenyl)-methylsulfamoyl]benzoate	/Users/marcelmueller/source/randommolecules/example/2102192/2102192_opt.xyz	51	0	2.491
+2128457	3-[4-amino-5-[2-(1H-indol-3-yl)-2-oxoethyl]sulfanyl-1,2,4-triazol-3-yl]-N,N-diethylbenzenesulfonamide	/Users/marcelmueller/source/randommolecules/example/2128457/2128457_opt.xyz	57	0	2.409
+2130877	(4R,5S)-1-(2-methoxyethyl)-4-[3-methyl-4-(2-methylpropoxy)benzoyl]-5-pyridin-4-ylpyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/2130877/2130877_opt.xyz	59	0	2.375
+2172911	(5E)-5-[(Z)-3-(4-bromophenyl)prop-2-enylidene]-3-(4-methoxyphenyl)-2-sulfanylidene-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/2172911/2172911_opt.xyz	39	0	1.168
+2237602	N-[4-(piperidine-1-carbonyl)phenyl]-2-[3-(trifluoromethyl)-5,6,7,8-tetrahydro-4H-cyclohepta[c]pyrazol-1-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/2237602/2237602_opt.xyz	59	0	3.416
+2248152	(3-nitrophenyl)-[4-(pentoxycarbonylamino)phenyl]sulfonylazanide	/Users/marcelmueller/source/randommolecules/example/2248152/2248152_opt.xyz	48	-1	0.863
+2251244	N',N'-diethyl-N-[(3-methoxyphenyl)methylideneamino]oxamide	/Users/marcelmueller/source/randommolecules/example/2251244/2251244_opt.xyz	39	0	2.574
+2260045	[2-[[2-(dimethylamino)quinolin-1-ium-4-yl]amino]-2-oxoethyl]-(2,4,4-trimethylpentan-2-yl)azanium	/Users/marcelmueller/source/randommolecules/example/2260045/2260045_opt.xyz	60	2	2.456
+2285540	1-chloro-3-[3-(3-ethoxyphenoxy)propoxy]benzene	/Users/marcelmueller/source/randommolecules/example/2285540/2285540_opt.xyz	40	0	3.665
+2305092	(Z)-2,3-dithiophen-2-ylprop-2-enoic acid	/Users/marcelmueller/source/randommolecules/example/2305092/2305092_opt.xyz	23	0	2.154
+2324044	(5R)-1',3',3'-trimethylspiro[2H-1,2-oxazole-5,2'-indole]	/Users/marcelmueller/source/randommolecules/example/2324044/2324044_opt.xyz	32	0	3.659
+2327075	(4-benzhydrylpiperazin-4-ium-1-yl)-(4-thiophen-2-ylsulfonyliminocyclohexa-2,5-dien-1-ylidene)methanolate	/Users/marcelmueller/source/randommolecules/example/2327075/2327075_opt.xyz	63	0	0.387
+2328540	2,6-ditert-butyl-4-[2-(furan-2-ylmethylimino)-3-phenyl-1,3-thiazol-4-yl]phenol	/Users/marcelmueller/source/randommolecules/example/2328540/2328540_opt.xyz	65	0	2.859
+2330340	1-(fluoren-9-ylideneamino)-3-phenylthiourea	/Users/marcelmueller/source/randommolecules/example/2330340/2330340_opt.xyz	39	0	1.322
+2333578	3-(4-methylphenyl)-1-phenyl-N-[2-(4-sulfamoylphenyl)ethyl]pyrazole-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/2333578/2333578_opt.xyz	57	0	2.764
+2349987	[2-oxo-2-[[(1S)-1-phenylethyl]amino]ethyl] 2-(2-methylphenoxy)acetate	/Users/marcelmueller/source/randommolecules/example/2349987/2349987_opt.xyz	45	0	3.636
+2354345	N-(1,3-benzothiazol-2-yl)-2-(4-chlorophenoxy)-N-(2,6-dimethylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/2354345/2354345_opt.xyz	48	0	3.134
+2363395	1-[(5,7-dichloro-2-hydroxy-1H-indol-3-yl)imino]-3-[[(2R)-oxolan-2-yl]methyl]thiourea	/Users/marcelmueller/source/randommolecules/example/2363395/2363395_opt.xyz	37	0	0.605
+2365621	2-[[(4S)-5-cyano-4-(4-ethoxyphenyl)-2-oxo-3,4-dihydro-1H-pyridin-6-yl]sulfanyl]-N-(4-fluorophenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/2365621/2365621_opt.xyz	50	0	2.221
+2377197	4-chloro-3-(2,3-dihydroindol-1-ylsulfonyl)benzoate	/Users/marcelmueller/source/randommolecules/example/2377197/2377197_opt.xyz	33	-1	1.860
+2377419	(2E)-4,4-dimethyl-3-oxo-2-[(5Z)-4-oxo-5-(pyridin-4-ylmethylidene)-3-[2-(trifluoromethyl)phenyl]-1,3-thiazolidin-2-ylidene]pentanenitrile	/Users/marcelmueller/source/randommolecules/example/2377419/2377419_opt.xyz	50	0	1.391
+2377958	1-[(2-hydroxyphenyl)methylideneamino]-3-(4-morpholin-4-ylsulfonylphenyl)thiourea	/Users/marcelmueller/source/randommolecules/example/2377958/2377958_opt.xyz	48	0	1.657
+2390012	(5-methyl-1,2-oxazol-3-yl)-(4-naphthalen-2-ylsulfonylazanidylphenyl)sulfonylazanide	/Users/marcelmueller/source/randommolecules/example/2390012/2390012_opt.xyz	45	-2	0.662
+2392603	ethyl 2-[[2-[[(4S)-5-cyano-4-(4-methylphenyl)-2-oxo-3,4-dihydro-1H-pyridin-6-yl]sulfanyl]acetyl]amino]-4,5,6,7-tetrahydro-1-benzothiophene-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/2392603/2392603_opt.xyz	62	0	2.125
+2415723	2-[3-[(3S)-3-methylpiperidin-1-yl]quinoxalin-2-yl]propanedinitrile	/Users/marcelmueller/source/randommolecules/example/2415723/2415723_opt.xyz	39	0	1.855
+2417996	2-[[5-(1,3-benzodioxol-5-yl)-1,3,4-oxadiazol-2-yl]sulfanyl]-N-(3-methylbutylcarbamoyl)acetamide	/Users/marcelmueller/source/randommolecules/example/2417996/2417996_opt.xyz	47	0	2.695
+2419155	1-(2,4-dihydroxyphenyl)-2-[[5-(3-piperidin-1-ylsulfonylphenyl)-1,3,4-oxadiazol-2-yl]sulfanyl]ethanone	/Users/marcelmueller/source/randommolecules/example/2419155/2419155_opt.xyz	53	0	2.564
+2419759	[2-(4-ethylphenyl)-2-oxoethyl] 2-naphthalen-1-ylacetate	/Users/marcelmueller/source/randommolecules/example/2419759/2419759_opt.xyz	45	0	2.330
+2429564	(E)-3-(4-chloro-3-nitrophenyl)-2-cyano-N-prop-2-enylprop-2-enamide	/Users/marcelmueller/source/randommolecules/example/2429564/2429564_opt.xyz	30	0	2.349
+2433975	2-[(4-amino-5-propan-2-yl-1,2,4-triazol-3-yl)sulfanyl]-N-(2-cyanoethyl)-N-(2-fluorophenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/2433975/2433975_opt.xyz	44	0	3.114
+2441879	N-[2-(1H-indol-3-yl)ethyl]-3,4,5-trimethoxybenzamide	/Users/marcelmueller/source/randommolecules/example/2441879/2441879_opt.xyz	48	0	3.148
+2450344	(2R)-N-(3,5-dichloropyridin-2-yl)-2-(4-methylquinolin-2-yl)sulfanylpropanamide	/Users/marcelmueller/source/randommolecules/example/2450344/2450344_opt.xyz	40	0	2.454
+2459929	2-[(4S)-4-(2-chlorophenyl)-4-methyl-2,5-dioxoimidazolidin-1-yl]-N-(furan-2-ylmethyl)acetamide	/Users/marcelmueller/source/randommolecules/example/2459929/2459929_opt.xyz	41	0	3.972
+2465105	(4-acetylphenyl)sulfonyl-[4-(2-methoxyanilino)phenyl]azanide	/Users/marcelmueller/source/randommolecules/example/2465105/2465105_opt.xyz	47	-1	0.827
+2477197	2-(4-acetyl-2-methoxyphenoxy)-N-cycloheptylacetamide	/Users/marcelmueller/source/randommolecules/example/2477197/2477197_opt.xyz	48	0	2.930
+2478947	[2-[(4-methylphenyl)methylamino]-2-oxoethyl] (E)-3-(2,4-dichlorophenyl)prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/2478947/2478947_opt.xyz	42	0	2.670
+2479717	[(2R)-1-(3-chloroanilino)-1-oxopropan-2-yl] 2,4,5-trimethoxybenzoate	/Users/marcelmueller/source/randommolecules/example/2479717/2479717_opt.xyz	47	0	3.148
+2485446	N-[(3-chlorophenyl)methyl]-N-methyl-4-piperidin-1-ylsulfonylbenzamide	/Users/marcelmueller/source/randommolecules/example/2485446/2485446_opt.xyz	50	0	3.273
+2514086	[2-[di(propan-2-yl)amino]-2-oxoethyl] 4-chloro-3-piperidin-1-ylsulfonylbenzoate	/Users/marcelmueller/source/randommolecules/example/2514086/2514086_opt.xyz	58	0	2.616
+2541474	N-[2-(2-fluorophenoxy)ethyl]-3-methyl-4-oxophthalazine-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/2541474/2541474_opt.xyz	41	0	2.592
+2541746	(2S)-N-(1,3-benzodioxol-5-yl)-2-methyl-3-oxo-4H-1,4-benzothiazine-6-carboxamide	/Users/marcelmueller/source/randommolecules/example/2541746/2541746_opt.xyz	38	0	2.464
+2545354	2-[benzenesulfonyl(benzyl)amino]-N-[(2-chlorophenyl)methyl]acetamide	/Users/marcelmueller/source/randommolecules/example/2545354/2545354_opt.xyz	50	0	3.295
+2564560	2-(1,3-dioxoisoindol-2-yl)ethyl 2-methyl-3-nitrobenzoate	/Users/marcelmueller/source/randommolecules/example/2564560/2564560_opt.xyz	40	0	2.742
+2567488	4-(difluoromethoxy)-3-methoxy-N-[(1S)-1-phenylethyl]benzamide	/Users/marcelmueller/source/randommolecules/example/2567488/2567488_opt.xyz	40	0	3.500
+2576465	2-(4-cyanophenoxy)-N-cyclohexyl-N-[(3R)-1,1-dioxothiolan-3-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/2576465/2576465_opt.xyz	50	0	3.635
+2603342	(2R)-N-carbamoyl-2-(7-thia-9,11-diazatricyclo[6.4.0.02,6]dodeca-1(8),2(6),9,11-tetraen-12-ylsulfanyl)propanamide	/Users/marcelmueller/source/randommolecules/example/2603342/2603342_opt.xyz	35	0	2.621
+2620429	cyanomethyl 4-methylsulfonyl-3-nitrobenzoate	/Users/marcelmueller/source/randommolecules/example/2620429/2620429_opt.xyz	27	0	2.550
+2622102	[2-oxo-2-(pentan-3-ylamino)ethyl] 4-chloro-3-nitrobenzoate	/Users/marcelmueller/source/randommolecules/example/2622102/2622102_opt.xyz	39	0	2.153
+2627971	N-(methylcarbamoyl)-2-(4-nitrophenoxy)acetamide	/Users/marcelmueller/source/randommolecules/example/2627971/2627971_opt.xyz	29	0	2.820
+2629595	4-(3-chloro-4-methoxyphenyl)-3-ethylsulfanyl-5-phenyl-1,2,4-triazole	/Users/marcelmueller/source/randommolecules/example/2629595/2629595_opt.xyz	39	0	2.924
+2629788	[(2S)-1-(2-methoxyanilino)-1-oxopropan-2-yl] 2,6-dimethoxybenzoate	/Users/marcelmueller/source/randommolecules/example/2629788/2629788_opt.xyz	47	0	3.622
+2629867	[2-(2-methylpropylcarbamoylamino)-2-oxoethyl] (E)-3-(3-fluorophenyl)prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/2629867/2629867_opt.xyz	42	0	2.908
+2635754	2-ethoxy-N-[(2S)-3-methyl-1-oxo-1-(thiophen-2-ylmethylamino)butan-2-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/2635754/2635754_opt.xyz	49	0	3.458
+2644188	(5R)-5-ethyl-3-[(3-fluorophenyl)methylideneamino]-5-methylimidazolidine-2,4-dione	/Users/marcelmueller/source/randommolecules/example/2644188/2644188_opt.xyz	33	0	2.707
+2658238	2-[[2-(tert-butylcarbamoylamino)-2-oxoethyl]-methylamino]-N-(5-chloro-2-methoxyphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/2658238/2658238_opt.xyz	51	0	2.931
+2661351	N-[(4-methoxyphenyl)methyl]-2-[3-methyl-7-(2-methylpropyl)-2,4-dioxo-1-propylpyrimido[4,5-d]pyrimidin-5-yl]sulfanylacetamide	/Users/marcelmueller/source/randommolecules/example/2661351/2661351_opt.xyz	65	0	2.482
+2664631	(2S)-N-[(1R)-1-(2,4-dichlorophenyl)ethyl]-2-[1-(2-ethoxyphenyl)tetrazol-5-yl]sulfanylpropanamide	/Users/marcelmueller/source/randommolecules/example/2664631/2664631_opt.xyz	51	0	3.061
+2665109	[(2R)-1-(carbamoylamino)-1-oxopropan-2-yl] 4-(3-nitrophenyl)sulfonyloxybenzoate	/Users/marcelmueller/source/randommolecules/example/2665109/2665109_opt.xyz	45	0	1.413
+2665592	2-(2-methoxyphenyl)-N-(3-methylsulfanylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/2665592/2665592_opt.xyz	37	0	3.174
+2675710	3-(1,3-dioxoisoindol-2-yl)-N-(4-methyl-2-oxochromen-7-yl)propanamide	/Users/marcelmueller/source/randommolecules/example/2675710/2675710_opt.xyz	44	0	1.802
+2693460	2-[3-(2,3-dimethylphenyl)-4-oxoquinazolin-2-yl]sulfanyl-N-ethylacetamide	/Users/marcelmueller/source/randommolecules/example/2693460/2693460_opt.xyz	47	0	2.992
+2698285	(4-ethoxy-3-methoxyphenyl)methyl-[2-(furan-2-ylmethylcarbamoylamino)-2-oxoethyl]-methylazanium	/Users/marcelmueller/source/randommolecules/example/2698285/2698285_opt.xyz	53	1	2.479
+2699341	N-(5-chloro-2-cyanophenyl)-2-[(2,4-dichlorophenyl)methyl-methylamino]acetamide	/Users/marcelmueller/source/randommolecules/example/2699341/2699341_opt.xyz	38	0	2.041
+2735490	1-benzyl-5-nitroindole-3-carbaldehyde	/Users/marcelmueller/source/randommolecules/example/2735490/2735490_opt.xyz	33	0	2.281
+2743319	3-(4-tert-butylphenyl)-4-(furan-2-ylmethyl)-5-[(4-methylphenyl)methylsulfanyl]-1,2,4-triazole	/Users/marcelmueller/source/randommolecules/example/2743319/2743319_opt.xyz	57	0	3.305
+2763291	4-(chloromethyl)-2-propan-2-yl-1,3-oxazole	/Users/marcelmueller/source/randommolecules/example/2763291/2763291_opt.xyz	20	0	4.618
+2766579	1-methyl-3-[[6-oxo-1-[[3-(trifluoromethyl)phenyl]methyl]pyridine-3-carbonyl]amino]thiourea	/Users/marcelmueller/source/randommolecules/example/2766579/2766579_opt.xyz	41	0	1.266
+2769579	2-(diethylaminomethyl)cyclopentan-1-one	/Users/marcelmueller/source/randommolecules/example/2769579/2769579_opt.xyz	31	0	2.677
+2801564	2-(hydroxymethyl)-5-phenylmethoxy-1H-pyridin-4-one	/Users/marcelmueller/source/randommolecules/example/2801564/2801564_opt.xyz	30	0	3.147
+2833903	1-(1-adamantyl)ethyl-trimethylazanium	/Users/marcelmueller/source/randommolecules/example/2833903/2833903_opt.xyz	44	1	6.906
+2851430	1-(4-bromophenyl)-3-(4-fluoroanilino)pyrrolidine-2,5-dione	/Users/marcelmueller/source/randommolecules/example/2851430/2851430_opt.xyz	34	0	2.372
+2875271	2-(2-chlorophenyl)-4-[(2,5-dimethoxyphenyl)methylidene]-1,3-oxazol-5-one	/Users/marcelmueller/source/randommolecules/example/2875271/2875271_opt.xyz	38	0	1.831
+2879952	1-(3-bromophenyl)-5-[(2,4-dimethoxyphenyl)methylidene]-2-sulfanylidene-1,3-diazinane-4,6-dione	/Users/marcelmueller/source/randommolecules/example/2879952/2879952_opt.xyz	42	0	1.232
+2900451	[2-oxo-2-(4-phenylphenyl)ethyl] 2-(1,3-dioxoisoindol-2-yl)-3-phenylpropanoate	/Users/marcelmueller/source/randommolecules/example/2900451/2900451_opt.xyz	60	0	2.408
+2901452	2-cyclohexyl-6-[(2,4-dichlorophenyl)methylidene]-5-imino-[1,3,4]thiadiazolo[3,2-a]pyrimidin-7-one	/Users/marcelmueller/source/randommolecules/example/2901452/2901452_opt.xyz	42	0	1.806
+2906829	4-chloro-3-(1,3-dioxo-3a,4,7,7a-tetrahydroisoindol-2-yl)benzamide	/Users/marcelmueller/source/randommolecules/example/2906829/2906829_opt.xyz	34	0	3.451
+2912093	2-[(4-methoxy-3-methylphenyl)methylidene]indene-1,3-dione	/Users/marcelmueller/source/randommolecules/example/2912093/2912093_opt.xyz	35	0	2.140
+2928923	ethyl 1-[2-[(3-chlorophenyl)methyl-(4-methylphenyl)sulfonylamino]acetyl]piperidine-4-carboxylate	/Users/marcelmueller/source/randommolecules/example/2928923/2928923_opt.xyz	62	0	3.314
+2940942	methyl 1-(1-methoxy-2-methyl-1-oxopropan-2-yl)-3-oxo-1,2-dihydrobenzo[f]chromene-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/2940942/2940942_opt.xyz	46	0	2.959
+2945826	2-[5-[1-[acetyl(methyl)amino]cyclopentyl]tetrazol-1-yl]ethyl N-naphthalen-1-ylcarbamate	/Users/marcelmueller/source/randommolecules/example/2945826/2945826_opt.xyz	57	0	2.945
+2945966	4,11-diethyl-7,14-diphenyl-1,4,8,11-tetrazatetracyclo[6.6.0.02,6.09,13]tetradecane-3,5,10,12-tetrone	/Users/marcelmueller/source/randommolecules/example/2945966/2945966_opt.xyz	60	0	2.031
+2956104	1-[(3,4-dimethoxyphenyl)methyl]-3-hydroxy-3-[2-oxo-2-(2,3,5,6-tetramethylphenyl)ethyl]indol-2-one	/Users/marcelmueller/source/randommolecules/example/2956104/2956104_opt.xyz	66	0	3.285
+2958465	3,5-dichloro-N-(5-chloro-6-methoxy-1,3-benzothiazol-2-yl)-4-methoxybenzamide	/Users/marcelmueller/source/randommolecules/example/2958465/2958465_opt.xyz	36	0	2.643
+2966574	3-[2-(4-methoxyphenoxy)ethylsulfanyl]-5-(2-methylphenyl)-1H-1,2,4-triazole	/Users/marcelmueller/source/randommolecules/example/2966574/2966574_opt.xyz	43	0	2.557
+2975854	3-hydroxy-N-[(2-methoxyphenyl)methyl]-5-nitro-2-phenyltriazol-4-imine	/Users/marcelmueller/source/randommolecules/example/2975854/2975854_opt.xyz	40	0	1.454
+2986005	6-(3,4-dimethylphenyl)-[1,2,4]triazolo[3,4-b][1,3,4]thiadiazole	/Users/marcelmueller/source/randommolecules/example/2986005/2986005_opt.xyz	26	0	2.292
+3003232	1-(4-cyanophenyl)-3-[C-[(2,6-dichlorophenyl)methyl]-N-ethylcarbonimidoyl]thiourea	/Users/marcelmueller/source/randommolecules/example/3003232/3003232_opt.xyz	41	0	1.892
+3023510	5-chloro-2-(4-chlorophenyl)sulfanyl-N,N-dimethyl-4-nitroaniline	/Users/marcelmueller/source/randommolecules/example/3023510/3023510_opt.xyz	33	0	1.773
+3024635	2-(2,6-dichlorophenyl)-3-(1,3-thiazol-2-yl)-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/3024635/3024635_opt.xyz	27	0	2.832
+3027347	3-[2-(diethylamino)ethyl]-1H-benzimidazole-2-thione	/Users/marcelmueller/source/randommolecules/example/3027347/3027347_opt.xyz	36	0	2.353
+3027439	5-[3-(5-chloro-2-hydroxyphenyl)-3-oxoprop-1-enyl]-2-hydroxybenzoic acid	/Users/marcelmueller/source/randommolecules/example/3027439/3027439_opt.xyz	33	0	2.077
+3042598	1-(chloromethyl)-4-methyl-2,6,7-trioxabicyclo[2.2.2]octane	/Users/marcelmueller/source/randommolecules/example/3042598/3042598_opt.xyz	22	0	6.796
+3046094	[3-(2-methylphenyl)-4-oxoquinazolin-2-yl]methyl carbamimidothioate	/Users/marcelmueller/source/randommolecules/example/3046094/3046094_opt.xyz	39	0	3.120
+3050003	4-hydroxy-2-methyl-1-morpholin-4-yl-5-piperidin-1-ylpentan-1-one;hydrochloride	/Users/marcelmueller/source/randommolecules/example/3050003/3050003_opt.xyz	50	0	3.337
+3052537	2-(3-chlorophenyl)-1-(4-chlorophenyl)ethanamine	/Users/marcelmueller/source/randommolecules/example/3052537/3052537_opt.xyz	30	0	3.707
+3065572	(6S)-6-ethyl-9,10-dimethoxy-3-methyl-2-(2,4,6-trimethylphenyl)imino-6,7-dihydropyrimido[6,1-a]isoquinolin-4-one	/Users/marcelmueller/source/randommolecules/example/3065572/3065572_opt.xyz	63	0	1.945
+3075426	N-(6-methylpyridin-2-yl)-2,4-dioxo-4-phenylbutanamide	/Users/marcelmueller/source/randommolecules/example/3075426/3075426_opt.xyz	35	0	1.865
+3097900	4-[(2,4,6-trioxo-1,3-diazinan-5-ylidene)methyl]benzoic acid	/Users/marcelmueller/source/randommolecules/example/3097900/3097900_opt.xyz	27	0	2.454
+3106005	cyclohexyl 4-(3-methoxy-4-phenylmethoxyphenyl)-2-methyl-5-oxo-4,6,7,8-tetrahydro-1H-quinoline-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/3106005/3106005_opt.xyz	72	0	2.328
+3114900	2-[3-(1,3-dioxobenzo[de]isoquinolin-2-yl)propylsulfanyl]benzoic acid	/Users/marcelmueller/source/randommolecules/example/3114900/3114900_opt.xyz	45	0	1.276
+3125489	tetramethyl 6'-but-2-enoyl-9'-methoxy-5',5'-dimethylspiro[1,3-dithiole-2,1'-thiopyrano[2,3-c]quinoline]-2',3',4,5-tetracarboxylate	/Users/marcelmueller/source/randommolecules/example/3125489/3125489_opt.xyz	72	0	1.767
+3168161	ethyl 6-amino-5-cyano-2-methyl-4-(6-methyl-2-piperidin-1-ylquinolin-3-yl)-4H-pyran-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/3168161/3168161_opt.xyz	60	0	1.852
+3199537	3-[[benzyl-[1-[1-[(4-fluorophenyl)methyl]tetrazol-5-yl]propyl]amino]methyl]-7-methoxy-1H-quinolin-2-one	/Users/marcelmueller/source/randommolecules/example/3199537/3199537_opt.xyz	67	0	2.143
+3209515	furan-2-yl-[4-[[1-(oxolan-2-ylmethyl)tetrazol-5-yl]methyl]piperazin-1-yl]methanone	/Users/marcelmueller/source/randommolecules/example/3209515/3209515_opt.xyz	47	0	3.223
+3215216	N-benzyl-3-cyclohexyl-9-methyl-4H-[1,3]thiazino[6,5-b]quinolin-2-imine	/Users/marcelmueller/source/randommolecules/example/3215216/3215216_opt.xyz	56	0	2.350
+3221446	N-benzyl-8-methoxy-2-oxo-N-(oxolan-2-ylmethyl)chromene-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/3221446/3221446_opt.xyz	52	0	2.291
+3239244	2-[2-(dimethylamino)ethyl]-3-phenylquinazolin-4-one;hydron;chloride	/Users/marcelmueller/source/randommolecules/example/3239244/3239244_opt.xyz	43	0	2.591
+3243879	N-[2-(diethylamino)ethyl]-5-methyl-4-oxo-3-[2-oxo-2-(propylamino)ethyl]thieno[2,3-d]pyrimidine-6-carboxamide	/Users/marcelmueller/source/randommolecules/example/3243879/3243879_opt.xyz	57	0	1.464
+3244845	N-[[4-(3-methylphenyl)-5-sulfanylidene-1H-1,2,4-triazol-3-yl]methyl]-4-pyrrolidin-1-ylsulfonylbenzamide	/Users/marcelmueller/source/randommolecules/example/3244845/3244845_opt.xyz	54	0	1.609
+3248792	2-amino-N-(4-methoxynaphthalen-2-yl)propanamide	/Users/marcelmueller/source/randommolecules/example/3248792/3248792_opt.xyz	34	0	2.937
+3282800	ethyl 3-(2,4-dimethylphenyl)-7-(naphthalene-2-carbonyl)pyrrolo[1,2-c]pyrimidine-5-carboxylate	/Users/marcelmueller/source/randommolecules/example/3282800/3282800_opt.xyz	58	0	2.386
+3286782	prop-2-enyl 2-[4-[hydroxy-(3-propoxyphenyl)methylidene]-2,3-dioxo-5-(4-pentoxyphenyl)pyrrolidin-1-yl]-4-methyl-1,3-thiazole-5-carboxylate	/Users/marcelmueller/source/randommolecules/example/3286782/3286782_opt.xyz	79	0	1.854
+3298992	1-[1-(4-methoxyphenyl)ethylideneamino]-3-(2-methylprop-2-enyl)thiourea	/Users/marcelmueller/source/randommolecules/example/3298992/3298992_opt.xyz	38	0	1.850
+3303608	2-chloro-N-hexyl-N-[1-[3-(2-methylphenyl)-4-oxoquinazolin-2-yl]ethyl]benzamide	/Users/marcelmueller/source/randommolecules/example/3303608/3303608_opt.xyz	68	0	3.123
+3328539	2-(1,3-benzodioxol-5-ylmethyl)-7-bromo-1'-methylspiro[chromeno[2,3-c]pyrrole-1,3'-indole]-2',3,9-trione	/Users/marcelmueller/source/randommolecules/example/3328539/3328539_opt.xyz	53	0	2.005
+3332081	5-[[3-chloro-4-[(3-fluorophenyl)methoxy]phenyl]methylidene]-3-propyl-2-sulfanylideneimidazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/3332081/3332081_opt.xyz	45	0	1.440
+3379274	ethyl 2-[2-(4-butoxy-3-ethoxyphenyl)-4-hydroxy-5-oxo-3-(thiophene-2-carbonyl)-2H-pyrrol-1-yl]-4-methyl-1,3-thiazole-5-carboxylate	/Users/marcelmueller/source/randommolecules/example/3379274/3379274_opt.xyz	69	0	1.607
+3397149	5-(4-ethylphenyl)-4-[hydroxy-(4-methylphenyl)methylidene]-1-(2-phenylethyl)pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/3397149/3397149_opt.xyz	59	0	1.956
+3399646	1-[(3-methylpyridin-2-yl)-(5-methylpyridin-2-yl)methyl]piperazine	/Users/marcelmueller/source/randommolecules/example/3399646/3399646_opt.xyz	43	0	2.504
+3400097	2-[[5-(3-methoxyphenyl)-1,3,4-oxadiazol-2-yl]sulfanyl]-N-(4-piperidin-1-ylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/3400097/3400097_opt.xyz	54	0	1.722
+3428067	2-amino-1-(2,3-dichlorophenyl)-4-(5-ethylthiophen-2-yl)-7,7-dimethyl-5-oxo-6,8-dihydro-4H-quinoline-3-carbonitrile	/Users/marcelmueller/source/randommolecules/example/3428067/3428067_opt.xyz	54	0	2.077
+3449296	3-(4-bromo-2-fluorophenyl)-10-methyl-6-propyl-2,4-dihydropyrano[3,2-g][1,3]benzoxazin-8-one	/Users/marcelmueller/source/randommolecules/example/3449296/3449296_opt.xyz	46	0	2.742
+3451470	3-methyl-7-nitro-4H-1lambda6,2,4-benzothiadiazine 1,1-dioxide	/Users/marcelmueller/source/randommolecules/example/3451470/3451470_opt.xyz	23	0	2.270
+3452517	2-cyanopropan-2-yl 4-bromobenzoate	/Users/marcelmueller/source/randommolecules/example/3452517/3452517_opt.xyz	25	0	3.236
+3456689	[4-[2-cyano-2-(6,7,8,9-tetrahydro-5H-[1,2,4]triazolo[4,3-a]azepin-3-yl)ethenyl]-2-methoxyphenyl] propanoate	/Users/marcelmueller/source/randommolecules/example/3456689/3456689_opt.xyz	49	0	1.818
+3468288	N-(3-chloro-4-fluorophenyl)-4-[1-(3-methoxyphenyl)-5-(4-methoxyphenyl)-2-methylpyrrole-3-carbonyl]piperazine-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/3468288/3468288_opt.xyz	71	0	3.120
+3468843	2-(2-chlorophenyl)-6-[[4-(diethylamino)phenyl]methylidene]-5-imino-[1,3,4]thiadiazolo[3,2-a]pyrimidin-7-one	/Users/marcelmueller/source/randommolecules/example/3468843/3468843_opt.xyz	50	0	1.638
+3470558	3-methoxy-N-[1-(4-propylphenyl)ethylideneamino]benzamide	/Users/marcelmueller/source/randommolecules/example/3470558/3470558_opt.xyz	45	0	2.907
+3490556	5-(2-chlorophenyl)-2-(3-methylphenyl)-N-(pyridin-3-ylmethyl)pyrazole-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/3490556/3490556_opt.xyz	48	0	2.958
+3510446	5-bromo-N-[(2-chloro-5-nitrophenyl)methylideneamino]furan-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/3510446/3510446_opt.xyz	28	0	2.396
+3513881	benzyl 5-(4-butoxyphenyl)-2-[(3-ethoxy-4-hydroxyphenyl)methylidene]-7-methyl-3-oxo-5H-[1,3]thiazolo[3,2-a]pyrimidine-6-carboxylate	/Users/marcelmueller/source/randommolecules/example/3513881/3513881_opt.xyz	77	0	1.822
+3529580	2-azaniumyl-4-(butylsulfonimidoyl)butanoate	/Users/marcelmueller/source/randommolecules/example/3529580/3529580_opt.xyz	32	0	4.132
+3543220	N-[1-[3-(4-chloro-2-methylphenyl)-4-oxoquinazolin-2-yl]ethyl]-2-methyl-N-(2-phenylethyl)benzamide	/Users/marcelmueller/source/randommolecules/example/3543220/3543220_opt.xyz	69	0	3.027
+3545129	[3-[3-(benzylamino)-7-methylimidazo[1,2-a]pyridin-2-yl]phenyl] 2-phenylethenesulfonate	/Users/marcelmueller/source/randommolecules/example/3545129/3545129_opt.xyz	61	0	1.709
+3551268	6-[2-(4-butoxyanilino)-2-oxoethyl]sulfanyl-5-cyano-4-(furan-2-yl)-2-methyl-1,4-dihydropyridine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/3551268/3551268_opt.xyz	59	0	2.614
+3575710	4-(4-benzylpiperazin-1-yl)-2,6-dimethylthieno[2,3-d]pyrimidine	/Users/marcelmueller/source/randommolecules/example/3575710/3575710_opt.xyz	46	0	2.993
+3592434	ethyl 5-(2-chloro-6-fluorophenyl)-3-oxo-8-thia-4,6,11-triazatricyclo[7.4.0.02,7]trideca-1(9),2(7)-diene-11-carboxylate	/Users/marcelmueller/source/randommolecules/example/3592434/3592434_opt.xyz	44	0	2.388
+3605576	(2-bromophenyl)-[1-(2,3,5,6-tetramethylphenyl)-[1,2,3,5]oxatriazolo[3,2-a]benzotriazol-5-yl]methanone	/Users/marcelmueller/source/randommolecules/example/3605576/3605576_opt.xyz	52	0	2.042
+3628626	N-[(5-cyano-2-hydroxy-1,4-dimethyl-6-oxopyridin-3-yl)methylideneamino]-3-nitrobenzamide	/Users/marcelmueller/source/randommolecules/example/3628626/3628626_opt.xyz	39	0	1.576
+3641065	[2-(3,5-dimethylanilino)-2-oxo-1-phenylethyl] 2-acetamidoacetate	/Users/marcelmueller/source/randommolecules/example/3641065/3641065_opt.xyz	48	0	3.571
+3644480	N,N-diethyl-6-[3-[(3-fluorophenyl)carbamoylamino]phenyl]-8-methyl-2,3,4,6-tetrahydropyrimido[2,1-b][1,3]thiazine-7-carboxamide	/Users/marcelmueller/source/randommolecules/example/3644480/3644480_opt.xyz	65	0	2.580
+3660166	2-[4-chloro-6-[2-(3,4-dimethoxyphenyl)ethyl-methylamino]pyrimidin-2-yl]sulfanylacetic acid	/Users/marcelmueller/source/randommolecules/example/3660166/3660166_opt.xyz	46	0	3.231
+3664083	3-(2-fluorophenyl)-2-[[3-(trifluoromethyl)phenyl]methylsulfanyl]quinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/3664083/3664083_opt.xyz	44	0	3.143
+3674961	4-(4-bromophenoxy)-N-(2-chlorophenyl)butanamide	/Users/marcelmueller/source/randommolecules/example/3674961/3674961_opt.xyz	36	0	3.684
+3677657	1-cyclopentyl-3,3-diethyl-1-[(6-methyl-2-oxo-1H-quinolin-3-yl)methyl]urea	/Users/marcelmueller/source/randommolecules/example/3677657/3677657_opt.xyz	55	0	2.203
+3697871	1,2,5-trimethyl-3-(nonoxymethyl)benzimidazol-1-ium	/Users/marcelmueller/source/randommolecules/example/3697871/3697871_opt.xyz	56	1	1.864
+3728829	1-benzyl-6,7-dimethoxy-3-propan-2-yl-3,9b-dihydro-2H-imidazo[1,2-b]isoindol-5-one	/Users/marcelmueller/source/randommolecules/example/3728829/3728829_opt.xyz	53	0	2.958
+3729289	[2-[1-(1H-indole-7-carbonyl)piperidin-4-yl]-6-methylpyridin-3-yl]-(1,3-thiazolidin-3-yl)methanone	/Users/marcelmueller/source/randommolecules/example/3729289/3729289_opt.xyz	57	0	2.862
+3729721	(6-oxo-7,8,9,10-tetrahydrobenzo[c]chromen-3-yl) 2-[(2-methylpropan-2-yl)oxycarbonylamino]-4-methylsulfanylbutanoate	/Users/marcelmueller/source/randommolecules/example/3729721/3729721_opt.xyz	60	0	1.857
+3745642	1-(2-hydroxy-2-phenylethyl)-3-[6-[(2-hydroxy-2-phenylethyl)carbamoylamino]hexyl]urea	/Users/marcelmueller/source/randommolecules/example/3745642/3745642_opt.xyz	66	0	3.781
+3748738	2-[(4-acetamidophenyl)sulfonyl-methylamino]-N-(4-phenylbutan-2-ylideneamino)acetamide	/Users/marcelmueller/source/randommolecules/example/3748738/3748738_opt.xyz	56	0	2.615
+3765919	ethyl N-(3-ethylsulfanyl-1,2,4-thiadiazol-5-yl)carbamate	/Users/marcelmueller/source/randommolecules/example/3765919/3765919_opt.xyz	25	0	2.499
+3778393	(9-chloro-2-naphthalen-2-yl-5,10b-dihydro-1H-pyrazolo[1,5-c][1,3]benzoxazin-5-yl)-phenylmethanone	/Users/marcelmueller/source/randommolecules/example/3778393/3778393_opt.xyz	51	0	2.020
+3786836	3-chloro-N'-[1-(4-ethoxyphenyl)-2,5-dioxopyrrolidin-3-yl]benzohydrazide	/Users/marcelmueller/source/randommolecules/example/3786836/3786836_opt.xyz	45	0	2.955
+3794796	(1-oxo-1-phenylpropan-2-yl) 4-[(5-oxo-5-phenacyloxypentanoyl)amino]benzoate	/Users/marcelmueller/source/randommolecules/example/3794796/3794796_opt.xyz	64	0	2.105
+3811096	1-cyclohexyl-2-(N-ethylanilino)ethanol	/Users/marcelmueller/source/randommolecules/example/3811096/3811096_opt.xyz	43	0	3.583
+3819993	2,4-dichloro-N-[3-fluoro-5-(trifluoromethyl)phenyl]-5-methylbenzenesulfonamide	/Users/marcelmueller/source/randommolecules/example/3819993/3819993_opt.xyz	33	0	3.454
+3841432	3-[8,8-bis(2-carboxyethyl)-8a-hydroxy-2-oxo-4,5,6,7-tetrahydro-3H-chromen-4a-yl]propanoic acid	/Users/marcelmueller/source/randommolecules/example/3841432/3841432_opt.xyz	53	0	4.439
+3842133	(3-benzyl-4,8-dimethyl-2-oxochromen-7-yl) 2-[(2-methylpropan-2-yl)oxycarbonylamino]-2-phenylacetate	/Users/marcelmueller/source/randommolecules/example/3842133/3842133_opt.xyz	69	0	2.938
+3860609	4-(4-methoxyphenyl)-2,5-dimethyl-1-(pyridin-2-ylmethyl)pyrrole-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/3860609/3860609_opt.xyz	46	0	2.475
+3864470	2-[amino(phenyl)methyl]-N-heptyl-1,3-oxazole-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/3864470/3864470_opt.xyz	48	0	3.629
+3869893	5-chloro-N-[1-(4-methoxyphenyl)ethyl]-1,3-dimethylpyrazole-4-sulfonamide	/Users/marcelmueller/source/randommolecules/example/3869893/3869893_opt.xyz	40	0	3.934
+3876232	N-butan-2-yl-2-(2,5-dimethylphenyl)-5-(4-fluorophenyl)pyrazole-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/3876232/3876232_opt.xyz	51	0	3.372
+3882864	N-[(2,3-dimethoxyphenyl)methylideneamino]-1-naphthalen-1-yltetrazol-5-amine	/Users/marcelmueller/source/randommolecules/example/3882864/3882864_opt.xyz	46	0	2.266
+3888734	N-(1,5-dimethyl-3-oxo-2-phenylpyrazol-4-yl)-N-(2-methyl-5-nitrophenyl)sulfonylpyridine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/3888734/3888734_opt.xyz	57	0	1.483
+3891404	1-[1,3-benzodioxol-5-yl-(3-methylpyridin-4-yl)methyl]piperidine-3-carboxylic acid	/Users/marcelmueller/source/randommolecules/example/3891404/3891404_opt.xyz	48	0	3.070
+3899582	2-[(2,6-dichlorophenyl)carbamoyl-(2-methylpropyl)amino]-N-[2-(3,4-dichlorophenyl)-5-phenylpyrazol-3-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/3899582/3899582_opt.xyz	64	0	2.869
+3900276	2-(3-chlorophenyl)-N-(3-methoxypropyl)-5-(5-methylfuran-2-yl)pyrazole-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/3900276/3900276_opt.xyz	46	0	2.679
+3901749	3-(4-bromophenyl)-6-(thiophen-2-ylmethylidene)-[1,3]thiazolo[2,3-c][1,2,4]triazol-5-one	/Users/marcelmueller/source/randommolecules/example/3901749/3901749_opt.xyz	30	0	1.564
+3903846	5,7-dimethyl-3-phenyl-[1,3]selenazolo[3,2-a]pyrimidin-4-ium	/Users/marcelmueller/source/randommolecules/example/3903846/3903846_opt.xyz	30	1	2.281
+3906576	1-(3,4-dimethoxyphenyl)sulfonyl-N-(1-phenylethyl)piperidine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/3906576/3906576_opt.xyz	58	0	3.511
+3917917	3-butyl-1-[2-[4-(4-chlorophenyl)-6,7-dihydro-4H-thieno[3,2-c]pyridin-5-yl]-2-oxoethyl]-1-prop-2-enylurea	/Users/marcelmueller/source/randommolecules/example/3917917/3917917_opt.xyz	58	0	2.943
+3945692	N-(2-methoxyethyl)-4-methyl-N-[2-[4-(2-methylphenyl)-6,7-dihydro-4H-thieno[3,2-c]pyridin-5-yl]-2-oxoethyl]benzamide	/Users/marcelmueller/source/randommolecules/example/3945692/3945692_opt.xyz	63	0	3.433
+3953210	2-[[4-methyl-5-(trifluoromethyl)-1,2,4-triazol-3-yl]sulfanyl]-N-(2,4,6-trimethylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/3953210/3953210_opt.xyz	41	0	2.806
+3957385	1-(4-bromophenyl)-2-[4-(4-chlorobenzoyl)phenoxy]ethanone	/Users/marcelmueller/source/randommolecules/example/3957385/3957385_opt.xyz	40	0	2.245
+3960575	3,5-dimethoxy-N-[3-methyl-1-[(6-methyl-1,3-benzothiazol-2-yl)amino]-1-oxobutan-2-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/3960575/3960575_opt.xyz	55	0	2.870
+3975569	2-(4-benzylpiperidin-1-yl)-5-(hexanoylamino)-N-(2-morpholin-4-ylethyl)benzamide	/Users/marcelmueller/source/randommolecules/example/3975569/3975569_opt.xyz	82	0	2.758
+4004074	N-(4-fluoro-3-nitrophenyl)-2-[3-(2-fluorophenyl)-4-oxoquinazolin-2-yl]sulfanylacetamide	/Users/marcelmueller/source/randommolecules/example/4004074/4004074_opt.xyz	47	0	2.031
+4004678	N-(4-methoxyphenyl)-2-[4-methyl-5-[2-(3-nitrophenyl)-2-oxoethyl]sulfanyl-1,2,4-triazol-3-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/4004678/4004678_opt.xyz	50	0	1.322
+4006651	4-(5-acetamido-3-methylpyrazol-1-yl)-N-(pyridin-2-ylmethyl)benzamide	/Users/marcelmueller/source/randommolecules/example/4006651/4006651_opt.xyz	45	0	2.897
+4007508	(5-bromo-3-nitro-1,2,4-triazol-1-yl)methyl acetate	/Users/marcelmueller/source/randommolecules/example/4007508/4007508_opt.xyz	19	0	2.996
+4011085	N-(3-bromophenyl)-2-[[5-(5-chloro-1-benzofuran-2-yl)-4-methyl-1,2,4-triazol-3-yl]sulfanyl]acetamide	/Users/marcelmueller/source/randommolecules/example/4011085/4011085_opt.xyz	42	0	2.661
+4021922	N-[bis(2-methylpropyl)carbamothioyl]adamantane-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/4021922/4021922_opt.xyz	58	0	2.055
+4049064	N,N-dicyclohexyl-4-[[[4-(dicyclohexylcarbamoyl)phenyl]-dimethylsilyl]oxy-dimethylsilyl]benzamide	/Users/marcelmueller/source/randommolecules/example/4049064/4049064_opt.xyz	113	0	3.569
+4061771	4-[cyclohexyl(methyl)sulfamoyl]-N-[4-(2,4,6-trimethylphenyl)-1,3-thiazol-2-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/4061771/4061771_opt.xyz	65	0	2.432
+4082912	N-[3-[4-[(4,5-dichloroimidazol-1-yl)methyl]-6-[4-(hydroxymethyl)phenyl]-5-methyl-1,3-dioxan-2-yl]phenyl]-2,3,4,5,6-pentafluorobenzamide	/Users/marcelmueller/source/randommolecules/example/4082912/4082912_opt.xyz	65	0	1.857
+4085864	N-benzyl-N-[(4-chlorophenyl)-[1-[(4-methylphenyl)sulfonylmethyl]tetrazol-5-yl]methyl]ethanamine	/Users/marcelmueller/source/randommolecules/example/4085864/4085864_opt.xyz	60	0	2.511
+4086501	[4-[2-(1,3-benzothiazol-2-yl)-2-cyanoethenyl]phenyl] 4-(2,6-dimethylmorpholin-4-yl)sulfonylbenzoate	/Users/marcelmueller/source/randommolecules/example/4086501/4086501_opt.xyz	64	0	1.956
+4088240	1-(3-chlorophenyl)-3-[(1,2-dimethylindol-5-yl)methyl]urea	/Users/marcelmueller/source/randommolecules/example/4088240/4088240_opt.xyz	41	0	3.490
+4089221	methyl 5,5,7,7-tetramethyl-2-[[4-(3-methylpiperidin-1-yl)sulfonylbenzoyl]amino]-4,6-dihydrothieno[2,3-c]pyridine-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/4089221/4089221_opt.xyz	71	0	1.357
+4089260	2-(carboxylatomethylsulfonyl)acetate	/Users/marcelmueller/source/randommolecules/example/4089260/4089260_opt.xyz	15	-2	4.616
+4092264	2-(4-methylquinazolin-2-yl)sulfanyl-1-(4-phenylpiperazin-1-yl)ethanone	/Users/marcelmueller/source/randommolecules/example/4092264/4092264_opt.xyz	49	0	1.530
+4122327	3-[4-(4-tert-butylphenoxy)-3-nitrophenyl]-2-cyano-N-(2-phenylethyl)prop-2-enamide	/Users/marcelmueller/source/randommolecules/example/4122327/4122327_opt.xyz	62	0	2.202
+4122632	N-[1-[[amino(phenyl)methylidene]amino]-2,2,2-trichloroethyl]-4-methylbenzamide	/Users/marcelmueller/source/randommolecules/example/4122632/4122632_opt.xyz	40	0	3.292
+4130990	1-(4-methylphenyl)sulfonyl-2-(1-phenylethylsulfanyl)-4,5-dihydroimidazole	/Users/marcelmueller/source/randommolecules/example/4130990/4130990_opt.xyz	44	0	2.999
+4161128	2-amino-4-(2-ethylsulfanyl-5-methylfuran-3-yl)-7,7-dimethyl-5-oxo-1-[4-(trifluoromethyl)phenyl]-6,8-dihydro-4H-quinoline-3-carbonitrile	/Users/marcelmueller/source/randommolecules/example/4161128/4161128_opt.xyz	61	0	1.290
+4162929	2-bromoethyl-dimethyl-(3-phenylprop-2-enyl)azanium	/Users/marcelmueller/source/randommolecules/example/4162929/4162929_opt.xyz	34	1	3.200
+4176388	2-[1-(4-chlorobenzoyl)-5-methoxyindol-3-yl]-N-cyclooctylacetamide	/Users/marcelmueller/source/randommolecules/example/4176388/4176388_opt.xyz	61	0	2.602
+4203082	3-[5-[[(3-hydroxynaphthalene-2-carbonyl)hydrazinylidene]methyl]furan-2-yl]-4-methylbenzoic acid	/Users/marcelmueller/source/randommolecules/example/4203082/4203082_opt.xyz	49	0	2.448
+4211716	(3-ethoxy-3-oxopropyl) 2-(5-bromo-2,3-dioxoindol-1-yl)propanoate	/Users/marcelmueller/source/randommolecules/example/4211716/4211716_opt.xyz	40	0	1.779
+4223710	methyl 2-[(3-methoxy-4-methylphenyl)methylidene]-7-methyl-3-oxo-5-phenyl-5H-[1,3]thiazolo[3,2-a]pyrimidine-6-carboxylate	/Users/marcelmueller/source/randommolecules/example/4223710/4223710_opt.xyz	53	0	1.833
+4224691	4-[4-(3,4-dihydro-1H-isoquinolin-2-yl)-4-oxobutyl]-1,4-benzothiazin-3-one	/Users/marcelmueller/source/randommolecules/example/4224691/4224691_opt.xyz	48	0	3.024
+4224910	N-[2-(4-fluorophenyl)ethyl]-2-(7-thia-9,11-diazatricyclo[6.4.0.02,6]dodeca-1(12),2(6),8,10-tetraen-12-yloxy)acetamide	/Users/marcelmueller/source/randommolecules/example/4224910/4224910_opt.xyz	44	0	3.081
+4230183	5-[[4-[4-(azocan-1-ylmethyl)-6-[4-(hydroxymethyl)phenyl]-1,3-dioxan-2-yl]phenyl]methylamino]-5-oxopentanoic acid	/Users/marcelmueller/source/randommolecules/example/4230183/4230183_opt.xyz	81	0	2.922
+4250520	N-[1-(4-bromophenyl)ethylideneamino]-2-phenylcyclopropane-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/4250520/4250520_opt.xyz	39	0	2.948
+4251165	N-(3,5-dichlorophenyl)pentanamide	/Users/marcelmueller/source/randommolecules/example/4251165/4251165_opt.xyz	28	0	3.877
+4254568	2-(3-cyclopropyl-2-cyclopropylimino-4-oxo-1,3-thiazolidin-5-ylidene)-N-(4-methoxyphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/4254568/4254568_opt.xyz	44	0	1.631
+4257741	N-[2-(cyclopentanecarbonylcarbamothioylamino)propylcarbamothioyl]cyclopentanecarboxamide	/Users/marcelmueller/source/randommolecules/example/4257741/4257741_opt.xyz	53	0	2.091
+4262931	2-[4-[methyl-(4-methylphenyl)sulfonylamino]phenoxy]-N-(4-phenylbutan-2-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/4262931/4262931_opt.xyz	63	0	3.158
+4264139	[2-[1-(2,3-dihydro-1,4-benzodioxin-3-ylmethyl)-2,5-dimethylpyrrol-3-yl]-2-oxoethyl] 3-hydroxyadamantane-1-carboxylate	/Users/marcelmueller/source/randommolecules/example/4264139/4264139_opt.xyz	68	0	3.172
+4276857	3,5-diethoxy-N-[(2-oxo-1,3-dihydrobenzimidazol-5-yl)carbamothioyl]benzamide	/Users/marcelmueller/source/randommolecules/example/4276857/4276857_opt.xyz	48	0	1.689
+4282382	2-chloro-N-[3-oxo-1-phenyl-3-(3-sulfamoylanilino)propyl]benzamide	/Users/marcelmueller/source/randommolecules/example/4282382/4282382_opt.xyz	51	0	3.596
+4294906	2-fluoro-N-(oxolan-2-ylmethyl)-N-[2-oxo-2-(1,3-thiazol-2-ylamino)ethyl]benzamide	/Users/marcelmueller/source/randommolecules/example/4294906/4294906_opt.xyz	43	0	3.149
+4298623	ethyl 4-[[2-(3-phenoxyphenyl)-1,3-thiazolidine-3-carbonyl]amino]benzoate	/Users/marcelmueller/source/randommolecules/example/4298623/4298623_opt.xyz	56	0	2.932
+4306113	2-[(2-fluorophenyl)sulfonylamino]propanoate	/Users/marcelmueller/source/randommolecules/example/4306113/4306113_opt.xyz	25	-1	1.610
+4315615	[2-(4-methoxyphenyl)-5-(5-methylfuran-2-yl)pyrazol-3-yl]-(1,3,3-trimethyl-6-azabicyclo[3.2.1]octan-6-yl)methanone	/Users/marcelmueller/source/randommolecules/example/4315615/4315615_opt.xyz	63	0	2.933
+4327269	4-[3-(1-ethylpiperidin-4-yl)-5,6-dihydro-4H-pyrrolo[2,3-c]pyrazol-1-yl]benzonitrile	/Users/marcelmueller/source/randommolecules/example/4327269/4327269_opt.xyz	47	0	1.962
+4339977	2-[[5-(furan-2-yl)-4-(4-methylphenyl)-1,2,4-triazol-3-yl]sulfanyl]-1-phenylethanone	/Users/marcelmueller/source/randommolecules/example/4339977/4339977_opt.xyz	44	0	2.054
+4353682	2,4-dichloro-N-[4-(4-methylpiperidin-1-yl)sulfonylphenyl]benzamide	/Users/marcelmueller/source/randommolecules/example/4353682/4353682_opt.xyz	47	0	2.624
+4354882	methyl 2-(pyridin-3-ylsulfamoyl)benzoate	/Users/marcelmueller/source/randommolecules/example/4354882/4354882_opt.xyz	32	0	2.489
+4399274	N-(furan-2-ylmethyl)-2-[[3-[(3-methoxyphenyl)methyl]-1,2,4-thiadiazol-5-yl]-methylamino]acetamide	/Users/marcelmueller/source/randommolecules/example/4399274/4399274_opt.xyz	46	0	3.366
+4406467	N-[2-(3,4-dimethoxyphenyl)-4-oxo-1,2-dihydroquinazolin-3-yl]-4-methylbenzenesulfonamide	/Users/marcelmueller/source/randommolecules/example/4406467/4406467_opt.xyz	55	0	2.828
+4409203	(4-benzylpiperazin-1-yl)-[1-[3-[(4-methylphenyl)methyl]-1,2,4-thiadiazol-5-yl]piperidin-4-yl]methanone	/Users/marcelmueller/source/randommolecules/example/4409203/4409203_opt.xyz	67	0	3.402
+4412051	6,8-dichloro-3-[2-(4-methoxyphenyl)-2-oxoethyl]quinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/4412051/4412051_opt.xyz	36	0	2.646
+4416428	6-[[3-chloro-4-[(2,6-dichlorophenyl)methoxy]phenyl]methylidene]-5-imino-2-pyridin-3-yl-[1,3,4]thiadiazolo[3,2-a]pyrimidin-7-one	/Users/marcelmueller/source/randommolecules/example/4416428/4416428_opt.xyz	49	0	1.933
+4428643	N-[3-(phenylcarbamoyl)-4,5,6,7-tetrahydro-1-benzothiophen-2-yl]pyridine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/4428643/4428643_opt.xyz	46	0	2.153
+4445126	2-[cyclopropyl(ethylcarbamoyl)amino]-N-(furan-2-ylmethyl)-N-[(1-methylpyrrol-2-yl)methyl]acetamide	/Users/marcelmueller/source/randommolecules/example/4445126/4445126_opt.xyz	52	0	3.677
+4466359	ethyl 2-[4-(1,1,2,2,3,3,3-heptafluoropropylsulfinyl)-2-nitrophenyl]sulfanylacetate	/Users/marcelmueller/source/randommolecules/example/4466359/4466359_opt.xyz	38	0	1.904
+4470947	2-[4-(1,1,2,2,3,3,3-heptafluoropropylsulfanyl)-2,6-dinitrophenyl]sulfonylacetic acid	/Users/marcelmueller/source/randommolecules/example/4470947/4470947_opt.xyz	35	0	2.441
+4474645	4-[(4-chlorophenyl)-hydroxymethylidene]-5-(3-ethoxyphenyl)-1-(3-imidazol-1-ylpropyl)pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/4474645/4474645_opt.xyz	57	0	1.608
+4486202	2-[(2-butan-2-ylphenyl)iminomethyl]-4-chloro-6-methoxyphenol	/Users/marcelmueller/source/randommolecules/example/4486202/4486202_opt.xyz	42	0	2.173
+4494037	5-[2-[(4-butoxy-3-methoxyphenyl)methylidene]hydrazinyl]-2-methyl-1,3-oxazole-4-carbonitrile	/Users/marcelmueller/source/randommolecules/example/4494037/4494037_opt.xyz	44	0	2.441
+4495878	5-(3-chlorophenyl)-N-[2-chloro-5-(trifluoromethyl)phenyl]furan-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/4495878/4495878_opt.xyz	36	0	2.822
+4505573	4-[2-[[2-(2,4-dibromophenoxy)acetyl]carbamothioyl]hydrazinyl]-N-(2,4-dimethylphenyl)-4-oxobutanamide	/Users/marcelmueller/source/randommolecules/example/4505573/4505573_opt.xyz	54	0	2.024
+4512243	N'-[2-(5-methyl-2-propan-2-ylphenoxy)acetyl]-2-nitrobenzohydrazide	/Users/marcelmueller/source/randommolecules/example/4512243/4512243_opt.xyz	48	0	1.141
+4524454	5-(dipropylsulfamoyl)-2-fluoro-N-(2-methoxy-5-methylphenyl)benzamide	/Users/marcelmueller/source/randommolecules/example/4524454/4524454_opt.xyz	56	0	2.522
+4538390	2-(2,4-dichlorophenoxy)ethyl 4-cyanobenzoate	/Users/marcelmueller/source/randommolecules/example/4538390/4538390_opt.xyz	33	0	2.601
+4547802	2-[(4-chloro-3-methylphenyl)carbamothioyl-[(4-ethoxycarbonylphenyl)methyl]amino]-4-methylpentanoic acid	/Users/marcelmueller/source/randommolecules/example/4547802/4547802_opt.xyz	61	0	1.844
+4551880	1-(3-methylphenyl)-3-[2-(2-nitrophenyl)ethenyl]pyrido[1,2-a]benzimidazole-4-carbonitrile	/Users/marcelmueller/source/randommolecules/example/4551880/4551880_opt.xyz	51	0	1.399
+4567279	N-(2-ethylhexyl)-3-methyl-N'-(4-propan-2-ylphenyl)pentanediamide	/Users/marcelmueller/source/randommolecules/example/4567279/4567279_opt.xyz	65	0	3.742
+4568605	(2,5-dioxopyrrolidin-1-yl) 3-methylsulfonylsulfanylpropanoate	/Users/marcelmueller/source/randommolecules/example/4568605/4568605_opt.xyz	28	0	3.194
+4576642	4-[(1,5-dimethyl-3-oxo-2-phenylpyrazol-4-yl)amino]-4-oxobut-2-enoate	/Users/marcelmueller/source/randommolecules/example/4576642/4576642_opt.xyz	36	-1	0.317
+4592985	N-[(2-chloro-6-nitrophenyl)methylideneamino]pyridine-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/4592985/4592985_opt.xyz	30	0	1.658
+4645917	N-(2-fluorophenyl)-3-methylpiperidine-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/4645917/4645917_opt.xyz	34	0	3.943
+4681122	2-(6-methyl-5-propan-2-yl-1-benzofuran-3-yl)-N-(3-methylsulfanylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/4681122/4681122_opt.xyz	48	0	2.969
+4682906	3-[3-oxo-3-(4-phenylpiperazin-1-yl)propyl]-2-sulfanylidene-1H-quinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/4682906/4682906_opt.xyz	50	0	1.582
+4694472	N-cyclopentyl-4-(3,4-difluorophenyl)-5-methyl-1,3-thiazol-2-amine	/Users/marcelmueller/source/randommolecules/example/4694472/4694472_opt.xyz	36	0	2.807
+4699550	1-[2-(diethylamino)ethyl]-4-[hydroxy-[4-[(2-methylphenyl)methoxy]phenyl]methylidene]-5-(3-hydroxyphenyl)pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/4699550/4699550_opt.xyz	72	0	1.348
+4744738	6-[(3-fluorophenyl)carbamoyl]-3,4-dimethylcyclohex-3-ene-1-carboxylate	/Users/marcelmueller/source/randommolecules/example/4744738/4744738_opt.xyz	38	-1	2.302
+4747572	1-[4-[(3,4-dichlorophenyl)methyl]piperazin-4-ium-1-yl]-2-ethyl-3-methyl-5H-pyrido[1,2-a]benzimidazol-10-ium-4-carbonitrile	/Users/marcelmueller/source/randommolecules/example/4747572/4747572_opt.xyz	60	2	1.622
+4761781	2-(2-fluoroanilino)-5-(pyridin-3-ylmethylidene)-1,3-thiazol-4-one	/Users/marcelmueller/source/randommolecules/example/4761781/4761781_opt.xyz	31	0	1.760
+4770737	2-(3,5-dichloro-2-hydroxyphenyl)-2,3,5,6,7,8-hexahydro-1H-[1]benzothiolo[2,3-d]pyrimidin-4-one	/Users/marcelmueller/source/randommolecules/example/4770737/4770737_opt.xyz	37	0	2.711
+4781399	2-[(4-benzyl-5-pyridin-3-yl-1,2,4-triazol-3-yl)sulfanyl]-N-(oxolan-2-ylmethyl)acetamide	/Users/marcelmueller/source/randommolecules/example/4781399/4781399_opt.xyz	52	0	2.920
+4806369	4-(2-fluorophenyl)sulfanyl-2-(3-methyl-1,3-benzothiazol-2-ylidene)-3-oxobutanenitrile	/Users/marcelmueller/source/randommolecules/example/4806369/4806369_opt.xyz	37	0	1.965
+4811131	1-(2,3-dihydro-1,4-benzodioxin-6-yl)-3-(3-methylphenyl)prop-2-en-1-one	/Users/marcelmueller/source/randommolecules/example/4811131/4811131_opt.xyz	37	0	2.471
+4811141	1-[4-(5,6-dihydro-4H-1,3-thiazin-2-ylamino)phenyl]-3-(4-nitrophenyl)prop-2-en-1-one	/Users/marcelmueller/source/randommolecules/example/4811141/4811141_opt.xyz	43	0	1.411
+4813673	2-(1-amino-4-phenylimidazol-2-yl)sulfanyl-N-(2,3,4-trifluorophenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/4813673/4813673_opt.xyz	39	0	2.813
+4817984	N-butyl-N-(1,1-dioxothiolan-3-yl)-2-(1-phenylbenzimidazol-2-yl)sulfanylacetamide	/Users/marcelmueller/source/randommolecules/example/4817984/4817984_opt.xyz	58	0	3.208
+4819359	1-[1-(2,3-dihydroindol-1-yl)-1-oxopropan-2-yl]sulfanyl-4-prop-2-enyl-[1,2,4]triazolo[4,3-a]quinazolin-5-one	/Users/marcelmueller/source/randommolecules/example/4819359/4819359_opt.xyz	52	0	2.312
+4819671	4-[5-(3-phenylprop-2-enylsulfanyl)tetrazol-1-yl]phenol	/Users/marcelmueller/source/randommolecules/example/4819671/4819671_opt.xyz	36	0	2.597
+4823331	2-[(4-benzyl-5-oxo-[1,2,4]triazolo[4,3-a]quinazolin-1-yl)sulfanyl]-N-(1-cyano-1-cyclopropylethyl)acetamide	/Users/marcelmueller/source/randommolecules/example/4823331/4823331_opt.xyz	55	0	2.586
+4828422	2-[1-(2,3-dihydro-1H-inden-5-yl)-1-oxopropan-2-yl]sulfanyl-3-(2-methoxyethyl)quinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/4828422/4828422_opt.xyz	53	0	2.742
+4829177	dimethyl 2-bromo-4-(1,3-dioxoisoindol-2-yl)pentanedioate	/Users/marcelmueller/source/randommolecules/example/4829177/4829177_opt.xyz	37	0	2.676
+4846053	N-[2-(1,3-benzodioxol-5-ylmethylcarbamoyl)phenyl]-3-chloroadamantane-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/4846053/4846053_opt.xyz	60	0	2.990
+4848858	2-[2-(5-naphthalen-2-yl-3-phenyl-3,4-dihydropyrazol-2-yl)-2-oxoethoxy]benzaldehyde	/Users/marcelmueller/source/randommolecules/example/4848858/4848858_opt.xyz	55	0	2.476
+4850029	N-(1,3-benzodioxol-5-ylmethyl)-2-[methyl-[4-(methylamino)-3-nitrophenyl]sulfonylamino]acetamide	/Users/marcelmueller/source/randommolecules/example/4850029/4850029_opt.xyz	50	0	0.983
+4861384	N'-[6-bromo-4-(dibromomethyl)-5,5-dimethylbicyclo[2.1.1]hexane-1-carbonyl]naphthalene-1-carbohydrazide	/Users/marcelmueller/source/randommolecules/example/4861384/4861384_opt.xyz	49	0	3.014
+4863957	4-hydroxy-1-(3-imidazol-1-ylpropyl)-2-(4-methoxyphenyl)-3-(1-methyl-[1,3]thiazolo[3,2-a]benzimidazole-2-carbonyl)-2H-pyrrol-5-one	/Users/marcelmueller/source/randommolecules/example/4863957/4863957_opt.xyz	63	0	1.680
+4864197	4-hydroxy-3-(5-methyl-1-benzofuran-2-carbonyl)-1-(3-morpholin-4-ylpropyl)-2-thiophen-2-yl-2H-pyrrol-5-one	/Users/marcelmueller/source/randommolecules/example/4864197/4864197_opt.xyz	59	0	1.333
+4912914	3-anilino-4-hydroxy-4-methyl-1-oxa-3-azaspiro[4.5]decan-2-one	/Users/marcelmueller/source/randommolecules/example/4912914/4912914_opt.xyz	40	0	4.092
+4921873	ethyl 1-(4-acetyloxybenzoyl)-2-(4-acetyloxy-3-methoxyphenyl)-3-cyano-2,3a-dihydro-1H-pyrrolo[1,2-a]quinoline-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/4921873/4921873_opt.xyz	74	0	1.748
+4931611	N'-[2-(4-methoxyphenyl)acetyl]-2-propoxybenzohydrazide	/Users/marcelmueller/source/randommolecules/example/4931611/4931611_opt.xyz	47	0	3.401
+4938294	1-N',4-N'-bis(2-phenylmethoxybenzoyl)cyclohexane-1,4-dicarbohydrazide	/Users/marcelmueller/source/randommolecules/example/4938294/4938294_opt.xyz	82	0	2.717
+4950453	N-(ethylcarbamothioyl)-2-fluorobenzamide	/Users/marcelmueller/source/randommolecules/example/4950453/4950453_opt.xyz	26	0	1.334
+4955537	3-(2-phenoxyethoxy)benzamide	/Users/marcelmueller/source/randommolecules/example/4955537/4955537_opt.xyz	34	0	3.455
+4972791	2-[4-[2-(3,4-diethoxyphenyl)ethylamino]-5,6-dimethylpyrrolo[2,3-d]pyrimidin-7-yl]ethanol	/Users/marcelmueller/source/randommolecules/example/4972791/4972791_opt.xyz	59	0	3.152
+4980171	methyl 2-(dimethylamino)-8-(2-hydroxyethenyl)-5-methyl-4-oxo-1-phenylpyrrolo[3,2-c]quinoline-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/4980171/4980171_opt.xyz	54	0	2.481
+4983994	6-[(4,6-dichloro-1,3,5-triazin-2-yl)oxy]-4,7-dimethylchromen-2-one	/Users/marcelmueller/source/randommolecules/example/4983994/4983994_opt.xyz	31	0	2.686
+5008190	[1-[3-[(4-fluorophenyl)methyl]-1,2,4-thiadiazol-5-yl]piperidin-4-yl]-[4-(4-methoxyphenyl)piperazin-1-yl]methanone	/Users/marcelmueller/source/randommolecules/example/5008190/5008190_opt.xyz	65	0	2.742
+5010824	3-[2-chloro-5-(trifluoromethyl)phenyl]-N-(3,5-dimethylphenyl)-4-oxo-2-sulfanylidene-1H-quinazoline-7-carboxamide	/Users/marcelmueller/source/randommolecules/example/5010824/5010824_opt.xyz	51	0	1.700
+5013368	N-[6-bromo-3-(2-methoxyethyl)-1,3-benzothiazol-2-ylidene]acetamide	/Users/marcelmueller/source/randommolecules/example/5013368/5013368_opt.xyz	31	0	3.156
+5020518	N-(2,3-dihydro-1,4-benzodioxin-3-ylmethyl)-10-methyl-7-thia-9,11-diazatricyclo[6.4.0.02,6]dodeca-1(12),2(6),8,10-tetraen-12-amine	/Users/marcelmueller/source/randommolecules/example/5020518/5020518_opt.xyz	44	0	3.062
+5026229	N-(4-carbamoylphenyl)-1-(2-methoxy-5-methylphenyl)sulfonylpiperidine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/5026229/5026229_opt.xyz	55	0	3.103
+5032790	ethyl 1-[[4-(butylcarbamoyl)phenyl]methyl]-4-(4-chlorophenyl)-6-methyl-2-oxo-3,4-dihydropyridine-5-carboxylate	/Users/marcelmueller/source/randommolecules/example/5032790/5032790_opt.xyz	65	0	2.715
+5066911	[4-[[[2-(4-ethoxyanilino)-2-oxoacetyl]hydrazinylidene]methyl]-2-methoxyphenyl] 4-chlorobenzoate	/Users/marcelmueller/source/randommolecules/example/5066911/5066911_opt.xyz	57	0	2.118
+5082504	N-[5-[2-(2-fluoroanilino)-2-oxoethyl]sulfanyl-1,3,4-thiadiazol-2-yl]-2-naphthalen-1-ylacetamide	/Users/marcelmueller/source/randommolecules/example/5082504/5082504_opt.xyz	48	0	2.594
+5084973	6-morpholin-4-ylsulfonyl-4-oxo-N-(2-phenylethyl)-1H-quinoline-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/5084973/5084973_opt.xyz	54	0	2.372
+5095254	[4-(2-chloro-6-nitrophenyl)piperazin-1-yl]-(3,4,5-trimethoxyphenyl)methanone	/Users/marcelmueller/source/randommolecules/example/5095254/5095254_opt.xyz	52	0	1.452
+5095938	N-[(2-chlorophenyl)methyl]-4-oxo-3-(pyridin-3-ylmethyl)-10-oxa-3-azatricyclo[5.2.1.01,5]dec-8-ene-6-carboxamide	/Users/marcelmueller/source/randommolecules/example/5095938/5095938_opt.xyz	49	0	3.196
+5114769	4-chloro-1,5-dimethyl-2-(4-methylanilino)-2-oxo-1,5,2lambda5-diazaphosphinin-6-one	/Users/marcelmueller/source/randommolecules/example/5114769/5114769_opt.xyz	34	0	3.001
+5133238	2-[2-chloro-4-[(3,4-dimethylanilino)methyl]phenoxy]-N-(2-methylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/5133238/5133238_opt.xyz	54	0	2.522
+5139408	N-[1-(5,6,7,8-tetrahydronaphthalen-2-yl)ethylideneamino]pyridine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/5139408/5139408_opt.xyz	41	0	2.668
+5153647	2-chloro-N-[[(2-chloroacetyl)amino]-(3-methoxy-4-propan-2-yloxyphenyl)methyl]acetamide	/Users/marcelmueller/source/randommolecules/example/5153647/5153647_opt.xyz	43	0	3.819
+5156780	2-[[6-[(4-methoxycyclohexanecarbonyl)amino]-1,3-benzothiazol-2-yl]sulfanyl]ethyl acetate	/Users/marcelmueller/source/randommolecules/example/5156780/5156780_opt.xyz	51	0	2.902
+5159498	2-(2-methyl-6-pyridin-4-ylpyrimidin-4-yl)-3,4-dihydro-1H-isoquinoline	/Users/marcelmueller/source/randommolecules/example/5159498/5159498_opt.xyz	41	0	2.272
+5174652	2-[3-(3-fluorophenyl)-4-phenyl-5-sulfanylidene-1,2,4-triazol-1-yl]-6,8-dioxabicyclo[3.2.1]octan-4-one	/Users/marcelmueller/source/randommolecules/example/5174652/5174652_opt.xyz	44	0	1.891
+5176757	1-[2-(dimethylamino)ethyl]-5-(3-ethoxy-4-prop-2-enoxyphenyl)-4-[hydroxy-(4-methoxyphenyl)methylidene]pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/5176757/5176757_opt.xyz	67	0	1.537
+5184246	1-[(2,5-dimethylphenyl)-(4-methylphenyl)methyl]-1,4-diazepane	/Users/marcelmueller/source/randommolecules/example/5184246/5184246_opt.xyz	51	0	3.151
+5214695	N-[4-(1,3-benzothiazol-2-yl)-1,3-thiazol-2-yl]-4-morpholin-4-yl-3-nitrobenzamide	/Users/marcelmueller/source/randommolecules/example/5214695/5214695_opt.xyz	49	0	1.674
+5215284	3-[(3,4-dichlorophenyl)methyl-dodecanoylamino]-4-hydroxy-N-(2-hydroxyethyl)-8-(hydroxymethyl)-6-methoxy-3,4,4a,9b-tetrahydrodibenzofuran-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/5215284/5215284_opt.xyz	95	0	2.997
+5222645	2-(benzenesulfonyl)-3-(2-methoxyphenyl)-5-(4-methylphenyl)-1,3-dihydropyrazole	/Users/marcelmueller/source/randommolecules/example/5222645/5222645_opt.xyz	51	0	2.270
+5234812	[1-(3-nitroanilino)-1-oxopropan-2-yl] 4-(diethylamino)benzoate	/Users/marcelmueller/source/randommolecules/example/5234812/5234812_opt.xyz	51	0	1.641
+5236906	6-amino-4-(5-methylfuran-2-yl)-3-(trifluoromethyl)-2,4-dihydropyrano[2,3-c]pyrazole-5-carbonitrile	/Users/marcelmueller/source/randommolecules/example/5236906/5236906_opt.xyz	31	0	2.905
+5237389	6-phenylspiro[4,5,6,7-tetrahydro-[1,2,4]triazolo[5,1-b]quinazoline-9,1'-cyclohexane]-8-one	/Users/marcelmueller/source/randommolecules/example/5237389/5237389_opt.xyz	47	0	2.565
+5246874	4-[(4-trimethylsilyltriazol-1-yl)methyl]phenol	/Users/marcelmueller/source/randommolecules/example/5246874/5246874_opt.xyz	34	0	3.441
+5254924	N-[[6-[4-[2-[[bis(piperidin-2-ylmethyl)amino]methyl]-1,2-dihydropyridin-6-yl]cyclohexyl]piperidin-2-yl]methyl]-1-piperidin-2-yl-N-(piperidin-2-ylmethyl)methanamine	/Users/marcelmueller/source/randommolecules/example/5254924/5254924_opt.xyz	126	0	2.701
+5295002	(2S)-N-(4-chlorophenyl)-1-[(4-fluorophenyl)carbamothioyl]pyrrolidine-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/5295002/5295002_opt.xyz	42	0	1.695
+5347501	(E,Z)-N-[4-[(4-chlorophenyl)methyl]piperazin-1-yl]-3-(furan-2-yl)prop-2-en-1-imine	/Users/marcelmueller/source/randommolecules/example/5347501/5347501_opt.xyz	43	0	2.242
+5371309	(E)-1,4-bis(4-fluorophenyl)-2-(hydroxyamino)-3-nitrosobut-2-ene-1,4-dione	/Users/marcelmueller/source/randommolecules/example/5371309/5371309_opt.xyz	34	0	1.837
+5372382	1-[(E)-2-bromoethenyl]-4-chlorobenzene	/Users/marcelmueller/source/randommolecules/example/5372382/5372382_opt.xyz	16	0	3.030
+5378684	3-methyl-2-[(E)-2-(3-nitrophenyl)ethenyl]quinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/5378684/5378684_opt.xyz	36	0	1.735
+5410385	(1E)-N-(3-carbamoylanilino)-2-(methylamino)-2-oxoethanimidoyl cyanide	/Users/marcelmueller/source/randommolecules/example/5410385/5410385_opt.xyz	29	0	2.478
+5428200	N-[(E)-1-(2,4-dimethoxyphenyl)ethylideneamino]-2-(4-methylphenoxy)acetamide	/Users/marcelmueller/source/randommolecules/example/5428200/5428200_opt.xyz	47	0	3.129
+5438857	(4E,5R)-1-(5-acetyl-4-methyl-1,3-thiazol-2-yl)-4-[(2,5-dimethylphenyl)-hydroxymethylidene]-5-pyridin-3-ylpyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/5438857/5438857_opt.xyz	53	0	1.965
+5449968	(4-oxo-2,3-dihydro-1H-cyclopenta[c]chromen-7-yl) (E)-3-(4-methoxyphenyl)prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/5449968/5449968_opt.xyz	45	0	2.529
+5451936	2-(6-ethyl-4-oxothieno[2,3-d]pyrimidin-3-yl)-N'-(2-oxoindol-3-yl)acetohydrazide	/Users/marcelmueller/source/randommolecules/example/5451936/5451936_opt.xyz	42	0	1.085
+5453935	5-methyl-N'-[(Z)-(3-nitro-4-oxocyclohexa-2,5-dien-1-ylidene)methyl]-3-phenyl-1,2-oxazole-4-carbohydrazide	/Users/marcelmueller/source/randommolecules/example/5453935/5453935_opt.xyz	41	0	1.652
+5465978	(NZ)-N-[(5E)-5-[amino(cyano)methylidene]-3-(2-hydroxyethyl)imidazol-4-ylidene]acetamide	/Users/marcelmueller/source/randommolecules/example/5465978/5465978_opt.xyz	27	0	1.846
+5468256	N-[(Z)-(2-phenyl-2,3-dihydrochromen-4-ylidene)amino]aniline	/Users/marcelmueller/source/randommolecules/example/5468256/5468256_opt.xyz	42	0	2.631
+5472787	4-amino-5-benzoyl-2-[(4-methylpyridin-2-yl)amino]-N-phenyl-1H-pyrrole-3-carbothioamide	/Users/marcelmueller/source/randommolecules/example/5472787/5472787_opt.xyz	52	0	1.909
+5506267	ethyl (6Z)-7-benzyl-2-oxo-6-(thiophene-2-carbonylimino)-1,7,9-triazatricyclo[8.4.0.03,8]tetradeca-3(8),4,9,11,13-pentaene-5-carboxylate	/Users/marcelmueller/source/randommolecules/example/5506267/5506267_opt.xyz	55	0	1.671
+5508596	(4E,5S)-1-[2-(diethylamino)ethyl]-5-(4-hydroxy-3-methoxyphenyl)-4-[hydroxy-(4-nitrophenyl)methylidene]pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/5508596/5508596_opt.xyz	61	0	0.612
+5513131	N-[(Z)-(7-bromo-1,5-dimethyl-2-oxoindol-3-ylidene)amino]-4-methylbenzamide	/Users/marcelmueller/source/randommolecules/example/5513131/5513131_opt.xyz	40	0	2.017
+5537920	(4E,5S)-5-(4-hydroxy-3-methoxyphenyl)-4-[hydroxy-(4-propan-2-yloxyphenyl)methylidene]-1-(2-morpholin-4-ylethyl)pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/5537920/5537920_opt.xyz	68	0	1.864
+5538296	(4E,5R)-1-[3-(diethylamino)propyl]-5-(furan-2-yl)-4-[hydroxy(phenyl)methylidene]pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/5538296/5538296_opt.xyz	54	0	1.230
+5563230	2-[(Z)-[[2-(2-methoxyanilino)acetyl]hydrazinylidene]methyl]-4-nitrophenolate	/Users/marcelmueller/source/randommolecules/example/5563230/5563230_opt.xyz	40	-1	1.907
+5588360	4-[(Z)-(4-tert-butylphenyl)methylideneamino]-3-(3-methoxyphenyl)-1H-1,2,4-triazole-5-thione	/Users/marcelmueller/source/randommolecules/example/5588360/5588360_opt.xyz	48	0	1.549
+5591685	(5E)-5-(2-oxo-1H-indol-3-ylidene)-3-[[(2S)-oxolan-2-yl]methyl]-2-sulfanylidene-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/5591685/5591685_opt.xyz	37	0	1.107
+5592365	(2Z,6Z)-5-imino-6-[[3-methoxy-4-[(2-methylphenyl)methoxy]phenyl]methylidene]-2-(2-oxo-2-pyrrolidin-1-ylethylidene)-3H-[1,3,4]thiadiazolo[3,2-a]pyrimidin-7-one	/Users/marcelmueller/source/randommolecules/example/5592365/5592365_opt.xyz	64	0	1.680
+5594524	(E)-N-[(7S)-5,7-bis(4-chlorophenyl)-1,7-dihydro-[1,2,4]triazolo[1,5-a]pyrimidin-2-yl]-3-phenylprop-2-enamide	/Users/marcelmueller/source/randommolecules/example/5594524/5594524_opt.xyz	53	0	1.245
+5608132	N-[(Z)-(2-methoxyphenyl)methylideneamino]-2-(3-methyl-5-oxo-1,2-dihydropyrazol-4-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/5608132/5608132_opt.xyz	37	0	2.622
+5621834	(NZ)-4-tert-butyl-N-(5-cyano-2-oxo-7-pentyl-1,7,9-triazatricyclo[8.4.0.03,8]tetradeca-3(8),4,9,11,13-pentaen-6-ylidene)benzamide	/Users/marcelmueller/source/randommolecules/example/5621834/5621834_opt.xyz	64	0	1.487
+5631154	(5E)-5-[[2-(4-benzoylpiperazin-1-ium-1-yl)ethylamino]methylidene]-1-(4-methylphenyl)-2-sulfanylidene-1,3-diazinane-4,6-dione	/Users/marcelmueller/source/randommolecules/example/5631154/5631154_opt.xyz	62	1	0.970
+5682163	3-[(4-chlorophenyl)sulfamoyl]-N-[(Z)-(3-nitrophenyl)methylideneamino]benzamide	/Users/marcelmueller/source/randommolecules/example/5682163/5682163_opt.xyz	46	0	1.797
+5690849	6-[2-[[(5E)-5-indol-3-ylidene-4-(3-methylphenyl)-1H-1,2,4-triazol-3-yl]sulfanyl]acetyl]-4H-1,4-benzoxazin-3-one	/Users/marcelmueller/source/randommolecules/example/5690849/5690849_opt.xyz	57	0	1.345
+5691716	(Z)-amino-[(2E,6S)-2-(4-bromo-3-methylphenyl)sulfonylimino-6-methyl-4,5,6,7-tetrahydro-1-benzothiophen-3-ylidene]methanolate	/Users/marcelmueller/source/randommolecules/example/5691716/5691716_opt.xyz	43	-1	1.423
+5694531	4-bromo-N-[(Z)-2,3-dihydro-1,4-benzodioxin-6-ylmethylideneamino]benzamide	/Users/marcelmueller/source/randommolecules/example/5694531/5694531_opt.xyz	35	0	2.499
+5694952	N-[(Z)-[(E)-3-(2-nitrophenyl)prop-2-enylidene]amino]-1H-indole-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/5694952/5694952_opt.xyz	39	0	1.742
+5702803	bis(1,1,1,3,3,3-hexafluoropropan-2-yl) (E)-but-2-enedioate	/Users/marcelmueller/source/randommolecules/example/5702803/5702803_opt.xyz	30	0	3.129
+5716409	5-[4-(dimethylamino)phenyl]-1-methyl-2,3,5,7,8,9-hexahydropyrazolo[3,4-c]isoquinolin-6-one	/Users/marcelmueller/source/randommolecules/example/5716409/5716409_opt.xyz	46	0	1.616
+5722607	2-[(2-chlorophenyl)methylsulfanyl]-N-[(Z)-1-(3-iodophenyl)ethylideneamino]acetamide	/Users/marcelmueller/source/randommolecules/example/5722607/5722607_opt.xyz	39	0	2.365
+5755727	N-[(Z)-[4-(2,4-dimethoxyanilino)-4-oxobutan-2-ylidene]amino]pyrazine-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/5755727/5755727_opt.xyz	45	0	1.879
+5761991	N-[4-[[(E)-3-(5-bromo-2-methoxyphenyl)prop-2-enoyl]amino]phenyl]-4-tert-butylbenzamide	/Users/marcelmueller/source/randommolecules/example/5761991/5761991_opt.xyz	60	0	2.119
+5788614	(5Z)-3-(5-chloro-1,3-benzothiazol-2-yl)-5-[(2-chlorophenyl)methylidene]-2-phenylimidazol-4-one	/Users/marcelmueller/source/randommolecules/example/5788614/5788614_opt.xyz	43	0	1.842
+5809498	4-chloro-N-[1-[2-[(E)-(3-chloro-5-methoxy-6-oxocyclohexa-2,4-dien-1-ylidene)methyl]hydrazinyl]-3-methyl-1-oxobutan-2-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/5809498/5809498_opt.xyz	50	0	1.583
+5814073	[(E)-[amino-(4-amino-1,2,5-oxadiazol-3-yl)methylidene]amino] N-(3-chlorophenyl)carbamate	/Users/marcelmueller/source/randommolecules/example/5814073/5814073_opt.xyz	29	0	2.844
+5815946	(E)-2-cyano-3-[2-[2-(4-methoxyanilino)-2-oxoethoxy]phenyl]-N-phenylprop-2-enamide	/Users/marcelmueller/source/randommolecules/example/5815946/5815946_opt.xyz	53	0	1.846
+5830173	N-[[(4Z)-4-(3H-1,3-benzothiazol-2-ylidene)-3-oxocyclohexa-1,5-dien-1-yl]carbamothioyl]-2-methoxybenzamide	/Users/marcelmueller/source/randommolecules/example/5830173/5830173_opt.xyz	47	0	1.568
+5839258	[3-[(Z)-[(4-methylphenyl)sulfonylhydrazinylidene]methyl]phenyl] 3-chloro-1-benzothiophene-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/5839258/5839258_opt.xyz	49	0	2.339
+5855712	(E)-3-(5-bromo-2-methoxyphenyl)-N-[4-(4-ethylpiperazin-1-yl)phenyl]prop-2-enamide	/Users/marcelmueller/source/randommolecules/example/5855712/5855712_opt.xyz	54	0	1.484
+5858613	methyl (4Z)-1-(3,4-dimethoxyphenyl)-4-[[1-(4-fluorophenyl)-2,5-dimethylpyrrol-3-yl]methylidene]-2-methyl-5-oxopyrrole-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/5858613/5858613_opt.xyz	63	0	2.007
+5879855	1-(4-methylphenyl)-3-phenyl-4-(4-phenylmethoxyphenyl)-2,4-dihydropyrazolo[3,4-e][1,4]thiazepin-7-one	/Users/marcelmueller/source/randommolecules/example/5879855/5879855_opt.xyz	65	0	2.141
+5888416	3-bromo-N-[(Z)-1-(3,4-dimethoxyphenyl)-3-oxo-3-(6-oxo-7,11-diazatricyclo[7.3.1.02,7]trideca-2,4-dien-11-yl)prop-1-en-2-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/5888416/5888416_opt.xyz	66	0	2.112
+5899249	(5Z)-2-(5-chloro-2-methoxyphenyl)imino-5-(5-chloro-3-methyl-1,3-benzothiazol-2-ylidene)-3-cyclohexyl-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/5899249/5899249_opt.xyz	56	0	1.921
+5901296	(5E)-3-[(2-chlorophenyl)methyl]-5-[[1-(2-morpholin-4-yl-2-oxoethyl)indol-3-yl]methylidene]-1,3-thiazolidine-2,4-dione	/Users/marcelmueller/source/randommolecules/example/5901296/5901296_opt.xyz	56	0	2.018
+5908857	(1E)-2-(5-chloro-3-methyl-1-benzothiophen-2-yl)-2-oxo-N-(4-propan-2-ylanilino)ethanimidoyl cyanide	/Users/marcelmueller/source/randommolecules/example/5908857/5908857_opt.xyz	45	0	1.913
+5918984	N-[1-[8-[(E)-3-(2-ethoxyphenyl)prop-2-enoyl]-2,8-diazaspiro[4.5]decan-2-yl]-4-methylsulfanyl-1-oxobutan-2-yl]formamide	/Users/marcelmueller/source/randommolecules/example/5918984/5918984_opt.xyz	68	0	2.695
+5936259	7-benzyl-1,3-dimethyl-8-[(2Z)-2-[(4-phenylmethoxyphenyl)methylidene]hydrazinyl]purine-2,6-dione	/Users/marcelmueller/source/randommolecules/example/5936259/5936259_opt.xyz	63	0	2.504
+5939415	N'-[(E)-(5-methyl-6-oxocyclohexa-2,4-dien-1-ylidene)methyl]-2-(2,3,6-trimethylphenoxy)acetohydrazide	/Users/marcelmueller/source/randommolecules/example/5939415/5939415_opt.xyz	46	0	1.885
+5940876	ethyl (2Z)-7-methyl-2-[(4-methylphenyl)methylidene]-3-oxo-5-thiophen-2-yl-5H-[1,3]thiazolo[3,2-a]pyrimidine-6-carboxylate	/Users/marcelmueller/source/randommolecules/example/5940876/5940876_opt.xyz	49	0	1.881
+5956286	N'-[(Z)-(3-bromo-5-ethoxy-4-phenylmethoxyphenyl)methylideneamino]-N-(2-bromophenyl)propanediamide	/Users/marcelmueller/source/randommolecules/example/5956286/5956286_opt.xyz	57	0	2.536
+5957888	(E)-2-cyano-N-[4-(difluoromethylsulfanyl)phenyl]-3-(1-phenyl-3-thiophen-2-ylpyrazol-4-yl)prop-2-enamide	/Users/marcelmueller/source/randommolecules/example/5957888/5957888_opt.xyz	49	0	2.029
+5966098	(E)-N-(5-chloro-2-phenoxyphenyl)-3-(2,3,4-trimethoxyphenyl)prop-2-enamide	/Users/marcelmueller/source/randommolecules/example/5966098/5966098_opt.xyz	53	0	2.617
+6006981	2-(3,5-dimethyl-4-nitropyrazol-1-yl)-N-[(Z)-[4-(2,4-dinitrophenoxy)phenyl]methylideneamino]propanamide	/Users/marcelmueller/source/randommolecules/example/6006981/6006981_opt.xyz	55	0	1.907
+6027764	[4-[(Z)-[[2-(4-cyanoanilino)-2-oxoacetyl]hydrazinylidene]methyl]phenyl] benzoate	/Users/marcelmueller/source/randommolecules/example/6027764/6027764_opt.xyz	47	0	2.505
+6029681	1-[(Z)-[3,4-bis(phenylmethoxy)phenyl]methylideneamino]-3-cyclohexylthiourea	/Users/marcelmueller/source/randommolecules/example/6029681/6029681_opt.xyz	65	0	1.680
+6056840	[2-acetyloxy-4-[(Z)-[2-(4-methylphenyl)-5-oxo-1,3-oxazol-4-ylidene]methyl]phenyl] acetate	/Users/marcelmueller/source/randommolecules/example/6056840/6056840_opt.xyz	45	0	1.972
+6060420	5-[(Z)-3-chlorobut-2-enyl]-5-hexyl-2-sulfanylidene-1,3-diazinane-4,6-dione	/Users/marcelmueller/source/randommolecules/example/6060420/6060420_opt.xyz	41	0	1.881
+6066664	(4E)-4-[(3-bromophenyl)methylidene]-2-thiophen-2-yl-1,3-oxazol-5-one	/Users/marcelmueller/source/randommolecules/example/6066664/6066664_opt.xyz	27	0	2.114
+6067815	N-(1,3-benzodioxol-5-yl)-2-[(5Z)-5-[(3-chloro-4-hydroxyphenyl)methylidene]-2,4-dioxo-1,3-thiazolidin-3-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/6067815/6067815_opt.xyz	42	0	1.729
+6067973	3-[3-chloro-5-(trifluoromethyl)pyridin-2-yl]sulfanyl-5-[(E)-2-(4-propan-2-ylanilino)ethenyl]-1,2-thiazole-4-carbonitrile	/Users/marcelmueller/source/randommolecules/example/6067973/6067973_opt.xyz	47	0	2.004
+6072818	2-phenoxyethyl (E)-3-phenylprop-2-enoate	/Users/marcelmueller/source/randommolecules/example/6072818/6072818_opt.xyz	36	0	2.500
+6099511	2-[[(5Z)-5-indol-3-ylidene-4-methyl-1H-1,2,4-triazol-3-yl]sulfanyl]-N-(4-methylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/6099511/6099511_opt.xyz	46	0	2.116
+6122543	(4E)-4-[hydroxy-(4-methoxyphenyl)methylidene]-1-(3-morpholin-4-ylpropyl)-5-(3-pentoxyphenyl)pyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/6122543/6122543_opt.xyz	76	0	1.300
+6142673	methyl 2-[(5Z)-5-(5-methyl-2-oxo-1H-indol-3-ylidene)-4-oxo-2-sulfanylidene-1,3-thiazolidin-3-yl]propanoate	/Users/marcelmueller/source/randommolecules/example/6142673/6142673_opt.xyz	38	0	0.974
+6142995	3-N-[(Z)-[5-(2,5-dichlorophenyl)furan-2-yl]methylideneamino]-1,2,4-triazole-3,4-diamine	/Users/marcelmueller/source/randommolecules/example/6142995/6142995_opt.xyz	32	0	2.229
+6145994	N'-[(Z)-(2-butoxyphenyl)methylideneamino]-N-(2,4-dimethylphenyl)propanediamide	/Users/marcelmueller/source/randommolecules/example/6145994/6145994_opt.xyz	55	0	2.484
+6156777	(5Z)-2-(5-chloro-2-methoxyphenyl)imino-3-cyclohexyl-5-(3-methyl-1,3-benzothiazol-2-ylidene)-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/6156777/6156777_opt.xyz	56	0	1.972
+6176112	4-[2-[(Z)-(2-methylindol-3-ylidene)methyl]hydrazinyl]-6-morpholin-4-yl-N-naphthalen-2-yl-1,3,5-triazin-2-amine	/Users/marcelmueller/source/randommolecules/example/6176112/6176112_opt.xyz	62	0	2.272
+6198542	[(Z)-[1,7,7-trimethyl-4-[(4-nitrophenyl)carbamoyl]-2-bicyclo[2.2.1]heptanylidene]amino] 2-bromobenzoate	/Users/marcelmueller/source/randommolecules/example/6198542/6198542_opt.xyz	57	0	2.256
+6204325	(5Z)-5-(furan-2-ylmethylidene)-3-(4-morpholin-4-yl-4-oxobutyl)-2-sulfanylidene-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/6204325/6204325_opt.xyz	42	0	1.242
+6206538	3-[(5Z)-5-[(3-methoxy-4-nonan-2-yloxyphenyl)methylidene]-4-oxo-2-sulfanylidene-1,3-thiazolidin-3-yl]propanoic acid	/Users/marcelmueller/source/randommolecules/example/6206538/6206538_opt.xyz	62	0	1.405
+6214500	(E)-3-(3-methoxyanilino)-2-(3-methylpyridin-1-ium-1-yl)-1-(4-nitrophenyl)-3-sulfanylprop-2-en-1-one	/Users/marcelmueller/source/randommolecules/example/6214500/6214500_opt.xyz	50	1	2.007
+6282686	2-[2-chloro-4-[(Z)-2-cyano-2-[4-(trifluoromethyl)phenyl]ethenyl]phenoxy]acetamide	/Users/marcelmueller/source/randommolecules/example/6282686/6282686_opt.xyz	38	0	2.258
+6295406	(4Z)-4-[hydroxy-(4-methoxyphenyl)methylidene]-1,5-diphenylpyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/6295406/6295406_opt.xyz	48	0	1.891
+6304412	(5Z)-5-[[1-[4-(diethylamino)phenyl]-2,5-dimethylpyrrol-3-yl]methylidene]-3-(2-oxo-2-pyrrolidin-1-ylethyl)-1,3-thiazolidine-2,4-dione	/Users/marcelmueller/source/randommolecules/example/6304412/6304412_opt.xyz	66	0	2.036
+6305148	(5Z)-3-(furan-2-ylmethyl)-5-[[3-[2-(4-methoxyphenoxy)ethoxy]phenyl]methylidene]-2-sulfanylidene-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/6305148/6305148_opt.xyz	53	0	1.282
+6319657	(4E)-1-(4,6-dimethyl-1,3-benzothiazol-2-yl)-4-[hydroxy-(2-methylimidazo[1,2-a]pyridin-3-yl)methylidene]-5-phenylpyrrolidine-2,3-dione	/Users/marcelmueller/source/randommolecules/example/6319657/6319657_opt.xyz	58	0	1.852
+6330159	N,N-bis(dimethylarsanyl)methanamine	/Users/marcelmueller/source/randommolecules/example/6330159/6330159_opt.xyz	23	0	5.322
+6343198	[amino-(3-bromophenyl)methylidene]-(2-chlorobenzoyl)oxyazanium	/Users/marcelmueller/source/randommolecules/example/6343198/6343198_opt.xyz	31	1	1.991
+6399761	N-[[4-(4-chlorophenyl)-2-imino-1,3-thiazol-5-ylidene]amino]-3-nitroaniline	/Users/marcelmueller/source/randommolecules/example/6399761/6399761_opt.xyz	34	0	1.498
+6414092	5-amino-6-[(E)-(3-hydroxy-4-oxocyclohexa-2,5-dien-1-ylidene)methyl]-2-(2-morpholin-4-yl-2-oxoethyl)-[1,3,4]thiadiazolo[3,2-a]pyrimidin-7-one	/Users/marcelmueller/source/randommolecules/example/6414092/6414092_opt.xyz	46	0	1.534
+6418009	methyl 4-butyl-6-(2-fluoro-1,2-dihydroxyethyl)-5-hydroxy-8-oxo-5,6-dihydropyrano[3,4-c]pyridazine-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/6418009/6418009_opt.xyz	44	0	1.591
+6420846	2-methylpropyl 2-(2-fluoroanilino)-2-oxoacetate	/Users/marcelmueller/source/randommolecules/example/6420846/6420846_opt.xyz	31	0	2.980
+6424146	bis(6-ethyloctan-3-yl) benzene-1,2-dicarboxylate	/Users/marcelmueller/source/randommolecules/example/6424146/6424146_opt.xyz	78	0	3.294
+6426594	[dimethyl-(2,3,4,5,6-pentafluorophenyl)silyl] tricosanoate	/Users/marcelmueller/source/randommolecules/example/6426594/6426594_opt.xyz	90	0	3.001
+6471491	3-[(4-fluorophenoxy)methyl]-6-pyridin-2-yl-[1,2,4]triazolo[3,4-b][1,3,4]thiadiazole	/Users/marcelmueller/source/randommolecules/example/6471491/6471491_opt.xyz	33	0	2.066
+6492861	3-[2-(5-chlorothiophen-2-yl)-2-oxoethyl]sulfanyl-6-thiophen-2-yl-2H-1,2,4-triazin-5-one	/Users/marcelmueller/source/randommolecules/example/6492861/6492861_opt.xyz	30	0	2.078
+6499564	2-[(7-cyano-2,4-dioxo-1H-thieno[3,2-d]pyrimidin-6-yl)sulfanyl]-N-(5-ethyl-1,3,4-thiadiazol-2-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/6499564/6499564_opt.xyz	35	0	1.905
+6500376	methyl 4-(4-hydroxy-3,5-dimethoxyphenyl)-2-methyl-1,4-dihydropyrimido[1,2-a]benzimidazole-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/6500376/6500376_opt.xyz	50	0	2.612
+6513494	N-[(5Z)-5-[[5-[2-chloro-5-(trifluoromethyl)phenyl]furan-2-yl]methylidene]-4-oxo-2-sulfanylidene-1,3-thiazolidin-3-yl]-2-phenylacetamide	/Users/marcelmueller/source/randommolecules/example/6513494/6513494_opt.xyz	48	0	1.264
+6514682	(NE)-N-(4-fluoro-3-prop-2-ynyl-1,3-benzothiazol-2-ylidene)-4-oxochromene-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/6514682/6514682_opt.xyz	38	0	2.304
+6523855	(4E)-4-[[2-(4-amino-5-methyl-1,2,4-triazol-3-yl)hydrazinyl]methylidene]-2-methoxy-6-prop-2-enylcyclohexa-2,5-dien-1-one	/Users/marcelmueller/source/randommolecules/example/6523855/6523855_opt.xyz	40	0	1.716
+6526417	N-[4-[[[(1E)-1-(4-methoxy-6-oxocyclohexa-2,4-dien-1-ylidene)ethyl]amino]carbamoyl]phenyl]thiophene-2-sulfonamide	/Users/marcelmueller/source/randommolecules/example/6526417/6526417_opt.xyz	49	0	1.685
+6532957	4-[[2-[[(2Z)-2-[(3-methoxyphenyl)methylidene]-3-oxo-1-benzofuran-6-yl]oxy]acetyl]amino]butanoic acid	/Users/marcelmueller/source/randommolecules/example/6532957/6532957_opt.xyz	51	0	2.248
+6534549	(5E)-5-[[3-(4-methylphenyl)-1-phenylpyrazol-4-yl]methylidene]-3-prop-2-enyl-2-sulfanylidene-1,3-thiazolidin-4-one	/Users/marcelmueller/source/randommolecules/example/6534549/6534549_opt.xyz	48	0	1.379
+6534555	(NE)-2-bromo-N-[3-(2-methoxyethyl)-6-sulfamoyl-1,3-benzothiazol-2-ylidene]benzamide	/Users/marcelmueller/source/randommolecules/example/6534555/6534555_opt.xyz	43	0	3.108
+6545096	(1R,3S,4S,5R,8S,10S,14R)-10,14-dimethyl-5-(pyrrolidin-1-ylmethyl)-2,7-dioxatetracyclo[8.4.0.01,3.04,8]tetradecan-6-one	/Users/marcelmueller/source/randommolecules/example/6545096/6545096_opt.xyz	52	0	3.098
+6546769	(3aS)-3a-[(E)-2-(2-hydroxyphenyl)ethenyl]-4,4,6-trimethyl-1,3-dihydroimidazo[1,2-a]indol-2-one	/Users/marcelmueller/source/randommolecules/example/6546769/6546769_opt.xyz	47	0	2.572
+6547319	ethyl (3aR,6aS)-4,6-dioxo-6a-phenyl-5-[3-(trifluoromethyl)phenyl]-1,3a-dihydropyrrolo[3,4-c]pyrazole-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/6547319/6547319_opt.xyz	47	0	2.934
+6555333	(1R,8aR)-1-cyclohexyl-2-[(2,5-dimethoxyphenyl)methyl]-3,4,6,7,8,8a-hexahydro-1H-pyrrolo[1,2-a]pyrazine	/Users/marcelmueller/source/randommolecules/example/6555333/6555333_opt.xyz	60	0	2.920
+6560981	methyl 4-[(2R,3R)-1-[2-(dimethylamino)ethyl]-2-(3-methoxyphenyl)-4,5-dioxopyrrolidine-3-carbonyl]-3,5-dimethyl-1H-pyrrole-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/6560981/6560981_opt.xyz	62	0	1.828
+6569045	(8R)-6-(5-hydroxypentyl)-2,2-dimethyl-3,6,17-triazatetracyclo[8.7.0.03,8.011,16]heptadeca-1(10),11,13,15-tetraene-4,7-dione	/Users/marcelmueller/source/randommolecules/example/6569045/6569045_opt.xyz	54	0	3.586
+6573076	(2S)-2-[[4-[2-[(8R,9S,10S,13R,14R,17R)-17-hydroxy-10,13-dimethyl-3,11-dioxo-1,2,6,7,8,9,12,14,15,16-decahydrocyclopenta[a]phenanthren-17-yl]-2-oxoethoxy]-4-oxobutanoyl]amino]propanoic acid	/Users/marcelmueller/source/randommolecules/example/6573076/6573076_opt.xyz	75	0	2.499
+6622971	N-butyl-N-(furan-2-ylmethyl)-4H-thieno[3,2-c]chromene-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/6622971/6622971_opt.xyz	47	0	2.568
+6646020	(3aS,6R,6aS,9aR,10aS,10bR)-6a,9a-dichloro-6-(3-chloro-4-hydroxy-5-methoxyphenyl)-8-methyl-2-(thiophen-2-ylmethyl)-3a,4,6,10,10a,10b-hexahydroisoindolo[5,6-e]isoindole-1,3,7,9-tetrone	/Users/marcelmueller/source/randommolecules/example/6646020/6646020_opt.xyz	62	0	2.680
+6648191	methyl (3aS,6R,6aS,9aR,10aS,10bR)-6a-(4-chlorophenyl)-8-(4-fluoroanilino)-6-(3-fluoro-2-hydroxyphenyl)-1,3,7,9-tetraoxo-4,6,9a,10,10a,10b-hexahydro-3aH-isoindolo[5,6-e]isoindole-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/6648191/6648191_opt.xyz	73	0	2.739
+6677000	7-[[3-[3-[(2S,4S,6R)-4-(benzimidazol-1-ylmethyl)-6-[4-(hydroxymethyl)phenyl]-1,3-dioxan-2-yl]phenyl]phenyl]methylamino]-7-oxoheptanoic acid	/Users/marcelmueller/source/randommolecules/example/6677000/6677000_opt.xyz	89	0	3.284
+6697668	1-ethyl-3-[[4-[(2S,4R,6S)-4-[4-(hydroxymethyl)phenyl]-6-[[1-(4-hydroxyphenyl)tetrazol-5-yl]sulfanylmethyl]-1,3-dioxan-2-yl]phenyl]methyl]urea	/Users/marcelmueller/source/randommolecules/example/6697668/6697668_opt.xyz	73	0	3.119
+6715214	[(3aS,4R,7aR)-6-[(2R)-2-(2-hydroxyethylcarbamoyl)pyrrolidine-1-carbonyl]-2,2-diphenyl-3a,4,5,7a-tetrahydro-1,3-benzodioxol-4-yl] 4-[3-[(3R)-4,4-dimethyl-2-oxooxolan-3-yl]oxy-3-oxoprop-1-enyl]benzoate	/Users/marcelmueller/source/randommolecules/example/6715214/6715214_opt.xyz	100	0	2.173
+6718387	(3R,4S,4aS,9bS)-3-[hexyl(octanoyl)amino]-4-hydroxy-N-(2-hydroxyethyl)-3,4,4a,9b-tetrahydrodibenzofuran-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/6718387/6718387_opt.xyz	80	0	3.464
+6724149	2-(1,3-benzodioxol-5-yl)-N-[(2S)-3-hydroxy-1-oxo-1-(4-pyrimidin-2-ylpiperazin-1-yl)propan-2-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/6724149/6724149_opt.xyz	53	0	2.857
+6724616	N-[(2S)-1-(cyclohexylamino)-3-hydroxy-1-oxopropan-2-yl]-2-[3-(trifluoromethyl)anilino]benzamide	/Users/marcelmueller/source/randommolecules/example/6724616/6724616_opt.xyz	58	0	2.997
+6725661	2-(2-chloro-6-fluorophenyl)-1-[(2S,5S,6S,13S)-5,13-dihydroxy-6,10-dimethyl-5-[[methyl(2-phenylethyl)amino]methyl]-17-tricyclo[13.2.2.02,6]nonadeca-1(17),9,15,18-tetraenyl]ethanone	/Users/marcelmueller/source/randommolecules/example/6725661/6725661_opt.xyz	92	0	2.177
+6747015	4-chloro-6-[4-(4-methylbenzoyl)-1,2-dihydropyrazol-3-ylidene]cyclohexa-2,4-dien-1-one	/Users/marcelmueller/source/randommolecules/example/6747015/6747015_opt.xyz	35	0	2.724
+6749464	5-[(4-chloro-5-methyl-3-nitropyrazol-1-yl)methyl]-N'-[(3-methoxy-4-oxocyclohexa-2,5-dien-1-ylidene)methyl]furan-2-carbohydrazide	/Users/marcelmueller/source/randommolecules/example/6749464/6749464_opt.xyz	46	0	0.976
+6753042	N-(3-chlorophenyl)-2-[[4-(2-methoxyphenyl)-5-(6-oxocyclohexa-2,4-dien-1-ylidene)-1H-1,2,4-triazol-3-yl]sulfanyl]acetamide	/Users/marcelmueller/source/randommolecules/example/6753042/6753042_opt.xyz	51	0	3.036
+6767738	methyl 2-[(3-bromo-5-ethoxy-6-oxocyclohexa-2,4-dien-1-ylidene)methylamino]-6-methyl-5,7-dihydro-4H-thieno[2,3-c]pyridine-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/6767738/6767738_opt.xyz	48	0	1.302
+6773075	2-[[4-(4-chlorophenyl)-5-(4-methoxyphenyl)-1,2,4-triazol-3-yl]sulfanyl]-N'-[(6-oxo-5-prop-2-enylcyclohexa-2,4-dien-1-ylidene)methyl]acetohydrazide	/Users/marcelmueller/source/randommolecules/example/6773075/6773075_opt.xyz	61	0	1.875
+6775371	5-(3,4-dimethyl-6-oxocyclohexa-2,4-dien-1-ylidene)-N-[2-(trifluoromethyl)phenyl]-1,2-dihydropyrazole-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/6775371/6775371_opt.xyz	43	0	2.104
+6785079	3-methylsulfanyl-6-(1-phenylprop-1-en-2-yl)-6,7-dihydro-[1,2,4]triazino[5,6-d][3,1]benzoxazepine	/Users/marcelmueller/source/randommolecules/example/6785079/6785079_opt.xyz	44	0	1.786
+6819306	2,4-dichloro-6-[[2-(4-phenyl-1,3-thiazol-2-yl)hydrazinyl]methylidene]cyclohexa-2,4-dien-1-one	/Users/marcelmueller/source/randommolecules/example/6819306/6819306_opt.xyz	34	0	1.678
+6838067	ethyl 4-[4-[[2-[2-(4-chlorophenyl)sulfanylacetyl]hydrazinyl]methylidene]-1,3-dioxoisoquinolin-2-yl]benzoate	/Users/marcelmueller/source/randommolecules/example/6838067/6838067_opt.xyz	59	0	2.429
+6879374	4-[(E)-(3,4-dichlorophenyl)methylideneamino]-3-(3-ethoxyphenyl)-1H-1,2,4-triazole-5-thione	/Users/marcelmueller/source/randommolecules/example/6879374/6879374_opt.xyz	39	0	1.239
+6886536	methyl 4-[(E)-[4-[(2-chlorophenyl)methyl]piperazin-1-yl]iminomethyl]benzoate	/Users/marcelmueller/source/randommolecules/example/6886536/6886536_opt.xyz	48	0	2.341
+6902997	N-[(Z)-(3-methyl-1,3-benzothiazol-2-ylidene)amino]-2-(4-phenylphenyl)quinoline-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/6902997/6902997_opt.xyz	58	0	2.131
+6912360	(2Z)-2-(6,7-dimethoxy-3,3-dimethyl-2,4-dihydroisoquinolin-1-ylidene)-N-phenylacetamide	/Users/marcelmueller/source/randommolecules/example/6912360/6912360_opt.xyz	50	0	2.406
+6919378	benzyl-[2-(4-fluoroanilino)-2-oxoethyl]azanium	/Users/marcelmueller/source/randommolecules/example/6919378/6919378_opt.xyz	35	1	3.260
+6933022	(3R)-3-chloro-3-phenyl-1-azatetracyclo[7.6.1.05,16.010,15]hexadeca-5,7,9(16),10(15)-tetraene-2,4-dione	/Users/marcelmueller/source/randommolecules/example/6933022/6933022_opt.xyz	41	0	2.338
+6955314	cyclohexyl-[2-[(2-methoxycarbonyl-1H-indol-3-yl)amino]-2-oxoethyl]-methylazanium	/Users/marcelmueller/source/randommolecules/example/6955314/6955314_opt.xyz	51	1	2.374
+6956055	(1R)-1-(5-methoxy-2-methyl-1H-indol-3-yl)-2-(1,2,3,4-tetrahydroisoquinolin-2-ium-2-yl)ethanol	/Users/marcelmueller/source/randommolecules/example/6956055/6956055_opt.xyz	50	1	3.492
+6962665	(3S)-1-[(4-bromophenyl)methyl]piperidine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/6962665/6962665_opt.xyz	34	0	3.132
+6984074	diethyl-[2-[(7-phenyl-10-thia-8,13,15-triazatetracyclo[7.7.0.02,6.011,16]hexadeca-1(9),2(6),7,11(16),12,14-hexaen-12-yl)amino]ethyl]azanium	/Users/marcelmueller/source/randommolecules/example/6984074/6984074_opt.xyz	58	1	2.331
+6994517	(2S,3R)-2-amino-3-hydroxy-3-thiophen-2-ylpropanoic acid	/Users/marcelmueller/source/randommolecules/example/6994517/6994517_opt.xyz	21	0	3.544
+7018778	(2S)-6-(dimethylamino)-2-[(2-methylpropan-2-yl)oxycarbonylamino]hexanoic acid	/Users/marcelmueller/source/randommolecules/example/7018778/7018778_opt.xyz	45	0	2.748
+7024640	[(2R)-butan-2-yl] (E)-2-cyano-3-[5-(2-nitrophenyl)furan-2-yl]prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/7024640/7024640_opt.xyz	41	0	2.087
+7036848	methyl (2R)-2-[[(2R)-2-(1,3-dioxoisoindol-2-yl)-3-phenylpropanoyl]amino]-3-phenylpropanoate	/Users/marcelmueller/source/randommolecules/example/7036848/7036848_opt.xyz	58	0	2.045
+7037691	3-(2-methylpropylsulfanyl)-1-morpholin-4-yl-5,6,7,8-tetrahydroisoquinolin-2-ium-4-carbonitrile	/Users/marcelmueller/source/randommolecules/example/7037691/7037691_opt.xyz	49	1	2.367
+7067684	ethyl (6S)-2-[[(3R)-2,3-dihydro-1,4-benzodioxine-3-carbonyl]amino]-6-methyl-4,5,6,7-tetrahydro-1-benzothiophene-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/7067684/7067684_opt.xyz	51	0	2.610
+7074906	(3S,10bR)-3-butyl-5,10b-dimethyl-2,3,4,6,7,8,9,10-octahydro-1H-cyclopenta[a]quinolizin-5-ium	/Users/marcelmueller/source/randommolecules/example/7074906/7074906_opt.xyz	51	1	4.662
+7078116	(2S)-azepan-1-ium-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/7078116/7078116_opt.xyz	23	0	4.329
+7088788	butyl (4R)-4-(3-bromo-4-methoxyphenyl)-6-methyl-2-oxo-3,4-dihydro-1H-pyrimidine-5-carboxylate	/Users/marcelmueller/source/randommolecules/example/7088788/7088788_opt.xyz	45	0	3.146
+7094269	(3E)-3-[(4-fluorophenyl)hydrazinylidene]-1-(morpholin-4-ylmethyl)indol-2-one	/Users/marcelmueller/source/randommolecules/example/7094269/7094269_opt.xyz	45	0	2.058
+7120050	3-(4-fluorophenyl)-2-sulfanylidene-1H-[1]benzofuro[3,2-d]pyrimidin-4-one	/Users/marcelmueller/source/randommolecules/example/7120050/7120050_opt.xyz	31	0	1.769
+7128808	(3S)-1,2,3,4-tetrahydroisoquinoline-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/7128808/7128808_opt.xyz	25	0	3.996
+7130477	6-[(3S)-3-methylpiperidin-1-yl]-N-(2-phenylethyl)pyridin-1-ium-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/7130477/7130477_opt.xyz	50	1	1.468
+7135907	ethyl 2-[(4-ethoxybenzoyl)amino]-6-ethyl-4,5,6,7-tetrahydrothieno[2,3-c]pyridin-6-ium-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/7135907/7135907_opt.xyz	55	1	2.578
+7149211	[2-oxo-2-(pentan-3-ylamino)ethyl] 2-amino-5-bromobenzoate	/Users/marcelmueller/source/randommolecules/example/7149211/7149211_opt.xyz	39	0	2.645
+7158078	N-[(2R)-1-(cyclohexylamino)-3-methyl-1-oxobutan-2-yl]adamantane-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/7158078/7158078_opt.xyz	62	0	4.313
+7159283	(6S)-6-(4-methylphenyl)-1-phenylhept-1-en-3-one	/Users/marcelmueller/source/randommolecules/example/7159283/7159283_opt.xyz	43	0	2.488
+7172043	4-(4-bromophenyl)-2-phenylpyrazol-3-amine	/Users/marcelmueller/source/randommolecules/example/7172043/7172043_opt.xyz	31	0	3.161
+7185236	3-(3-chlorophenyl)-5-(3-pyridin-4-yl-1,2,4-oxadiazol-5-yl)triazol-4-amine	/Users/marcelmueller/source/randommolecules/example/7185236/7185236_opt.xyz	34	0	2.253
+7187332	[2-oxo-2-(propan-2-ylcarbamoylamino)ethyl] (E)-3-(4-methylphenyl)prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/7187332/7187332_opt.xyz	42	0	2.869
+7196252	N'-[(2-methoxyphenyl)methyl]-N-[[(2R)-3-(thiophene-2-carbonyl)-1,3-oxazolidin-2-yl]methyl]oxamide	/Users/marcelmueller/source/randommolecules/example/7196252/7196252_opt.xyz	49	0	3.047
+7197492	[amino-[(4-methoxy-3-methylphenyl)sulfonylamino]methylidene]-[2-(3,4-dimethoxyphenyl)ethyl]azanium	/Users/marcelmueller/source/randommolecules/example/7197492/7197492_opt.xyz	54	1	1.858
+7201872	methyl 4-[4-oxo-2-[(1S)-1-(2-phenylethylamino)ethyl]quinazolin-3-yl]butanoate	/Users/marcelmueller/source/randommolecules/example/7201872/7201872_opt.xyz	56	0	2.705
+7215756	1-(2-chlorophenyl)-3-[(3R)-1-(4-fluorophenyl)-5-oxopyrrolidin-3-yl]urea	/Users/marcelmueller/source/randommolecules/example/7215756/7215756_opt.xyz	39	0	3.742
+7224234	[(1S)-2-(ethylcarbamoylamino)-2-oxo-1-phenylethyl] 2-(furan-2-ylmethylamino)benzoate	/Users/marcelmueller/source/randommolecules/example/7224234/7224234_opt.xyz	54	0	2.609
+7232815	(2R)-2-(2,4-dichlorophenoxy)-1-(2,3-dihydroindol-1-yl)propan-1-one	/Users/marcelmueller/source/randommolecules/example/7232815/7232815_opt.xyz	37	0	3.575
+7240697	2-[[4-amino-5-(naphthalen-1-ylmethyl)-1,2,4-triazol-3-yl]sulfanyl]-N-[(1R,2S,3S)-2,3-dimethylcyclohexyl]acetamide	/Users/marcelmueller/source/randommolecules/example/7240697/7240697_opt.xyz	59	0	3.111
+7289282	[(2R)-2-(2,4-dimethoxyphenyl)-1,3-thiazolidin-3-yl]-(4-ethylphenyl)methanone	/Users/marcelmueller/source/randommolecules/example/7289282/7289282_opt.xyz	48	0	3.354
+7307522	[(1R)-1-(1H-benzimidazol-2-yl)-2-(4-hydroxyphenyl)ethyl]azanium	/Users/marcelmueller/source/randommolecules/example/7307522/7307522_opt.xyz	35	1	2.132
+7313171	(4S,7R)-7-(4-chlorophenyl)-4-(2-ethoxyphenyl)-2-methyl-5-oxo-4,6,7,8-tetrahydro-3H-quinoline-3-carbonitrile	/Users/marcelmueller/source/randommolecules/example/7313171/7313171_opt.xyz	53	0	2.315
+7322427	5-(1,3-benzodioxol-5-yloxy)-N-[(2R)-2-ethylhexyl]-1H-indole-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/7322427/7322427_opt.xyz	58	0	2.778
+7325119	[amino-[(4,6-dimethylpyrimidin-2-yl)amino]methylidene]-(2,2,6,6-tetramethylpiperidin-1-ium-4-yl)azanium	/Users/marcelmueller/source/randommolecules/example/7325119/7325119_opt.xyz	52	2	2.736
+7341385	N-[(Z)-(3-ethoxy-4-phenylmethoxyphenyl)methylideneamino]-2-(4-methylanilino)acetamide	/Users/marcelmueller/source/randommolecules/example/7341385/7341385_opt.xyz	58	0	2.523
+7355583	[2-(2-cyanoanilino)-2-oxoethyl] (E)-3-[4-(trifluoromethyl)phenyl]prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/7355583/7355583_opt.xyz	40	0	2.774
+7365065	[2-oxo-2-(4-phenyldiazenylanilino)ethyl] (1R,2R)-2-methylcyclopropane-1-carboxylate	/Users/marcelmueller/source/randommolecules/example/7365065/7365065_opt.xyz	44	0	0.769
+7376709	N-(1-cyanocyclohexyl)-2-[[5-(4-methylanilino)-1,3,4-thiadiazol-2-yl]sulfanyl]acetamide	/Users/marcelmueller/source/randommolecules/example/7376709/7376709_opt.xyz	47	0	2.756
+7385554	N-(3-acetylphenyl)-2-[[1-[2-(dimethylamino)ethyl]-2-oxo-6,7-dihydro-5H-cyclopenta[d]pyrimidin-4-yl]sulfanyl]acetamide	/Users/marcelmueller/source/randommolecules/example/7385554/7385554_opt.xyz	55	0	1.923
+7387231	[(5S,10bS)-9-chloro-2-(4-methylphenyl)-5,10b-dihydro-1H-pyrazolo[1,5-c][1,3]benzoxazin-5-yl]-phenylmethanone	/Users/marcelmueller/source/randommolecules/example/7387231/7387231_opt.xyz	48	0	2.028
+7396431	[2-[bis(prop-2-enyl)amino]-2-oxoethyl]-[2-[(2R)-2-(4-fluorophenyl)-1,3-thiazolidin-3-yl]-2-oxoethyl]-propan-2-ylazanium	/Users/marcelmueller/source/randommolecules/example/7396431/7396431_opt.xyz	60	1	3.128
+7406237	[2-[2-(cyclohexen-1-yl)ethylamino]-2-oxoethyl]-cyclopentylazanium	/Users/marcelmueller/source/randommolecules/example/7406237/7406237_opt.xyz	45	1	3.180
+7415335	[2-(3,4-dichloroanilino)-2-oxoethyl] 2-(6-hydroxy-1-benzofuran-3-yl)acetate	/Users/marcelmueller/source/randommolecules/example/7415335/7415335_opt.xyz	39	0	2.981
+7417876	[2-[[(2S)-butan-2-yl]amino]-2-oxoethyl] 3-(4-fluorophenyl)-1-phenylpyrazole-4-carboxylate	/Users/marcelmueller/source/randommolecules/example/7417876/7417876_opt.xyz	51	0	3.294
+7434247	[2-[4-(2,2-dimethylpropanoylamino)phenyl]-2-oxoethyl] cyclopropanecarboxylate	/Users/marcelmueller/source/randommolecules/example/7434247/7434247_opt.xyz	43	0	2.947
+7444452	N-[(1S)-1-(3-chlorophenyl)ethyl]-2-[[5-(2-fluorophenyl)-1,3,4-oxadiazol-2-yl]sulfanyl]acetamide	/Users/marcelmueller/source/randommolecules/example/7444452/7444452_opt.xyz	41	0	2.675
+7462555	5-[(3S,5S)-3,5-dimethylpiperidin-1-yl]-2-[(E)-2-phenylethenyl]-1,3-oxazole-4-carbonitrile	/Users/marcelmueller/source/randommolecules/example/7462555/7462555_opt.xyz	44	0	2.179
+7469361	[2-(4-cyclohexylphenyl)-2-oxoethyl] 2,4-dimethyl-1,3-thiazole-5-carboxylate	/Users/marcelmueller/source/randommolecules/example/7469361/7469361_opt.xyz	48	0	2.756
+7483452	[2-(3,4-difluorophenyl)-2-oxoethyl] 3-hydroxybenzoate	/Users/marcelmueller/source/randommolecules/example/7483452/7483452_opt.xyz	31	0	2.303
+7511589	2-[(4-ethoxy-1,3-benzothiazol-2-yl)-(4-fluorobenzoyl)amino]ethyl-diethylazanium	/Users/marcelmueller/source/randommolecules/example/7511589/7511589_opt.xyz	56	1	2.300
+7511930	2-[(5,7-dimethyl-1,3-benzothiazol-2-yl)-[(E)-3-thiophen-2-ylprop-2-enoyl]amino]ethyl-diethylazanium	/Users/marcelmueller/source/randommolecules/example/7511930/7511930_opt.xyz	56	1	2.337
+7517202	N-(1-acetyl-3,4-dihydro-2H-quinolin-7-yl)-3,4-diethoxybenzamide	/Users/marcelmueller/source/randommolecules/example/7517202/7517202_opt.xyz	54	0	3.133
+7518682	[2-[[3-(4-methylphenyl)-1,2-oxazol-5-yl]amino]-2-oxoethyl] 2,4-dimethylbenzoate	/Users/marcelmueller/source/randommolecules/example/7518682/7518682_opt.xyz	47	0	3.333
+7528584	2-[[5-(3-methylphenyl)-4-propyl-1,2,4-triazol-3-yl]sulfanyl]-N-(2-methylsulfanylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/7528584/7528584_opt.xyz	52	0	2.573
+7547147	1-[(2R)-5-(diethylamino)pentan-2-yl]-3-[(3R)-1-(3-fluorophenyl)-5-oxopyrrolidin-3-yl]urea	/Users/marcelmueller/source/randommolecules/example/7547147/7547147_opt.xyz	58	0	2.402
+7548661	[2-[2,5-dimethyl-1-(2-thiophen-2-ylethyl)pyrrol-3-yl]-2-oxoethyl] (E)-3-(4-methylphenyl)prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/7548661/7548661_opt.xyz	54	0	2.674
+7569093	[2-(cyclopropylcarbamoylamino)-2-oxoethyl] 3-methyl-2-nitrobenzoate	/Users/marcelmueller/source/randommolecules/example/7569093/7569093_opt.xyz	38	0	2.088
+7587465	methyl 4-[[5-(thiophen-2-ylcarbamoylamino)-1,3,4-thiadiazol-2-yl]sulfanylmethyl]benzoate	/Users/marcelmueller/source/randommolecules/example/7587465/7587465_opt.xyz	40	0	2.726
+7605011	[2-[4-(cyanomethyl)anilino]-2-oxoethyl] 4-(4-acetylphenoxy)butanoate	/Users/marcelmueller/source/randommolecules/example/7605011/7605011_opt.xyz	51	0	3.073
+7607122	2-[[(1S,2R)-1-hydroxy-1-(4-hydroxyphenyl)propan-2-yl]iminomethyl]-4-nitrophenolate	/Users/marcelmueller/source/randommolecules/example/7607122/7607122_opt.xyz	38	-1	1.962
+7616310	ethyl 5-[2-(tert-butylamino)-2-oxoacetyl]-2-methyl-4-(4-methylphenyl)-1H-pyrrole-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/7616310/7616310_opt.xyz	53	0	2.144
+7616931	[2-(cyclohexylcarbamoylamino)-2-oxoethyl] (2R)-3-methyl-2-(phenylcarbamoylamino)butanoate	/Users/marcelmueller/source/randommolecules/example/7616931/7616931_opt.xyz	60	0	3.508
+7648606	[(2S)-1-(4-methoxyphenyl)-1-oxopropan-2-yl] 2,5-dimethylthiophene-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/7648606/7648606_opt.xyz	40	0	2.746
+7654751	[2-[(4-fluorophenyl)methylamino]-2-oxoethyl] 2-[(3,5-dimethyl-1,2-oxazol-4-yl)methoxy]benzoate	/Users/marcelmueller/source/randommolecules/example/7654751/7654751_opt.xyz	51	0	3.394
+7683064	(2S)-2-[[5-(2-methylphenyl)-1,3,4-oxadiazol-2-yl]sulfanyl]-N-naphthalen-1-ylpropanamide	/Users/marcelmueller/source/randommolecules/example/7683064/7683064_opt.xyz	47	0	2.908
+7687291	2,2-dimethyl-N-[4-(2-oxopiperidin-1-yl)phenyl]propanamide	/Users/marcelmueller/source/randommolecules/example/7687291/7687291_opt.xyz	42	0	3.502
+7703318	[2-(4-propan-2-ylphenyl)-1,3-thiazol-4-yl]methyl 3-methoxybenzoate	/Users/marcelmueller/source/randommolecules/example/7703318/7703318_opt.xyz	47	0	2.868
+7711195	[2-(dimethylamino)-2-oxoethyl] 2-[(4S)-2',5'-dioxospiro[2,3-dihydrochromene-4,4'-imidazolidine]-1'-yl]acetate	/Users/marcelmueller/source/randommolecules/example/7711195/7711195_opt.xyz	45	0	3.620
+7714704	2-[(2R,6R)-2,6-dimethylmorpholin-4-yl]-9,10-dimethoxy-6,7-dihydropyrimido[6,1-a]isoquinolin-4-one	/Users/marcelmueller/source/randommolecules/example/7714704/7714704_opt.xyz	52	0	2.446
+7720389	6-chloro-4-[[4-(2-fluorophenyl)piperazin-1-ium-1-yl]methyl]-7-hydroxychromen-2-one	/Users/marcelmueller/source/randommolecules/example/7720389/7720389_opt.xyz	46	1	1.699
+7740406	[(1S,2S)-2-[(dimethylamino)methyl]cyclohexyl] 2,4-dichlorobenzoate	/Users/marcelmueller/source/randommolecules/example/7740406/7740406_opt.xyz	42	0	1.867
+7746083	(5S,10bS)-2-(2,3-dihydro-1,4-benzodioxin-6-yl)-5-(4-methylphenyl)-5,10b-dihydro-1H-pyrazolo[1,5-c][1,3]benzoxazine	/Users/marcelmueller/source/randommolecules/example/7746083/7746083_opt.xyz	52	0	2.697
+7770999	[2-oxo-2-(propan-2-ylamino)ethyl] 2-[4-[(3,5-dimethyl-1,2-oxazol-4-yl)methoxy]phenyl]acetate	/Users/marcelmueller/source/randommolecules/example/7770999/7770999_opt.xyz	50	0	3.885
+7796948	[2-oxo-2-[[2-oxo-2-(2,3,4-trifluoroanilino)ethyl]amino]ethyl] butanoate	/Users/marcelmueller/source/randommolecules/example/7796948/7796948_opt.xyz	38	0	3.466
+7800061	[2-[(4-tert-butylbenzoyl)amino]-2-oxoethyl] 4-oxo-4-thiophen-2-ylbutanoate	/Users/marcelmueller/source/randommolecules/example/7800061/7800061_opt.xyz	51	0	2.976
+7800079	[2-(2-methylanilino)-2-oxoethyl] 4-oxo-4-thiophen-2-ylbutanoate	/Users/marcelmueller/source/randommolecules/example/7800079/7800079_opt.xyz	40	0	2.635
+7813212	[2-oxo-2-(4-phenylanilino)ethyl] 2-chloro-5-nitrobenzoate	/Users/marcelmueller/source/randommolecules/example/7813212/7813212_opt.xyz	44	0	1.547
+7822532	[(1S)-1,2-bis(4-methylphenyl)-2-oxoethyl] (3R,7aS)-7a-methyl-5-oxo-2,3,6,7-tetrahydropyrrolo[2,1-b][1,3]thiazole-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/7822532/7822532_opt.xyz	55	0	1.805
+7823640	[2-(3-methoxypropylamino)-2-oxoethyl] 4-chloro-3-(methylsulfamoyl)benzoate	/Users/marcelmueller/source/randommolecules/example/7823640/7823640_opt.xyz	43	0	3.017
+7850078	N-(tert-butylcarbamoyl)-2-(1-methyl-2,4-dioxo-1,3-diazaspiro[4.5]decan-3-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/7850078/7850078_opt.xyz	50	0	4.069
+7882715	2-[(1R)-1-[[5-(2-methylpropylsulfanyl)-1,3,4-thiadiazol-2-yl]sulfanyl]ethyl]-1H-quinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/7882715/7882715_opt.xyz	42	0	2.096
+7892793	1-[3-(4-phenylpiperazine-1-carbonyl)phenyl]pyrrolidine-2,5-dione	/Users/marcelmueller/source/randommolecules/example/7892793/7892793_opt.xyz	48	0	1.924
+7907208	[2-[cyclohexyl(methyl)amino]-2-oxoethyl] 3-(4-nitro-1,3-dioxoisoindol-2-yl)propanoate	/Users/marcelmueller/source/randommolecules/example/7907208/7907208_opt.xyz	53	0	1.601
+7914472	[(2S)-1-(3-chloroanilino)-1-oxopropan-2-yl] (E)-2-cyano-3-(furan-2-yl)prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/7914472/7914472_opt.xyz	37	0	2.231
+7927159	2-(4-chloro-2-methylphenoxy)-N',N'-diphenylacetohydrazide	/Users/marcelmueller/source/randommolecules/example/7927159/7927159_opt.xyz	45	0	3.067
+7931743	(2R)-1-[4-(difluoromethoxy)phenyl]-2-(2-methoxy-5-nitrophenoxy)propan-1-one	/Users/marcelmueller/source/randommolecules/example/7931743/7931743_opt.xyz	41	0	2.199
+7952983	[2-(5-chloro-2-cyanoanilino)-2-oxoethyl] 4-(2-oxopyrrolidin-1-yl)benzoate	/Users/marcelmueller/source/randommolecules/example/7952983/7952983_opt.xyz	44	0	2.741
+7965198	1-(3,4-dimethoxyphenyl)-3-[[(2R)-2-methylcyclohexylidene]amino]thiourea	/Users/marcelmueller/source/randommolecules/example/7965198/7965198_opt.xyz	45	0	2.196
+7975102	5-[3-[(Z)-cyclohexylmethylideneamino]-2-methylimino-1,3-thiazol-4-yl]-2-hydroxybenzamide	/Users/marcelmueller/source/randommolecules/example/7975102/7975102_opt.xyz	47	0	2.309
+7978627	3-cyclopentyl-N-(4-methoxy-3-morpholin-4-ylsulfonylphenyl)propanamide	/Users/marcelmueller/source/randommolecules/example/7978627/7978627_opt.xyz	55	0	3.270
+8002377	phenyl (E)-3-(3,4-dimethoxyphenyl)prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/8002377/8002377_opt.xyz	37	0	2.709
+8016712	(1S)-1'-(2-methylpropyl)spiro[2,3,4,9-tetrahydropyrido[3,4-b]indol-2-ium-1,3'-indole]-2'-one	/Users/marcelmueller/source/randommolecules/example/8016712/8016712_opt.xyz	50	1	2.363
+8021443	ethyl N-[2-(4-chloronaphthalen-1-yl)oxyacetyl]carbamate	/Users/marcelmueller/source/randommolecules/example/8021443/8021443_opt.xyz	35	0	2.940
+8025703	[4-amino-6-(4-methylanilino)-1,3,5-triazin-2-yl]methyl 1-benzofuran-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/8025703/8025703_opt.xyz	45	0	2.507
+8034624	methyl 5,5-dimethyl-2-[[2-oxo-2-(pyridin-2-ylmethylamino)acetyl]amino]-4,7-dihydrothieno[2,3-c]pyran-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/8034624/8034624_opt.xyz	49	0	2.585
+8035306	N-[(3R)-1-[[(3R)-2,3-dihydro-1,4-benzodioxin-3-yl]methyl]-5-methyl-2-oxo-3H-indol-3-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/8035306/8035306_opt.xyz	46	0	3.581
+8051100	N-[2-[(2R,5S)-2-(4-fluorophenyl)-5-methyl-4-oxo-1,3-thiazolidin-3-yl]ethyl]-N-methylfuran-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/8051100/8051100_opt.xyz	44	0	3.134
+8054173	[(2S)-1-(4-chlorophenyl)sulfonylpyrrolidin-2-yl]-(4-methylpiperidin-1-yl)methanone	/Users/marcelmueller/source/randommolecules/example/8054173/8054173_opt.xyz	47	0	2.821
+8066484	(3S)-3-(3-fluorophenyl)-3-(1H-indol-3-yl)-N-(2-methoxyethyl)propanamide	/Users/marcelmueller/source/randommolecules/example/8066484/8066484_opt.xyz	46	0	3.577
+8067892	N-[(1R)-1-(4-propan-2-ylphenyl)ethyl]-2-thiophen-2-ylacetamide	/Users/marcelmueller/source/randommolecules/example/8067892/8067892_opt.xyz	41	0	3.625
+8075349	[4-[[[(2R)-butan-2-yl]-(propan-2-ylcarbamoyl)amino]methyl]phenyl] propane-2-sulfonate	/Users/marcelmueller/source/randommolecules/example/8075349/8075349_opt.xyz	55	0	3.461
+8079285	5-[[(1S)-1-(2-methoxyphenyl)-1,2,3,4-tetrahydropyrrolo[1,2-a]pyrazin-2-ium-2-yl]methyl]-N-(2-methylpropyl)furan-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/8079285/8079285_opt.xyz	60	1	2.982
+8101648	(1R)-6,7-dimethoxy-1-[(2-methylpropanoylamino)methyl]-N-phenyl-3,4-dihydro-1H-isoquinoline-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/8101648/8101648_opt.xyz	59	0	3.302
+8107282	N-(3-methylphenyl)-2-[4-(4-propylphenyl)sulfonylpiperazin-1-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/8107282/8107282_opt.xyz	58	0	3.087
+8115074	(1'S,2S,4S,5'R,6'R)-2'-amino-6'-(4-methoxyphenyl)-4-methylspiro[1,3-dioxolane-2,4'-3-azabicyclo[3.1.0]hex-2-ene]-1',5'-dicarbonitrile	/Users/marcelmueller/source/randommolecules/example/8115074/8115074_opt.xyz	40	0	3.523
+8116662	N'-[6-(4-oxo-2-sulfanylidene-1,3-thiazolidin-3-yl)hexanoyl]cyclohexanecarbohydrazide	/Users/marcelmueller/source/randommolecules/example/8116662/8116662_opt.xyz	49	0	1.944
+8133988	3-[(3,5-dimethyl-1,2-oxazol-4-yl)methoxy]-N-[2-(2-methoxy-5-methylphenyl)ethyl]benzamide	/Users/marcelmueller/source/randommolecules/example/8133988/8133988_opt.xyz	55	0	3.534
+8173561	methyl 3-[2-[[(2R)-butan-2-yl]carbamoylamino]-2-oxoethoxy]benzoate	/Users/marcelmueller/source/randommolecules/example/8173561/8173561_opt.xyz	42	0	3.363
+8174315	[(2R)-1-[methyl-[2-(4-methylanilino)-2-oxoethyl]amino]-1-oxopropan-2-yl] 3,5-difluorobenzoate	/Users/marcelmueller/source/randommolecules/example/8174315/8174315_opt.xyz	48	0	1.945
+8175459	methyl 4-[2-[[(1R)-1-(4-chlorophenyl)ethyl]amino]-2-oxoethoxy]-3-methoxybenzoate	/Users/marcelmueller/source/randommolecules/example/8175459/8175459_opt.xyz	46	0	3.010
+8181481	1-[(Z)-[2-(difluoromethoxy)-3-methoxyphenyl]methylideneamino]-3-(2-methoxyethyl)thiourea	/Users/marcelmueller/source/randommolecules/example/8181481/8181481_opt.xyz	39	0	1.715
+8183516	(2R)-N-(3-cyanophenyl)-2-(2,3-dimethylanilino)propanamide	/Users/marcelmueller/source/randommolecules/example/8183516/8183516_opt.xyz	41	0	1.986
+8200930	N-[(2S)-1-[4-[(4-methoxyphenyl)methyl]piperazin-4-ium-1-yl]-1-oxopropan-2-yl]-3-methylbenzamide	/Users/marcelmueller/source/randommolecules/example/8200930/8200930_opt.xyz	59	1	3.813
+8215900	(2R)-2-[[2-[2-oxo-5-(trifluoromethyl)pyridin-1-yl]acetyl]amino]-N-propylpropanamide	/Users/marcelmueller/source/randommolecules/example/8215900/8215900_opt.xyz	41	0	3.197
+8220550	[(1R)-2,2-dichlorocyclopropyl]methyl 4-acetamidobenzoate	/Users/marcelmueller/source/randommolecules/example/8220550/8220550_opt.xyz	32	0	3.322
+8223814	[2-[2-(3-chlorophenyl)ethylamino]-2-oxoethyl] (1R)-2,2-dichloro-1-methylcyclopropane-1-carboxylate	/Users/marcelmueller/source/randommolecules/example/8223814/8223814_opt.xyz	38	0	3.891
+8226269	[2-[1-adamantyl(2-cyanoethyl)amino]-2-oxoethyl] 4-hydroxybenzoate	/Users/marcelmueller/source/randommolecules/example/8226269/8226269_opt.xyz	54	0	3.517
+8236855	2-(4-fluorophenyl)-5-[(1S)-1-[(5-thiophen-2-yl-1H-1,2,4-triazol-3-yl)sulfanyl]ethyl]-1,3,4-oxadiazole	/Users/marcelmueller/source/randommolecules/example/8236855/8236855_opt.xyz	37	0	2.290
+8244956	methyl N-[(2S)-2-[(4-ethyl-5-thiophen-2-yl-1,2,4-triazol-3-yl)sulfanyl]propanoyl]carbamate	/Users/marcelmueller/source/randommolecules/example/8244956/8244956_opt.xyz	38	0	2.802
+8245831	2-(5,6-dimethyl-4-oxothieno[2,3-d]pyrimidin-3-yl)-N-(2-methylsulfonylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/8245831/8245831_opt.xyz	43	0	2.732
+8249820	2-[[2-(3-chloro-4-fluorophenoxy)acetyl]amino]thiophene-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/8249820/8249820_opt.xyz	31	0	3.077
+8252353	[3-(2-methoxyphenyl)-1,2,4-oxadiazol-5-yl]methyl 4-(4-fluorophenyl)-4-oxobutanoate	/Users/marcelmueller/source/randommolecules/example/8252353/8252353_opt.xyz	45	0	2.625
+8261705	5-chloro-1-[[4-[(4-chlorophenyl)methyl]piperazin-1-yl]methyl]indole-2,3-dione	/Users/marcelmueller/source/randommolecules/example/8261705/8261705_opt.xyz	46	0	0.980
+8264878	[2-oxo-2-[2-(4-sulfamoylphenyl)ethylamino]ethyl] 3-(3,5-dimethyl-1,2-oxazol-4-yl)propanoate	/Users/marcelmueller/source/randommolecules/example/8264878/8264878_opt.xyz	51	0	3.799
+8299698	[(2S)-1-[(5-methyl-1,2-oxazol-3-yl)amino]-1-oxopropan-2-yl] (E)-3-[4-(azepan-1-yl)phenyl]prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/8299698/8299698_opt.xyz	56	0	2.172
+8307954	N-[2-(tert-butylamino)-2-oxoethyl]-N-methyl-2-(2-methylbenzimidazol-1-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/8307954/8307954_opt.xyz	47	0	3.445
+8311400	(2R)-3-[[3-(4-chlorophenyl)-4-oxo-5,6,7,8-tetrahydro-[1]benzothiolo[2,3-d]pyrimidin-2-yl]sulfanyl]-2-methylpropanenitrile	/Users/marcelmueller/source/randommolecules/example/8311400/8311400_opt.xyz	45	0	2.664
+8312648	(2R)-2-[(5-anilino-1,3,4-thiadiazol-2-yl)sulfanyl]-N-(2,6-dimethylphenyl)propanamide	/Users/marcelmueller/source/randommolecules/example/8312648/8312648_opt.xyz	46	0	2.867
+8318064	(3R)-1-(3-chloro-4-fluorophenyl)-3-(2,4-dimethylanilino)pyrrolidine-2,5-dione	/Users/marcelmueller/source/randommolecules/example/8318064/8318064_opt.xyz	40	0	1.998
+8328148	[2-(2,4-dimethylanilino)-2-oxoethyl] 3-(3-oxo-1,4-benzoxazin-4-yl)propanoate	/Users/marcelmueller/source/randommolecules/example/8328148/8328148_opt.xyz	50	0	3.209
+8333838	[2-[[(3R)-1,1-dioxothiolan-3-yl]-ethylamino]-2-oxoethyl] 2-(2-oxopropylsulfanyl)benzoate	/Users/marcelmueller/source/randommolecules/example/8333838/8333838_opt.xyz	50	0	2.068
+8344769	[2-(benzylamino)-2-oxoethyl] (2S)-2-(3-methylphenoxy)propanoate	/Users/marcelmueller/source/randommolecules/example/8344769/8344769_opt.xyz	45	0	3.532
+8357694	N-[[4-(dimethylamino)phenyl]methyl]-2-[(4R)-4-thiophen-2-yl-6,7-dihydro-4H-thieno[3,2-c]pyridin-5-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/8357694/8357694_opt.xyz	53	0	2.946
+8358372	[(2S)-1-[(3,4-dimethoxyphenyl)methylamino]-1-oxopropan-2-yl] 4,5,6,7-tetrahydro-1-benzothiophene-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/8358372/8358372_opt.xyz	53	0	2.557
+8369570	[2-(2-methoxyethylamino)-2-oxoethyl] 4-bromo-3,5-dimethoxybenzoate	/Users/marcelmueller/source/randommolecules/example/8369570/8369570_opt.xyz	40	0	2.902
+8378840	N-[(Z)-2,3-dihydrochromen-4-ylideneamino]-2-(2-morpholin-4-yl-1,3-thiazol-4-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/8378840/8378840_opt.xyz	46	0	2.627
+8392924	[2-[[(1S,2S)-2-methylcyclohexyl]carbamoylamino]-2-oxoethyl] 4-(2,3-dihydro-1H-inden-5-yl)-4-oxobutanoate	/Users/marcelmueller/source/randommolecules/example/8392924/8392924_opt.xyz	60	0	3.086
+8403938	(E)-2-(4-chlorophenyl)-N-[(1R)-1-(3,4-difluorophenyl)ethyl]ethenesulfonamide	/Users/marcelmueller/source/randommolecules/example/8403938/8403938_opt.xyz	37	0	2.976
+8416429	(3S)-1,1-dioxo-N-[(E)-(2-oxo-1-propan-2-ylindol-3-ylidene)amino]thiolane-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/8416429/8416429_opt.xyz	43	0	2.168
+8422369	[2-(cyclohexylcarbamoylamino)-2-oxoethyl] 2-[(5-chlorothiophen-2-yl)methylsulfanyl]acetate	/Users/marcelmueller/source/randommolecules/example/8422369/8422369_opt.xyz	46	0	2.814
+8426035	[2-[2-(2-fluorophenyl)ethylamino]-2-oxoethyl] (E)-3-(3-chloro-4-methylphenyl)prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/8426035/8426035_opt.xyz	45	0	2.867
+8426747	N-[(3S)-1,1-dioxo-2,3-dihydrothiophen-3-yl]-N-phenyl-2-(1,2,3,4-tetrahydroisoquinolin-2-ium-2-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/8426747/8426747_opt.xyz	50	1	3.720
+8456900	2-[[4-(dimethylamino)phenyl]methyl-methylamino]-N-(4-methylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/8456900/8456900_opt.xyz	48	0	2.759
+8472633	(2R)-N-(2-chloro-4-fluorophenyl)-2-(1,2,3,4-tetrahydroisoquinolin-2-ium-2-yl)propanamide	/Users/marcelmueller/source/randommolecules/example/8472633/8472633_opt.xyz	42	1	3.359
+8503497	3,4-dichloro-N-[(4R)-4-(3-methoxyphenyl)-4-methyl-2,5-dioxoimidazolidin-1-yl]benzamide	/Users/marcelmueller/source/randommolecules/example/8503497/8503497_opt.xyz	42	0	2.530
+8509939	[2-[[(1S)-1-cyclopropylethyl]amino]-2-oxoethyl] (E)-3-[2-(N-acetylanilino)-1,3-thiazol-4-yl]prop-2-enoate	/Users/marcelmueller/source/randommolecules/example/8509939/8509939_opt.xyz	52	0	2.543
+8517299	[4-(difluoromethoxy)phenyl]methyl-[(7-hydroxy-8-methyl-2-oxochromen-4-yl)methyl]-methylazanium	/Users/marcelmueller/source/randommolecules/example/8517299/8517299_opt.xyz	47	1	2.547
+8517657	N-[2-(5,6-dimethyl-4-oxo-1H-pyrimidin-2-yl)-5-methylpyrazol-3-yl]-2-(4-phenylphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/8517657/8517657_opt.xyz	54	0	2.675
+8521227	2-(2,4-dimethyl-6-nitrophenoxy)-1-(4-iodophenyl)ethanone	/Users/marcelmueller/source/randommolecules/example/8521227/8521227_opt.xyz	36	0	2.502
+8530006	2-[4-(3-chlorophenyl)piperazin-1-ium-1-yl]-N-[(3S)-3-methyl-1,1-dioxothiolan-3-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/8530006/8530006_opt.xyz	50	1	2.702
+8530610	1-[(2R)-1-[2-[(2S)-butan-2-yl]anilino]-1-oxopropan-2-yl]piperidine-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/8530610/8530610_opt.xyz	53	0	3.305
+8533127	ethyl (3S)-1-[(2S)-1-(3-chloroanilino)-1-oxopropan-2-yl]piperidin-1-ium-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/8533127/8533127_opt.xyz	47	1	3.077
+8547681	(2R)-N-carbamoyl-2-[4-[3-(trifluoromethyl)phenyl]piperazin-1-yl]propanamide	/Users/marcelmueller/source/randommolecules/example/8547681/8547681_opt.xyz	43	0	3.046
+8555040	2-(4-phenyl-3,6-dihydro-2H-pyridin-1-yl)-N-[(2R)-2-phenylpropyl]acetamide	/Users/marcelmueller/source/randommolecules/example/8555040/8555040_opt.xyz	51	0	3.193
+8582096	N-butyl-N-ethyl-2-[[5-(4-methylphenyl)-1H-1,2,4-triazol-3-yl]sulfanyl]acetamide	/Users/marcelmueller/source/randommolecules/example/8582096/8582096_opt.xyz	47	0	2.412
+8598704	2-[[(1R)-1-(2-chlorophenyl)ethyl]amino]-N-cyclopentyl-N-[(3S)-1,1-dioxothiolan-3-yl]acetamide	/Users/marcelmueller/source/randommolecules/example/8598704/8598704_opt.xyz	53	0	3.369
+8609211	[2-(cyclopropylamino)-2-oxoethyl] (3R)-3-(carbamoylamino)-3-(4-chlorophenyl)propanoate	/Users/marcelmueller/source/randommolecules/example/8609211/8609211_opt.xyz	41	0	3.953
+8619392	1-[2-(dimethylamino)ethyl]-3-(2,5-dimethylphenyl)thiourea	/Users/marcelmueller/source/randommolecules/example/8619392/8619392_opt.xyz	38	0	2.458
+8659237	(5S)-5-(1,3-benzodioxol-5-ylmethyl)-3-(2-ethoxyethyl)-5-methylimidazolidine-2,4-dione	/Users/marcelmueller/source/randommolecules/example/8659237/8659237_opt.xyz	43	0	3.642
+8662085	(3-fluorophenyl)methyl 2-[(2-ethoxybenzoyl)amino]acetate	/Users/marcelmueller/source/randommolecules/example/8662085/8662085_opt.xyz	42	0	3.518
+8663652	[(2S)-1-(5-chloro-2-methoxyanilino)-1-oxopropan-2-yl] 3-methoxynaphthalene-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/8663652/8663652_opt.xyz	49	0	2.571
+8673429	[(2R)-1-[[(1S)-1-(2,4-dichlorophenyl)ethyl]amino]-1-oxopropan-2-yl] (E)-pent-2-enoate	/Users/marcelmueller/source/randommolecules/example/8673429/8673429_opt.xyz	41	0	3.595
+8687801	2-[[2-[4-(2-methoxyphenyl)piperazin-1-ium-1-yl]acetyl]amino]-5,6-dihydro-4H-cyclopenta[b]thiophene-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/8687801/8687801_opt.xyz	56	1	1.846
+8700875	2-[2-(5-ethylthiophen-2-yl)-2-oxoethyl]sulfanyl-3-methylbenzo[g]quinazolin-4-one	/Users/marcelmueller/source/randommolecules/example/8700875/8700875_opt.xyz	45	0	2.261
+8701197	N-(1,3-benzodioxol-5-yl)-3-(2-methylphenoxy)propanamide	/Users/marcelmueller/source/randommolecules/example/8701197/8701197_opt.xyz	39	0	3.436
+8715071	1-(5-chlorothiophen-2-yl)-3-(2,4-dimethylanilino)-2-(3-methylpyridin-1-ium-1-yl)-3-sulfanylprop-2-en-1-one	/Users/marcelmueller/source/randommolecules/example/8715071/8715071_opt.xyz	47	1	1.776
+8735228	[2-[3-(ethylcarbamoyl)anilino]-2-oxoethyl] 3-[(2-methylpropan-2-yl)oxycarbonylamino]propanoate	/Users/marcelmueller/source/randommolecules/example/8735228/8735228_opt.xyz	55	0	3.409
+8735440	[2-(3-chloro-4-methylanilino)-2-oxoethyl] 2-[(3R)-1,1-dioxothiolan-3-yl]acetate	/Users/marcelmueller/source/randommolecules/example/8735440/8735440_opt.xyz	41	0	3.701
+8741522	(2S)-1-(4-methylpiperidin-1-yl)-3-[(2-methylpropan-2-yl)oxy]propan-2-ol	/Users/marcelmueller/source/randommolecules/example/8741522/8741522_opt.xyz	43	0	9.633
+8754509	methyl 1-[2-[[(1S)-1-(2,3-dihydro-1,4-benzodioxin-6-yl)ethyl]amino]-2-oxoethyl]piperidine-4-carboxylate	/Users/marcelmueller/source/randommolecules/example/8754509/8754509_opt.xyz	52	0	3.189
+8763419	N-(5-chloro-2-methoxyphenyl)-5-methyl-4-propylthiophene-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/8763419/8763419_opt.xyz	39	0	2.686
+8763659	2-cyclopentylsulfanyl-N-(8-methyl-2,4-dioxo-1,3-diazaspiro[4.5]decan-3-yl)acetamide	/Users/marcelmueller/source/randommolecules/example/8763659/8763659_opt.xyz	48	0	2.581
+8771836	2-[[2-[(3R)-5-(4-chlorophenyl)-3-(furan-2-yl)-3,4-dihydropyrazol-2-yl]-2-oxoethyl]amino]-N-methylacetamide	/Users/marcelmueller/source/randommolecules/example/8771836/8771836_opt.xyz	45	0	1.714
+8784495	2-(3,4-dihydro-2H-quinolin-1-ylmethyl)-5-(5-methylthiophen-2-yl)-3H-thieno[2,3-d]pyrimidin-4-one	/Users/marcelmueller/source/randommolecules/example/8784495/8784495_opt.xyz	46	0	1.855
+8787343	1-[[(3S)-2,3-dihydro-1,4-benzodioxin-3-yl]methyl]-1-ethyl-3-[(4-methoxyphenyl)methyl]thiourea	/Users/marcelmueller/source/randommolecules/example/8787343/8787343_opt.xyz	50	0	2.375
+8793166	[5-(furan-2-yl)-1,3,4-oxadiazol-2-yl]methyl-[(4-methoxyphenyl)methyl]-methylazanium	/Users/marcelmueller/source/randommolecules/example/8793166/8793166_opt.xyz	40	1	2.643
+8796414	N-[(2R)-2-(dimethylamino)-2-(4-ethylphenyl)ethyl]-2-(3,4,5-trimethoxyphenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/8796414/8796414_opt.xyz	61	0	3.532
+8828154	1-(2,4-dimethylphenyl)-2-(2,3-dimethylpyridin-1-ium-1-yl)ethanone	/Users/marcelmueller/source/randommolecules/example/8828154/8828154_opt.xyz	39	1	2.097
+8834583	3-phenyl-N-[3-(tetrazol-1-yl)phenyl]thiophene-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/8834583/8834583_opt.xyz	38	0	2.718
+8846641	[2-(4-fluoroanilino)-2-oxoethyl] (2S)-2-[(3aR,7aR)-1,3-dioxo-3a,4,5,6,7,7a-hexahydroisoindol-2-yl]propanoate	/Users/marcelmueller/source/randommolecules/example/8846641/8846641_opt.xyz	48	0	3.811
+8848837	2-[[2-[(5-anilino-1,3,4-thiadiazol-2-yl)sulfanyl]acetyl]-ethylamino]-N-ethylacetamide	/Users/marcelmueller/source/randommolecules/example/8848837/8848837_opt.xyz	46	0	2.869
+8851845	2-(2,3-dihydro-1,4-benzodioxin-6-yl)-N-(4-methyl-3-nitrophenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/8851845/8851845_opt.xyz	40	0	1.937
+8865209	[2-oxo-2-(3-sulfamoylanilino)ethyl] (2R)-2-(4-chlorophenoxy)propanoate	/Users/marcelmueller/source/randommolecules/example/8865209/8865209_opt.xyz	44	0	3.155
+8871873	1-[(4R)-4-[4-(difluoromethoxy)-3,5-dimethylphenyl]-6-phenyl-2-sulfanylidene-3,4-dihydro-1H-pyrimidin-5-yl]ethanone	/Users/marcelmueller/source/randommolecules/example/8871873/8871873_opt.xyz	48	0	1.508
+8881854	N-(1,3-benzothiazol-2-yl)-5-methyl-1,2-oxazole-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/8881854/8881854_opt.xyz	27	0	2.615
+8898566	N-(4-chloro-2-nitrophenyl)-2-[[(1S)-1-phenylethyl]amino]acetamide	/Users/marcelmueller/source/randommolecules/example/8898566/8898566_opt.xyz	39	0	0.753
+8909552	N-cyclopropyl-2-[2-(2,5-dichlorophenyl)sulfanylethyl-methylamino]acetamide	/Users/marcelmueller/source/randommolecules/example/8909552/8909552_opt.xyz	38	0	2.506
+8912562	[(2R)-1-(4-cyanoanilino)-1-oxopropan-2-yl] 1-ethyl-2,5-dimethylpyrrole-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/8912562/8912562_opt.xyz	46	0	2.754
+8916003	N-(5-benzyl-1,3-thiazol-2-yl)-3-methyl-4-nitrobenzamide	/Users/marcelmueller/source/randommolecules/example/8916003/8916003_opt.xyz	40	0	1.684
+8917904	[2-(3-chloro-2-methylanilino)-2-oxoethyl]-[(1R)-1-(furan-2-yl)ethyl]azanium	/Users/marcelmueller/source/randommolecules/example/8917904/8917904_opt.xyz	38	1	2.851
+8938764	N'-[2-[(3R)-1,1-dioxothiolan-3-yl]acetyl]-4-phenylbenzohydrazide	/Users/marcelmueller/source/randommolecules/example/8938764/8938764_opt.xyz	46	0	3.148
+8939243	[2-(4-ethylphenyl)-2-oxoethyl] (2S)-2-[(4-acetylphenyl)sulfonylamino]propanoate	/Users/marcelmueller/source/randommolecules/example/8939243/8939243_opt.xyz	52	0	2.641
+8958607	[(2R)-1-[2-cyanoethyl(methyl)amino]-1-oxopropan-2-yl] 4-fluoro-3-methyl-1-benzothiophene-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/8958607/8958607_opt.xyz	41	0	2.601
+8988425	[(2S)-1-[(4-methylphenyl)methylamino]-1-oxopropan-2-yl] 4-methoxy-3-(methylsulfamoyl)benzoate	/Users/marcelmueller/source/randommolecules/example/8988425/8988425_opt.xyz	53	0	2.536
+8989922	2-[2-chloro-4-[(Z)-[[2-(furan-2-ylmethylamino)-2-oxoacetyl]hydrazinylidene]methyl]-6-methoxyphenoxy]acetic acid	/Users/marcelmueller/source/randommolecules/example/8989922/8989922_opt.xyz	44	0	2.706
+8990028	2-[2-methoxy-4-[(Z)-[[2-(4-methoxyanilino)-2-oxoacetyl]hydrazinylidene]methyl]phenoxy]acetic acid	/Users/marcelmueller/source/randommolecules/example/8990028/8990028_opt.xyz	48	0	2.801
+9019069	N-[(1R)-1-cyclopropylethyl]-2-(4-phenylphenoxy)acetamide	/Users/marcelmueller/source/randommolecules/example/9019069/9019069_opt.xyz	43	0	3.586
+9026939	2-[(1S)-1-[4-(2-methoxyphenyl)piperazin-1-ium-1-yl]ethyl]-5-thiophen-2-yl-1,3,4-oxadiazole	/Users/marcelmueller/source/randommolecules/example/9026939/9026939_opt.xyz	49	1	1.700
+9050984	(6-chloro-7-methyl-2-oxochromen-4-yl)methyl-[(R)-phenyl(thiophen-2-yl)methyl]azanium	/Users/marcelmueller/source/randommolecules/example/9050984/9050984_opt.xyz	46	1	2.540
+9059502	2-hydroxy-4-[[2-(4-methylphenyl)hydrazinyl]methylidene]cyclohexa-2,5-dien-1-one	/Users/marcelmueller/source/randommolecules/example/9059502/9059502_opt.xyz	32	0	1.920
+9062839	[2-oxo-2-(2-oxoimidazolidin-1-yl)ethyl] (1'S,5'R)-spiro[1,3-dithiolane-2,9'-bicyclo[3.3.1]nonane]-3'-carboxylate	/Users/marcelmueller/source/randommolecules/example/9062839/9062839_opt.xyz	49	0	2.760
+9066169	[2-[4-[methyl(methylsulfonyl)amino]phenyl]-2-oxoethyl] 2-[(1R)-cyclopent-2-en-1-yl]acetate	/Users/marcelmueller/source/randommolecules/example/9066169/9066169_opt.xyz	45	0	2.669
+9066910	[2-(3-cyanoanilino)-2-oxoethyl] 5-methoxy-2,3-dihydro-1,4-benzodioxine-7-carboxylate	/Users/marcelmueller/source/randommolecules/example/9066910/9066910_opt.xyz	43	0	2.798
+9093765	1-(6-amino-1-butyl-2,4-dioxopyrimidin-5-yl)-1-benzyl-3-[2-(dimethylamino)ethyl]thiourea	/Users/marcelmueller/source/randommolecules/example/9093765/9093765_opt.xyz	59	0	1.934
+9100411	(6S)-6-methyl-2-[[4-(2-oxopyrrolidin-1-yl)benzoyl]amino]-4,5,6,7-tetrahydro-1-benzothiophene-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/9100411/9100411_opt.xyz	51	0	2.435
+9114596	[2-oxo-2-(3-sulfamoylanilino)ethyl] 2,3-dimethyl-1H-indole-5-carboxylate	/Users/marcelmueller/source/randommolecules/example/9114596/9114596_opt.xyz	47	0	2.818
+9116073	[2-[(2-fluorophenyl)carbamoylamino]-2-oxoethyl]-methyl-[(1S)-1,2,3,4-tetrahydronaphthalen-1-yl]azanium	/Users/marcelmueller/source/randommolecules/example/9116073/9116073_opt.xyz	49	1	2.770
+9119505	3-[[(4aS,8aR)-1,2,3,4,4a,5,6,7,8,8a-decahydroquinolin-1-ium-1-yl]methyl]-5-thiophen-2-yl-1,3,4-oxadiazol-2-one	/Users/marcelmueller/source/randommolecules/example/9119505/9119505_opt.xyz	44	1	2.850
+9122285	1-[(1R,2R)-2-methylcyclohexyl]-3-[(Z)-thiophen-3-ylmethylideneamino]thiourea	/Users/marcelmueller/source/randommolecules/example/9122285/9122285_opt.xyz	37	0	1.631
+9139562	[2-[4-(dimethylamino)anilino]-2-oxoethyl] 3-(4-methylphenoxy)propanoate	/Users/marcelmueller/source/randommolecules/example/9139562/9139562_opt.xyz	50	0	2.855
+9167674	[2-(4-bromoanilino)-2-oxoethyl]-methyl-[(4-prop-2-enoxyphenyl)methyl]azanium	/Users/marcelmueller/source/randommolecules/example/9167674/9167674_opt.xyz	46	1	2.640
+9171041	1-(2,5-dichlorothiophen-3-yl)-2-[(4,5-dicyclopropyl-1,2,4-triazol-3-yl)sulfanyl]ethanone	/Users/marcelmueller/source/randommolecules/example/9171041/9171041_opt.xyz	35	0	2.159
+9174046	N-[4-[2-(2-amino-2-oxoethyl)-1,3-thiazol-4-yl]phenyl]-2,2-dimethylpropanamide	/Users/marcelmueller/source/randommolecules/example/9174046/9174046_opt.xyz	41	0	2.823
+9179474	N'-[(Z)-1-(1-adamantyl)propan-2-ylideneamino]-N-(4-methylphenyl)oxamide	/Users/marcelmueller/source/randommolecules/example/9179474/9179474_opt.xyz	56	0	2.721
+9190732	N-[5-(5-benzylsulfonyl-1,3,4-oxadiazol-2-yl)pentyl]thiophene-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/9190732/9190732_opt.xyz	49	0	3.253
+9229017	[2-[[(2R)-5-methylhexan-2-yl]amino]-2-oxoethyl] 4-(dimethylamino)benzoate	/Users/marcelmueller/source/randommolecules/example/9229017/9229017_opt.xyz	51	0	2.898
+9238720	[4-(1,3-benzothiazol-2-ylmethyl)piperazin-1-yl]-(4-propan-2-ylphenyl)methanone	/Users/marcelmueller/source/randommolecules/example/9238720/9238720_opt.xyz	52	0	2.633
+9242915	2-[[[(3S)-1,1-dioxothiolan-3-yl]-ethylamino]methyl]-5-phenyl-4-prop-2-enyl-1,2,4-triazole-3-thione	/Users/marcelmueller/source/randommolecules/example/9242915/9242915_opt.xyz	50	0	2.066
+9250091	3,3-dimethyl-4-[(2S)-2-(4-methylpiperazine-1,4-diium-1-yl)propanoyl]-1H-quinoxalin-2-one	/Users/marcelmueller/source/randommolecules/example/9250091/9250091_opt.xyz	52	2	2.289
+9253074	2-[[2-[[(1R)-1-(1,3-benzodioxol-5-yl)ethyl]amino]-2-oxoethyl]-methylamino]-N-(4-fluorophenyl)acetamide	/Users/marcelmueller/source/randommolecules/example/9253074/9253074_opt.xyz	50	0	3.288
+9260413	6,7-dimethyl-4-[[methyl-[(1R)-1,2,3,4-tetrahydronaphthalen-1-yl]amino]methyl]chromen-2-one	/Users/marcelmueller/source/randommolecules/example/9260413/9260413_opt.xyz	51	0	2.022
+9305071	(3R)-1-[2-(4-bromophenyl)sulfonylethyl]piperidin-1-ium-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/9305071/9305071_opt.xyz	41	1	3.306
+9306583	N-(5-chloro-2-fluorophenyl)-2-[[(1S)-1-(2-chlorophenyl)ethyl]amino]acetamide	/Users/marcelmueller/source/randommolecules/example/9306583/9306583_opt.xyz	37	0	2.710
+9307470	2-[[(1R)-1-(3-chlorophenyl)ethyl]amino]-N-(furan-2-ylmethylcarbamoyl)acetamide	/Users/marcelmueller/source/randommolecules/example/9307470/9307470_opt.xyz	41	0	3.231
+9308811	(2R)-2-[[5-(3-amino-3-oxopropyl)-4-methyl-1,2,4-triazol-3-yl]sulfanyl]-N-(5-methyl-1,2-oxazol-3-yl)propanamide	/Users/marcelmueller/source/randommolecules/example/9308811/9308811_opt.xyz	41	0	3.025
+9313028	2-[2-methoxy-4-[(Z)-(5-oxo-2-thiophen-2-yl-1,3-oxazol-4-ylidene)methyl]phenoxy]acetonitrile	/Users/marcelmueller/source/randommolecules/example/9313028/9313028_opt.xyz	36	0	1.719
+9334150	1-[4-(2-methoxyphenyl)piperazin-1-yl]-2-(4-phenylphenoxy)ethanone	/Users/marcelmueller/source/randommolecules/example/9334150/9334150_opt.xyz	56	0	3.384
+9352414	(3S)-1-tert-butyl-N-(4-methoxy-2-nitrophenyl)-5-oxopyrrolidine-3-carboxamide	/Users/marcelmueller/source/randommolecules/example/9352414/9352414_opt.xyz	45	0	1.422
+9355207	6-amino-3-[2-(4-methylpiperidin-1-yl)-2-oxoethyl]-5-morpholin-4-yl-1-propylpyrimidine-2,4-dione	/Users/marcelmueller/source/randommolecules/example/9355207/9355207_opt.xyz	59	0	3.082
+9384652	[(2S)-1-(3-bromoanilino)-1-oxopropan-2-yl] 2-methylfuran-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/9384652/9384652_opt.xyz	35	0	3.562
+9385879	[2-[[(1S)-1-cyano-1-cyclopropylethyl]amino]-2-oxoethyl] 4-acetyl-1H-pyrrole-2-carboxylate	/Users/marcelmueller/source/randommolecules/example/9385879/9385879_opt.xyz	39	0	3.187
+9391526	4-chloro-3-[(2Z)-2-[[5-[(1R,2S)-2-methylcyclopropyl]furan-2-yl]methylidene]hydrazinyl]benzoate	/Users/marcelmueller/source/randommolecules/example/9391526/9391526_opt.xyz	36	-1	0.522
+9397018	[2-(2,4-difluoroanilino)-2-oxoethyl]-[(1R)-1-naphthalen-1-ylethyl]azanium	/Users/marcelmueller/source/randommolecules/example/9397018/9397018_opt.xyz	44	1	2.714
+9404092	(E)-3-[3-(dimethylsulfamoyl)-4-methoxyphenyl]-N-[(1S,2S)-2-methylcyclohexyl]prop-2-enamide	/Users/marcelmueller/source/randommolecules/example/9404092/9404092_opt.xyz	54	0	2.619
+9407546	N-[[(2S)-butan-2-yl]carbamoyl]-2-(4-oxo-3-prop-2-enylquinazolin-2-yl)sulfanylacetamide	/Users/marcelmueller/source/randommolecules/example/9407546/9407546_opt.xyz	48	0	2.876
+9419323	6-amino-1-ethyl-5-[2-(ethylamino)-1,3-thiazol-4-yl]pyrimidine-2,4-dione	/Users/marcelmueller/source/randommolecules/example/9419323/9419323_opt.xyz	34	0	2.864
+9430844	(2S)-N-(4-bromo-2-fluorophenyl)-2-[(3S,5R)-3,5-dimethylpiperidin-1-yl]propanamide	/Users/marcelmueller/source/randommolecules/example/9430844/9430844_opt.xyz	43	0	2.447
+9432403	(2S)-2-[(4-chlorophenyl)methylsulfanyl]-N-(4-methoxyphenyl)propanamide	/Users/marcelmueller/source/randommolecules/example/9432403/9432403_opt.xyz	40	0	3.040
+9459631	(2S)-2-[4-[(E)-3-phenylprop-2-enyl]piperazine-1,4-diium-1-yl]-N-prop-2-enylpropanamide	/Users/marcelmueller/source/randommolecules/example/9459631/9459631_opt.xyz	52	2	0.855
+9461499	2,6-ditert-butyl-4-[[[3-(furan-2-yl)-5-sulfanylidene-1H-1,2,4-triazol-4-yl]amino]methylidene]cyclohexa-2,5-dien-1-one	/Users/marcelmueller/source/randommolecules/example/9461499/9461499_opt.xyz	54	0	1.668
+9471184	N-methyl-4-(methylsulfanylmethyl)-N-[(1S)-1-[4-(1,2,4-triazol-1-yl)phenyl]ethyl]benzamide	/Users/marcelmueller/source/randommolecules/example/9471184/9471184_opt.xyz	48	0	2.602
+9484308	(2S)-2-(4-methylpiperidine-1-carbothioyl)sulfanylpropanoic acid	/Users/marcelmueller/source/randommolecules/example/9484308/9484308_opt.xyz	32	0	2.492
+9490915	[2-[(3-cyano-5,5,7,7-tetramethyl-4,6-dihydrothieno[2,3-c]pyridin-2-yl)amino]-2-oxoethyl] N,N-diethylcarbamodithioate	/Users/marcelmueller/source/randommolecules/example/9490915/9490915_opt.xyz	55	0	2.124
+9510099	(2R,7R)-2,7-bis[(dimethylamino)methyl]-1,8-bis(4-propoxyphenyl)octane-1,8-dione	/Users/marcelmueller/source/randommolecules/example/9510099/9510099_opt.xyz	86	0	2.091
+9519476	N-[(Z)-1-(2-bromophenyl)ethylideneamino]-3-hydroxybenzamide	/Users/marcelmueller/source/randommolecules/example/9519476/9519476_opt.xyz	33	0	3.303
+9534069	N-[(1R)-1-(2,4-difluorophenyl)ethyl]-2-quinolin-8-yloxyacetamide	/Users/marcelmueller/source/randommolecules/example/9534069/9534069_opt.xyz	41	0	2.400
+9539383	4-[(3aR,4R,7aS)-4-methyl-1,3-dioxo-3a,4,7,7a-tetrahydroisoindol-2-yl]-N-(5-chloro-2-methylphenyl)benzamide	/Users/marcelmueller/source/randommolecules/example/9539383/9539383_opt.xyz	50	0	2.999
+9541895	(1R,3R,3aR,6aS)-5-(4-bromophenyl)-1-ethyl-1'-prop-2-enylspiro[1,2,3a,6a-tetrahydropyrrolo[3,4-c]pyrrol-2-ium-3,3'-indole]-2',4,6-trione	/Users/marcelmueller/source/randommolecules/example/9541895/9541895_opt.xyz	54	1	2.158
+9552432	2-[2-[(E)-[[2-(2-methoxyphenoxy)acetyl]hydrazinylidene]methyl]phenoxy]acetic acid	/Users/marcelmueller/source/randommolecules/example/9552432/9552432_opt.xyz	44	0	2.233
+9575202	7-[4-[(2E)-2-(carbamoylhydrazinylidene)-2-phenylethyl]piperazin-1-yl]-1-ethyl-6-fluoro-4-oxoquinoline-3-carboxylic acid	/Users/marcelmueller/source/randommolecules/example/9575202/9575202_opt.xyz	63	0	2.524
+9579416	5-(furan-2-yl)-2-methyl-3-[(E)-(4-nitrophenyl)methylideneamino]thieno[2,3-d]pyrimidin-4-one	/Users/marcelmueller/source/randommolecules/example/9579416/9579416_opt.xyz	39	0	1.229
+9586299	[(Z)-(5-methoxy-2,3-dihydroinden-1-ylidene)amino] 5-chloro-2-methoxybenzoate	/Users/marcelmueller/source/randommolecules/example/9586299/9586299_opt.xyz	40	0	2.864
+9600228	(6Z)-6-[4-(4-bromophenyl)-2-[(2E)-2-[(2-fluorophenyl)methylidene]hydrazinyl]-1H-pyrimidin-6-ylidene]cyclohexa-2,4-dien-1-one	/Users/marcelmueller/source/randommolecules/example/9600228/9600228_opt.xyz	46	0	2.303
+9602450	(Z)-1-(10,13-dimethyl-3-trimethylsilyloxy-2,3,4,5,6,7,8,9,11,12,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-17-yl)-N-methoxyethanimine	/Users/marcelmueller/source/randommolecules/example/9602450/9602450_opt.xyz	74	0	4.313
+9603309	2-[(2E)-2-[(4-methylphenyl)hydrazinylidene]propyl]isoindole-1,3-dione	/Users/marcelmueller/source/randommolecules/example/9603309/9603309_opt.xyz	40	0	1.045
+9604228	N-[(E)-naphthalen-2-ylmethylideneamino]-2,4-dinitroaniline	/Users/marcelmueller/source/randommolecules/example/9604228/9604228_opt.xyz	37	0	1.617
+9622471	N-benzyl-N'-[(E)-[3-bromo-4-[(2,4-dichlorophenyl)methoxy]-5-ethoxyphenyl]methylideneamino]oxamide	/Users/marcelmueller/source/randommolecules/example/9622471/9622471_opt.xyz	57	0	2.379
+9634409	2-(2-bromo-N-methylsulfonylanilino)-N-[(E)-[4-(dimethylamino)phenyl]methylideneamino]acetamide	/Users/marcelmueller/source/randommolecules/example/9634409/9634409_opt.xyz	48	0	2.305
+9637001	[4-[(E)-[[2-[(2-iodobenzoyl)amino]acetyl]hydrazinylidene]methyl]phenyl] 4-propoxybenzoate	/Users/marcelmueller/source/randommolecules/example/9637001/9637001_opt.xyz	59	0	2.710
+9662019	2-phenyl-N-[(E)-(2,4,5-trimethoxyphenyl)methylideneamino]cyclopropane-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/9662019/9662019_opt.xyz	48	0	2.535
+9669244	N-[4-[(E)-[[5-(dimethylsulfamoyl)-2-methylphenyl]carbamothioylhydrazinylidene]methyl]phenyl]acetamide	/Users/marcelmueller/source/randommolecules/example/9669244/9669244_opt.xyz	52	0	1.628
+9670846	1-(4-amino-1,2,5-oxadiazol-3-yl)-N-[(E)-1-(4-fluorophenyl)ethylideneamino]-5-(3-methoxyphenyl)triazole-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/9670846/9670846_opt.xyz	49	0	2.232
+9677453	5-chloro-2-hydroxy-N-[(E)-(3-nitrophenyl)methylideneamino]benzamide	/Users/marcelmueller/source/randommolecules/example/9677453/9677453_opt.xyz	32	0	2.241
+9691566	2-[(2E)-2-[(4-chloro-3-nitrophenyl)methylidene]hydrazinyl]-6-methyl-1H-pyrimidin-4-one	/Users/marcelmueller/source/randommolecules/example/9691566/9691566_opt.xyz	31	0	1.345
+9696630	(2S)-2-hydroxy-N-[(E)-(4-methylsulfanylphenyl)methylideneamino]-2-phenylacetamide	/Users/marcelmueller/source/randommolecules/example/9696630/9696630_opt.xyz	37	0	2.332
+9699860	4-[(E)-[(2R,6R)-2,6-dimethylpiperidin-1-yl]iminomethyl]-N,N-dimethylaniline	/Users/marcelmueller/source/randommolecules/example/9699860/9699860_opt.xyz	44	0	2.738
+9712267	ethyl (6S)-2-[[4-[(2R)-1-[(2E)-2-[(3-ethoxy-4-propoxyphenyl)methylidene]hydrazinyl]-1-oxopropan-2-yl]oxybenzoyl]amino]-6-methyl-4,5,6,7-tetrahydro-1-benzothiophene-3-carboxylate	/Users/marcelmueller/source/randommolecules/example/9712267/9712267_opt.xyz	86	0	2.235
+9730754	1-[(E)-1-(4-chlorophenyl)propylideneamino]-3-(2-morpholin-4-ium-4-ylethyl)thiourea	/Users/marcelmueller/source/randommolecules/example/9730754/9730754_opt.xyz	47	1	2.394
+9757879	N-(4-methylphenyl)-N'-[(E)-1-naphthalen-2-ylethylideneamino]oxamide	/Users/marcelmueller/source/randommolecules/example/9757879/9757879_opt.xyz	45	0	2.459
+9774060	2-[N-(benzenesulfonyl)-2-chloro-5-(trifluoromethyl)anilino]-N-[(E)-[4-[2-oxo-2-[[(1R)-1-phenylethyl]amino]ethoxy]phenyl]methylideneamino]acetamide	/Users/marcelmueller/source/randommolecules/example/9774060/9774060_opt.xyz	74	0	2.565
+9775215	3-[(E)-anthracen-9-ylmethylideneamino]-1,3-diazaspiro[4.5]decane-2,4-dione	/Users/marcelmueller/source/randommolecules/example/9775215/9775215_opt.xyz	49	0	1.885
+9792681	N-[(E)-(2-chloro-6-methoxyquinolin-3-yl)methylideneamino]-4-methoxybenzamide	/Users/marcelmueller/source/randommolecules/example/9792681/9792681_opt.xyz	42	0	2.396
+9795637	(2S)-1-[(2S)-2-amino-3-(4-hydroxyphenyl)propanoyl]pyrrolidine-2-carboxylic acid	/Users/marcelmueller/source/randommolecules/example/9795637/9795637_opt.xyz	38	0	3.638
+9825796	N-[3-[(4-ethylphenyl)sulfonylamino]-2-hydroxy-2,3-dihydro-1H-inden-5-yl]-3-methoxybenzamide	/Users/marcelmueller/source/randommolecules/example/9825796/9825796_opt.xyz	59	0	3.102
+9835814	1-(4-fluorophenyl)-5-imino-4-(phenylhydrazinylidene)pyrazol-3-amine	/Users/marcelmueller/source/randommolecules/example/9835814/9835814_opt.xyz	35	0	1.532
+9837850	[(2-fluoro-5-nitrophenyl)-hydroxymethyl]phosphonic acid	/Users/marcelmueller/source/randommolecules/example/9837850/9837850_opt.xyz	23	0	2.723
+9841494	3-(diethylamino)-N-(3-phenylpropyl)-N-(pyridin-4-ylmethyl)propanamide	/Users/marcelmueller/source/randommolecules/example/9841494/9841494_opt.xyz	57	0	2.332
+9888421	7-acetamido-N-cyclohexyl-N,1-dimethyl-[1,3]thiazolo[3,2-a]benzimidazole-2-carboxamide	/Users/marcelmueller/source/randommolecules/example/9888421/9888421_opt.xyz	51	0	2.908
+9892095	[4-[bis(2-chloroethyl)amino]phenyl] 3-(4,5-dimethoxy-2-methyl-3,6-dioxocyclohexa-1,4-dien-1-yl)-3-methylbutanoate	/Users/marcelmueller/source/randommolecules/example/9892095/9892095_opt.xyz	62	0	1.154
+9925822	(3S)-3-methyl-1-[4-(trifluoromethyl)-1-benzofuran-7-yl]piperazine	/Users/marcelmueller/source/randommolecules/example/9925822/9925822_opt.xyz	35	0	2.909
+9926995	4,5,6-trimethoxy-N-(2-methoxyethyl)-1-benzofuran-3-imine;hydrochloride	/Users/marcelmueller/source/randommolecules/example/9926995/9926995_opt.xyz	41	0	2.922
+9934561	1-cyclopropyl-4-[[4-[(2,6-dimethylpyridin-4-yl)methoxy]phenyl]sulfonylmethyl]-N-hydroxypiperidine-4-carboxamide	/Users/marcelmueller/source/randommolecules/example/9934561/9934561_opt.xyz	64	0	2.505
+9945487	(2S,3S)-N-[[2-(difluoromethoxy)phenyl]methyl]-2-phenylpiperidin-3-amine	/Users/marcelmueller/source/randommolecules/example/9945487/9945487_opt.xyz	46	0	2.962
+9946494	[4-(trifluoromethoxy)phenyl] N-(3,4-dihydro-1H-isoquinolin-2-yl)carbamate	/Users/marcelmueller/source/randommolecules/example/9946494/9946494_opt.xyz	40	0	3.416
+9991131	(1S)-1-[(3R)-4-methylpent-1-en-3-yl]-2-propan-2-ylidenecyclohexan-1-ol	/Users/marcelmueller/source/randommolecules/example/9991131/9991131_opt.xyz	42	0	4.576
+9993533	N-cyclohexyl-1-hydroxy-3-oxo-2-benzofuran-1-carboxamide	/Users/marcelmueller/source/randommolecules/example/9993533/9993533_opt.xyz	37	0	3.109
