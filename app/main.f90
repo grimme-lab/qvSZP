@@ -374,6 +374,9 @@ program main
    case('ext')
       if (dummy) call fatal_error(error, "External charges not supported for dummy atoms.")
       call extcharges(mol,'ext.charges',q,cn)
+   case('extonlyq')
+      if (dummy) call fatal_error(error, "External charges not supported for dummy atoms.")
+      call extcharges(mol,'ext.charges',q)
    end select
    if(verbose) write(*,'(a)') "---------------------------"
    if (allocated(error)) then
