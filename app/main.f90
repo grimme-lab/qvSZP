@@ -61,7 +61,7 @@ program main
    cm                = "ceh"
 
    !##### VERSION STRING #####
-   version = "2.2.0"
+   version = "2.3.0"
    !##########################
 
    ! get number of arguments
