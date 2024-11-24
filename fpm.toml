@@ -10,14 +10,18 @@ auto-executables = true
 auto-tests = true
 auto-examples = true
 link=["lapack"]
+# link=["openblas"]
 
 [install]
 library = false
 
 [dependencies]
 tblite.git = "https://github.com/tblite/tblite"
+tblite.tag = "v0.4.0"
 stdlib = "*"
 
 [dev-dependencies]
 test-drive.git = "https://github.com/fortran-lang/test-drive"
+test-drive.tag = "v0.5.0"
 mstore.git = "https://github.com/grimme-lab/mstore"
+mstore.tag = "v0.3.0"
