@@ -85,7 +85,7 @@ contains
       real(wp)                               :: tmpvec(4) = 1000.00_wp
       real(wp)                               :: iattmp(3)
 
-      allocate(nbf(100),npr(100,20),angmom(100,20),ibasis%sccoeff(118),ibasis%scalparam(118,3))
+      allocate(nbf(118),npr(118,20),angmom(118,20),ibasis%sccoeff(118),ibasis%scalparam(118,3))
       ibasis%sccoeff = .false.
       ibasis%scalparam = 0.0_wp
 
@@ -206,17 +206,11 @@ contains
          endif
       enddo
 
-      ibasis%atmax = imax
-      allocate(ibasis%npr(imax,20),ibasis%angmom(imax,20),ibasis%nbf(imax))
-      allocate(ibasis%exp(imax,20,20),ibasis%coeff(imax,20,20),ibasis%qcoeff(imax,20,20))
       close(myunit)
 
-      ibasis%npr = 0
-      ibasis%nbf = 0
-      ibasis%angmom = 0
-      ibasis%exp = 0.0_wp
-      ibasis%coeff = 0.0_wp
-      ibasis%qcoeff = 0.0_wp
+      ibasis%atmax = imax
+      allocate(ibasis%npr(imax,20),ibasis%angmom(imax,20),ibasis%nbf(imax), source=0)
+      allocate(ibasis%exp(imax,20,20),ibasis%coeff(imax,20,20),ibasis%qcoeff(imax,20,20), source=0.0_wp)
 
       do i=1,ibasis%atmax
          ibasis%nbf(i) = nbf(i)
@@ -230,7 +224,6 @@ contains
             if (angmom(i,j) == "h") ibasis%angmom(i,j) = 5
             if (angmom(i,j) == "i") ibasis%angmom(i,j) = 6
             if (angmom(i,j) == "j") error stop "too high primitives"
-            ibasis%npr(iat,:) = npr(iat,:)
          enddo
       enddo
 

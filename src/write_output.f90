@@ -16,6 +16,8 @@ module write_output
 
       logical          :: geoopt        = .false. ! turn on !OPT keyword
       logical          :: nocosx        = .false. ! turns off RIJCOSX, seminumerical exchange
+      logical          :: notrah        = .false. ! turns off TRAH
+      logical          :: nososcf       = .false. ! turns off SOSCF
       logical          :: dipgrad       = .false. ! dipole moment gradients
       logical          :: polgrad       = .false. ! polarizability derivatives
       logical          :: polar         = .false. ! polarizability calc
@@ -30,6 +32,7 @@ module write_output
       integer          :: defgrid = 2
       integer          :: coremem = 5000
       integer          :: mpi = 4
+      integer          :: scfcycles = 125
 
       real(wp)         :: d4_s6 = 1.00_wp
       real(wp)         :: d4_s8 = 1.00_wp
@@ -80,7 +83,9 @@ contains
       else
          write(myunit,'(a,a,a)') "! ",orcainp%dfa, " def2/J PrintBasis"
          write(myunit,'(a,a)',advance='NO') "! ",orcainp%scfconv
-         write(myunit,'(1x,a,i1,/)') "DEFGRID", orcainp%defgrid
+         write(myunit,'(1x,a,i1)') "DEFGRID", orcainp%defgrid
+         if(orcainp%notrah) write(myunit,'(''! NoTRAH'')')
+         if(orcainp%nososcf) write(myunit,'(''! NoSOSCF'')')
          if(orcainp%geoopt) write(myunit,'(''! Opt'')')
          if(orcainp%nocosx) write(myunit,'(''! NOCOSX'')')
          if(orcainp%dipgrad) write(myunit,'(''! Freq'')')
@@ -104,6 +109,7 @@ contains
             write(myunit,'(a,f12.8,a,f12.8,a,f12.8)') "  efield", &
             & orcainp%efield(1),", ", orcainp%efield(2),", ", orcainp%efield(3)
          endif
+         if (orcainp%scfcycles > 0) write(myunit,'(2x,a,1x,i0)') "MaxIter", orcainp%scfcycles
          write(myunit, '(a,/)') "end"
       endif
 
@@ -150,6 +156,12 @@ contains
          if ( sum(abs(ecp%exp(mol%num(i),:,:))) > 0.0_wp .and. mol%num(i) >= ecp%atmin ) then
             if ( .not. ecpex ) then
                write(myunit,'(a)') "%basis"
+               ! Check if an atom with ordinal number > 86 is in the molecule
+               if ( any(mol%num > 86) ) then
+                  ! Print the following line to the output file
+                  !   AuxJ  "AutoAux"      # Use AutoAux to generate the AuxJ fitting basis set
+                  write(myunit,'(a)') '  AuxJ  "AutoAux" # Use AutoAux to generate the AuxJ fitting basis set'
+               end if
                ecpex = .true.
             endif
             write(myunit,'(a,a2)') "  NewECP ", mol%sym(i)
@@ -222,8 +234,11 @@ contains
                enddo
             enddo
             write(myunit,'(2x,a)') "end"
+            if (mol%num(mol%id(i)) > 86) then
+               write(myunit,'(2x,a,/,5x,a,/,2x,a)') 'NewAuxJGTO', '"AutoAux"', 'end'
+            end if
          else
-            call fatal_error(error,"No basis set for atoms with Z > 86")
+            call fatal_error(error,"No basis set for desired element available.")
          endif
       enddo
       write(myunit,'(a)') "*"

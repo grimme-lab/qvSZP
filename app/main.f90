@@ -61,7 +61,7 @@ program main
    cm                = "ceh"
 
    !##### VERSION STRING #####
-   version = "2.1"
+   version = "2.2.0"
    !##########################
 
    ! get number of arguments
@@ -120,6 +120,10 @@ program main
          call get_command_argument(i+1,atmp)
          read(atmp,*) orcainp%defgrid
       endif
+      if(index(atmp,'--scf-cycles').ne.0) then
+         call get_command_argument(i+1,atmp)
+         read(atmp,*) orcainp%scfcycles
+      endif
       if(index(atmp,'--guess').ne.0) then
          call get_command_argument(i+1,atmp)
          orcainp%guess=trim(adjustl(atmp))
@@ -162,6 +166,8 @@ program main
       if(index(atmp,'--dipgrad').ne.0) orcainp%dipgrad=.true.
       if(index(atmp,'--geoopt').ne.0) orcainp%geoopt=.true.
       if(index(atmp,'--nocosx').ne.0) orcainp%nocosx=.true.
+      if(index(atmp,'--notrah').ne.0) orcainp%notrah=.true.
+      if(index(atmp,'--nososcf').ne.0) orcainp%nososcf=.true.
       if(index(atmp,'--tightscf').ne.0)   orcainp%scfconv='TightSCF'
       if(index(atmp,'--strongscf').ne.0)  orcainp%scfconv='StrongSCF'
       if(index(atmp,'--nouseshark').ne.0) orcainp%nouseshark=.true.
@@ -203,8 +209,10 @@ program main
    !> Print header - actual program starts here
    write(*,'(a)')       "     -------------------------------------"
    write(*,'(a)')       "     |    q-vSZP ORCA INPUT GENERATOR    |"
-   write(*,'(a,a,a)')   "     |               v",version,"                |"
-   write(*,'(a)')       "     |        M. Müller, S. Grimme       |"
+   write(*,'(a,a,a)')   "     |               v",version,"              |"
+   write(*,'(a)')       "     |        M. M., T. F., S. G.        |"
+   write(*,'(a)')       "     |    University of Bonn, Germany    |"
+   write(*,'(a)')       "     |           (c) 2023-24             |"
    write(*,'(a,/)')     "     -------------------------------------"
    if (help) then
       call helpf()
@@ -366,6 +374,9 @@ program main
    case('ext')
       if (dummy) call fatal_error(error, "External charges not supported for dummy atoms.")
       call extcharges(mol,'ext.charges',q,cn)
+   case('extonlyq')
+      if (dummy) call fatal_error(error, "External charges not supported for dummy atoms.")
+      call extcharges(mol,'ext.charges',q)
    end select
    if(verbose) write(*,'(a)') "---------------------------"
    if (allocated(error)) then

@@ -12,3 +12,6 @@ tmpfiles/
 
 # VS code settings
 .vscode/
+
+# macOS storage cache
+**/.DS_Store

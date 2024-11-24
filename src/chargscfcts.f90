@@ -8,7 +8,7 @@ module chargscfcts
    use multicharge_lapack, only : sytrf, sytrs
    !> CEH modules
    use tblite_ceh_ceh, only : new_ceh_calculator
-   use tblite_ceh_singlepoint, only : ceh_guess
+   use tblite_ceh_singlepoint, only : ceh_singlepoint
    use tblite_xtb_calculator, only : xtb_calculator
    use tblite_wavefunction, only : wavefunction_type, new_wavefunction
    use tblite_container, only : container_type
@@ -202,11 +202,11 @@ contains
       !> Verbosity level
       integer,intent(in),optional :: verbosity
       !> Electronic temperature
-      real(wp) :: etemp = 300.0_wp
+      real(wp) :: etemp = 4000.0_wp
       !> Numerical accuracy for self-consistent iterations
       real(wp) :: accuracy = 1.0_wp
 
-      call new_ceh_calculator(calc, mol)
+      call new_ceh_calculator(calc, mol, error)
       call new_wavefunction(wfn, mol%nat, calc%bas%nsh, calc%bas%nao, 1, etemp * kt)
       if (norm2(efield) > 1.0e-10_wp) then
          block
@@ -215,7 +215,7 @@ contains
             call calc%push_back(cont)
          end block
       end if
-      call ceh_guess(ctx, calc, mol, error, wfn, accuracy, verbosity)
+      call ceh_singlepoint(ctx, calc, mol, wfn, accuracy, verbosity)
       if (ctx%failed()) then
          print *, 'CEH guess failed'
          do while(ctx%failed())
@@ -296,7 +296,7 @@ contains
       do i = 1, tmpmol%nat
          do j = 1, i-1
             k = k + 1
-            rcovij= 1.0_wp * ( rcov(tmpmol%num(tmpmol%id(i))) + rcov(tmpmol%num(tmpmol%id(j))) )
+            rcovij= rcov(tmpmol%num(tmpmol%id(i))) + rcov(tmpmol%num(tmpmol%id(j)))
             arg = (rab(k)-rcovij)/rcovij
             tmp = 0.5_wp * (1.0_wp + erf(kn*arg))
             cn(i) = cn(i) + tmp
