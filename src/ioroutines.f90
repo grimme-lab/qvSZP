@@ -85,6 +85,10 @@ contains
       real(wp)                               :: tmpvec(4) = 1000.00_wp
       real(wp)                               :: iattmp(3)
 
+      ! define a one-dimensional array of one-character angular momentum labels
+      character(len=1), dimension(7)         :: angmom_labels = (/"s","p","d","f","g","h","i"/)
+      logical                                :: angmom_label_found
+
       allocate(nbf(118),npr(118,20),angmom(118,20),ibasis%sccoeff(118),ibasis%scalparam(118,3))
       ibasis%sccoeff = .false.
       ibasis%scalparam = 0.0_wp
@@ -188,6 +192,10 @@ contains
                do j=1,tmpnpr
                   read(myunit,'(a)',iostat=iread) atmp
                   l = l + 1
+                  if(index(atmp,'*').ne.0) then
+                     write(*,*) "Current line number: ",l
+                     error stop "Corrupted basis set file. Number of primitives might be wrong."
+                  end if
                   if (.not. checked) then
                      read(atmp,*,iostat=iread) tmpvec(:)
                      if (tmpvec(3) < 999.0_wp) then
@@ -202,6 +210,21 @@ contains
                   write(*,*) "Current line number: ",l
                   error stop "I/O error in basis set read in."
                end if
+               ! if no "s", "p", "d", "f", "g", "h", "i" is found, we assume that the basis set is
+               ! corrupted and stop the program.
+               if(index(atmp,'*').eq.0) then
+                  angmom_label_found = .false.
+                  do i=1,7
+                     if (index(atmp,angmom_labels(i)).gt.0) then
+                        angmom_label_found = .true.
+                        exit
+                     endif
+                  end do
+                  if (.not. angmom_label_found) then
+                     write(*,*) "Current line number: ",l
+                     error stop "Corrupted basis set file. Angular momentum label not found."
+                  end if
+               endif
             enddo
          endif
       enddo
