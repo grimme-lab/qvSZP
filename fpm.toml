@@ -1,9 +1,9 @@
 name = "qvSZP"
-version = "2.3.0"
+version = "3.0.0"
 license = "license"
 author = ["Marcel Mueller", "Thomas Froitzheim", "Stefan Grimme"]
 maintainer = "marcel.mueller@thch.uni-bonn.de"
-copyright = "Copyright 2023-2024, Marcel Mueller"
+copyright = "Copyright 2023-2025, Marcel Mueller"
 
 [build]
 auto-executables = true
