@@ -73,13 +73,16 @@ contains
       open(newunit=myunit,file=orcainp%outn)
 
       if (orcainp%hfref) then
-         write(myunit,'(a)')     "! HF NORI ExtremeSCF"
-         write(myunit,'(a)')     "! NOCOSX"
-         write(myunit,'(a,/)')   "! LargePrint"
-         write(myunit,'(a)')     "%scf"
-         write(myunit,'(a,a)')   "  guess ", trim(adjustl(orcainp%guess))
-         write(myunit,'(a)')     "  SCFMode Conventional"
-         write(myunit,'(a,/)')   "end"
+         write(myunit,'(a)')   "! HF"
+         write(myunit,'(a)') "! NOCOSX NORI"
+         if(orcainp%notrah) write(myunit,'(''! NoTRAH'')')
+         if(orcainp%nososcf) write(myunit,'(''! NoSOSCF'')')
+         write(myunit,'(a)')   "%scf"
+         write(myunit,'(a,a)') "  guess ", trim(adjustl(orcainp%guess))
+         if (orcainp%scfcycles > 0) write(myunit,'(2x,a,1x,i0)') "MaxIter", orcainp%scfcycles
+         write(myunit,'(a,/)') "end"
+         if(orcainp%mpi.gt.0) write(myunit,'(''%pal'',/,''  nprocs'',i4,/,''end'',/)') orcainp%mpi
+         write(myunit,'(''%MaxCore '',i6,/)') orcainp%coremem
       else
          write(myunit,'(a,a,a)') "! ",orcainp%dfa, " def2/J PrintBasis"
          write(myunit,'(a,a)',advance='NO') "! ",orcainp%scfconv
