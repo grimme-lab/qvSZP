@@ -1,7 +1,7 @@
 # qvSZP
 This tool sets up an ORCA calculation using the q-vSZP basis set ([_J. Chem. Phys. 159_, 164108 (**2023**)](https://doi.org/10.1063/5.0172373)). It is intended to work with ORCA version 5.0.4 and higher. The project depends on other subprojects, the most important being `tblite` (https://github.com/tblite/tblite) and `stdlib` (https://github.com/fortran-lang/stdlib).
 
-The basis sets itself is located in `q-vSZP_basis/`. Besides the full q-vSZP basis set, also versions without polarization functions and without core electrons for *f* elements are available.
+The basis sets itself is located in `q-vSZP_basis/`. Besides the full q-vSZP basis set, also versions without polarization functions and without core electrons for *f* elements are available. The full q-vSZP basis set is also provided in CP2K format.
 
 ## Installation
 ### Building with Fortran package Manager
